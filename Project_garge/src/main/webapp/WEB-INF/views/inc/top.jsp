@@ -9,14 +9,14 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="${pageContext.request.contextPath }/resources/img/logo.png" alt=""></a>
+                        <a href="./"><img src="${pageContext.request.contextPath }/resources/img/logo.png" alt=""></a>
                     </div>
                      <a href="#">Sign in</a>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="./">Home</a></li>
                             <li><a href="Shop">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
