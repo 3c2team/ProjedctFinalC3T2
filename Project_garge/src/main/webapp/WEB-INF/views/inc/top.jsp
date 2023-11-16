@@ -11,7 +11,6 @@
                     <div class="header__logo">
                         <a href="./"><img src="${pageContext.request.contextPath }/resources/img/logo.png" alt=""></a>
                     </div>
-                     <a href="#">Sign in</a>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
@@ -34,7 +33,6 @@
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a>
                         <a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a>
                         <a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
@@ -42,6 +40,15 @@
                 </div>
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+        <div>
+        <form novalidate role="serch">
+         <a href="#">Sign in</a>
+         <label>
+         <input type="search" class="form-text">
+          <a href="#" class="search-switch"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a>
+         </label>
+        </form>
         </div>
     </header>
     <!-- Header Section End -->
