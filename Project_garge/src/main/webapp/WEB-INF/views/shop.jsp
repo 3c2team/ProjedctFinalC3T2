@@ -1,51 +1,38 @@
-<!DOCTYPE html>
-<html lang="zxx">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html><html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Male_Fashion Template">
-    <meta name="keywords" content="Male_Fashion, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Male-Fashion | Template</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-    rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css" type="text/css">
+<meta charset="UTF-8">
+<meta name="description" content="Male_Fashion Template">
+<meta name="keywords" content="Male_Fashion, unica, creative, html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Male-Fashion | Template</title>
+<jsp:include page="inc/style.jsp"></jsp:include>
 </head>
-
 <body>
-	<jsp:include page="inc/top.jsp"></jsp:include>
-
-    <!-- Breadcrumb Section Begin -->
+	<header>
+		<jsp:include page="inc/top.jsp"></jsp:include>
+	</header>
+	
+    <!-- 주메뉴 -->
     <section class="breadcrumb-option">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Shop</h4>
+                        <h4>거래하기</h4>
                         <div class="breadcrumb__links">
-                            <a href="./index.html">Home</a>
-                            <span>Shop</span>
+                            <a href="./index.html">홈</a>
+                            <span>거래하기</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Section End -->
 
-    <!-- Shop Section Begin -->
+    <!-- 거래하기 메인 시작 -->
     <section class="shop spad">
         <div class="container">
             <div class="row">
@@ -57,176 +44,192 @@
                                 <button type="submit"><span class="icon_search"></span></button>
                             </form>
                         </div>
+                        
+                        <!-- 카테고리 -->
                         <div class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
+                                        <a data-toggle="collapse" data-target="#collapseOne">카테고리</a>
                                     </div>
                                     <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="#">Men (20)</a></li>
-                                                    <li><a href="#">Women (20)</a></li>
-                                                    <li><a href="#">Bags (20)</a></li>
-                                                    <li><a href="#">Clothing (20)</a></li>
-                                                    <li><a href="#">Shoes (20)</a></li>
-                                                    <li><a href="#">Accessories (20)</a></li>
-                                                    <li><a href="#">Kids (20)</a></li>
-                                                    <li><a href="#">Kids (20)</a></li>
-                                                    <li><a href="#">Kids (20)</a></li>
+                                                    <li><a href="#">디지털기기</a></li>
+                                                    <li><a href="#">가구/인테리어</a></li>
+                                                    <li><a href="#">유아동</a></li>
+                                                    <li><a href="#">여성패션/잡화</a></li>
+                                                    <li><a href="#">남성패션/잡화</a></li>
+                                                    <li><a href="#">생활가전</a></li>
+                                                    <li><a href="#">생활/주방</a></li>
+                                                    <li><a href="#">가공식품</a></li>
+                                                    <li><a href="#">스포츠/레저</a></li>
+                                                    <li><a href="#">취미/게임/음반</a></li>
+                                                    <li><a href="#">뷰티/미용</a></li>
+                                                    <li><a href="#">식물</a></li>
+                                                    <li><a href="#">반려동물용품</a></li>
+                                                    <li><a href="#">티켓/교환권</a></li>
+                                                    <li><a href="#">도서</a></li>
+                                                    <li><a href="#">기타 중고물품</a></li>
+                                                    <li><a href="#">무료나눔</a></li>
+                                                    <li><a href="#">삽니다</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseTwo">Branding</a>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__brand">
-                                                <ul>
-                                                    <li><a href="#">Louis Vuitton</a></li>
-                                                    <li><a href="#">Chanel</a></li>
-                                                    <li><a href="#">Hermes</a></li>
-                                                    <li><a href="#">Gucci</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
-                                    </div>
-                                    <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__price">
-                                                <ul>
-                                                    <li><a href="#">$0.00 - $50.00</a></li>
-                                                    <li><a href="#">$50.00 - $100.00</a></li>
-                                                    <li><a href="#">$100.00 - $150.00</a></li>
-                                                    <li><a href="#">$150.00 - $200.00</a></li>
-                                                    <li><a href="#">$200.00 - $250.00</a></li>
-                                                    <li><a href="#">250.00+</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Size</a>
-                                    </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__size">
-                                                <label for="xs">xs
-                                                    <input type="radio" id="xs">
-                                                </label>
-                                                <label for="sm">s
-                                                    <input type="radio" id="sm">
-                                                </label>
-                                                <label for="md">m
-                                                    <input type="radio" id="md">
-                                                </label>
-                                                <label for="xl">xl
-                                                    <input type="radio" id="xl">
-                                                </label>
-                                                <label for="2xl">2xl
-                                                    <input type="radio" id="2xl">
-                                                </label>
-                                                <label for="xxl">xxl
-                                                    <input type="radio" id="xxl">
-                                                </label>
-                                                <label for="3xl">3xl
-                                                    <input type="radio" id="3xl">
-                                                </label>
-                                                <label for="4xl">4xl
-                                                    <input type="radio" id="4xl">
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFive">Colors</a>
-                                    </div>
-                                    <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__color">
-                                                <label class="c-1" for="sp-1">
-                                                    <input type="radio" id="sp-1">
-                                                </label>
-                                                <label class="c-2" for="sp-2">
-                                                    <input type="radio" id="sp-2">
-                                                </label>
-                                                <label class="c-3" for="sp-3">
-                                                    <input type="radio" id="sp-3">
-                                                </label>
-                                                <label class="c-4" for="sp-4">
-                                                    <input type="radio" id="sp-4">
-                                                </label>
-                                                <label class="c-5" for="sp-5">
-                                                    <input type="radio" id="sp-5">
-                                                </label>
-                                                <label class="c-6" for="sp-6">
-                                                    <input type="radio" id="sp-6">
-                                                </label>
-                                                <label class="c-7" for="sp-7">
-                                                    <input type="radio" id="sp-7">
-                                                </label>
-                                                <label class="c-8" for="sp-8">
-                                                    <input type="radio" id="sp-8">
-                                                </label>
-                                                <label class="c-9" for="sp-9">
-                                                    <input type="radio" id="sp-9">
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseSix">Tags</a>
-                                    </div>
-                                    <div id="collapseSix" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__tags">
-                                                <a href="#">Product</a>
-                                                <a href="#">Bags</a>
-                                                <a href="#">Shoes</a>
-                                                <a href="#">Fashio</a>
-                                                <a href="#">Clothing</a>
-                                                <a href="#">Hats</a>
-                                                <a href="#">Accessories</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+                                <!-- 브랜드 -->
+<!--                                 <div class="card"> -->
+<!--                                     <div class="card-heading"> -->
+<!--                                         <a data-toggle="collapse" data-target="#collapseTwo">Branding</a> -->
+<!--                                     </div> -->
+<!--                                     <div id="collapseTwo" class="collapse show" data-parent="#accordionExample"> -->
+<!--                                         <div class="card-body"> -->
+<!--                                             <div class="shop__sidebar__brand"> -->
+<!--                                                 <ul> -->
+<!--                                                     <li><a href="#">Louis Vuitton</a></li> -->
+<!--                                                     <li><a href="#">Chanel</a></li> -->
+<!--                                                     <li><a href="#">Hermes</a></li> -->
+<!--                                                     <li><a href="#">Gucci</a></li> -->
+<!--                                                 </ul> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
+<!--                                 <div class="card"> -->
+<!--                                     <div class="card-heading"> -->
+<!--                                         <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a> -->
+<!--                                     </div> -->
+<!--                                     <div id="collapseThree" class="collapse show" data-parent="#accordionExample"> -->
+<!--                                         <div class="card-body"> -->
+<!--                                             <div class="shop__sidebar__price"> -->
+<!--                                                 <ul> -->
+<!--                                                     <li><a href="#">$0.00 - $50.00</a></li> -->
+<!--                                                     <li><a href="#">$50.00 - $100.00</a></li> -->
+<!--                                                     <li><a href="#">$100.00 - $150.00</a></li> -->
+<!--                                                     <li><a href="#">$150.00 - $200.00</a></li> -->
+<!--                                                     <li><a href="#">$200.00 - $250.00</a></li> -->
+<!--                                                     <li><a href="#">250.00+</a></li> -->
+<!--                                                 </ul> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
+<!--                                 <div class="card"> -->
+<!--                                     <div class="card-heading"> -->
+<!--                                         <a data-toggle="collapse" data-target="#collapseFour">Size</a> -->
+<!--                                     </div> -->
+<!--                                     <div id="collapseFour" class="collapse show" data-parent="#accordionExample"> -->
+<!--                                         <div class="card-body"> -->
+<!--                                             <div class="shop__sidebar__size"> -->
+<!--                                                 <label for="xs">xs -->
+<!--                                                     <input type="radio" id="xs"> -->
+<!--                                                 </label> -->
+<!--                                                 <label for="sm">s -->
+<!--                                                     <input type="radio" id="sm"> -->
+<!--                                                 </label> -->
+<!--                                                 <label for="md">m -->
+<!--                                                     <input type="radio" id="md"> -->
+<!--                                                 </label> -->
+<!--                                                 <label for="xl">xl -->
+<!--                                                     <input type="radio" id="xl"> -->
+<!--                                                 </label> -->
+<!--                                                 <label for="2xl">2xl -->
+<!--                                                     <input type="radio" id="2xl"> -->
+<!--                                                 </label> -->
+<!--                                                 <label for="xxl">xxl -->
+<!--                                                     <input type="radio" id="xxl"> -->
+<!--                                                 </label> -->
+<!--                                                 <label for="3xl">3xl -->
+<!--                                                     <input type="radio" id="3xl"> -->
+<!--                                                 </label> -->
+<!--                                                 <label for="4xl">4xl -->
+<!--                                                     <input type="radio" id="4xl"> -->
+<!--                                                 </label> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
+<!--                                 <div class="card"> -->
+<!--                                     <div class="card-heading"> -->
+<!--                                         <a data-toggle="collapse" data-target="#collapseFive">Colors</a> -->
+<!--                                     </div> -->
+<!--                                     <div id="collapseFive" class="collapse show" data-parent="#accordionExample"> -->
+<!--                                         <div class="card-body"> -->
+<!--                                             <div class="shop__sidebar__color"> -->
+<!--                                                 <label class="c-1" for="sp-1"> -->
+<!--                                                     <input type="radio" id="sp-1"> -->
+<!--                                                 </label> -->
+<!--                                                 <label class="c-2" for="sp-2"> -->
+<!--                                                     <input type="radio" id="sp-2"> -->
+<!--                                                 </label> -->
+<!--                                                 <label class="c-3" for="sp-3"> -->
+<!--                                                     <input type="radio" id="sp-3"> -->
+<!--                                                 </label> -->
+<!--                                                 <label class="c-4" for="sp-4"> -->
+<!--                                                     <input type="radio" id="sp-4"> -->
+<!--                                                 </label> -->
+<!--                                                 <label class="c-5" for="sp-5"> -->
+<!--                                                     <input type="radio" id="sp-5"> -->
+<!--                                                 </label> -->
+<!--                                                 <label class="c-6" for="sp-6"> -->
+<!--                                                     <input type="radio" id="sp-6"> -->
+<!--                                                 </label> -->
+<!--                                                 <label class="c-7" for="sp-7"> -->
+<!--                                                     <input type="radio" id="sp-7"> -->
+<!--                                                 </label> -->
+<!--                                                 <label class="c-8" for="sp-8"> -->
+<!--                                                     <input type="radio" id="sp-8"> -->
+<!--                                                 </label> -->
+<!--                                                 <label class="c-9" for="sp-9"> -->
+<!--                                                     <input type="radio" id="sp-9"> -->
+<!--                                                 </label> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
+<!--                                 <div class="card"> -->
+<!--                                     <div class="card-heading"> -->
+<!--                                         <a data-toggle="collapse" data-target="#collapseSix">Tags</a> -->
+<!--                                     </div> -->
+<!--                                     <div id="collapseSix" class="collapse show" data-parent="#accordionExample"> -->
+<!--                                         <div class="card-body"> -->
+<!--                                             <div class="shop__sidebar__tags"> -->
+<!--                                                 <a href="#">Product</a> -->
+<!--                                                 <a href="#">Bags</a> -->
+<!--                                                 <a href="#">Shoes</a> -->
+<!--                                                 <a href="#">Fashio</a> -->
+<!--                                                 <a href="#">Clothing</a> -->
+<!--                                                 <a href="#">Hats</a> -->
+<!--                                                 <a href="#">Accessories</a> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- 본문 시작 -->
                 <div class="col-lg-9">
                     <div class="shop__product__option">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__left">
-                                    <p>Showing 1–12 of 126 results</p>
+                                    <p>Showing DBAll of DBselect results</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__right">
-                                    <p>Sort by Price:</p>
+                                    <p>정렬:&nbsp;</p>
                                     <select>
-                                        <option value="">Low To High</option>
-                                        <option value="">$0 - $55</option>
-                                        <option value="">$55 - $100</option>
+                                        <option value="">추천순</option>
+                                        <option value="">최신순</option>
+                                        <option value="">낮은가격순</option>
+                                        <option value="">높은가격순</option>
                                     </select>
                                 </div>
                             </div>
@@ -238,14 +241,13 @@
                                 <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-2.jpg">
                                     <ul class="product__hover">
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
-                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                        </li>
+<%--                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li> --%>
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6>Piqué Biker Jacket</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <h6>PiquÃ© Biker Jacket</h6>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
@@ -271,7 +273,7 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item sale">
                                 <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-3.jpg">
-                                    <span class="label">Sale</span>
+                                    <span class="label">무료나눔</span>
                                     <ul class="product__hover">
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a>
@@ -281,7 +283,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Multi-pocket Chest Bag</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -316,7 +318,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Diagonal Textured Cap</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
@@ -342,7 +344,7 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item sale">
                                 <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-6.jpg">
-                                    <span class="label">Sale</span>
+                                    <span class="label">무료나눔</span>
                                     <ul class="product__hover">
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a>
@@ -352,7 +354,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Ankle Boots</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -387,7 +389,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>T-shirt Contrast Pocket</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
@@ -422,7 +424,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Basic Flowing Scarf</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
@@ -456,8 +458,8 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6>Piqué Biker Jacket</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <h6>PiquÃ© Biker Jacket</h6>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
@@ -483,7 +485,7 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item sale">
                                 <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-10.jpg">
-                                    <span class="label">Sale</span>
+                                    <span class="label">무료나눔</span>
                                     <ul class="product__hover">
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a>
@@ -493,7 +495,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Multi-pocket Chest Bag</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -528,7 +530,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Diagonal Textured Cap</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
@@ -554,7 +556,7 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item sale">
                                 <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-12.jpg">
-                                    <span class="label">Sale</span>
+                                    <span class="label">무료나눔</span>
                                     <ul class="product__hover">
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a>
@@ -564,7 +566,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Ankle Boots</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -599,7 +601,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>T-shirt Contrast Pocket</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
@@ -634,7 +636,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Basic Flowing Scarf</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a href="#" class="add-cart">상세보기</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
@@ -664,8 +666,6 @@
                                 <a class="active" href="#">1</a>
                                 <a href="#">2</a>
                                 <a href="#">3</a>
-                                <span>...</span>
-                                <a href="#">21</a>
                             </div>
                         </div>
                     </div>
@@ -673,9 +673,9 @@
             </div>
         </div>
     </section>
-    <!-- Shop Section End -->
-
-<jsp:include page="inc/bottom.jsp"></jsp:include>
+    <footer class="footer">
+		<jsp:include page="inc/bottom.jsp"></jsp:include>
+    </footer>
 </body>
 
 </html>
