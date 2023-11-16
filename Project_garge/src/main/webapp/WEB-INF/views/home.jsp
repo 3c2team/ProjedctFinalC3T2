@@ -48,8 +48,8 @@
             </div>
         </div>
         <div class="offcanvas__nav__option">
-            <a href="#" class="search-switch"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a>
-            <a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a>
+            <a href="#" class="search-switch"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png"></a>
+            <a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png"></a>
             <a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/cart.png" alt=""> <span>0</span></a>
             <div class="price">$0.00</div>
         </div>
@@ -103,15 +103,15 @@
                             <li><a href="Shop">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="About">About Us</a></li>
+                                    <li><a href="ShopDetails">Shop Details</a></li>
+                                    <li><a href="ShoppingCart">Shopping Cart</a></li>
+                                    <li><a href="Checkout">Check Out</a></li>
+                                    <li><a href="BlogDetails">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
+                            <li><a href="Blog">Blog</a></li>
+                            <li><a href="Contact">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
