@@ -41,14 +41,14 @@
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
         </div>
-        <div>
-        <form novalidate role="serch">
-         <a href="#">Sign in</a>
-         <label>
-         <input type="search" class="form-text">
-          <a href="#" class="search-switch"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a>
-         </label>
-        </form>
-        </div>
+        
+        <nav class="navbar navbar-light bg-light">
+			<div class="input-group justify-content-center">
+				<input type="text" class="" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+				<img class="input-group-text" id="basic-addon1" src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt="">
+			</div>
+		</nav>	
+        
+        
     </header>
     <!-- Header Section End -->
