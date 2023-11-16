@@ -43,12 +43,6 @@
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
         </div>
         
-        <nav class="navbar navbar-light bg-light" style="padding-right: 10%;">
-			<div class="input-group justify-content-end">
-				<input type="text" class="" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-				<a href="#"><img class="input-group-text" id="basic-addon1" src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a>
-			</div>
-		</nav>	
         
         
     </header>

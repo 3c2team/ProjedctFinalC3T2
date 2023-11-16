@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -10,7 +12,6 @@
     <title>Male-Fashion | Template</title>
 	<jsp:include page="inc/style.jsp"></jsp:include>
 </head>
-
 <body>
 	<jsp:include page="inc/top.jsp"></jsp:include>
 
@@ -63,21 +64,21 @@
                                 product of natural selected proteins. This concentrate works actively in bringing about
                                 the natural youthful glow of the skin. It tightens the skin along with its moisturizing
                                 effect on the skin. The other important ingredient, making hydroderm so effective is
-                                “marine collagen” which along with Vyo-Serum helps revitalize the skin.</p>
+                                âmarine collagenâ which along with Vyo-Serum helps revitalize the skin.</p>
                         </div>
                         <div class="blog__details__quote">
                             <i class="fa fa-quote-left"></i>
-                            <p>“When designing an advertisement for a particular product many things should be
-                                researched like where it should be displayed.”</p>
+                            <p>âWhen designing an advertisement for a particular product many things should be
+                                researched like where it should be displayed.â</p>
                             <h6>_ John Smith _</h6>
                         </div>
                         <div class="blog__details__text">
                             <p>Vyo-Serum along with tightening the skin also reduces the fine lines indicating aging of
-                                skin. Problems like dark circles, puffiness, and crow’s feet can be control from the
+                                skin. Problems like dark circles, puffiness, and crowâs feet can be control from the
                                 strong effects of this serum.</p>
                             <p>Hydroderm is a multi-functional product that helps in reducing the cellulite and giving
                                 the body a toned shape, also helps in cleansing the skin from the root and not letting
-                                the pores clog, nevertheless also let’s sweeps out the wrinkles and all signs of aging
+                                the pores clog, nevertheless also letâs sweeps out the wrinkles and all signs of aging
                                 from the sensitive near the eyes.</p>
                         </div>
                         <div class="blog__details__option">
@@ -122,7 +123,7 @@
                             <form action="#">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4">
-                                        <input type="text" placeholder="Name">
+                                        <input type="text" placeholder="Name" id="result">
                                     </div>
                                     <div class="col-lg-4 col-md-4">
                                         <input type="text" placeholder="Email">
@@ -145,6 +146,7 @@
     <!-- Blog Details Section End -->
 
 	<jsp:include page="inc/bottom.jsp"></jsp:include>
+	
 </body>
 
 </html>
