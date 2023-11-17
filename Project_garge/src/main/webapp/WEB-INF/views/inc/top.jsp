@@ -26,9 +26,13 @@
                                     <li><a href="BlogDetails">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="Blog">Blog</a></li>
-                            <li><a href="Contact">Contacts</a></li>
                         </ul>
+                        <div class="shop__sidebar__search">
+                              <form action="#">
+                                <input type="text" style="margin-top:7%;" placeholder="상품 혹은 동네를 입력해주세요">
+                                <button style="margin-top:4%;" type="submit"><span class="icon_search"></span></button>
+                            </form> 
+                       </div>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">

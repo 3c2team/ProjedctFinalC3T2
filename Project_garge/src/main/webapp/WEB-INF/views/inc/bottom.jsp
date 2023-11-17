@@ -89,5 +89,6 @@
     <script src="${pageContext.request.contextPath }/resources/js/jquery.countdown.min.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/jquery.slicknav.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/mixitup.min.js"></script>
+<%--     <script src="${pageContext.request.contextPath }/resources/js/address.js"></script> --%>
     <script src="${pageContext.request.contextPath }/resources/js/owl.carousel.min.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/main.js"></script>

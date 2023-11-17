@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -12,8 +14,7 @@
 </head>
 
 <body>
-
-	<jsp:include page="inc/top.jsp"></jsp:include>
+		<jsp:include page="inc/top.jsp"></jsp:include>
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
@@ -129,7 +130,7 @@
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6>Piqué Biker Jacket</h6>
+                            <h6>PiquÃ© Biker Jacket</h6>
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
@@ -163,7 +164,7 @@
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6>Piqué Biker Jacket</h6>
+                            <h6>PiquÃ© Biker Jacket</h6>
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
@@ -521,6 +522,37 @@
     <!-- Latest Blog Section End -->
 
 	<jsp:include page="inc/bottom.jsp"></jsp:include>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7a037ee7b5defdef9bd8b44dd31e3eac&libraries=services"></script>
+  <script type="text/javascript">
+    navigator.geolocation.getCurrentPosition((position) => {
+		const gps = {
+			latitude: position.coords.latitude,
+			longitude: position.coords.longitude
+		}
+		// 검색이름
+		var SEARCH_KEYWORD = "부전동사무소";
+		
+        const options = {
+   			x: gps.longitude,
+   			y: gps.latitude
+   		};
+		
+		const places = new kakao.maps.services.Places();
+
+		var callback = function(result, status) {
+	    if (status === kakao.maps.services.Status.OK) {
+			for(let i = 0; i < result.length; i++){
+				if(result[i].category_name.includes("주민센터")){
+					console.log(result[i].category_name);
+				}
+			}
+	    }
+		};
+		console.log("성공");
+		places.keywordSearch(SEARCH_KEYWORD, callback,options); 
+	});
+	</script>
+
 </body>
 
 </html>
