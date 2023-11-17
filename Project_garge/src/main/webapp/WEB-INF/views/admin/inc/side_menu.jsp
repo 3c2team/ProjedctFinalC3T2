@@ -8,41 +8,36 @@
 	<ul class="menu-inner py-1">
 	<!-- Dashboard -->
 		<li class="menu-item active">
-			<a href="MyPageMain" class="menu-link">
+			<a href="AdminMain" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-home-circle"></i>
-				<div data-i18n="MyPageMain">마이페이지</div>
+				<div data-i18n="MyPageMain">관리자 페이지</div>
 			</a>
 		</li>
 	
 	
 		<li class="menu-header small text-uppercase">
-			<span class="menu-header-text">나의 거래</span>
+			<span class="menu-header-text">가지 정보</span>
 		</li>
-		<li class="menu-item">
-			<a href="MyFavorite" class="menu-link">
-				<i class="menu-icon tf-icons bx bx-dock-top"></i>
-				<div data-i18n="MyFavorite">관심목록</div>
-			</a>
-		</li>
+		
 		<li class="menu-item">
 			<a href="javascript:void(0);" class="menu-link menu-toggle">
 				<i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-				<div data-i18n="Authentications">판매내역</div>
+				<div data-i18n="">가지페이</div>
 			</a>
 			<ul class="menu-sub">
 				<li class="menu-item">
 					<a href="auth-login-basic.html" class="menu-link" target="_blank">
-						<div data-i18n="Basic">판매중</div>
+						<div data-i18n="">입금내역</div>
 					</a>
 				</li>
 				<li class="menu-item">
 					<a href="auth-register-basic.html" class="menu-link" target="_blank">
-						<div data-i18n="Basic">거래완료</div>
+						<div data-i18n="Basic">출금내역</div>
 					</a>
 				</li>
 				<li class="menu-item">
 					<a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-						<div data-i18n="Basic">숨김</div>
+						<div data-i18n="Basic">거래완료</div>
 					</a>
 				</li>
 			</ul>
@@ -50,7 +45,7 @@
 		<li class="menu-item">
 			<a href="javascript:void(0);" class="menu-link menu-toggle">
 				<i class="menu-icon tf-icons bx bx-cube-alt"></i>
-				<div data-i18n="Misc">구매내역</div>
+				<div data-i18n="Misc">뭐로 쓸지 고민중</div>
 			</a>
 			<ul class="menu-sub">
 				<li class="menu-item">
@@ -65,32 +60,38 @@
 				</li>
 			</ul>
 		</li>
+		<li class="menu-item">
+			<a href="MyFavorite" class="menu-link">
+				<i class="menu-icon tf-icons bx bx-dock-top"></i>
+				<div data-i18n="">신고회원 조회</div>
+			</a>
+		</li>
 	  <!-- Components -->
-		<li class="menu-header small text-uppercase">
-			<span class="menu-header-text">내 정보</span>
-		</li>
+<!-- 		<li class="menu-header small text-uppercase"> -->
+<!-- 			<span class="menu-header-text">내 정보</span> -->
+<!-- 		</li> -->
 	  <!-- Cards -->
-		<li class="menu-item">
-			<a href="MyProfile" class="menu-link">
-				<i class="menu-icon tf-icons bx bx-collection"></i>
-				<div data-i18n="Basic">프로필관리</div>
-			</a>
-		</li>
+<!-- 		<li class="menu-item"> -->
+<!-- 			<a href="MyProfile" class="menu-link"> -->
+<!-- 				<i class="menu-icon tf-icons bx bx-collection"></i> -->
+<!-- 				<div data-i18n="Basic">프로필관리</div> -->
+<!-- 			</a> -->
+<!-- 		</li> -->
 	  <!-- User interface -->
-		<li class="menu-item">
-			<a href="javascript:void(0)" class="menu-link">
-				<i class="menu-icon tf-icons bx bx-box"></i>
-				<div data-i18n="User interface">계좌관리</div>
-			</a>
-		</li>
+<!-- 		<li class="menu-item"> -->
+<!-- 			<a href="javascript:void(0)" class="menu-link"> -->
+<!-- 				<i class="menu-icon tf-icons bx bx-box"></i> -->
+<!-- 				<div data-i18n="User interface">계좌관리</div> -->
+<!-- 			</a> -->
+<!-- 		</li> -->
 	
 	  <!-- Extended components -->
-		<li class="menu-item">
-			<a href="javascript:void(0)" class="menu-link">
-				<i class="menu-icon tf-icons bx bx-copy"></i>
-				<div data-i18n="Extended UI">배송지관리</div>
-			</a>
-		</li>
+<!-- 		<li class="menu-item"> -->
+<!-- 			<a href="javascript:void(0)" class="menu-link"> -->
+<!-- 				<i class="menu-icon tf-icons bx bx-copy"></i> -->
+<!-- 				<div data-i18n="Extended UI">배송지관리</div> -->
+<!-- 			</a> -->
+<!-- 		</li> -->
 		
 		<li class="menu-header small text-uppercase">
 			<span class="menu-header-text">소식 및 지원</span>

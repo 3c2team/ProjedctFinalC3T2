@@ -55,11 +55,11 @@
 			<%-- 사이드 메뉴 --%>
 			<jsp:include page="inc/side_menu.jsp"></jsp:include>  
 			<!-- Layout container -->
-			<div class="card-body">
-				<div class="text-light small fw-semibold">Height</div>
-				<div class="demo-vertical-spacing">
-				</div>
-			</div>
+<!-- 			<div class="card-body"> -->
+<!-- 				<div class="text-light small fw-semibold">Height</div> -->
+<!-- 				<div class="demo-vertical-spacing"> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
 		</div>	  
 	</div>
 	<%-- 바텀 메뉴 --%>

@@ -92,3 +92,4 @@
 <%--     <script src="${pageContext.request.contextPath }/resources/js/address.js"></script> --%>
     <script src="${pageContext.request.contextPath }/resources/js/owl.carousel.min.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/main.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/admin_easterEgg.js"></script>
