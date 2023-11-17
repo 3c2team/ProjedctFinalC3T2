@@ -62,70 +62,7 @@
 
     <!-- Header Section Begin -->
     <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-7">
-                        <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-5">
-                        <div class="header__top__right">
-                            <div class="header__top__links">
-                                <a href="#">Sign in</a>
-                                <a href="#">FAQs</a>
-                            </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="${pageContext.request.contextPath }/resources/img/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li class="active"><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas__open"><i class="fa fa-bars"></i></div>
-        </div>
+        <jsp:include page="inc/top.jsp"></jsp:include>
     </header>
     <!-- Header Section End -->
 
@@ -156,24 +93,23 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <h6 class="coupon__code"><span class="icon_tag_alt"></span>같은 상품을 2회 이상 주문 완료 후 취소하실 경우 그 상품은 구매하실 수 없으므로 신중하게 구매해 주세요.</h6>
-                            <h6 class="checkout__title">결제 정보</h6>
-                            <div class="radio" style="margin-top: -3%;">
-	                            <input type="radio" name="diliver" id="" value="1" checked style="accent-color: #5F12D3;">
+                            <h6 class="checkout__title">결제 정보
+	                            <input type="radio" name="diliver" id="" value="1" checked style="accent-color: #5F12D3; margin-left: 55%;">
 								<label style="margin-right: 3%;">기존 배송지</label>
 								<input type="radio" name="diliver" id="" value="2" style="accent-color: #5F12D3;">
 								<label>새로운 배송지</label>
-                            </div>
+                            </h6>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>받으시는 분<span>*</span></p>
-                                        <input type="text" placeholder="이름 가져와서 띄우기">
+                                        <input type="text" placeholder="이름 가져와서 띄우기" id="member_name" value="이예림" style="color: black;">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디<span>*</span></p>
-                                        <input type="text" placeholder="아이디 가져와서 띄우기" readonly>
+                                        <input type="text" placeholder="아이디 가져와서 띄우기" style="color: black;">
                                     </div>
                                 </div>
                             </div>
@@ -186,12 +122,12 @@
                                 	주소<span>*</span>
                                 	<button type="button" style="cursor: pointer; margin-left:1%; color:white; background-color: #cb99c5; border: none; font-size: 0.8em" id="btnSearchAddress" >주소 검색</button>
                                 </p> <!-- box-shadow:0px 4px 0px #AD83A8; -->
-                                <input type="text" placeholder="Street Address" class="checkout__input__add">
-                                <input type="text" placeholder="상세주소">
+                                <input type="text" placeholder="주소" class="checkout__input__add" style="color: black;">
+                                <input type="text" placeholder="상세주소" style="color: black;">
                             </div>
                             <div class="checkout__input">
                                 <p>우편번호<span>*</span></p>
-                                <input type="text"  placeholder="주소 검색할 때 우편번호 가져오기(api 알아보기)">
+                                <input type="text"  placeholder="주소 검색할 때 우편번호 가져오기(api 알아보기)" style="color: black;">
                             </div>
 <!--                             <div class="checkout__input"> -->
 <!--                                 <p>우편번호<span>*</span></p> -->
@@ -205,13 +141,13 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>전화번호<span>*</span></p>
-                                        <input type="text"  placeholder="전화번호 가져와서 띄우기">
+                                        <input type="text"  placeholder="전화번호 가져와서 띄우기" style="color: black;">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>이메일<span>*</span></p>
-                                        <input type="text"  placeholder="이메일 가져와서 띄우기" readonly>
+                                        <input type="text"  placeholder="이메일 가져와서 띄우기" style="color: black;">
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +174,7 @@
                             <div class="checkout__input">
                                 <p>배송 메세지</p>
                                 <input type="text"
-                                placeholder="배송 문구를 입력해주세요.">
+                                placeholder="배송 문구를 입력해주세요." style="color: black;">
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -254,7 +190,7 @@
                                 </ul>
                                 <div class="checkout__input__checkbox"> <!-- 셋 중 하나만 되게 고칠 것 -->
                                     <label for="acc-or">
-                                        무통장 입금
+                                        카카오 페이
                                         <input type="checkbox" id="acc-or" name="pay">
                                         <span class="checkmark"></span>
                                     </label>
@@ -268,11 +204,19 @@
                                 </div>
                                 <div class="checkout__input__checkbox">
                                     <label for="paypal">
-                                        카카오페이
+                                        무통장 입금
                                         <input type="checkbox" id="paypal" name="pay">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
+                                <div id="block" class="form-select" style="display:none">
+                                	<select  name="bank">
+                                		<option value="noSelect" disabled>입금 은행을 선택해주세요.</option>
+                                		<option value="kakao">카카오뱅크</option>
+                                		<option value="kb">국민은행</option>
+                                		<option value="woori">우리은행</option>
+                               		</select>
+								</div>
                                 <button type="submit" class="site-btn">결제하기</button>
                             </div>
                         </div>
@@ -285,68 +229,7 @@
 
     <!-- Footer Section Begin -->
     <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__logo">
-                            <a href="#"><img src="${pageContext.request.contextPath }/resources/img/footer-logo.png" alt=""></a>
-                        </div>
-                        <p>The customer is at the heart of our unique business model, which includes design.</p>
-                        <a href="#"><img src="${pageContext.request.contextPath }/resources/img/payment.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Clothing Store</a></li>
-                            <li><a href="#">Trending Shoes</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Sale</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Delivary</a></li>
-                            <li><a href="#">Return & Exchanges</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>NewLetter</h6>
-                        <div class="footer__newslatter">
-                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
-                            <form action="#">
-                                <input type="text" placeholder="Your email">
-                                <button type="submit"><span class="icon_mail_alt"></span></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="footer__copyright__text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p>Copyright Â©
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        </p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                </div>
-            </div>
-        </div>
+        <jsp:include page="inc/bottom.jsp"></jsp:include>
     </footer>
     <!-- Footer Section End -->
 
@@ -364,7 +247,7 @@
     <!-- Js Plugins -->
     <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.min.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/js/jquery.nice-select.min.js"></script>
+<%--     <script src="${pageContext.request.contextPath }/resources/js/jquery.nice-select.min.js"></script> --%>
     <script src="${pageContext.request.contextPath }/resources/js/jquery.nicescroll.min.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/jquery.magnific-popup.min.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/jquery.countdown.min.js"></script>
@@ -380,6 +263,27 @@
     			$(this).prop('checked',true);
    			}
    		});
+    	
+        $('input[type="radio"][name="diliver"]').change(function(){
+    	   if($('input[type="radio"][name="diliver"]:checked').val()==1){
+    		   $("#member_name").val("이예림");
+//     		   $("#phone").val("${Member.member_phone_num}");
+    		   
+    	   } else{
+    	         $('input[type="text"]').val("");
+    	   }
+        });
+        
+        $(function(){
+            $('input[type="checkbox"][id="paypal"]').click(function() {
+                if ($('input[type="checkbox"][id="paypal"]').is(":checked")) {
+                    $("#block").show();
+                } else {
+                    $("#block").hide();
+                }
+            })
+     
+        });
    	});
     </script>
 </body>
