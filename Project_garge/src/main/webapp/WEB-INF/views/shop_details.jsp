@@ -46,7 +46,7 @@
 										<div class="product__details__text">
 											<h4>나이키 집업 자켓 팝니다</h4>
 											<h3>35000원</h3>
-											<p>1시간 전<span>조회</span><span>찜</span></p>
+											<p>1시간 전<span>/ 조회</span><span>/ 찜</span></p>
 											<p>배송비</p>
 											<div class="product__details__option">
 				                                <div class="product__details__option__size">
@@ -141,30 +141,28 @@
 <!--                         </div> -->
 <!--                     </div> -->
 <!--                 </div> -->
+				<!-- 상세정보 시작 -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__tab">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#tabs-5"
-                                    role="tab">Description</a>
+                                    <a class="nav-link active" data-toggle="tab" href="#tabs-5" role="tab">상세정보</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">Customer
-                                    Previews(5)</a>
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">판매자정보</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Additional
-                                    information</a>
-                                </li>
+<!--                                 <li class="nav-item"> -->
+<!--                                     <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">주소정보</a> -->
+<!--                                 </li> -->
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tabs-5" role="tabpanel">
                                     <div class="product__details__tab__content">
-                                        <p class="note">Nam tempus turpis at metus scelerisque placerat nulla deumantos
-                                            solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis
-                                            ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo
-                                        pharetras loremos.</p>
+                                        <p class="note">거래 전 주의사항 안내<br>
+														판매자가 별도의 메신저로 결제링크를 보내거나 직거래(직접송금)을
+														유도하는 경우 사기일 가능성이 높으니 거래를 자제해 주시고
+														중고나라 고객센터로 신고해주시기 바랍니다.</p>
                                         <div class="product__details__tab__content__item">
                                             <h5>Products Infomation</h5>
                                             <p>A Pocket PC is a handheld computer, which features many of the same

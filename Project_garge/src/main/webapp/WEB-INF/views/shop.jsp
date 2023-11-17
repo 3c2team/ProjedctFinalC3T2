@@ -54,7 +54,7 @@
                                     </div>
                                     <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
-                                            <div class="shop__sidebar__categories">
+                                            <div class="card-main">
                                                 <ul class="nice-scroll">
                                                     <li><a href="#">디지털기기</a></li>
                                                     <li><a href="#">가구/인테리어</a></li>
@@ -236,6 +236,7 @@
                         </div>
                     </div>
                     <div class="row">
+                    	<!-- 첫번째 글 -->
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-2.jpg">
@@ -246,63 +247,29 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6>PiquÃ© Biker Jacket</h6>
+                                    <h6>유틸리티 자켓</h6>
                                     <a href="#" class="add-cart">상세보기</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <h5>$67.24</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-4">
-                                            <input type="radio" id="pc-4">
-                                        </label>
-                                        <label class="active black" for="pc-5">
-                                            <input type="radio" id="pc-5">
-                                        </label>
-                                        <label class="grey" for="pc-6">
-                                            <input type="radio" id="pc-6">
-                                        </label>
-                                    </div>
+									<p>부산진구 <span> / 6분 전</span></p>
+                                    <h5>30000원</h5>
                                 </div>
                             </div>
                         </div>
+                    	<!-- 두번쨰 글 -->
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item sale">
                                 <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-3.jpg">
                                     <span class="label">무료나눔</span>
                                     <ul class="product__hover">
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
-                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                        </li>
+<%--                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li> --%>
                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6>Multi-pocket Chest Bag</h6>
+                                    <h6>가방 팔아요</h6>
                                     <a href="#" class="add-cart">상세보기</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <h5>$43.48</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-7">
-                                            <input type="radio" id="pc-7">
-                                        </label>
-                                        <label class="active black" for="pc-8">
-                                            <input type="radio" id="pc-8">
-                                        </label>
-                                        <label class="grey" for="pc-9">
-                                            <input type="radio" id="pc-9">
-                                        </label>
-                                    </div>
+									<p>서울 마포구 중앙동 <span> / 15분 전</span></p>
+                                    <h5>5000원</h5>
                                 </div>
                             </div>
                         </div>

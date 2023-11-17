@@ -164,7 +164,7 @@ ol {
 	text-transform: uppercase;
 	padding: 14px 30px;
 	color: #ffffff;
-	background: #000000;
+	background: #5F12D3;
 	letter-spacing: 4px;
 }
 
@@ -1250,7 +1250,7 @@ ol {
 .shop__sidebar__categories ul li a,
 .shop__sidebar__price ul li a,
 .shop__sidebar__brand ul li a {
-	color: #b7b7b7;
+	color: #6c757d;
 	font-size: 15px;
 	line-height: 32px;
 	-webkit-transition: all, 0.3s;
@@ -1505,7 +1505,7 @@ ol {
 	text-align: center;
 	background: #f3f2ee;
 	padding: 40px 0 60px;
-	margin-bottom: 100px;
+/* 	margin-bottom: 100px; */
 }
 
 .product__details__pic .nav-tabs {
@@ -1656,7 +1656,7 @@ ol {
 
 .product__details__option__size {
 	display: inline-block;
-	margin-right: 50px;
+/* 	margin-right: 50px; */
 }
 
 .product__details__option__size span {
@@ -1915,6 +1915,17 @@ ol {
 
 .product__details__tab__content__item p {
 	margin-bottom: 0;
+}
+
+.card-main li {
+    margin: 1rem;
+    list-style: none;
+}
+
+.card-main a {
+    color: #343a40;
+    margin: 1rem;
+    padding-bottom: 1rem;
 }
 
 /*---------------------
