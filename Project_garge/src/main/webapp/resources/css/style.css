@@ -1606,7 +1606,8 @@ ol {
 }
 
 .product__details__text {
-	text-align: center;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .product__details__text h4 {
@@ -1891,11 +1892,13 @@ ol {
 }
 
 .note {
-	color: #111111;
-	font-size: 18px;
-	font-weight: 700;
-	line-height: 28px;
-	margin-bottom: 25px;
+    color: #343a40;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    background-color: #F3EDFF;
+    text-align: center;
+    padding: 15px;
 }
 
 .product__details__tab__content__item {

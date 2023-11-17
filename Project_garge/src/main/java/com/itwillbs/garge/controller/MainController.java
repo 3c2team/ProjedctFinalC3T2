@@ -37,18 +37,6 @@ public class MainController {
 		
 		return "contact";
 	}
-	
-	@GetMapping("Login")
-	public String login() {
-		
-		return "login";
-	}
-	
-	@GetMapping("Join")
-	public String join() {
-		
-		return "join";
-	}
 	// 안써도 될거같음
 	@GetMapping("Main")
 	public String main() {
@@ -64,6 +52,11 @@ public class MainController {
 	public String shopDetails() {
 		
 		return "shop_details";
+	}
+	@GetMapping("ShopForm")
+	public String shopForm() {
+		
+		return "shop_form";
 	}
 	@GetMapping("ShoppingCart")
 	public String shoppingCart() {

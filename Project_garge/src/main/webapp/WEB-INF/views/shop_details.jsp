@@ -23,9 +23,9 @@
                     <div class="col-lg-12">
 						<!-- 카테고리 -->
                         <div class="product__details__breadcrumb">
-                            <a href="./index.html">홈</a>
-                            <a href="./shop.html">디지털기기</a>
-                            <a href="./shop.html">모바일</a>
+                            <a href="./index.jsp">홈</a>
+                            <a href="./shop.jsp">디지털기기</a>
+                            <a href="./ShopForm">모바일</a>
                             <span>아이폰</span>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                     <div class="col-lg-6 col-md-9">
 						<div class="tab-pane active" id="tabs-1" role="tabpanel">
 						    <div class="product__details__pic__item">
-						        <img src="${pageContext.request.contextPath }/resources/img/shop-details/product-big-2.png" alt="">
+						        <img src="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg" alt="">
 						    </div>
 						</div>
                     </div>
@@ -46,8 +46,12 @@
 										<div class="product__details__text">
 											<h4>나이키 집업 자켓 팝니다</h4>
 											<h3>35000원</h3>
-											<p>1시간 전<span>/ 조회</span><span>/ 찜</span></p>
-											<p>배송비</p>
+											<div style="display:flex;">
+												<p>1시간 전</p><p>조회</p><p>찜</p>
+											</div>
+											<div style="display:flex;">
+												<p>배송비</p><br><p>배송비 별도</p>
+											</div>
 											<div class="product__details__option">
 				                                <div class="product__details__option__size">
 				                                    <span>거래방법 선택</span>
@@ -161,74 +165,42 @@
                                     <div class="product__details__tab__content">
                                         <p class="note">거래 전 주의사항 안내<br>
 														판매자가 별도의 메신저로 결제링크를 보내거나 직거래(직접송금)을
-														유도하는 경우 사기일 가능성이 높으니 거래를 자제해 주시고
-														중고나라 고객센터로 신고해주시기 바랍니다.</p>
+														유도하는 경우 사기일 가능성이 높으니 거래를 자제해 주시고<br>
+														Garge 고객센터로 신고해주시기 바랍니다.</p>
                                         <div class="product__details__tab__content__item">
-                                            <h5>Products Infomation</h5>
-                                            <p>A Pocket PC is a handheld computer, which features many of the same
-                                                capabilities as a modern PC. These handy little devices allow
-                                                individuals to retrieve and store e-mail messages, create a contact
-                                                file, coordinate appointments, surf the internet, exchange text messages
-                                                and more. Every product that is labeled as a Pocket PC must be
-                                                accompanied with specific software to operate the unit and must feature
-                                            a touchscreen and touchpad.</p>
-                                            <p>As is the case with any new technology product, the cost of a Pocket PC
-                                                was substantial during itâs early release. For approximately $700.00,
-                                                consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                                These days, customers are finding that prices have become much more
-                                                reasonable now that the newness is wearing off. For approximately
-                                            $350.00, a new Pocket PC can now be purchased.</p>
-                                        </div>
-                                        <div class="product__details__tab__content__item">
-                                            <h5>Material used</h5>
-                                            <p>Polyester is deemed lower quality due to its none natural qualityâs. Made
-                                                from synthetic materials, not natural like wool. Polyester suits become
-                                                creased easily and are known for not being breathable. Polyester suits
-                                                tend to have a shine to them compared to wool and cotton suits, this can
-                                                make the suit look cheap. The texture of velvet is luxurious and
-                                                breathable. Velvet is a great choice for dinner party jacket and can be
-                                            worn all year round.</p>
+                                            <h5>상품내용</h5>
+											<p>♡색상:브라운
+												♡소재:폴리 아크릴 혼방
+												<br>
+												♡사이즈:free
+												ㅡ가슴단면34.5,총장53.5
+												<br>
+												측정 위치와 방법에 따라
+												오차 발생 할 수 있습니다
+												<br>
+												<br>
+												<br>
+												여성스러우면서 세련된 느낌의 니트티셔츠♡
+												<br>
+												어깨패드가 장착되어있어 깔끔하고
+												고급스러운 느낌을 주는 니트티♡
+												<br>
+												랩 디자인의 과하지 않은 브이넥으로
+												부담 없이 입기좋은 티셔츠♡
+												<br>
+												스커트,청바지,슬랙스 등
+												어떤하의와도 코디하기 좋은 니트티♡
+												<br>
+												<br>
+												데일리룩부터 하객룩, 오피스룩, 데이트룩
+												언제든 입기좋은 니트티♡</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tabs-6" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
-                                            <h5>Products Infomation</h5>
-                                            <p>A Pocket PC is a handheld computer, which features many of the same
-                                                capabilities as a modern PC. These handy little devices allow
-                                                individuals to retrieve and store e-mail messages, create a contact
-                                                file, coordinate appointments, surf the internet, exchange text messages
-                                                and more. Every product that is labeled as a Pocket PC must be
-                                                accompanied with specific software to operate the unit and must feature
-                                            a touchscreen and touchpad.</p>
-                                            <p>As is the case with any new technology product, the cost of a Pocket PC
-                                                was substantial during itâs early release. For approximately $700.00,
-                                                consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                                These days, customers are finding that prices have become much more
-                                                reasonable now that the newness is wearing off. For approximately
-                                            $350.00, a new Pocket PC can now be purchased.</p>
-                                        </div>
-                                        <div class="product__details__tab__content__item">
-                                            <h5>Material used</h5>
-                                            <p>Polyester is deemed lower quality due to its none natural qualityâs. Made
-                                                from synthetic materials, not natural like wool. Polyester suits become
-                                                creased easily and are known for not being breathable. Polyester suits
-                                                tend to have a shine to them compared to wool and cotton suits, this can
-                                                make the suit look cheap. The texture of velvet is luxurious and
-                                                breathable. Velvet is a great choice for dinner party jacket and can be
-                                            worn all year round.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="tabs-7" role="tabpanel">
-                                    <div class="product__details__tab__content">
-                                        <p class="note">Nam tempus turpis at metus scelerisque placerat nulla deumantos
-                                            solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis
-                                            ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo
-                                        pharetras loremos.</p>
-                                        <div class="product__details__tab__content__item">
-                                            <h5>Products Infomation</h5>
+                                            <h5>판매자 정보</h5>
                                             <p>A Pocket PC is a handheld computer, which features many of the same
                                                 capabilities as a modern PC. These handy little devices allow
                                                 individuals to retrieve and store e-mail messages, create a contact
@@ -264,12 +236,12 @@
     </section>
     <!-- Shop Details Section End -->
 
-    <!-- Related Section Begin -->
+    <!-- 인기상품 시작 -->
     <section class="related spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="related-title">Related Product</h3>
+                    <h3 class="related-title">인기상품</h3>
                 </div>
             </div>
             <div class="row">
