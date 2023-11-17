@@ -171,7 +171,7 @@ ol {
 .site-btn {
 	font-size: 14px;
 	color: #ffffff;
-	background: #111111;
+	background: #5F12D3;
 	font-weight: 700;
 	border: none;
 	text-transform: uppercase;
@@ -2076,7 +2076,7 @@ ol {
 	position: absolute;
 	right: -14px;
 	top: 0;
-	content: ">";
+	content: "";
 	font-family: "FontAwesome";
 }
 
@@ -2522,7 +2522,7 @@ ol {
 .coupon__code {
 	color: #0d0d0d;
 	font-size: 14px;
-	border-top: 2px solid #77b527;
+	border-top: 2px solid #5F12D3;
 	background: #f5f5f5;
 	padding: 23px 30px 18px;
 	margin-bottom: 50px;
@@ -2604,7 +2604,7 @@ ol {
 }
 
 .checkout__input__checkbox label input:checked~.checkmark {
-	border-color: #e53637;
+	border-color: #5F12D3;
 }
 
 .checkout__input__checkbox label input:checked~.checkmark:after {
@@ -2628,7 +2628,7 @@ ol {
 	top: -3px;
 	width: 14px;
 	height: 7px;
-	border: solid #e53637;
+	border: solid #5F12D3;
 	border-width: 1.5px 1.5px 0px 0px;
 	-webkit-transform: rotate(127deg);
 	-ms-transform: rotate(127deg);
@@ -2718,7 +2718,7 @@ ol {
 }
 
 .checkout__total__all li span {
-	color: #e53637;
+	color: #5F12D3;
 	font-weight: 700;
 	float: right;
 }
