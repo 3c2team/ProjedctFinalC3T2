@@ -57,7 +57,7 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                            All rights reserved | This Project is made with <i class="fa fa-heart-o"
                             aria-hidden="true"></i> by <a href="AdminMain" target="_blank">Colorlib</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
