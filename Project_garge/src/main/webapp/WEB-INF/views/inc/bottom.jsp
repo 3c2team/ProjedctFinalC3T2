@@ -10,7 +10,7 @@
                         <div class="footer__logo">
                             <a href="#"><img src="${pageContext.request.contextPath }/resources/img/footer-logo.png" alt=""></a>
                         </div>
-                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <p>중고나라 상점의 판매상품을 제외한 모든 상품들에 대하여, (주)중고나라는 통신판매중개자로서 거래 당사자가 아니며 판매 회원과 구매 회원 간의 상품거래 정보 및 거래에 관여하지 않고, 어떠한 의무와 책임도 부담하지 않습니다.</p>
                         <a href="#"><img src="${pageContext.request.contextPath }/resources/img/payment.png" alt=""></a>
                     </div>
                 </div>

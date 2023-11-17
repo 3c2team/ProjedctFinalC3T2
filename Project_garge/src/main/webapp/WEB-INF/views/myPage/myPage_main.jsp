@@ -17,7 +17,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Account settings - Account | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>GARGE | MyPage</title>
 
     <meta name="description" content="" />
 
@@ -48,22 +48,22 @@
 </head>
 <body>
 	<%-- 탑 메뉴 --%>
-	<header class="header">
-		<jsp:include page="../inc/top.jsp"></jsp:include>
-	</header>	
+	<jsp:include page="../inc/top.jsp"></jsp:include>
     <!-- Layout wrapper -->
 	<div class="layout-wrapper layout-content-navbar">
 		<div class="layout-container">
 			<%-- 사이드 메뉴 --%>
 			<jsp:include page="inc/side_menu.jsp"></jsp:include>  
 			<!-- Layout container -->
-		</div>
+			<div class="card-body">
+				<div class="text-light small fw-semibold">Height</div>
+				<div class="demo-vertical-spacing">
+				</div>
+			</div>
+		</div>	  
 	</div>
-	
 	<%-- 바텀 메뉴 --%>
-	<footer class="footer">
-		<jsp:include page="../inc/bottom.jsp"></jsp:include>
-	</footer>
+	<jsp:include page="../inc/bottom.jsp"></jsp:include>
 	
 	
     <!-- Core JS -->
