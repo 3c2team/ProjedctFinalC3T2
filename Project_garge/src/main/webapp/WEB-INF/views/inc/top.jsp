@@ -6,7 +6,7 @@
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
-            <div class="row">
+            <div class="customrow">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo" id="easterEgg" onclick="easterEgg()">
                         <a href="./"><img src="${pageContext.request.contextPath }/resources/img/logo.png" alt=""></a>
@@ -34,6 +34,8 @@
                             </form> 
                        </div>
                     </nav>
+                    <span><a href="FraudInquiry">사기조회</a></span>
+                    <span><a href="#">시세조회</a></span>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option" >

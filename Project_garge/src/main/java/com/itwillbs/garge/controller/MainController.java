@@ -3,6 +3,7 @@ package com.itwillbs.garge.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.itwillbs.garge.service.MainService;
 
@@ -72,6 +73,24 @@ public class MainController {
 	public String shoppingCart() {
 		
 		return "shopping_cart";
+	}
+	//사기조회 페이지 이동
+	@GetMapping("FraudInquiry")
+	public String fraudInquiry() {
+		
+		return "fraud_inquiry";
+	}
+	//사기조회 결과 처리
+	@PostMapping("FraudInquiryPro")
+	public String fraudInquiryPro() {
+		
+		return "redirect:/FraudInquiryDetail";
+	}
+	//사기조회 결과 페이지 이동
+	@GetMapping("FraudInquiryDetail")
+	public String fraudInquiryDtail() {
+		
+		return "fraud_inquiry_detail";
 	}
 	
 }
