@@ -25,45 +25,16 @@
 			</a>
 		</li>
 		<li class="menu-item">
-			<a href="javascript:void(0);" class="menu-link menu-toggle">
+			<a href="MySales" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
 				<div data-i18n="Authentications">판매내역</div>
 			</a>
-			<ul class="menu-sub">
-				<li class="menu-item">
-					<a href="auth-login-basic.html" class="menu-link" target="_blank">
-						<div data-i18n="Basic">판매중</div>
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="auth-register-basic.html" class="menu-link" target="_blank">
-						<div data-i18n="Basic">거래완료</div>
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-						<div data-i18n="Basic">숨김</div>
-					</a>
-				</li>
-			</ul>
 		</li>
 		<li class="menu-item">
-			<a href="javascript:void(0);" class="menu-link menu-toggle">
+			<a href="MyPurchase" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-cube-alt"></i>
 				<div data-i18n="Misc">구매내역</div>
 			</a>
-			<ul class="menu-sub">
-				<li class="menu-item">
-					<a href="pages-misc-error.html" class="menu-link">
-						<div data-i18n="Error">Error</div>
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="pages-misc-under-maintenance.html" class="menu-link">
-						<div data-i18n="Under Maintenance">Under Maintenance</div>
-					</a>
-				</li>
-			</ul>
 		</li>
 	  <!-- Components -->
 		<li class="menu-header small text-uppercase">
@@ -71,14 +42,14 @@
 		</li>
 	  <!-- Cards -->
 		<li class="menu-item">
-			<a href="MyProfile" class="menu-link">
+			<a href="MyInfo" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-collection"></i>
 				<div data-i18n="Basic">프로필관리</div>
 			</a>
 		</li>
 	  <!-- User interface -->
 		<li class="menu-item">
-			<a href="javascript:void(0)" class="menu-link">
+			<a href="MyAccount" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-box"></i>
 				<div data-i18n="User interface">계좌관리</div>
 			</a>
@@ -86,7 +57,7 @@
 	
 	  <!-- Extended components -->
 		<li class="menu-item">
-			<a href="javascript:void(0)" class="menu-link">
+			<a href="MyAddress" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-copy"></i>
 				<div data-i18n="Extended UI">배송지관리</div>
 			</a>
@@ -97,14 +68,14 @@
 		</li>
 	  <!-- Cards -->
 		<li class="menu-item">
-			<a href="cards-basic.html" class="menu-link">
+			<a href="FAQ" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-collection"></i>
 				<div data-i18n="Basic">자주 묻는 질문</div>
 			</a>
 		</li>
 	  <!-- User interface -->
 		<li class="menu-item">
-			<a href="javascript:void(0)" class="menu-link">
+			<a href="Announcement" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-box"></i>
 				<div data-i18n="User interface">공지사항</div>
 			</a>
@@ -112,7 +83,7 @@
 	
 	  <!-- Extended components -->
 		<li class="menu-item">
-			<a href="javascript:void(0)" class="menu-link">
+			<a href="TermsAndPolicies" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-copy"></i>
 				<div data-i18n="Extended UI">약관 및 정책</div>
 			</a>

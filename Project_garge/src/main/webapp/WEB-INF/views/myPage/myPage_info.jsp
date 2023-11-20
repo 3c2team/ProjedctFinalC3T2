@@ -66,87 +66,85 @@
 </head>
 
 <body>
+	<%-- 탑 메뉴 --%>
 	<jsp:include page="../inc/top.jsp"></jsp:include>
 	<!-- Layout wrapper -->
 	<div class="layout-wrapper layout-content-navbar">
-		<!-- container -->
 		<div class="layout-container">
 			<%-- 사이드 메뉴 --%>
 			<jsp:include page="inc/side_menu.jsp"></jsp:include>  
-			<!-- layout -->
 			<div class="layout-page">
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
-						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">나의 거래 /</span> 관심목록</h4>
-						<!-- Table -->
+
+
+
+
+						<!-- 탈퇴 -->
 						<div class="card">
-							<h5 class="card-header">관심목록</h5>
-							<div class="table-responsive text-nowrap">
-								<table class="table">
-									<thead>
-										<tr>
-											<th width="50px"><input type="checkbox"></th>
-											<th>상품정보</th>
-											<th>판매자</th>
-											<th>거래상태</th>
-											<th>거래방법</th>
-										</tr>
-									</thead>
-									<tbody class="table-border-bottom-0">
-										<tr>
-											<td><input type="checkbox"></td>
-											<td>
-												<div class="product">
-													<img width="80px" src="../assets/img/elements/1.jpg">
-													<div class="product_info"><strong>****상품명****</strong><a>50,000원</a></div>
+							<h5 class="card-header">Delete Account</h5>
+							<div class="card-body">
+								<div class="mb-3 col-12 mb-0">
+									<div class="alert alert-warning">
+										<h6 class="alert-heading fw-bold mb-1">Are you sure you want to delete your account?</h6>
+										<p class="mb-0">Once you delete your account, there is no going back. Please be certain.</p>
+									</div>
+								</div>
+<!-- 								<form id="formAccountDeactivation" onsubmit="return false"> -->
+									<div class="form-check mb-3">
+										<input
+										class="form-check-input"
+										type="checkbox"
+										name="accountActivation"
+										id="accountActivation"
+										/>
+										<label class="form-check-label" for="accountActivation"
+										>I confirm my account deactivation</label
+										>
+									</div>
+									<%-- 모달창 버튼 --%>
+									<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#smallModal">회원탈퇴</button>
+
+									<%-- 모달창 --%>
+									<div class="modal fade" id="smallModal" tabindex="-1" aria-hidden="true">
+										<div class="modal-dialog modal-sm" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLabel2">비밀번호를 입력하세요.</h5>
 												</div>
-											</td>
-											<td>신혜리</td>
-											<td>
-                        						<span class="badge bg-label-primary">판매중</span>
-                        						<span class="badge bg-label-secondary">예약중</span>
-						                        <span class="badge bg-label-success">판매완료</span>	
-											</td>
-											<td><span>택배거래</span></td>
-										</tr>
-										<tr>
-											<td><input type="checkbox"></td>
-											<td>
-												<div class="product">
-													<img width="80px" src="../assets/img/elements/1.jpg">
-													<div class="product_info"><strong>****상품명****</strong><a>50,000원</a></div>
-												</div>
-											</td>
-											<td>신혜리</td>
-											<td><span class="badge bg-label-success me-1">거래완료</span></td>
-											<td><span>택배거래</span></td>
-										</tr>
-										<tr>
-											<td><input type="checkbox"></td>
-											<td>
-												<div class="product">
-													<img width="80px" src="../assets/img/elements/1.jpg">
-													<div class="product_info"><strong>****상품명****</strong><a>50,000원</a></div>
-												</div>
-											</td>
-											<td>신혜리</td>
-											<td><span class="badge bg-label-primary me-1"></span></td>
-											<td><span>택배거래</span></td>
-										</tr>
-									</tbody>
-								</table>
+												<form action="">
+													<div class="modal-body">
+														<div class="row">
+															<div class="col mb-3">
+																<label for="nameSmall" class="form-label"></label>
+																<input type="password" id="nameSmall" class="form-control" required="required" placeholder="PassWord" />
+															</div>
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button type="submit" class="btn btn-danger">탈퇴하기</button>
+														<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+															Close
+														</button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+									<%-- 모달창 --%>
+<!-- 									<button type="submit" class="btn btn-danger deactivate-account">Deactivate Account</button> -->
+<!-- 								</form> -->
 							</div>
 						</div>
-						<!--/Table -->
+						<!-- 탈퇴 -->
+						
 					</div>
-				</div>
-			</div>
-			<!-- layout -->
-		</div>
-		<!-- /container -->
-	</div>
-    <!-- / Layout wrapper -->
-	
+				</div> <!-- Content Wrapper -->
+			</div> <!-- / Layout page -->
+		</div> <!-- / Layout Container -->
+	</div> <!-- / Layout Wrapper -->
+
+
 	<%-- 바텀 메뉴 --%>
 	<jsp:include page="../inc/bottom.jsp"></jsp:include>
     <!-- Core JS -->

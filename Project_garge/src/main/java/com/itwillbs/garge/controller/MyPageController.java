@@ -32,37 +32,37 @@ public class MyPageController {
 	@GetMapping("MySales")
 	public String mySales() {
 		
-		return "myPage/myPage_favorite";
+		return "myPage/myPage_sales";
 	}
 	
 	@GetMapping("MyPurchase")
 	public String myPurchase() {
 		
-		return "myPage/myPage_favorite";
+		return "myPage/myPage_purchase";
 	}
 	
 	@GetMapping("MyInfo")
 	public String myInfo() {
 		
-		return "myPage/myPage_favorite";
+		return "myPage/myPage_info";
 	}
 	
 	@GetMapping("MyAccount")
 	public String myAccount() {
 		
-		return "myPage/myPage_favorite";
+		return "myPage/myPage_account";
 	}
 	
 	@GetMapping("MyAddress")
 	public String myAddress() {
 		
-		return "myPage/myPage_favorite";
+		return "myPage/myPage_address";
 	}
 	
 	@GetMapping("FAQ")
 	public String fAQ() {
 		
-		return "myPage/myPage_favorite";
+		return "myPage/tables-basic";
 	}
 	
 	@GetMapping("Announcement")
