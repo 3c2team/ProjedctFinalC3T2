@@ -34,8 +34,8 @@
                             </form> 
                        </div>
                     </nav>
-                    <span><a href="FraudInquiry">사기조회</a></span>
-                    <span><a href="#">시세조회</a></span>
+                    <span><a href="FraudInquiry " class="btn">사기조회</a></span>
+                    <span><a href="#" class="btn">시세조회</a></span>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option" >

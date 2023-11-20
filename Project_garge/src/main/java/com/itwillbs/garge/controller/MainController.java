@@ -93,4 +93,11 @@ public class MainController {
 		return "fraud_inquiry_detail";
 	}
 	
+	//시세조회 페이지 이동
+	@GetMapping("MarketPriceInquiry")
+	public String marketPriceInquiry() {
+		
+		return "market_price_inquiry";
+	}
+	
 }
