@@ -23,17 +23,17 @@
 		<li class="menu-item">
 			<a href="javascript:void(0);" class="menu-link menu-toggle">
 				<i class="menu-icon tf-icons bx bx-cube-alt"></i>
-				<div data-i18n="Misc">매출내역</div>
+				<div data-i18n="Misc">거래내역</div>
 			</a>
 			<ul class="menu-sub">
 				<li class="menu-item">
-					<a href="pages-misc-error.html" class="menu-link">
-						<div data-i18n="Error">품목별 매출 내역</div>
+					<a href="ProductSales" class="menu-link">
+						<div data-i18n="Error"> 수수료 내역</div>
 					</a>
 				</li>
 				<li class="menu-item">
 					<a href="pages-misc-under-maintenance.html" class="menu-link">
-						<div data-i18n="Under Maintenance">기간별 매출 내역</div>
+						<div data-i18n="Under Maintenance">거래 내역</div>
 					</a>
 				</li>
 			</ul>

@@ -13,8 +13,14 @@ public class AdminController {
 	}
 	
 	@GetMapping("/Declaration")
-	public String myFavorite() {
+	public String declaration() {
 		
 		return "admin/declaration";
+	}
+	
+	@GetMapping("/ProductSales")
+	public String productSales() {
+		
+		return "admin/product_sales";
 	}
 }
