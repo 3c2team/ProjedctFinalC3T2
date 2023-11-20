@@ -19,50 +19,55 @@
 			<span class="menu-header-text">가지 정보</span>
 		</li>
 		
-		<li class="menu-item">
-			<a href="javascript:void(0);" class="menu-link menu-toggle">
-				<i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-				<div data-i18n="">가지페이</div>
-			</a>
-			<ul class="menu-sub">
-				<li class="menu-item">
-					<a href="auth-login-basic.html" class="menu-link" target="_blank">
-						<div data-i18n="">입금내역</div>
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="auth-register-basic.html" class="menu-link" target="_blank">
-						<div data-i18n="Basic">출금내역</div>
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-						<div data-i18n="Basic">거래완료</div>
-					</a>
-				</li>
-			</ul>
-		</li>
+
 		<li class="menu-item">
 			<a href="javascript:void(0);" class="menu-link menu-toggle">
 				<i class="menu-icon tf-icons bx bx-cube-alt"></i>
-				<div data-i18n="Misc">뭐로 쓸지 고민중</div>
+				<div data-i18n="Misc">매출내역</div>
 			</a>
 			<ul class="menu-sub">
 				<li class="menu-item">
 					<a href="pages-misc-error.html" class="menu-link">
-						<div data-i18n="Error">Error</div>
+						<div data-i18n="Error">품목별 매출 내역</div>
 					</a>
 				</li>
 				<li class="menu-item">
 					<a href="pages-misc-under-maintenance.html" class="menu-link">
-						<div data-i18n="Under Maintenance">Under Maintenance</div>
+						<div data-i18n="Under Maintenance">기간별 매출 내역</div>
 					</a>
 				</li>
 			</ul>
 		</li>
-		<li class="menu-item">
-			<a href="MyFavorite" class="menu-link">
+		
+				<li class="menu-item">
+			<a href="javascript:void(0);" class="menu-link menu-toggle">
+<!-- 				<i class="menu-icon tf-icons bx bx-lock-open-alt"></i> -->
 				<i class="menu-icon tf-icons bx bx-dock-top"></i>
+				<div data-i18n="">가지페이</div>
+			</a>
+			<ul class="menu-sub">
+				<li class="menu-item">
+					<a href="auth-login-basic.html" class="menu-link" >
+						<div data-i18n="">페이 입금내역</div>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="auth-register-basic.html" class="menu-link">
+						<div data-i18n="Basic">페이 출금내역</div>
+					</a>
+				</li>
+<!-- 				<li class="menu-item"> -->
+<!-- 					<a href="auth-forgot-password-basic.html" class="menu-link" target="_blank"> -->
+<!-- 						<div data-i18n="Basic">거래완료</div> -->
+<!-- 					</a> -->
+<!-- 				</li> -->
+			</ul>
+		</li>
+		
+		<li class="menu-item">
+			<a href="Declaration" class="menu-link">
+<!-- 				<i class="menu-icon tf-icons bx bx-dock-top"></i> -->
+				<i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
 				<div data-i18n="">신고회원 조회</div>
 			</a>
 		</li>

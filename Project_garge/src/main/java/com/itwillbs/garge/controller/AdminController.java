@@ -6,9 +6,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class AdminController {
 
-	@GetMapping("AdminMain")
+	@GetMapping("/AdminMain")
 	public String myPageMain() {
 		
 		return "admin/admin_main";
+	}
+	
+	@GetMapping("/Declaration")
+	public String myFavorite() {
+		
+		return "admin/declaration";
 	}
 }

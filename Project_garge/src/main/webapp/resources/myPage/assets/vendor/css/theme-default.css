@@ -124,6 +124,20 @@ a.bg-primary:hover, a.bg-primary:focus {
   border: 3px solid #c3c4ff !important;
 }
 
+.bg-label-prohibition {
+  background-color: indigo !important;
+  color: aliceblue !important;
+}
+
+.bg-label-hold {
+  background-color: lightsteelblue !important;
+  color: darkblue !important;
+}
+.bg-label-approval {
+  background-color: forestgreen !important;
+  color: antiquewhite !important;
+}
+
 .border-light-primary {
   border: 3px solid rgba(105, 108, 255, 0.08);
 }
