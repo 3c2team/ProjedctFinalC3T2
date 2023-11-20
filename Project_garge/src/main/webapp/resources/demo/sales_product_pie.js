@@ -22,10 +22,11 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'pie',
   data: {
-    labels: [1,2,3,4],
+    labels: ["가지페이", "카드결제","직접거래"],
     datasets: [{
-      data: [10,20,30,40],
-      backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745','#000'],
+      data: [50,20,30],
+      backgroundColor: ['#5F12D3', '#2113D4', '#D4134D', '#28a745','#000'],
+//      backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745','#000'],
     }],
   },
 });

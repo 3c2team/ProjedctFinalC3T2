@@ -27,9 +27,9 @@ var myLineChart = new Chart(ctx, {
       label: "TEST",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [60,50,100,80]//데이터 값
-    }],
-  },
+      data: [60,50,30,50]//데이터 값
+    }]
+  }
 //  options: {
 //    scales: {
 //      xAxes: [{

@@ -16,7 +16,7 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 
-  <title>GARGE | 신고회원</title>
+  <title>GARGE | 출금내역</title>
 
   <meta name="description" content="" />
 
@@ -75,19 +75,20 @@
 			<div class="layout-page">
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
-						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">신고회원 /</span> 회원목록</h4>
+						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">가지페이 /</span> 출금내역</h4>
 						<!--/Table -->
 						<div class="card">
-							<h5 class="card-header">신고 목록</h5>
+							<h5 class="card-header">상품 목록</h5>
 							<div class="table-responsive text-nowrap">
 								<table class="table">
 									<thead>
 										<tr>
 											<th width="50px"><input type="checkbox"></th>
-											<th>신고상품</th>
+											<th>상품정보</th>
 											<th>판매자</th>
-											<th>회원상태</th>
-											<th>회원설정</th>
+											<th>신뢰지수</th>
+											<th>출금액</th>
+											<th>출금계좌<th>
 										</tr>
 									</thead>
 									<tbody class="table-border-bottom-0">
@@ -99,48 +100,18 @@
 													<div class="product_info"><strong>****상품명****</strong><a>50,000원</a></div>
 												</div>
 											</td>
-											<td>홍길동</td>
-											<td>
-<!--                         						<span class="badge bg-label-primary">판매중</span> -->
-<!--                         						<span class="badge bg-label-secondary">예약중</span> -->
-<!-- 						                        <span class="badge bg-label-success">판매완료</span>	 -->
-						                        <span class="badge bg-label-prohibition">회원정지</span>	
-											</td>
-											<td>
-												<button type="submit" class="btn default" style="border-radius: 3px; width:90px; margin-bottom: 3px; font-size: 11px; color: #fff; background: gray;" onclick="orderPro('${productList.product_num}')">회원정지</button><br>
-                        						<button class="btn default" style="border-radius: 3px; width:90px; margin-bottom: 3px; font-size: 11px; color: #fff; background: gray;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
-											</td>
-										</tr>
-										<tr>
-											<td><input type="checkbox"></td>
-											<td>
-												<div class="product">
-													<img width="80px" src="../assets/img/elements/1.jpg">
-													<div class="product_info"><strong>****상품명****</strong><a>50,000원</a></div>
-												</div>
-											</td>
 											<td>강원하</td>
-											<td><span class="badge bg-label-hold me-1">상태보류</span></td>
 											<td>
-												<button type="submit" class="btn default" style="border-radius: 3px; width:90px; margin-bottom: 3px; font-size: 11px; color: #fff; background: gray;" onclick="orderPro('${productList.product_num}')">회원정지</button><br>
-                        						<button class="btn default" style="border-radius: 3px; width:90px; margin-bottom: 3px; font-size: 11px; color: #fff; background: gray;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
+												<span class="badge bg-label-state">88%</span>	
+											</td>
+											<td>
+						                        <span class="badge bg-label-prohibition">50,000</span>	
+											</td>
+											<td>
+						                        <span>농협 158-452142-367452</span>	
 											</td>
 										</tr>
-										<tr>
-											<td><input type="checkbox"></td>
-											<td>
-												<div class="product">
-													<img width="80px" src="../assets/img/elements/1.jpg">
-													<div class="product_info"><strong>****상품명****</strong><a>50,000원</a></div>
-												</div>
-											</td>
-											<td>고길동</td>
-											<td><span class="badge bg-label-approval me-1">회원복구</span></td>
-											<td>
-												<button type="submit" class="btn default" style="border-radius: 3px; width:90px; margin-bottom: 3px; font-size: 11px; color: #fff; background: gray;" onclick="orderPro('${productList.product_num}')">회원정지</button><br>
-                        						<button class="btn default" style="border-radius: 3px; width:90px; margin-bottom: 3px; font-size: 11px; color: #fff; background: gray;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
-											</td>
-										</tr>
+
 									</tbody>
 								</table>
 							</div>

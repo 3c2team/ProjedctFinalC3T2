@@ -27,13 +27,13 @@
 			</a>
 			<ul class="menu-sub">
 				<li class="menu-item">
-					<a href="ProductSales" class="menu-link">
-						<div data-i18n="Error"> 수수료 내역</div>
+					<a href="Transaction" class="menu-link">
+						<div data-i18n="Under Maintenance">거래 내역</div>
 					</a>
 				</li>
 				<li class="menu-item">
-					<a href="pages-misc-under-maintenance.html" class="menu-link">
-						<div data-i18n="Under Maintenance">거래 내역</div>
+					<a href="ProductSales" class="menu-link">
+						<div data-i18n="Error"> 수수료 내역</div>
 					</a>
 				</li>
 			</ul>
@@ -47,13 +47,13 @@
 			</a>
 			<ul class="menu-sub">
 				<li class="menu-item">
-					<a href="auth-login-basic.html" class="menu-link" >
+					<a href="Deposit" class="menu-link" >
 						<div data-i18n="">페이 입금내역</div>
 					</a>
 				</li>
 				<li class="menu-item">
-					<a href="auth-register-basic.html" class="menu-link">
-						<div data-i18n="Basic">페이 출금내역</div>
+					<a href="Withdraw" class="menu-link">
+						<div data-i18n="">페이 출금내역</div>
 					</a>
 				</li>
 <!-- 				<li class="menu-item"> -->

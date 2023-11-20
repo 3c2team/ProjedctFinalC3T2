@@ -71,42 +71,112 @@
 			<div class="layout-page">
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
-						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">거래내역 /</span> 수수료 내역</h4>
+						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">거래내역 /</span> 거래 방법 내역</h4>
 						<!--/Table -->
 						<div class="card">
-							<h5 class="card-header">수수료 내역</h5>
+							<h5 class="card-header">거래 내역</h5>
 							<div class="table-responsive text-nowrap">
 								
 								<!-- -------------------------------------------------------------- -->
-<!-- 										<div id="layoutSidenav_content"> -->
-<!-- 										<main> -->
-<!-- 											<div class="row"> -->
-<!-- 												<div class="col-xl-6"> -->
-<!-- 													<div class="card mb-4"> -->
-<!-- 														<div class="card-header"> -->
-<!-- 															<i class="fas fa-chart-bar me-1"></i> 거래 방법 현황 -->
-<!-- 														</div> -->
-<!-- 														<div class="card-body"> -->
-<!-- 															<canvas id="myPieChart" width="100%" height="40"></canvas> -->
-<!-- 														</div> -->
+										<div id="layoutSidenav_content">
+										<main>
+											<div class="row">
+												<div class="col-xl-6">
+													<div class="card mb-4">
+														<br>
+														<div class="card-header">
+															<i class="fas fa-chart-bar me-1"></i> 거래 방법 현황
+														</div>
+														<br>
+														<div class="card-body">
+															<canvas id="myPieChart" width="100%" height="40"></canvas>
+														</div>
+													</div>
+												</div>
+												
+<!-- 												<div id="reservation_confirm_term_right"> -->
+<!-- 													<div class="calanderWrap"> -->
+<%-- 														<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate"  --%>
+<%-- 														value="${pageMaker.endDate}"> --%>
+<!-- 														<button type="submit" id="search_btn">조회</button> -->
 <!-- 													</div> -->
 <!-- 												</div> -->
-<!-- 												<div class="col-xl-6"> -->
-<!-- 													<div class="card mb-4"> -->
-<!-- 														<div class="card-header"> -->
-<!-- 															<i class="fas fa-chart-bar me-1"></i> 상품별 매출 -->
-<!-- 														</div> -->
-<!-- 														<div class="card-body"> -->
-<!-- 															<canvas id="myBarChart" width="100%" height="40"></canvas> -->
-<!-- 														</div> -->
-<!-- 													</div> -->
-<!-- 												</div> -->
-<!-- 												<div class="card mb-4"> -->
-<!-- 													<div class="card-header"> -->
+												<div class="col-xl-6" id="reservation_confirm_term_right">
+													<div class="calanderWrap" align="center">
+														<br>
+														<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate" 
+														value="${pageMaker.endDate}">
+														<button type="submit" style="border-radius: 3px; width:90px; margin-bottom: 3px; font-size: 11px; color: #fff; background: gray;" id="search_btn">조회</button>
+													</div>
+													<br>
+													<div class="table-responsive text-nowrap">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>거래방법</th>
+																	<th>건수</th>
+																	<th>금액</th>
+																</tr>
+															</thead>
+															<tbody class="table-border-bottom-0">
+																<tr>
+																	<td>
+																		<div class="product">
+																			<div class="product_info"><strong>가지페이</strong></div>
+																		</div>
+																	</td>
+																	<td>
+																		<div class="product">
+																			<div class="product_info"><strong>100</strong></div>
+																		</div>
+																	</td>
+																	<td>
+																		<div class="product">
+												                        	<span class="badge bg-label-prohibition">1,500,000 원</span>	
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="product">
+																			<div class="product_info"><strong>카드결제</strong></div>
+																		</div>
+																	</td>
+																	<td>
+																		<div class="product">
+																			<div class="product_info"><strong>50</strong></div>
+																		</div>
+																	</td>
+																	<td>
+												                        <span class="badge bg-label-prohibition">1,500,000 원</span>	
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="product">
+																			<div class="product_info"><strong>직접거래</strong></div>
+																		</div>
+																	</td>
+																	<td>
+																		<div class="product">
+																			<div class="product_info"><strong>150</strong></div>
+																		</div>
+																	</td>
+<!-- 																	<td> -->
+<!-- 												                        <span class="badge bg-label-prohibition">1,500,000 원</span>	 -->
+<!-- 																	</td> -->
+																</tr>
+															</tbody>
+														</table>
+													</div>
+
+												</div>
+												<div class="card mb-4">
+													<div class="card-header">
 <!-- 														<i class="fas fa-table me-1"></i> 상품 정보 -->
-<!-- 													</div> -->
-<!-- 													<div class="card-body"> -->
-<!-- 														<table id="datatablesSimple">  -->
+													</div>
+													<div class="card-body">
+														<table id="datatablesSimple"> 
 <!-- 															<thead> -->
 <!-- 																<tr> -->
 <!-- 																	<th>번호</th> -->
@@ -123,8 +193,8 @@
 <%-- 																	<th>${productList.product_price } 원</th> --%>
 <!-- 																</tr> -->
 															</c:forEach>	
-<!-- 														</table> -->
-<!-- 													</div> -->
+														</table>
+													</div>
 												</div>
 											</div>
 										</main>
