@@ -78,57 +78,25 @@
 							<div class="table-responsive text-nowrap">
 								
 								<!-- -------------------------------------------------------------- -->
-<!-- 										<div id="layoutSidenav_content"> -->
-<!-- 										<main> -->
-<!-- 											<div class="row"> -->
-<!-- 												<div class="col-xl-6"> -->
-<!-- 													<div class="card mb-4"> -->
-<!-- 														<div class="card-header"> -->
-<!-- 															<i class="fas fa-chart-bar me-1"></i> 거래 방법 현황 -->
-<!-- 														</div> -->
-<!-- 														<div class="card-body"> -->
-<!-- 															<canvas id="myPieChart" width="100%" height="40"></canvas> -->
-<!-- 														</div> -->
-<!-- 													</div> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-xl-6"> -->
-<!-- 													<div class="card mb-4"> -->
-<!-- 														<div class="card-header"> -->
-<!-- 															<i class="fas fa-chart-bar me-1"></i> 상품별 매출 -->
-<!-- 														</div> -->
-<!-- 														<div class="card-body"> -->
-<!-- 															<canvas id="myBarChart" width="100%" height="40"></canvas> -->
-<!-- 														</div> -->
-<!-- 													</div> -->
-<!-- 												</div> -->
-<!-- 												<div class="card mb-4"> -->
-<!-- 													<div class="card-header"> -->
-<!-- 														<i class="fas fa-table me-1"></i> 상품 정보 -->
-<!-- 													</div> -->
-<!-- 													<div class="card-body"> -->
-<!-- 														<table id="datatablesSimple">  -->
-<!-- 															<thead> -->
-<!-- 																<tr> -->
-<!-- 																	<th>번호</th> -->
-<!-- 																	<th>상품카테고리</th> -->
-<!-- 																	<th>상품이름</th> -->
-<!-- 																	<th>판매가</th> -->
-<!-- 																</tr> -->
-<!-- 															</thead> -->
-															<c:forEach var="productList" items="${productList }">
-<!-- 																<tr> -->
-<%-- 																	<th>${productList.num }</th> --%>
-<%-- 																	<th>${productList.product_category_name }</th> --%>
-<%-- 																	<th>${productList.product_name }</th> --%>
-<%-- 																	<th>${productList.product_price } 원</th> --%>
-<!-- 																</tr> -->
-															</c:forEach>	
-<!-- 														</table> -->
-<!-- 													</div> -->
-												</div>
+								<div class="row">
+									<div class="col-xl-6">
+										<div class="card mb-4">
+<!-- 											<div class="card-header"> -->
+<!-- 												<i class="fas fa-chart-area me-1"></i> 월별 매출 -->
+<!-- 												<input type="number" maxlength="4" placeholder=" ex)2023" id="year" style="float: right;" class="form-control-sm"> -->
+<!-- 												<input type="button" value="조회" id="sales_btn" style="float: right; height: 32px; margin-right: 10px;" class="btn btn-primary"> -->
+<!-- 											</div> -->
+											<div class="card-body">
+												<canvas id="myAreaChart" width="100%" height="40"></canvas>
 											</div>
-										</main>
+										</div>
 									</div>
+									<div class="col-xl-6" align="center">
+<!-- 											<i class="fas fa-chart-area me-1"></i> 월별 매출 -->
+											<input type="button" value="조회" id="sales_btn" style="float: right; height: 32px; margin-right: 10px;" class="btn btn-primary">
+											&nbsp;&nbsp;&nbsp;
+											<input type="number" maxlength="4" placeholder=" ex)2023" id="year" style="float: right;" class="form-control-sm">
+									</div>		
 								
 								
 								<!-- -------------------------------------------------------------- -->
@@ -175,19 +143,10 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     
-    <script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-		crossorigin="anonymous"></script>
-		<script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_scripts.js"></script>
+<%-- 		<script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script> --%>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
 		crossorigin="anonymous"></script>
-	<script src="${pageContext.request.contextPath }/resources/demo/sales_product_pie.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/demo/sales_product_bar.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-		crossorigin="anonymous"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/demo/sales_month_chart.js"></script>
 	</body>
 </html>

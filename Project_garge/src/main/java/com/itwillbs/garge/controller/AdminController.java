@@ -21,10 +21,10 @@ public class AdminController {
 	}
 	
 	// 수수료 내역
-	@GetMapping("/ProductSales")
+	@GetMapping("/ProductCharge")
 	public String productSales() {
 		
-		return "admin/product_sales";
+		return "admin/product_charge";
 	}
 	
 	// 거래내역

@@ -4,51 +4,53 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
-	$.ajax({
-		type: "POST",
-		url: "AdminSelectMonthDate",
-		async: false,
-		data: {
-			year : 0
-		},
-		success: function(AdminSelectMonthDate) {
-			mons = AdminSelectMonthDate.map(row => row.rnum);
-			sales = AdminSelectMonthDate.map(row => row.sales);
-			max = sales.reduce((max, curr) => max < curr ? curr : max );
-			
-		},
-		error:function(){
-			alert("실패");
-		}
-	});
-$("#sales_btn").on("click",function(){
-	$.ajax({
-		type: "POST",
-		url: "AdminSelectMonthDate",
-		async: false,
-		data: {
-			year : $("#year").val()
-		},
-		success: function(AdminSelectMonthDate) {
-			sales = AdminSelectMonthDate.map(row => row.sales);
-			myLineChart.data.datasets[0].data = sales
-			myBarChart.data.datasets[0].data = sales
-			max = sales.reduce((max, curr) => max < curr ? curr : max );
-			myLineChart.options.scales.yAxes[0].ticks.max = max
-			myBarChart.options.scales.yAxes[0].ticks.max = max
-			myLineChart.update();
-			myBarChart.update();
-		},
-		error:function(){
-			alert("실패");
-		}
-	});
-	
-});
+//	$.ajax({
+//		type: "POST",
+//		url: "AdminSelectMonthDate",
+//		async: false,
+//		data: {
+//			year : 0
+//		},
+//		success: function(AdminSelectMonthDate) {
+//			mons = AdminSelectMonthDate.map(row => row.rnum);
+//			sales = AdminSelectMonthDate.map(row => row.sales);
+//			max = sales.reduce((max, curr) => max < curr ? curr : max );
+//			
+//		},
+//		error:function(){
+//			alert("실패");
+//		}
+//	});
+//$("#sales_btn").on("click",function(){
+//	$.ajax({
+//		type: "POST",
+//		url: "AdminSelectMonthDate",
+//		async: false,
+//		data: {
+//			year : $("#year").val()
+//		},
+//		success: function(AdminSelectMonthDate) {
+//			sales = AdminSelectMonthDate.map(row => row.sales);
+//			myLineChart.data.datasets[0].data = sales
+//			myBarChart.data.datasets[0].data = sales
+//			max = sales.reduce((max, curr) => max < curr ? curr : max );
+//			myLineChart.options.scales.yAxes[0].ticks.max = max
+//			myBarChart.options.scales.yAxes[0].ticks.max = max
+//			myLineChart.update();
+//			myBarChart.update();
+//		},
+//		error:function(){
+//			alert("실패");
+//		}
+//	});
+//	
+//});
+
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: mons,
+//    labels: mons,
+    labels: ["8월","9월","10월","11월", "12월"],
     datasets: [{
       label: "Sessions",
       lineTension: 0.3,
@@ -61,7 +63,8 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: sales,
+//      data: sales,
+      data: [10, 20,50,30,70],
     }],
   },
   options: {
@@ -80,7 +83,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: max,
+          max: 100,
           maxTicksLimit: 5
         },
         gridLines: {

@@ -32,7 +32,7 @@
 					</a>
 				</li>
 				<li class="menu-item">
-					<a href="ProductSales" class="menu-link">
+					<a href="ProductCharge" class="menu-link">
 						<div data-i18n="Error"> 수수료 내역</div>
 					</a>
 				</li>
