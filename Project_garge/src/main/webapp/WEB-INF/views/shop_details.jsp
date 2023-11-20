@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="product__details__content">
-            <div class="container">
+<!--             <div class="container"> -->
 <!--                 <div class="row d-flex justify-content-center"> -->
 <!--                     <div class="col-lg-8"> -->
 <!--                         <div class="product__details__text"> -->
@@ -161,12 +161,14 @@
 <!--                                 </li> -->
                             </ul>
                             <div class="tab-content">
+                            <div>
                                 <div class="tab-pane active" id="tabs-5" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <p class="note">거래 전 주의사항 안내<br>
 														판매자가 별도의 메신저로 결제링크를 보내거나 직거래(직접송금)을
 														유도하는 경우 사기일 가능성이 높으니 거래를 자제해 주시고<br>
 														Garge 고객센터로 신고해주시기 바랍니다.</p>
+<!--                                         <div class="product__details__tab__content__item"> -->
                                         <div class="product__details__tab__content__item">
                                             <h5>상품내용</h5>
 											<p>♡색상:브라운
@@ -201,30 +203,120 @@
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
                                             <h5>판매자 정보</h5>
-                                            <p>A Pocket PC is a handheld computer, which features many of the same
-                                                capabilities as a modern PC. These handy little devices allow
-                                                individuals to retrieve and store e-mail messages, create a contact
-                                                file, coordinate appointments, surf the internet, exchange text messages
-                                                and more. Every product that is labeled as a Pocket PC must be
-                                                accompanied with specific software to operate the unit and must feature
-                                            a touchscreen and touchpad.</p>
-                                            <p>As is the case with any new technology product, the cost of a Pocket PC
-                                                was substantial during itâs early release. For approximately $700.00,
-                                                consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                                These days, customers are finding that prices have become much more
-                                                reasonable now that the newness is wearing off. For approximately
-                                            $350.00, a new Pocket PC can now be purchased.</p>
+                                            <p>빈조우님</p>
+                                            <p>판매상품 999+ / 안전거래 43 / 후기 10</p>
                                         </div>
                                         <div class="product__details__tab__content__item">
-                                            <h5>Material used</h5>
-                                            <p>Polyester is deemed lower quality due to its none natural qualityâs. Made
-                                                from synthetic materials, not natural like wool. Polyester suits become
-                                                creased easily and are known for not being breathable. Polyester suits
-                                                tend to have a shine to them compared to wool and cotton suits, this can
-                                                make the suit look cheap. The texture of velvet is luxurious and
-                                                breathable. Velvet is a great choice for dinner party jacket and can be
-                                            worn all year round.</p>
+                                            <h6>빈조우님의 판매 상품 50</h6>
                                         </div>
+								        <div class="container">
+								            <div class="row">
+								                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+								                    <div class="product__item">
+						                                <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-2.jpg">
+						                                    <ul class="product__hover">
+						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
+						<%--                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li> --%>
+						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a></li>
+						                                    </ul>
+						                                </div>
+						                                <div class="product__item__text">
+						                                    <h6>유틸리티 자켓</h6>
+						                                    <a href="#" class="add-cart">상세보기</a>
+															<p>부산진구 <span> / 6분 전</span></p>
+						                                    <h5>30000원</h5>
+						                                </div>
+						                            </div>
+								                </div>
+								                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+								                    <div class="product__item sale">
+						                                <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-3.jpg">
+						                                    <span class="label">무료나눔</span>
+						                                    <ul class="product__hover">
+						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
+						<%--                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li> --%>
+						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a></li>
+						                                    </ul>
+						                                </div>
+						                                <div class="product__item__text">
+						                                    <h6>가방 팔아요</h6>
+						                                    <a href="#" class="add-cart">상세보기</a>
+															<p>서울 마포구 중앙동 <span> / 15분 전</span></p>
+						                                    <h5>5000원</h5>
+						                                </div>
+						                            </div>
+								                </div>
+								                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+								                    <div class="product__item sale">
+								                        <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-3.jpg">
+								                            <span class="label">Sale</span>
+								                            <ul class="product__hover">
+								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
+								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a></li>
+								                            </ul>
+								                        </div>
+								                        <div class="product__item__text">
+								                            <h6>Multi-pocket Chest Bag</h6>
+								                            <a href="#" class="add-cart">+ Add To Cart</a>
+								                            <div class="rating">
+								                                <i class="fa fa-star"></i>
+								                                <i class="fa fa-star"></i>
+								                                <i class="fa fa-star"></i>
+								                                <i class="fa fa-star"></i>
+								                                <i class="fa fa-star-o"></i>
+								                            </div>
+								                            <h5>$43.48</h5>
+								                            <div class="product__color__select">
+								                                <label for="pc-7">
+								                                    <input type="radio" id="pc-7">
+								                                </label>
+								                                <label class="active black" for="pc-8">
+								                                    <input type="radio" id="pc-8">
+								                                </label>
+								                                <label class="grey" for="pc-9">
+								                                    <input type="radio" id="pc-9">
+								                                </label>
+								                            </div>
+								                        </div>
+								                    </div>
+								                </div>
+								                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+								                    <div class="product__item">
+								                        <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-4.jpg">
+								                            <ul class="product__hover">
+								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
+								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a></li>
+								                            </ul>
+								                        </div>
+								                        <div class="product__item__text">
+								                            <h6>Diagonal Textured Cap</h6>
+								                            <a href="#" class="add-cart">+ Add To Cart</a>
+								                            <div class="rating">
+								                                <i class="fa fa-star-o"></i>
+								                                <i class="fa fa-star-o"></i>
+								                                <i class="fa fa-star-o"></i>
+								                                <i class="fa fa-star-o"></i>
+								                                <i class="fa fa-star-o"></i>
+								                            </div>
+								                            <h5>$60.9</h5>
+								                            <div class="product__color__select">
+								                                <label for="pc-10">
+								                                    <input type="radio" id="pc-10">
+								                                </label>
+								                                <label class="active black" for="pc-11">
+								                                    <input type="radio" id="pc-11">
+								                                </label>
+								                                <label class="grey" for="pc-12">
+								                                    <input type="radio" id="pc-12">
+								                                </label>
+								                            </div>
+								                        </div>
+								                    </div>
+								                </div>
+								            </div>
+								        </div>
                                     </div>
                                 </div>
                             </div>
@@ -236,6 +328,8 @@
     </section>
     <!-- Shop Details Section End -->
 
+    <!-- 판매자 시작 -->
+    
     <!-- 인기상품 시작 -->
     <section class="related spad">
         <div class="container">
