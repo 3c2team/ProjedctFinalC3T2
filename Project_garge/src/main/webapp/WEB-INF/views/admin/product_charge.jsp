@@ -93,7 +93,7 @@
 									</div>
 									<div class="col-xl-6" align="center">
 <!-- 											<i class="fas fa-chart-area me-1"></i> 월별 매출 -->
-											<input type="button" value="조회" id="sales_btn" style="float: right; height: 32px; margin-right: 10px;" class="btn btn-primary">
+											<input type="button" value="조회" id="sales_btn" style="float: right; height: 32px; margin-right: 10px; margin-left:20px;" class="btn btn-primary">
 											&nbsp;&nbsp;&nbsp;
 											<input type="number" maxlength="4" placeholder=" ex)2023" id="year" style="float: right;" class="form-control-sm">
 									</div>		
