@@ -56,9 +56,9 @@
                         <p>Copyright Â©
                             <script>
                                 document.write(new Date().getFullYear());
-                            </script>2020
+                            </script>1218
                             All rights reserved | This Project is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="AdminMain" target="_blank">Colorlib</a>
+                            aria-hidden="true"></i> by <a href="AdminMain" target="_blank">C3T2</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
