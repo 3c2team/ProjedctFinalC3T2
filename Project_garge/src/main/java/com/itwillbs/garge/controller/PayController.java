@@ -17,7 +17,7 @@ public class PayController {
 //	@Autowired PayService service;
 	
 	@PostMapping("AccPro")
-	public String paymentPro(
+	public String accPro(
 //					@RequestParam Map<String, Object> map
 //					, MemberVO member
 //					, OrderDetailVO orderDetail
@@ -25,6 +25,16 @@ public class PayController {
 //					, Model model
 //					, int[] order_detail_num
 					) {
-		return "acc";
+		return "pay/acc";
+	}
+	
+	@PostMapping("PaymentPro")
+	public String paymentPro() {
+		return "pay/pay";
+	}
+	
+	@PostMapping("PaymentComplete")
+	public String paymentComplete() {
+		return "pay/orderPro";
 	}
 }
