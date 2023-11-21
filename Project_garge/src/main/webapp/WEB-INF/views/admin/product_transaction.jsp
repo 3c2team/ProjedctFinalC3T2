@@ -114,30 +114,30 @@
 															<tbody class="table-border-bottom-0">
 																<tr>
 																	<td>
-																		<div class="product">
+																		<div class="product pay-type" >
 																			<div class="product_info"><strong>가지페이</strong></div>
 																		</div>
 																	</td>
 																	<td>
-																		<div class="product">
-																			<div class="product_info"><strong>100</strong></div>
+																		<div class="product pay-type">
+																			<div class="product_info"><strong>150</strong></div>
 																		</div>
 																	</td>
 																	<td>
-																		<div class="product">
-												                        	<span class="badge bg-label-prohibition">1,500,000 원</span>	
+																		<div class="product pay-type">
+												                        	<span class="badge bg-label-prohibition">2,000,000 원</span>	
 																		</div>
 																	</td>
 																</tr>
 																<tr>
 																	<td>
-																		<div class="product">
-																			<div class="product_info"><strong>카드결제</strong></div>
+																		<div class="product pay-type">
+																			<div class="product_info"><strong>카카오결제</strong></div>
 																		</div>
 																	</td>
 																	<td>
-																		<div class="product">
-																			<div class="product_info"><strong>50</strong></div>
+																		<div class="product pay-type">
+																			<div class="product_info"><strong>100</strong></div>
 																		</div>
 																	</td>
 																	<td>
@@ -146,13 +146,28 @@
 																</tr>
 																<tr>
 																	<td>
-																		<div class="product">
+																		<div class="product pay-type" >
+																			<div class="product_info"><strong>무통장</strong></div>
+																		</div>
+																	</td>
+																	<td>
+																		<div class="product pay-type">
+																			<div class="product_info"><strong>50</strong></div>
+																		</div>
+																	</td>
+																	<td>
+												                        <span class="badge bg-label-prohibition">1,000,000 원</span>	
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="product pay-type">
 																			<div class="product_info"><strong>직접거래</strong></div>
 																		</div>
 																	</td>
 																	<td>
-																		<div class="product">
-																			<div class="product_info"><strong>150</strong></div>
+																		<div class="product pay-type">
+																			<div class="product_info"><strong>210</strong></div>
 																		</div>
 																	</td>
 																</tr>

@@ -16,7 +16,7 @@
 	
 	
 		<li class="menu-header small text-uppercase">
-			<span class="menu-header-text">가지 정보</span>
+			<span class="menu-header-text">트레이드업 정보</span>
 		</li>
 		
 
@@ -43,7 +43,7 @@
 			<a href="javascript:void(0);" class="menu-link menu-toggle">
 <!-- 				<i class="menu-icon tf-icons bx bx-lock-open-alt"></i> -->
 				<i class="menu-icon tf-icons bx bx-dock-top"></i>
-				<div data-i18n="">가지페이</div>
+				<div data-i18n="">결제정보</div>
 			</a>
 			<ul class="menu-sub">
 				<li class="menu-item">

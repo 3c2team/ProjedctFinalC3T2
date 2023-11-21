@@ -70,7 +70,7 @@
 </head>
 
 <body>
-	<jsp:include page="../inc/top.jsp"></jsp:include>
+	<jsp:include page="../inc/admin_top.jsp"></jsp:include>
 	<!-- Layout wrapper -->
 	<div class="layout-wrapper layout-content-navbar">
 		<div class="layout-container">
@@ -81,7 +81,7 @@
 					<div class="container-xxl flex-grow-1 container-p-y">
 						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">관리자 페이지 /</span> 메인</h4>
 						<!--/Table -->
-						<div class="card">
+<!-- 						<div class="card"> -->
 <!-- 							<h5 class="card-header">거래 내역</h5> -->
 								 <!-- Content Row -->
                     <div class="row">
@@ -93,11 +93,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
+                                               UP-PAY</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+<!--                                             <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -111,11 +111,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Earnings (Annual)</div>
+                                                KAKAO-PAY</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+<!--                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Bank Transfer
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
@@ -144,7 +144,7 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+<!--                                             <i class="fas fa-clipboard-list fa-2x text-gray-300"></i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -158,11 +158,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
+                                                Direct Transaction</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+<!--                                             <i class="fas fa-comments fa-2x text-gray-300"></i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -171,7 +171,7 @@
                     </div>
 						<br><br>
                     <!-- Content Row -->
-							<div class="table-responsive text-nowrap">
+<!-- 							<div class="table-responsive text-nowrap"> -->
 
 								<!-- -------------------------------------------------------------- -->
 										<div id="layoutSidenav_content">
@@ -198,9 +198,11 @@
 <!-- 															<i class="fas fa-chart-bar me-1"></i> 거래 방법 현황 --> 
 															<h6 class="m-0 font-weight-bold text-primary">거래 방법 현황</h6>
 														</div>
+														<br><br>
 														<div class="card-body">
 															<canvas id="myPieChart" width="100%" height="40"></canvas>
 														</div>
+														<br>
 <!-- 													</div> -->
 												</div>
 											</div>	
@@ -208,8 +210,8 @@
 									</div>
 								
 								<!-- -------------------------------------------------------------- -->
-							</div>
-						</div>
+<!-- 							</div> -->
+<!-- 						</div> -->
 						<!--/Table -->
 					</div>
 				</div>

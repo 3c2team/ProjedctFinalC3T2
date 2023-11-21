@@ -62,7 +62,7 @@
 </head>
 
 <body>
-	<jsp:include page="../inc/top.jsp"></jsp:include>
+	<jsp:include page="../inc/admin_top.jsp"></jsp:include>
 	<!-- Layout wrapper -->
 	<div class="layout-wrapper layout-content-navbar">
 		<div class="layout-container">
@@ -86,13 +86,12 @@
 			                                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
 			                                </div>
 			                                <div class="card-body">
-			                                    <div class="chart-area">
-			                                        <canvas id="myAreaChart"></canvas>
-			                                    </div>
-			                                    <hr>
-			                                    Styling for the area chart can be found in the
-			                                    <code>/js/demo/chart-area-demo.js</code> file.
-			                                </div>
+					                        	<div class="chart-area">
+					                            	<canvas id="myAreaChart"></canvas>
+					                            </div>
+<!-- 					                         Styling for the area chart can be found in the -->
+<%-- 					                        <code>/js/demo/chart-area-demo.js</code> file. --%>
+					                        </div>
 			                            </div>
 			                            
 									</div>		
