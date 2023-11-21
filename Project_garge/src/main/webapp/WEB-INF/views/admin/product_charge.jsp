@@ -79,24 +79,25 @@
 								
 								<!-- -------------------------------------------------------------- -->
 								<div class="row">
-									<div class="col-xl-6">
-										<div class="card mb-4">
-<!-- 											<div class="card-header"> -->
-<!-- 												<i class="fas fa-chart-area me-1"></i> 월별 매출 -->
-<!-- 												<input type="number" maxlength="4" placeholder=" ex)2023" id="year" style="float: right;" class="form-control-sm"> -->
-<!-- 												<input type="button" value="조회" id="sales_btn" style="float: right; height: 32px; margin-right: 10px;" class="btn btn-primary"> -->
-<!-- 											</div> -->
-											<div class="card-body">
-												<canvas id="myAreaChart" width="100%" height="40"></canvas>
-											</div>
-										</div>
-									</div>
-									<div class="col-xl-6" align="center">
-<!-- 											<i class="fas fa-chart-area me-1"></i> 월별 매출 -->
-											<input type="button" value="조회" id="sales_btn" style="float: right; height: 32px; margin-right: 10px; margin-left:20px;" class="btn btn-primary">
-											&nbsp;&nbsp;&nbsp;
-											<input type="number" maxlength="4" placeholder=" ex)2023" id="year" style="float: right;" class="form-control-sm">
+<!-- 									<div class="col-xl-6"> -->
+									
+										<div class="card shadow mb-4">
+			                                <div class="card-header py-3">
+			                                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+			                                </div>
+			                                <div class="card-body">
+			                                    <div class="chart-area">
+			                                        <canvas id="myAreaChart"></canvas>
+			                                    </div>
+			                                    <hr>
+			                                    Styling for the area chart can be found in the
+			                                    <code>/js/demo/chart-area-demo.js</code> file.
+			                                </div>
+			                            </div>
+			                            
 									</div>		
+									
+									  	
 								
 								
 								<!-- -------------------------------------------------------------- -->
@@ -144,9 +145,23 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     
 <%-- 		<script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script> --%>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
-		crossorigin="anonymous"></script>
-	<script src="${pageContext.request.contextPath }/resources/demo/sales_month_chart.js"></script>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<!-- 	<script -->
+<!-- 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" -->
+<!-- 		crossorigin="anonymous"></script> -->
+<%-- 	<script src="${pageContext.request.contextPath }/resources/demo/sales_month_chart.js"></script> --%>
+	
+	<!-- -------------------------------------------------------------------------------------------- -->
+	    <!-- Bootstrap core JavaScript-->
+    <script src="${pageContext.request.contextPath }/resources/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="${pageContext.request.contextPath }/resources/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="${pageContext.request.contextPath }/resources/admin/js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="${pageContext.request.contextPath }/resources/admin/vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="${pageContext.request.contextPath }/resources/admin/js/demo/chart-area-demo.js"></script>
 	</body>
 </html>

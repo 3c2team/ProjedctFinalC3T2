@@ -94,13 +94,6 @@
 													</div>
 												</div>
 												
-<!-- 												<div id="reservation_confirm_term_right"> -->
-<!-- 													<div class="calanderWrap"> -->
-<%-- 														<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate"  --%>
-<%-- 														value="${pageMaker.endDate}"> --%>
-<!-- 														<button type="submit" id="search_btn">조회</button> -->
-<!-- 													</div> -->
-<!-- 												</div> -->
 												<div class="col-xl-6" id="reservation_confirm_term_right">
 													<div class="calanderWrap" align="center">
 														<br>
@@ -162,37 +155,8 @@
 																			<div class="product_info"><strong>150</strong></div>
 																		</div>
 																	</td>
-<!-- 																	<td> -->
-<!-- 												                        <span class="badge bg-label-prohibition">1,500,000 원</span>	 -->
-<!-- 																	</td> -->
 																</tr>
 															</tbody>
-														</table>
-													</div>
-
-												</div>
-												<div class="card mb-4">
-													<div class="card-header">
-<!-- 														<i class="fas fa-table me-1"></i> 상품 정보 -->
-													</div>
-													<div class="card-body">
-														<table id="datatablesSimple"> 
-<!-- 															<thead> -->
-<!-- 																<tr> -->
-<!-- 																	<th>번호</th> -->
-<!-- 																	<th>상품카테고리</th> -->
-<!-- 																	<th>상품이름</th> -->
-<!-- 																	<th>판매가</th> -->
-<!-- 																</tr> -->
-<!-- 															</thead> -->
-															<c:forEach var="productList" items="${productList }">
-<!-- 																<tr> -->
-<%-- 																	<th>${productList.num }</th> --%>
-<%-- 																	<th>${productList.product_category_name }</th> --%>
-<%-- 																	<th>${productList.product_name }</th> --%>
-<%-- 																	<th>${productList.product_price } 원</th> --%>
-<!-- 																</tr> -->
-															</c:forEach>	
 														</table>
 													</div>
 												</div>

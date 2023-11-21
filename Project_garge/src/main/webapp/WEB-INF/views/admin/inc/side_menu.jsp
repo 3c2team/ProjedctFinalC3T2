@@ -103,7 +103,7 @@
 		</li>
 	  <!-- Cards -->
 		<li class="menu-item">
-			<a href="cards-basic.html" class="menu-link">
+			<a href="Charts" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-collection"></i>
 				<div data-i18n="Basic">자주 묻는 질문</div>
 			</a>

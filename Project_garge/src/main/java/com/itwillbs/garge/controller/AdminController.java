@@ -10,7 +10,7 @@ public class AdminController {
 	@GetMapping("/AdminMain")
 	public String myPageMain() {
 		
-		return "admin/product_transaction";
+		return "admin/admin_main";
 	}
 	
 	// 신고회원
@@ -46,4 +46,10 @@ public class AdminController {
 		
 		return "admin/withdraw";
 	}
+	
+	@GetMapping("/Charts")
+	public String charts() {
+		return "admin/charts";
+	}
+	
 }
