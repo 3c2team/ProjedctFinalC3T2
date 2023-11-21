@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="product__details__content">
+<!--         <div class="product__details__content"> -->
 <!--             <div class="container"> -->
 <!--                 <div class="row d-flex justify-content-center"> -->
 <!--                     <div class="col-lg-8"> -->
@@ -149,19 +149,19 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__tab">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#tabs-5" role="tab">상세정보</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">판매자정보</a>
-                                </li>
-<!--                                 <li class="nav-item"> -->
-<!--                                     <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">주소정보</a> -->
-<!--                                 </li> -->
-                            </ul>
+                             <div class="row">
+			                   <div class="product__details__tab">
+		                            <ul class="nav justify-content-center">
+										<li class="nav-item">
+											<a class="nav-link active" href="#tabs-5">Active</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="#tabs-6">Link</a>
+										</li>
+									</ul>
+                            	</div>
                             <div class="tab-content">
-                            <div>
+                            <div class="product__content__all">
                                 <div class="tab-pane active" id="tabs-5" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <p class="note">거래 전 주의사항 안내<br>
@@ -170,6 +170,7 @@
 														Garge 고객센터로 신고해주시기 바랍니다.</p>
 <!--                                         <div class="product__details__tab__content__item"> -->
                                         <div class="product__details__tab__content__item">
+                                        	<a name="tabs-5"></a>
                                             <h5>상품내용</h5>
 											<p>♡색상:브라운
 												♡소재:폴리 아크릴 혼방
@@ -202,6 +203,7 @@
                                 <div class="tab-pane" id="tabs-6" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
+                                        	<a name="tabs-6"></a>
                                             <h5>판매자 정보</h5>
                                             <p>빈조우님</p>
                                             <p>판매상품 999+ / 안전거래 43 / 후기 10</p>

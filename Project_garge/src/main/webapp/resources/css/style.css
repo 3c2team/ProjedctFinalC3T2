@@ -1914,6 +1914,10 @@ ol {
 	-ms-flex-pack: center;
 	justify-content: center;
 }
+.product__content__all {
+	display: flex;
+    margin-left: 10%;
+}
 
 .product__details__tab .nav-tabs .nav-item {
 	margin-right: 50px;
@@ -1935,6 +1939,7 @@ ol {
 
 .product__details__tab .nav-tabs .nav-item .nav-link.active {
 	border-bottom: 2px solid #e53637;
+	color: #343a40;
 }
 
 .product__details__tab__content {
