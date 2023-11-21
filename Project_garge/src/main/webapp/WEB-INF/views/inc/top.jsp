@@ -14,10 +14,16 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
+						<div class="shop__sidebar__search">
+							<form action="#">
+								<input type="text" style="margin-top:7%;" placeholder="상품 혹은 동네를 입력해주세요">
+								<button style="margin-top:4%;" type="submit"><span class="icon_search"></span></button>
+							</form> 
+						</div>
                         <ul>
-                            <li class="active"><a href="./">Home</a></li>
-                            <li><a href="Shop">Shop</a></li>
-                            <li><a href="#">Pages</a>
+                            <li class="active"><a href="./">메인</a></li>
+                            <li><a href="Shop">중고거래</a></li>
+                            <li><a href="#">페이지</a>
                                 <ul class="dropdown">
                                     <li><a href="About">About Us</a></li>
                                     <li><a href="ShopDetails">Shop Details</a></li>
@@ -26,16 +32,10 @@
                                     <li><a href="BlogDetails">Blog Details</a></li>
                                 </ul>
                             </li>
+                            <li><a href="FraudInquiry">사기조회</a></li>
+                            <li><a href="MarketPriceInquiry">시세조회</a></li>
                         </ul>
-                        <div class="shop__sidebar__search">
-                              <form action="#">
-                                <input type="text" style="margin-top:7%;" placeholder="상품 혹은 동네를 입력해주세요">
-                                <button style="margin-top:4%;" type="submit"><span class="icon_search"></span></button>
-                            </form> 
-                       </div>
                     </nav>
-                    <span><a href="FraudInquiry " class="btn border-start border-end">사기조회</a></span>
-                    <span><a href="MarketPriceInquiry" class="btn border-start border-end">시세조회</a></span>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option" >
