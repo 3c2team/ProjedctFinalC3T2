@@ -9,6 +9,7 @@
             <div class="customrow">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo" id="easterEgg" onclick="easterEgg()">
+<!--                     <div class="header__logo" id="easterEgg" > -->
                         <a href="./"><img src="${pageContext.request.contextPath }/resources/img/logo.png" alt=""></a>
                     </div>
                 </div>

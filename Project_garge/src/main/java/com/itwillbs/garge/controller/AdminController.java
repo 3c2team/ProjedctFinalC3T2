@@ -5,6 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AdminController {
+	
+	//admin 로그인
+	@GetMapping("/AdminLogin")
+	public String adminLogin() {
+		
+		return "admin/admin_login";
+	}
 
 	// admin 메인 
 	@GetMapping("/AdminMain")
