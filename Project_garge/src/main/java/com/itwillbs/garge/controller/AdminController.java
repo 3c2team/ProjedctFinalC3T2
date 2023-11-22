@@ -54,9 +54,16 @@ public class AdminController {
 		return "admin/withdraw";
 	}
 	
+	// 차트 확인용(지울꺼임)
 	@GetMapping("/Charts")
 	public String charts() {
 		return "admin/charts";
+	}
+	
+	@GetMapping("/MyChat")
+	public String myChat() {
+		
+		return "myChat";
 	}
 	
 }

@@ -79,6 +79,15 @@
 						<!--/Table -->
 						<div class="card">
 							<h5 class="card-header">상품 목록</h5>
+							<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 30px;">
+								<div class="calendarContainer" >
+									<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button>
+									<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button>
+									<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button>
+									<button type="button"  onclick="setMonths(this,-6)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-6' ? 'active':''} ">6개월</button>
+									<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button>
+								</div>
+							</div>
 							<div class="table-responsive text-nowrap">
 								<table class="table">
 									<thead>
