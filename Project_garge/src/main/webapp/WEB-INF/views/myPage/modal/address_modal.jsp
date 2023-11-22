@@ -28,58 +28,69 @@
 				aria-label="Close"
 				></button>
 			</div>
-			<div class="modal-body">
-				<div class="card-body demo-vertical-spacing demo-only-element">
-				
-					<label class="form-label" for="basic-default-password12">배송지명</label>
-					<div class="input-group">
-						<input
-							type="text"
-							class="form-control"
-							placeholder="Username"
-						/>
-					</div>
+			
+			<form action="">
+			
+				<div class="modal-body">
+					<div class="card-body demo-vertical-spacing demo-only-element">
 					
-					<label class="form-label" for="basic-default-password12">받으시는 분</label>
-					<div class="input-group">
-						<input
-							type="text"
-							class="form-control"
-							placeholder="Username"
-						/>
-					</div>
-					
-					<label class="form-label" for="basic-default-password12">전화번호</label>
-					<div class="input-group">
-						<input
-							type="text"
-							class="form-control"
-							placeholder="Username"
-						/>
-					</div>
-					
-					<label class="form-label" for="basic-default-password12">주소</label>
-					<div class="input-group">
-						<input
-							type="text"
-							class="form-control"
-							placeholder="Username"
-						/>
-					</div>
-					
-					<label class="form-label" for="basic-default-password12">상세주소</label>
-					<div class="input-group">
-						<input
-							type="text"
-							class="form-control"
-							placeholder="Username"
-						/>
+						<label class="form-label" for="basic-default-password12">배송지명</label>
+						<div class="input-group">
+							<input
+								type="text"
+								id="address_name"
+								class="form-control"
+								placeholder="Username"
+							/>
+						</div>
+						
+						<label class="form-label" for="basic-default-password12">받으시는 분</label>
+						<div class="input-group">
+							<input
+								type="text"
+								id=""
+								class="form-control"
+								placeholder="Username"
+							/>
+						</div>
+						
+						<label class="form-label" for="basic-default-password12">전화번호</label>
+						<div class="input-group">
+							<input
+								type="text"
+								id="phone_num"
+								class="form-control"
+								placeholder="Username"
+							/>
+						</div>
+						
+						<label class="form-label" for="basic-default-password12">주소</label>
+						<div class="input-group">
+							<input
+								type="text"
+								id="address1"
+								class="form-control"
+								placeholder="Username"
+							/>
+						</div>
+						
+						<label class="form-label" for="basic-default-password12">상세주소</label>
+						<div class="input-group">
+							<input
+								type="text"
+								id="address2"
+								class="form-control"
+								placeholder="Username"
+							/>
+						</div>
 					</div>
 				</div>
-			</div>
+				
+			</form>
+			
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소</button>
-				<button type="button" class="btn btn-primary">저장</button>
+				<button type="submit" class="btn btn-primary">저장</button>
 			</div>
 		</div>
 	</div>

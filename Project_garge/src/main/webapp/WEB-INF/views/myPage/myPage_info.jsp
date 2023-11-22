@@ -52,17 +52,6 @@
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
-	<style type="text/css">
-		.product{
-		    display: flex;
-    		align-items: center;
-		}
-		.product_info{
-			margin-left: 20px;
-		    display: flex;
-		    flex-direction: column;
-		}
-	</style>  
 </head>
 
 <body>
@@ -76,64 +65,63 @@
 			<div class="layout-page">
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
-
-
-
+						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">내 정보 /</span> 프로필 관리</h4>
+					
+						<div class="row">
+							<div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+								<div class="card h-100">
+									<div class="card-header d-flex align-items-center justify-content-center" style="flex-direction: column;">
+<!-- 										<h5 class="card-header m-0 me-2 pb-3"> 프로필 </h5> -->
+										<div class="mb-4 mt-5">
+											<img src="${pageContext.request.contextPath }/resources/myPage/assets/img/avatars/1.png" class="h-auto rounded-circle" style="width: 200px;" />
+										</div>
+										
+										<h5>
+											닉네임
+											<a 
+												data-bs-toggle="modal"
+												href="#info_adit_modal"
+											><i class="tf-icons bx bx-edit"></i>
+											</a>
+											<jsp:include page="modal/info_adit_modal.jsp"></jsp:include>
+										</h5>
+										<p>#239488</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+								<div class="card">
+									<div class="row row-bordered g-0">
+										<h5 class="card-header m-0 me-2 pb-3"> 내 정보 </h5>
+									</div>
+								</div>
+							</div>
+						</div>
 
 						<!-- 탈퇴 -->
 						<div class="card">
-							<h5 class="card-header">Delete Account</h5>
+							<h5 class="card-header">계정 삭제</h5>
 							<div class="card-body">
 								<div class="mb-3 col-12 mb-0">
 									<div class="alert alert-warning">
-										<h6 class="alert-heading fw-bold mb-1">Are you sure you want to delete your account?</h6>
-										<p class="mb-0">Once you delete your account, there is no going back. Please be certain.</p>
+										<h6 class="alert-heading fw-bold mb-1">정말로 계정을 삭제하시겠습니까?</h6>
+										<p class="mb-0">계정을 삭제하면 되돌릴 수 없습니다. 다시 확인해주세요.</p>
 									</div>
 								</div>
 <!-- 								<form id="formAccountDeactivation" onsubmit="return false"> -->
-									<div class="form-check mb-3">
-										<input
-										class="form-check-input"
-										type="checkbox"
-										name="accountActivation"
-										id="accountActivation"
-										/>
-										<label class="form-check-label" for="accountActivation"
-										>I confirm my account deactivation</label
-										>
-									</div>
-									<%-- 모달창 버튼 --%>
-									<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#smallModal">회원탈퇴</button>
-
-									<%-- 모달창 --%>
-									<div class="modal fade" id="smallModal" tabindex="-1" aria-hidden="true">
-										<div class="modal-dialog modal-sm" role="document">
-											<div class="modal-content">
-												<div class="modal-header">
-													<h5 class="modal-title" id="exampleModalLabel2">비밀번호를 입력하세요.</h5>
-												</div>
-												<form action="">
-													<div class="modal-body">
-														<div class="row">
-															<div class="col mb-3">
-																<label for="nameSmall" class="form-label"></label>
-																<input type="password" id="nameSmall" class="form-control" required="required" placeholder="PassWord" />
-															</div>
-														</div>
-													</div>
-													<div class="modal-footer">
-														<button type="submit" class="btn btn-danger">탈퇴하기</button>
-														<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-															Close
-														</button>
-													</div>
-												</form>
-											</div>
-										</div>
-									</div>
-									<%-- 모달창 --%>
-<!-- 									<button type="submit" class="btn btn-danger deactivate-account">Deactivate Account</button> -->
-<!-- 								</form> -->
+								<div class="form-check mb-3">
+									<input
+									class="form-check-input"
+									type="checkbox"
+									name="accountActivation"
+									id="accountActivation"
+									/>
+									<label class="form-check-label" for="accountActivation"
+									>계정을 삭제하겠습니다.</label
+									>
+								</div>
+								<%-- 모달창 버튼 --%>
+								<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_account_modal">회원탈퇴</button>
 							</div>
 						</div>
 						<!-- 탈퇴 -->
