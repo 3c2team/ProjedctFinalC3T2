@@ -42,16 +42,7 @@ public class MainController {
 		
 		return "contact";
 	}
-	@GetMapping("Login")
-	public String login() {
-
-		return "login";
-	}
-	@GetMapping("Join")
-	public String join() {
-
-		return "join";
-	}
+	
 	// 안써도 될거같음
 	@GetMapping("Main")
 	public String main() {
