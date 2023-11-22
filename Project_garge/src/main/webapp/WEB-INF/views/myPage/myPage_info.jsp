@@ -52,6 +52,24 @@
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
+  <style type="text/css">
+  	.info-img {
+  		position: relative;
+	    width: 200px;
+	    height: 200px;
+  	}
+  	
+  	.info-img img {
+  		position: absolute;
+	    top: 0;
+	    left: 0;
+	    transform: translate(50, 50);
+	    width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	    margin: auto;
+  	}
+  </style>
 </head>
 
 <body>
@@ -73,7 +91,9 @@
 									<div class="card-header d-flex align-items-center justify-content-center" style="flex-direction: column;">
 <!-- 										<h5 class="card-header m-0 me-2 pb-3"> 프로필 </h5> -->
 										<div class="mb-4 mt-5">
-											<img src="${pageContext.request.contextPath }/resources/myPage/assets/img/avatars/1.png" class="h-auto rounded-circle" style="width: 200px;" />
+											<div class="info-img">
+												<img src="${pageContext.request.contextPath }/resources/myPage/assets/img/avatars/FxxQO6pacAAZ808.jpg" class="rounded-circle" />
+											</div>
 										</div>
 										
 										<h5>
