@@ -7,6 +7,9 @@
 <meta name="keywords" content="Male_Fashion, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
 <title>Male-Fashion | Template</title>
 <jsp:include page="inc/style.jsp"></jsp:include>
 </head>
@@ -19,18 +22,9 @@
     <section class="shop-details">
         <div class="product__details__pic">
             <div class="container">
+            	<!-- 1행 -->
                 <div class="row">
-                    <div class="col-lg-12">
-						<!-- 카테고리 -->
-                        <div class="product__details__breadcrumb">
-                            <a href="./index.jsp">홈</a>
-                            <a href="./shop.jsp">디지털기기</a>
-                            <a href="./ShopForm">모바일</a>
-                            <span>아이폰</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
+					<!-- 왼쪽 -->
                     <div class="col-lg-6 col-md-9">
 						<div class="tab-pane active" id="tabs-1" role="tabpanel">
 						    <div class="product__details__pic__item">
@@ -38,20 +32,74 @@
 						    </div>
 						</div>
                     </div>
+					<!-- 오른쪽 -->
                     <div class="col-lg-6 col-md-9">
 						<div class="product__details__content">
+	                        <div class="product__details__breadcrumb">
+	                            <a href="./index.jsp">홈</a>
+	                            <a href="./shop.jsp">디지털기기</a>
+	                            <a href="./ShopForm">모바일</a>
+	                            <span>아이폰</span>
+	                        </div>
 							<div class="container">
 								<div class="row d-flex justify-content-center">
-									<div class="col-lg-8">
+									<div class="col-lg-8" style="max-width: 100%;">
 										<div class="product__details__text">
-											<h4>나이키 집업 자켓 팝니다</h4>
-											<h3>35000원</h3>
-											<div style="display:flex;">
-												<p>1시간 전</p><p>조회</p><p>찜</p>
+											<h3>나이키 집업 자켓 팝니다</h3>
+											<h3 style="padding-bottom: 1.25rem; border-bottom: 0.01em #adb5bd solid;">35000원</h3>
+											<div style="display: flex; text-align: center;">
+												<span>37분 전 · 조회 16 · 찜 0</span>
 											</div>
-											<div style="display:flex;">
-												<p>배송비</p><br><p>배송비 별도</p>
+											<div class="product__details__info">
+												<div>
+													<p>배송비</p><br><h6>배송비 별도</h6>
+												</div>
+												<div style="border-left: 0.1em #adb5bd solid; padding-left: 20px;}">
+													<p>업페이</p><br><h6>사용가능</h6>
+												</div>
+												<div style="border-left: 0.1em #adb5bd solid; padding-left: 20px; margin-right: 50px;">
+													<p>제품상태</p><br><h6>중고</h6>
+												</div>
 											</div>
+											<h6 style="text-align: left; margin-top: 30px">직거래 희망장소</h6>
+											<div id="map" style="margin-bottom:1em; width:400px; height:280px;"></div>
+											<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d79e4be802855b8c8c9dc38e9b02f6d"></script>
+											<script>
+												var container = document.getElementById('map');
+												var options = {
+													center: new kakao.maps.LatLng(35.15860, 129.0620),
+													level: 1
+												};
+											
+												var map = new kakao.maps.Map(container, options);
+												
+									// 			var markerPosition  = new kakao.maps.LatLng(35.15860, 129.0620); 
+											
+									// 			// 마커를 생성합니다
+									// 			var marker = new kakao.maps.Marker({
+									// 			    position: markerPosition
+									// 			});
+											
+									// 			// 마커가 지도 위에 표시되도록 설정합니다
+									// 			marker.setMap(map);
+									
+												var imageSrc = '${pageContext.request.contextPath }/resources/main_img/free-icon-food-and-restaurant-1515636.png', // 마커이미지의 주소입니다    
+											    imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+											    imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+											      
+												// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+												var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+												    markerPosition = new kakao.maps.LatLng(35.15860, 129.0620); // 마커가 표시될 위치입니다
+												
+												// 마커를 생성합니다
+												var marker = new kakao.maps.Marker({
+												    position: markerPosition, 
+												    image: markerImage // 마커이미지 설정 
+												});
+												
+												// 마커가 지도 위에 표시되도록 설정합니다
+												marker.setMap(map);  
+											</script>
 											<div class="product__details__option">
 				                                <div class="product__details__option__size">
 				                                    <span>거래방법 선택</span>
@@ -76,102 +124,33 @@
                 </div>
             </div>
         </div>
-<!--         <div class="product__details__content"> -->
-<!--             <div class="container"> -->
-<!--                 <div class="row d-flex justify-content-center"> -->
-<!--                     <div class="col-lg-8"> -->
-<!--                         <div class="product__details__text"> -->
-<!--                             <h4>나이키 집업 판매합니다.</h4> -->
-<!--                             <h3>35000원</h3> -->
-<!--                             <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable -->
-<!--                                 cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening -->
-<!--                             with placket.</p> -->
-<!--                             <div class="product__details__option"> -->
-<!--                                 <div class="product__details__option__size"> -->
-<!--                                     <span>거래방법 선택</span> -->
-<!--                                     <label for="xxl">xxl -->
-<!--                                         <input type="radio" id="xxl"> -->
-<!--                                     </label> -->
-<!--                                     <label class="active" for="xl">xl -->
-<!--                                         <input type="radio" id="xl"> -->
-<!--                                     </label> -->
-<!--                                     <label for="l">l -->
-<!--                                         <input type="radio" id="l"> -->
-<!--                                     </label> -->
-<!--                                     <label for="sm">s -->
-<!--                                         <input type="radio" id="sm"> -->
-<!--                                     </label> -->
-<!--                                 </div> -->
-<!--                                 <div class="product__details__option__color"> -->
-<!--                                     <span>Color:</span> -->
-<!--                                     <label class="c-1" for="sp-1"> -->
-<!--                                         <input type="radio" id="sp-1"> -->
-<!--                                     </label> -->
-<!--                                     <label class="c-2" for="sp-2"> -->
-<!--                                         <input type="radio" id="sp-2"> -->
-<!--                                     </label> -->
-<!--                                     <label class="c-3" for="sp-3"> -->
-<!--                                         <input type="radio" id="sp-3"> -->
-<!--                                     </label> -->
-<!--                                     <label class="c-4" for="sp-4"> -->
-<!--                                         <input type="radio" id="sp-4"> -->
-<!--                                     </label> -->
-<!--                                     <label class="c-9" for="sp-9"> -->
-<!--                                         <input type="radio" id="sp-9"> -->
-<!--                                     </label> -->
-<!--                                 </div> -->
-<!--                             </div> -->
-<!--                             <div class="product__details__cart__option"> -->
-<!--                                 <div class="quantity"> -->
-<!--                                     <div class="pro-qty"> -->
-<!--                                         <input type="text" value="1"> -->
-<!--                                     </div> -->
-<!--                                 </div> -->
-<!--                                 <a href="#" class="primary-btn">add to cart</a> -->
-<!--                             </div> -->
-<!--                             <div class="product__details__btns__option"> -->
-<!--                                 <a href="#"><i class="fa fa-heart"></i> add to wishlist</a> -->
-<!--                                 <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a> -->
-<!--                             </div> -->
-<!--                             <div class="product__details__last__option"> -->
-<!--                                 <h5><span>Guaranteed Safe Checkout</span></h5> -->
-<%--                                 <img src="${pageContext.request.contextPath }/resources/img/shop-details/details-payment.png" alt=""> --%>
-<!--                                 <ul> -->
-<!--                                     <li><span>SKU:</span> 3812912</li> -->
-<!--                                     <li><span>Categories:</span> Clothes</li> -->
-<!--                                     <li><span>Tag:</span> Clothes, Skin, Body</li> -->
-<!--                                 </ul> -->
-<!--                             </div> -->
-<!--                         </div> -->
-<!--                     </div> -->
-<!--                 </div> -->
 				<!-- 상세정보 시작 -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__tab">
                              <div class="row">
-			                   <div class="product__details__tab">
-		                            <ul class="nav justify-content-center">
-										<li class="nav-item">
-											<a class="nav-link active" href="#tabs-5">Active</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#tabs-6">Link</a>
-										</li>
-									</ul>
-                            	</div>
+<!-- 			                   <div class="product__details__tab"> -->
+<!-- 		                            <ul class="nav justify-content-center"> -->
+<!-- 										<li class="nav-item"> -->
+<!-- 											<a class="nav-link active" href="#tabs-5">Active</a> -->
+<!-- 										</li> -->
+<!-- 										<li class="nav-item"> -->
+<!-- 											<a class="nav-link" href="#tabs-6">Link</a> -->
+<!-- 										</li> -->
+<!-- 									</ul> -->
+<!--                             	</div> -->
                             <div class="tab-content">
                             <div class="product__content__all">
                                 <div class="tab-pane active" id="tabs-5" role="tabpanel">
                                     <div class="product__details__tab__content">
+										<h5>상품내용</h5>
                                         <p class="note">거래 전 주의사항 안내<br>
-														판매자가 별도의 메신저로 결제링크를 보내거나 직거래(직접송금)을
+														판매자가 별도의 메신저로 결제링크를 보내거나 직거래(직접송금)을<br>
 														유도하는 경우 사기일 가능성이 높으니 거래를 자제해 주시고<br>
 														Garge 고객센터로 신고해주시기 바랍니다.</p>
 <!--                                         <div class="product__details__tab__content__item"> -->
                                         <div class="product__details__tab__content__item">
-                                        	<a name="tabs-5"></a>
-                                            <h5>상품내용</h5>
+<!--                                         	<a name="tabs-5"></a> -->
 											<p>♡색상:브라운
 												♡소재:폴리 아크릴 혼방
 												<br>
@@ -203,7 +182,7 @@
                                 <div class="tab-pane" id="tabs-6" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
-                                        	<a name="tabs-6"></a>
+<!--                                         	<a name="tabs-6"></a> -->
                                             <h5>판매자 정보</h5>
                                             <p>빈조우님</p>
                                             <p>판매상품 999+ / 안전거래 43 / 후기 10</p>
@@ -212,10 +191,10 @@
                                             <h6>빈조우님의 판매 상품 50</h6>
                                         </div>
 								        <div class="container">
-								            <div class="row">
-								                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+								            <div class="row" style="justify-content: space-between;">
+								                <div class="col">
 								                    <div class="product__item">
-						                                <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-2.jpg">
+						                                <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
 						                                    <ul class="product__hover">
 						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
 						<%--                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li> --%>
@@ -230,9 +209,9 @@
 						                                </div>
 						                            </div>
 								                </div>
-								                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+								                <div class="col">
 								                    <div class="product__item sale">
-						                                <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-3.jpg">
+						                                <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
 						                                    <span class="label">무료나눔</span>
 						                                    <ul class="product__hover">
 						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
@@ -248,74 +227,23 @@
 						                                </div>
 						                            </div>
 								                </div>
-								                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+								                <div class="col">
 								                    <div class="product__item sale">
-								                        <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-3.jpg">
-								                            <span class="label">Sale</span>
-								                            <ul class="product__hover">
-								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
-								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a></li>
-								                            </ul>
-								                        </div>
-								                        <div class="product__item__text">
-								                            <h6>Multi-pocket Chest Bag</h6>
-								                            <a href="#" class="add-cart">+ Add To Cart</a>
-								                            <div class="rating">
-								                                <i class="fa fa-star"></i>
-								                                <i class="fa fa-star"></i>
-								                                <i class="fa fa-star"></i>
-								                                <i class="fa fa-star"></i>
-								                                <i class="fa fa-star-o"></i>
-								                            </div>
-								                            <h5>$43.48</h5>
-								                            <div class="product__color__select">
-								                                <label for="pc-7">
-								                                    <input type="radio" id="pc-7">
-								                                </label>
-								                                <label class="active black" for="pc-8">
-								                                    <input type="radio" id="pc-8">
-								                                </label>
-								                                <label class="grey" for="pc-9">
-								                                    <input type="radio" id="pc-9">
-								                                </label>
-								                            </div>
-								                        </div>
-								                    </div>
-								                </div>
-								                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-								                    <div class="product__item">
-								                        <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/product/product-4.jpg">
-								                            <ul class="product__hover">
-								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
-								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-								                                <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a></li>
-								                            </ul>
-								                        </div>
-								                        <div class="product__item__text">
-								                            <h6>Diagonal Textured Cap</h6>
-								                            <a href="#" class="add-cart">+ Add To Cart</a>
-								                            <div class="rating">
-								                                <i class="fa fa-star-o"></i>
-								                                <i class="fa fa-star-o"></i>
-								                                <i class="fa fa-star-o"></i>
-								                                <i class="fa fa-star-o"></i>
-								                                <i class="fa fa-star-o"></i>
-								                            </div>
-								                            <h5>$60.9</h5>
-								                            <div class="product__color__select">
-								                                <label for="pc-10">
-								                                    <input type="radio" id="pc-10">
-								                                </label>
-								                                <label class="active black" for="pc-11">
-								                                    <input type="radio" id="pc-11">
-								                                </label>
-								                                <label class="grey" for="pc-12">
-								                                    <input type="radio" id="pc-12">
-								                                </label>
-								                            </div>
-								                        </div>
-								                    </div>
+						                                <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
+						                                    <span class="label">무료나눔</span>
+						                                    <ul class="product__hover">
+						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
+						<%--                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li> --%>
+						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/search.png" alt=""></a></li>
+						                                    </ul>
+						                                </div>
+						                                <div class="product__item__text">
+						                                    <h6>가방 팔아요</h6>
+						                                    <a href="#" class="add-cart">상세보기</a>
+															<p>서울 마포구 중앙동 <span> / 15분 전</span></p>
+						                                    <h5>5000원</h5>
+						                                </div>
+						                            </div>
 								                </div>
 								            </div>
 								        </div>
@@ -337,7 +265,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="related-title">인기상품</h3>
+                    <h3 class="related-title">최신 등록 상품</h3>
                 </div>
             </div>
             <div class="row">
