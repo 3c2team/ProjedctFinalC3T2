@@ -33,6 +33,13 @@ public class PayController {
 		return "pay/pay";
 	}
 	
+	@PostMapping("PaypalPro")
+	public String paypalPro(@RequestParam String bank, Map<String, String> map) {
+//		System.out.println(bank + "!!!!!!!!!!!!!!!!!"); // 잘 뜸 굳
+		map.put("bank", bank);
+		return "pay/paypal";
+	}
+	
 	@PostMapping("PaymentComplete")
 	public String paymentComplete() {
 		return "pay/orderPro";

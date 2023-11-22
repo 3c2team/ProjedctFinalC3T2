@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Male_Fashion Template">
@@ -72,11 +72,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>결제</h4>
+                        <h4>주문 완료</h4>
                         <div class="breadcrumb__links">
                             <a href="./">홈</a>
                             <a href="Shop">상품</a>
-                            <span>결제</span>
+                            <span>주문 완료</span>
                         </div>
                     </div>
                 </div>
@@ -89,10 +89,10 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form method="post" action="PaymentComplete">
+                <form method="get" action="MyPageMain">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
-                            <h6 class="coupon__code"><span class="icon_tag_alt"></span>같은 상품을 2회 이상 주문 완료 후 취소하실 경우 그 상품은 구매하실 수 없으므로 신중하게 구매해 주세요.</h6>
+                            <h6 class="coupon__code"><span class="icon_tag_alt"></span>상품이 주문 완료 되었습니다. 임급하시면 결제가 완료됩니다. 결제 완료 시 상품 수령 후 구매확정 버튼을 눌려주세요.</h6>
                             <h6 class="checkout__title">결제 정보</h6>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
@@ -122,18 +122,16 @@
                             <hr>
                             <div class="col-lg-12">
                                 <div class="checkout__input">
-                                    <p>업페이 잔액 : 3,000원</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12" id="moneyDown" style="display: none;">
-                                <div class="checkout__input">
-                                    <p style="color: #5F12D3;">30,300원이 부족하므로 자동으로 40,000원 충전 후 결제됩니다.</p>
-                                    <p>연결된 계좌에 금액이 들어있는지 확인 후 결제를 진행해주시길 바랍니다.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12" id="moneyUp" style="display: none;">
-                                <div class="checkout__input">
-                                    <p style="color: #5F12D3;">결제정보를 다시 한 번 확인하신 후 결제 버튼을 눌려주시길 바랍니다.</p>
+                                	<c:if test="${bank eq kakao }">
+                                    	<p>계좌 정보 : 카카오뱅크 3333-10-6668888</p>
+                                	</c:if>
+                                	<c:if test="${bank eq kb }">
+	                                    <p>계좌 정보 : 국민은행 3333-10-6668888</p>
+                                	</c:if>
+                                	<c:if test="${bank eq sinhan }">
+	                                    <p>계좌 정보 : 신한은행 3333-10-6668888</p>
+                                	</c:if>
+                                    <p style="color: #5F12D3;">24시간 내에 입금되지 않으면 주문은 자동으로 취소됩니다.</p>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +146,7 @@
                                 <ul class="checkout__total__all">
                                     <li>총 가격 <span>33,300</span></li>
                                 </ul>
-                                <button type="submit" class="site-btn" id="paymentCheck">업페이로 결제하기</button>
+                                <button type="submit" class="site-btn" id="paymentCheck">마이 페이지로 가기</button>
                             </div>
                         </div>
                     </div>
