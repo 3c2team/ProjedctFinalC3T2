@@ -108,4 +108,5 @@ public class MainController {
 		return "market_price_inquiry";
 	}
 	
+	
 }

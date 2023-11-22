@@ -99,7 +99,7 @@
 														<br>
 														<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate" 
 														value="${pageMaker.endDate}">
-														<button type="submit" style="border-radius: 3px; width:90px; margin-bottom: 3px; font-size: 11px; color: #fff; background: gray;" id="search_btn">조회</button>
+														<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
 													</div>
 													<br>
 													<div class="table-responsive text-nowrap">

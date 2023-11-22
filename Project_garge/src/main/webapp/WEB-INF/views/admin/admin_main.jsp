@@ -78,7 +78,7 @@
 			<jsp:include page="inc/side_menu.jsp"></jsp:include>  
 			<div class="layout-page">
 				<div class="content-wrapper">
-					<div class="container-xxl flex-grow-1 container-p-y">
+					<div class="container-xxl flex-grow-1 container-p-y container-admin-main">
 						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">관리자 페이지 /</span> 메인</h4>
 						<!--/Table -->
 <!-- 						<div class="card"> -->

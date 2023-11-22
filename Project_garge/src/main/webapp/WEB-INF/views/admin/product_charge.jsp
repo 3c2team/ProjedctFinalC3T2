@@ -62,7 +62,7 @@
 </head>
 
 <body>
-	<jsp:include page="../inc/admin_top.jsp"></jsp:include>
+	<jsp:include page="../inc/top.jsp"></jsp:include>
 	<!-- Layout wrapper -->
 	<div class="layout-wrapper layout-content-navbar">
 		<div class="layout-container">
@@ -74,13 +74,12 @@
 						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">거래내역 /</span> 수수료 내역</h4>
 						<!--/Table -->
 						<div class="card">
-							<h5 class="card-header">수수료 내역</h5>
+							<h5 class="card-header">월간 수수료 내역</h5>
 							<div class="table-responsive text-nowrap">
 								
 								<!-- -------------------------------------------------------------- -->
 								<div class="row">
 <!-- 									<div class="col-xl-6"> -->
-									
 										<div class="card shadow mb-4">
 			                                <div class="card-header py-3">
 			                                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
@@ -93,9 +92,145 @@
 <%-- 					                        <code>/js/demo/chart-area-demo.js</code> file. --%>
 					                        </div>
 			                            </div>
-			                            
 									</div>		
 									
+									<!--/Table -->
+									
+									<div class="card">
+										<h5 class="card-header">수수료 상세  내역</h5>
+<!-- 										<div class="calendarContainer "> -->
+<%-- 											<button type="button"  onclick="setToday(this)"  class="calendarContainer  badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button> --%>
+<%-- 											<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button> --%>
+<%-- 											<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button> --%>
+<%-- 											<button type="button"  onclick="setMonths(this,-6)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-6' ? 'active':''} ">6개월</button> --%>
+<%-- 											<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button> --%>
+<!-- 										</div> -->
+<!-- 										<input type="hidden" id="searchType" name="searchType"> -->
+<!-- 										<div id="reservation_confirm_term_right" > -->
+<!-- 											<div class="calanderWrap" style="float: right;"> -->
+<%-- 												<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate"  --%>
+<%-- 												value="${pageMaker.endDate}"> --%>
+<!-- 												<button type="submit" id="search_btn">조회</button> -->
+<!-- 											</div> -->
+<!-- 										</div>	 -->
+											<form  id="frm">	
+												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;">
+													<div class="calendarContainer" style="float: right;">
+														<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button>
+														<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button>
+														<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button>
+														<button type="button"  onclick="setMonths(this,-6)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-6' ? 'active':''} ">6개월</button>
+														<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button>
+													</div>
+													<input type="hidden" id="searchType" name="searchType">
+													<div id="reservation_confirm_term_right" style="float: left;">
+														<div class="calanderWrap">
+															<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate" 
+															value="${pageMaker.endDate}">
+															<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
+														</div>
+													</div>
+												</div>
+											</form>	
+
+										<div class="table-responsive text-nowrap">
+											<table class="table">
+												<thead>
+													<tr>
+														<th width="50px"><input type="checkbox"></th>
+														<th>상품정보</th>
+														<th>구매자</th>
+														<th>입금액</th>
+														<th>수수료</th>
+													</tr>
+												</thead>
+												<tbody class="table-border-bottom-0">
+													<tr>
+														<td><input type="checkbox"></td>
+														<td>
+															<div class="product">
+																<img width="80px" src="../assets/img/elements/1.jpg">
+																<div class="product_info"><strong>****상품명****</strong><a>15,000원</a></div>
+															</div>
+														</td>
+														<td>홍길동</td>
+														<td>
+									                        <span class="badge bg-label-approval me-1">15,000원</span>	
+														</td>
+														<td>
+															<span class="badge bg-label-hold me-1">450원</span>
+														</td>
+														
+													</tr>
+													
+													<tr>
+														<td><input type="checkbox"></td>
+														<td>
+															<div class="product">
+																<img width="80px" src="../assets/img/elements/1.jpg">
+																<div class="product_info"><strong>****상품명****</strong><a>35,000원</a></div>
+															</div>
+														</td>
+														<td>고길동</td>
+														<td>
+									                        <span class="badge bg-label-approval me-1">32,000원</span>	
+														</td>
+														<td>
+															<span class="badge bg-label-hold me-1">960원</span>
+														</td>
+													</tr>
+													<tr>
+														<td><input type="checkbox"></td>
+														<td>
+															<div class="product">
+																<img width="80px" src="../assets/img/elements/1.jpg">
+																<div class="product_info"><strong>****상품명****</strong><a>35,000원</a></div>
+															</div>
+														</td>
+														<td>고길동</td>
+														<td>
+									                        <span class="badge bg-label-approval me-1">32,000원</span>	
+														</td>
+														<td>
+															<span class="badge bg-label-hold me-1">960원</span>
+														</td>
+													</tr>
+													<tr>
+														<td><input type="checkbox"></td>
+														<td>
+															<div class="product">
+																<img width="80px" src="../assets/img/elements/1.jpg">
+																<div class="product_info"><strong>****상품명****</strong><a>35,000원</a></div>
+															</div>
+														</td>
+														<td>고길동</td>
+														<td>
+									                        <span class="badge bg-label-approval me-1">32,000원</span>	
+														</td>
+														<td>
+															<span class="badge bg-label-hold me-1">960원</span>
+														</td>
+													</tr>
+													<tr>
+														<td><input type="checkbox"></td>
+														<td>
+															<div class="product">
+																<img width="80px" src="../assets/img/elements/1.jpg">
+																<div class="product_info"><strong>****상품명****</strong><a>35,000원</a></div>
+															</div>
+														</td>
+														<td>고길동</td>
+														<td>
+									                        <span class="badge bg-label-approval me-1">32,000원</span>	
+														</td>
+														<td>
+															<span class="badge bg-label-hold me-1">960원</span>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
 									  	
 								
 								

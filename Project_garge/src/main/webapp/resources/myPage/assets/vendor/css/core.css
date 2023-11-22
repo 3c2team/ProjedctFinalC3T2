@@ -6071,6 +6071,11 @@ a.invert-bg-dark:hover, a.invert-bg-dark:focus {
 .container-p-y:not([class^=pt-]):not([class*=" pt-"]) {
   padding-top: 1.625rem !important;
 }
+
+.container-admin-main:not([class^=pt-]):not([class*=" pt-"]) {
+  padding-top: 0rem !important;
+}
+
 .container-p-y:not([class^=pb-]):not([class*=" pb-"]) {
   padding-bottom: 1.625rem !important;
 }

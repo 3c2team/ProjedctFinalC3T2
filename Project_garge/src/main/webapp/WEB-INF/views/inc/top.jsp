@@ -40,7 +40,7 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option" >
                         <a href="MyPageMain"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a>&nbsp;&nbsp;
-                        <a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/chatting.png" style=" width: 20px" alt=""></a>
+                        <a href=""><img src="${pageContext.request.contextPath }/resources/img/icon/chatting.png" style=" width: 20px" alt=""></a>
                         <a href="${pageContext.request.contextPath }/Login"><img src="${pageContext.request.contextPath }/resources/img/icon/person.png" style=" width: 30px" alt=""></a>
                     </div>
                 </div>
