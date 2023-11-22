@@ -30,6 +30,10 @@
 /* Template default CSS
 /*----------------------------------------*/
 @charset "UTF-8";
+.custom_li{
+	margin: 1rem;
+    margin-left: 2rem;
+}
 .custom_div{
     background-color: #FFFFFF;
     width: 1000px;

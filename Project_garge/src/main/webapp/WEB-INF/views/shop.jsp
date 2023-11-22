@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
@@ -9,6 +10,16 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Male-Fashion | Template</title>
 <jsp:include page="inc/style.jsp"></jsp:include>
+<style type="text/css">
+.btn{
+	 background-color:#e0e0e0;
+	 margin: 5px;
+	 font-size: 13px;
+}
+.cusor{
+	cursor: pointer;
+}
+</style>
 </head>
 <body>
 	<header>
@@ -38,11 +49,16 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="shop__sidebar">
-                        <div class="shop__sidebar__search">
-                            <form action="#">
-                                <input type="text" placeholder="Search...">
-                                <button type="submit"><span class="icon_search"></span></button>
-                            </form>
+                        <div class="fs-5 fw-bold">
+                       		필터
+                        </div>
+                        <div>
+							<div class="btn" hidden="" id="category_name">
+							</div>	
+							<div class="btn" hidden="" id="price">
+							</div>	
+							<div class="btn" hidden="" id="search">
+							</div>	
                         </div>
                         
                         <!-- 카테고리 -->
@@ -56,24 +72,9 @@
                                         <div class="card-body">
                                             <div class="card-main">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="#">디지털기기</a></li>
-                                                    <li><a href="#">가구/인테리어</a></li>
-                                                    <li><a href="#">유아동</a></li>
-                                                    <li><a href="#">여성패션/잡화</a></li>
-                                                    <li><a href="#">남성패션/잡화</a></li>
-                                                    <li><a href="#">생활가전</a></li>
-                                                    <li><a href="#">생활/주방</a></li>
-                                                    <li><a href="#">가공식품</a></li>
-                                                    <li><a href="#">스포츠/레저</a></li>
-                                                    <li><a href="#">취미/게임/음반</a></li>
-                                                    <li><a href="#">뷰티/미용</a></li>
-                                                    <li><a href="#">식물</a></li>
-                                                    <li><a href="#">반려동물용품</a></li>
-                                                    <li><a href="#">티켓/교환권</a></li>
-                                                    <li><a href="#">도서</a></li>
-                                                    <li><a href="#">기타 중고물품</a></li>
-                                                    <li><a href="#">무료나눔</a></li>
-                                                    <li><a href="#">삽니다</a></li>
+                                                	<c:forEach var="selectCategory" items="${selectCategory }">
+														<li><div class="cusor">${selectCategory.category_name }</div></li>
+                                                    </c:forEach>
                                                 </ul>
                                             </div>
                                         </div>
@@ -102,20 +103,26 @@
 <!--                                     <div class="card-heading"> -->
 <!--                                         <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a> -->
 <!--                                     </div> -->
-<!--                                     <div id="collapseThree" class="collapse show" data-parent="#accordionExample"> -->
-<!--                                         <div class="card-body"> -->
-<!--                                             <div class="shop__sidebar__price"> -->
-<!--                                                 <ul> -->
-<!--                                                     <li><a href="#">$0.00 - $50.00</a></li> -->
-<!--                                                     <li><a href="#">$50.00 - $100.00</a></li> -->
-<!--                                                     <li><a href="#">$100.00 - $150.00</a></li> -->
-<!--                                                     <li><a href="#">$150.00 - $200.00</a></li> -->
-<!--                                                     <li><a href="#">$200.00 - $250.00</a></li> -->
-<!--                                                     <li><a href="#">250.00+</a></li> -->
-<!--                                                 </ul> -->
-<!--                                             </div> -->
-<!--                                         </div> -->
-<!--                                     </div> -->
+                                    <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__price">
+                                                <ul>
+                                                    <li class="custom_li">
+                                                    	<label><input type="radio" class="radio form-check-input"name="radio" value="10만원 이하">10만원 이하</label>
+                                                    </li>
+                                                    <li class="custom_li">
+                                                    	<label><input type="radio" class="radio form-check-input" name="radio" value="10만원 - 30만원 이하">10만원 - 30만원 이하</label>
+                                                    </li>
+                                                    <li class="custom_li">
+                                                    	<label><input type="radio" class="radio form-check-input" name="radio" value="30만원 - 50만원 이하">30만원 - 50만원 이하</label>
+                                                    </li>
+                                                    <li class="custom_li">
+                                                    	<label><input type="radio" class="radio form-check-input" name="radio" value="50만원 이상">50만원 이상</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
 <!--                                 </div> -->
 <!--                                 <div class="card"> -->
 <!--                                     <div class="card-heading"> -->
@@ -643,6 +650,26 @@
     <footer class="footer">
 		<jsp:include page="inc/bottom.jsp"></jsp:include>
     </footer>
+    <script type="text/javascript">
+    	$(function() {
+			$(".cusor").on("click",function(){
+				$("#category_name").attr("hidden",false);
+				$("#category_name").html($(this).text() + "<i class='bi bi-x'></i>");
+			});
+			$("#category_name").on("click",function(){
+				$("#category_name").html("");
+				$("#category_name").attr("hidden",true);
+			});
+			$(".radio").on("click",function(){
+				$("#price").attr("hidden",false);
+				$("#price").html($(this).val() + "<i class='bi bi-x'></i>");
+			});
+			$("#price").on("click",function(){
+				$("#price").html("");
+				$("#price").attr("hidden",true);
+			});
+		});
+    </script>
 </body>
 
 </html>
