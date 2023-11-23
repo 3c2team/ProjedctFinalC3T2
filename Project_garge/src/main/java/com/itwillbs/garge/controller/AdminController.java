@@ -1,10 +1,24 @@
 package com.itwillbs.garge.controller;
 
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.itwillbs.garge.service.AdminService;
 
 @Controller
 public class AdminController {
+	
+	@Autowired
+	AdminService adminService;
 	
 	//admin 로그인
 	@GetMapping("/AdminLogin")
@@ -60,10 +74,32 @@ public class AdminController {
 		return "admin/charts";
 	}
 	
+	// 채팅하기
 	@GetMapping("/MyChat")
 	public String myChat() {
 		
 		return "myChat";
+	}
+	
+	@PostMapping("/AdminLoginPro")
+	public String adminLoginPro(HttpSession session, Model model,@RequestParam Map<String, String> map) {
+		System.out.println("id : " + map.get("id") + ", passwd : " +  map.get("passwd"));
+	
+		
+//		MemberVO dbMember = adminService.selectAdminMember(map);
+		
+//		session.setAttribute("sId", id);
+		
+//		String sId = (String)session.getAttribute("sId");
+//		System.out.println("내 계정 : " + sId);
+//		if(!aId.equals("dnjsgk19")) {
+//			model.addAttribute("msg", "관리자 계정이 아닙니다."); // 출력할 메세지
+//			model.addAttribute("targetURL", "Login"); // 이동시킬 페이지
+//			session.invalidate();
+//			return "forward";
+//		}
+		
+		return "admin/admin_main";
 	}
 	
 }
