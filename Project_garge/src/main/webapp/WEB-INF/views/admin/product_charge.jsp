@@ -93,9 +93,7 @@
 					                        </div>
 			                            </div>
 									</div>		
-									
 									<!--/Table -->
-									
 									<div class="card">
 										<h5 class="card-header">수수료 상세  내역</h5>
 <!-- 										<div class="calendarContainer "> -->
@@ -128,6 +126,7 @@
 															<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate" 
 															value="${pageMaker.endDate}">
 															<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
+<!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
 														</div>
 													</div>
 												</div>

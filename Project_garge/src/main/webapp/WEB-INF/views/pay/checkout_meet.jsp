@@ -22,6 +22,44 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css" type="text/css">
+	<style>
+	#open {
+		background: #5F12D3;
+		color: #ffffff;
+		border: none;
+		border-radius: 5px;
+		padding: 3px;
+	}
+	#modal-box {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+		display: none;
+		justify-content: center;
+		align-items: center;
+		z-index: 9999;
+	}	
+	#modal-box.active {
+		display: flex;
+	}
+	#modal-contents {
+		background-color: #ffffff;
+		width: 450px;
+		padding: 20px;
+		border-radius: 5px;
+ 		position: relative;
+	}
+	#modal-contents botton {
+		background-color: #ffffff;
+		
+	}
+	#desc p {
+		margin-bottom: 2%;
+	}
+	</style>
 </head>
 
 <body>
@@ -72,7 +110,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>결제</h4>
+                        <h4>결제(직거래)</h4>
                         <div class="breadcrumb__links">
                             <a href="./">홈</a>
                             <a href="Shop">상품</a>
@@ -85,57 +123,21 @@
     </section>
     <!-- Breadcrumb Section End -->
     
+	
     <!-- Checkout Section Begin -->
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form method="post" action="PaymentComplete">
+                <form method="post" onsubmit="return checks()">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <h6 class="coupon__code"><span class="icon_tag_alt"></span>같은 상품을 2회 이상 주문 완료 후 취소하실 경우 그 상품은 구매하실 수 없으므로 신중하게 구매해 주세요.</h6>
                             <h6 class="checkout__title">결제 정보</h6>
-                            <div class="col-lg-6">
-                                <div class="checkout__input">
-                                    <p>받으시는 분 : 이예림</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="checkout__input">
-                                    <p>주소 : 부산광역시 부산진구 엄광로 68(가야동, 벽산아파트) 999동 4515호(우편번호)</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="checkout__input">
-                                    <p>전화번호 : 010-2594-7524</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="checkout__input">
-                                    <p>이메일 : lyl3697@naver.com</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="checkout__input">
-                                    <p>배송문구 : 없음</p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="col-lg-12">
-                                <div class="checkout__input">
-                                    <p>업페이 잔액 : 3,000원</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12" id="moneyDown" style="display: none;">
-                                <div class="checkout__input">
-                                    <p style="color: #5F12D3;">30,300원이 부족하므로 자동으로 40,000원 충전 후 결제됩니다.</p>
-                                    <p>연결된 계좌에 금액이 들어있는지 확인 후 결제를 진행해주시길 바랍니다.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12" id="moneyUp" style="display: none;">
-                                <div class="checkout__input">
-                                    <p style="color: #5F12D3;">결제정보를 다시 한 번 확인하신 후 결제 버튼을 눌려주시길 바랍니다.</p>
-                                </div>
-                            </div>
+	                        <div class="col-lg-12">
+	                            <div class="checkout__input">
+	                                <p style="color: #5F12D3;">결제방식을 선택하신 후 결제하기 버튼을 눌려주시길 바랍니다.</p>
+	                            </div>
+	                        </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="checkout__order">
@@ -148,7 +150,36 @@
                                 <ul class="checkout__total__all">
                                     <li>총 가격 <span>33,300</span></li>
                                 </ul>
-                                <button type="submit" class="site-btn" id="paymentCheck">업페이로 결제하기</button>
+                                <div class="checkout__input__checkbox"> <!-- 셋 중 하나만 되게 고칠 것 -->
+                                    <label for="acc-or">
+                                        카카오 페이
+                                        <input type="checkbox" id="acc-or" name="pay" value="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="checkout__input__checkbox">
+                                    <label for="payment">
+                                        업페이
+                                        <input type="checkbox" id="payment" name="pay" value="2">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="checkout__input__checkbox">
+                                    <label for="paypal">
+                                        무통장 입금
+                                        <input type="checkbox" id="paypal" name="pay" value="3">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div id="block" class="form-select" style="display:none">
+                                	<select name="bank" id="bank">
+                                		<option value="noSelect" disabled selected>입금 은행을 선택해주세요.</option>
+                                		<option value="kakao">카카오뱅크</option>
+                                		<option value="kb">국민은행</option>
+                                		<option value="sinhan">신한은행</option>
+                               		</select>
+								</div>
+                                <button type="submit" class="site-btn" id="paymentCheck">결제하기</button>
                             </div>
                         </div>
                     </div>
@@ -187,7 +218,7 @@
     <script src="${pageContext.request.contextPath }/resources/js/owl.carousel.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/main.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/js/pay.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/checkout.js"></script>
 </body>
 
 </html>

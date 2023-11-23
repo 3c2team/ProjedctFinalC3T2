@@ -73,6 +73,7 @@
                                 </div>
                                 <div class="col-lg-7">
                                     <input type="text" class="input-price" placeholder="판매가격">
+                                    <input type="button" class="input-price" value="무료나눔">
                                 </div>
                                 <div class="col-lg-12">
                                     <textarea rows="2" cols="20" wrap="hard" maxlength="1000" placeholder="- 상품명(브랜드) >
@@ -82,6 +83,8 @@
 * 실제 촬영한 사진과 함께 상세 정보를 입력해주세요.
 * 카카오톡 아이디 첨부 시 게시물 삭제 및 이용제재 처리될 수 있어요.
  안전하고 건전한 거래환경을 위해 과학기술정보통신부, 한국인터넷진흥원, 가지나라가 함께합니다."></textarea>
+	                                    <button class="site-btn" onclick="insertCheck()">사용하기</button>
+	                                    <button class="site-btn" onclick="insertCheck()">판매등록</button>
 	                                    <button type="submit" class="site-btn" onclick="insertCheck()">판매등록</button>
                                 </div>
                             </div>

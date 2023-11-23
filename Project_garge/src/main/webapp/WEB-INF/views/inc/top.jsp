@@ -9,6 +9,7 @@
             <div class="customrow">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo" id="easterEgg" onclick="easterEgg()">
+<!--                     <div class="header__logo" id="easterEgg" > -->
                         <a href="./"><img src="${pageContext.request.contextPath }/resources/img/logo.png" alt=""></a>
                     </div>
                 </div>
@@ -40,12 +41,17 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option" >
                         <a href="MyPageMain"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a>&nbsp;&nbsp;
-                        <a href=""><img src="${pageContext.request.contextPath }/resources/img/icon/chatting.png" style=" width: 20px" alt=""></a>
-                        <a href="${pageContext.request.contextPath }/Login"><img src="${pageContext.request.contextPath }/resources/img/icon/person.png" style=" width: 30px" alt=""></a>
+                        <a href="#none" onclick="openChat()"><img src="${pageContext.request.contextPath }/resources/img/icon/chatting.png" style=" width: 20px" alt=""></a>
+                        <a href=""><img src="${pageContext.request.contextPath }/resources/img/icon/person.png" style=" width: 30px" alt="" ></a>
                     </div>
                 </div>
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
         </div>
+        <script type="text/javascript">
+        	function openChat() {
+        		window.open("MyChat", "MyChat","width=600, height=800");
+			}
+        </script>
     </header>
     <!-- Header Section End -->

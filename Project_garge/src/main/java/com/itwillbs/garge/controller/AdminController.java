@@ -5,6 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AdminController {
+	
+	//admin 로그인
+	@GetMapping("/AdminLogin")
+	public String adminLogin() {
+		
+		return "admin/admin_login";
+	}
 
 	// admin 메인 
 	@GetMapping("/AdminMain")
@@ -47,9 +54,16 @@ public class AdminController {
 		return "admin/withdraw";
 	}
 	
+	// 차트 확인용(지울꺼임)
 	@GetMapping("/Charts")
 	public String charts() {
 		return "admin/charts";
+	}
+	
+	@GetMapping("/MyChat")
+	public String myChat() {
+		
+		return "myChat";
 	}
 	
 }

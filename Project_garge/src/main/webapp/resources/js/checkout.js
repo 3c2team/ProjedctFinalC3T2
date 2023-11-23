@@ -5,6 +5,11 @@ $("#close").click(function() {
 	$("#modal-box").toggleClass("active");
 });
 
+$('.choice').click(function(e){
+	$("#modal-box").toggleClass("active");
+	console.log("!!!!!!!!!!!!!" + e.target.value);
+});
+
 $(function() {
 	// 1. 이름(받으시는 분) 입력창 체크
 	$("#member_name").blur(function(){
@@ -19,6 +24,12 @@ $(function() {
 		
 		if(!regex.exec(name)) {
 			$("#checkNameResult").html("이름은 한글만 입력 가능합니다.");
+			$("#checkNameResult").css("color", "red");
+			return;
+		}
+		
+		if(regex.exec(name)) {
+			$("#checkNameResult").html("");
 			$("#checkNameResult").css("color", "red");
 		}
 	});
@@ -38,23 +49,6 @@ $(function() {
 	        }
 	    }).open();
 	});
-//	
-//	// 3. 메일 입력창 체크
-//	$("#member_email").blur(function(){
-//		let mail = $("#member_email").val();
-//		let regex = /^[A-Za-z0-9_]+[A-Za-z0-9]*[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/;
-//		
-//		if(mail == "") {
-//			$("#checkMailResult").html("메일을 입력해주세요.");
-//			$("#checkMailResult").css("color", "red");
-//			return;
-//		}
-//		
-//		if(!regex.exec(mail)) {
-//			$("#checkMailResult").html("메일 형식에 맞춰 입력해주세요. 예) hong@naver.com");
-//			$("#checkMailResult").css("color", "red");
-//		}
-//	});
 	
 	// 기존 배송지와 새로운 배송지 구분 짓기
     $('input[type="radio"][name="diliver"]').change(function(){
@@ -110,14 +104,6 @@ function checks() {
         $("#member_name").focus();
         return false;
     }
-    
-    // 이메일 유효성 검사
-//    if(!getMail.test($("#member_email").val())){
-//        alert("이메일 형식에 맞게 입력해주세요.")
-//        $("#member_email").val("");
-//        $("#member_email").focus();
-//        return false;
-//    }
     
     // 결제방식 선택 여부 검사
     if(!$("#acc-or").is(':checked') && !$("#payment").is(':checked') && !$("#paypal").is(':checked')) {

@@ -108,14 +108,14 @@
 																<tr>
 																	<th>거래방법</th>
 																	<th>건수</th>
-																	<th>금액</th>
+																	<th>수수료 금액</th>
 																</tr>
 															</thead>
 															<tbody class="table-border-bottom-0">
 																<tr>
 																	<td>
 																		<div class="product pay-type" >
-																			<div class="product_info"><strong>가지페이</strong></div>
+																			<div class="product_info"><strong>업페이</strong></div>
 																		</div>
 																	</td>
 																	<td>
@@ -159,18 +159,18 @@
 												                        <span class="badge bg-label-prohibition">1,000,000 원</span>	
 																	</td>
 																</tr>
-																<tr>
-																	<td>
-																		<div class="product pay-type">
-																			<div class="product_info"><strong>직접거래</strong></div>
-																		</div>
-																	</td>
-																	<td>
-																		<div class="product pay-type">
-																			<div class="product_info"><strong>210</strong></div>
-																		</div>
-																	</td>
-																</tr>
+<!-- 																<tr> -->
+<!-- 																	<td> -->
+<!-- 																		<div class="product pay-type"> -->
+<!-- 																			<div class="product_info"><strong>직접거래</strong></div> -->
+<!-- 																		</div> -->
+<!-- 																	</td> -->
+<!-- 																	<td> -->
+<!-- 																		<div class="product pay-type"> -->
+<!-- 																			<div class="product_info"><strong>210</strong></div> -->
+<!-- 																		</div> -->
+<!-- 																	</td> -->
+<!-- 																</tr> -->
 															</tbody>
 														</table>
 													</div>
