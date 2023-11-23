@@ -28,6 +28,7 @@ public class LoginController {
 			String uid, MemberVO member, HttpSession session, HttpServletResponse response, Model model) {
 //		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		MemberVO dbMember = service.getMemberLogin(uid);
+		System.out.println(dbMember);
 //		System.out.println(dbMember.getMember_passwd());
 //		!passwordEncoder.matches(member.getMember_passwd(), dbMember.getMember_passwd())
 		if(dbMember == null) {
@@ -39,11 +40,10 @@ public class LoginController {
 				return "fail_back";
 			} else { // 이메일 인증 회원
 				session.setAttribute("loginUser", dbMember);
-				session.setAttribute("sId", member.getMember_id());
+				session.setAttribute("sId", dbMember.getMember_id());
 				session.setAttribute("sName", dbMember.getMember_name());
 				session.setAttribute("sPhone", dbMember.getMember_phone_num());
-				session.setAttribute("sEmail1", dbMember.getMember_email1());
-	            session.setAttribute("sEmail2", dbMember.getMember_email2());
+				session.setAttribute("sEmail", dbMember.getMember_e_mail());
 				return "redirect:/";
 			}
 		}
