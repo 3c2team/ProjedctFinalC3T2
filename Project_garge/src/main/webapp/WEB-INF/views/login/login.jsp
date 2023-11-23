@@ -81,75 +81,15 @@
     border-color: #03C75A; /* 테두리도 보라색으로 변경 */
     }
     
-    .login-button, .signup-button, .find_password {
+    .login-button, .signup-button {
         margin-right: 15px;
         margin-left: 15px;
     }
-    
-    #kakaoLogin {
-    font-family: 'Roboto', sans-serif; /* Google Fonts에서 Roboto 글꼴 사용 */
-    color: #3C1E1E; /* 텍스트 색상 */
-    font-size: 15px; /* 글자 크기 */
-    font-weight: bold; /* 글자 굵기 */
-    text-shadow: 2px 2px 2px #FFD700; /* 글자에 금색 그림자 추가 */
-    transition: all 0.3s ease; /* 부드러운 전환 효과 */
-    text-decoration: none; /* 그어진 줄 제거 */
-	}
-	
-	#kakaoLogin:hover {
-	    color: #5F12D3; /* 마우스 오버 시 텍스트 색상 변경 */
-	    transform: scale(1.1); /* 마우스 오버 시 텍스트 약간 확대 */
-	}
-	
-	#naverLogin {
-    font-family: 'Arial', sans-serif; /* 글꼴 변경 */
-    color: #FFFFFF; /* NAVER의 특징적인 녹색으로 텍스트 색상 변경 */
-    font-size: 15px; /* 글자 크기 조정 */
-    font-weight: bold; /* 글자를 굵게 표시 */
-    transition: all 0.3s ease; /* 부드러운 전환 효과 */
-    text-decoration: none; /* 그어진 줄 제거 */
-	}
-	
-	#naverLogin:hover {
-	    color: #5F12D3; /* 마우스 오버 시 색상 변경 */
-	}
-	.button-container {
-	    display: flex;
-	    justify-content: space-around; /* 버튼 사이의 간격을 균등하게 조정 */
-	    align-items: center;
-	}
-	.footer{
-	    margin:0 auto;
-	    text-align:center;
-	    bottom:5px;
-	    color:gray;
-	    display: flex;
-		justify-content: center; /* 중앙 정렬 */
-		gap: 20px; /* 버튼 사이의 간격 */
-	}
-	.btn-white {
-	    /* 버튼 스타일 */
-	    padding: 10px;
-	    color: black; /* 텍스트 색상 */
-	    background-color: white; /* 배경색 */
-	    text-align: center;
-	    display: inline-block;
-	    border: 1px solid #ccc; /* 테두리 색상 */
-	    transition: background-color 0.3s ease;
-	}
-	
-	.btn-white a {
-	    color: black; /* 링크 텍스트 색상 */
-	    text-decoration: none; /* 밑줄 제거 */
-	}
-	.btn-white:hover {
-	    background-color: #5F12D3; /* 마우스 오버 시 보라색으로 변경 */
-	    color: white; /* 텍스트 색상을 흰색으로 변경 (선택적) */
-	}
   </style>
 
 </head>
 <body class="text-center">
+<form action="LoginPro" method="post">
   
   <!--  html 전체 영역을 지정하는 container -->
   <div id="container">
@@ -164,48 +104,44 @@
         <div class="input-form-box"><span>비밀번호 </span><input type="password" name="upw" class="form-control"></div>
         <br>
         <div class="button-login-box" >
-          <button type="button" id="loginButton" class="btn btn-primary btn-xs login-button" style="width:30%">로그인</button>
+          <button type="submit" id="loginButton" class="btn btn-primary btn-xs login-button" style="width:30%">로그인</button>
           <button type="button" id="joinButton" class="btn btn-primary btn-xs signup-button" style="width:30%">회원가입</button>
         </div>
+        <div class="find_password">
+            <a href="/forgot-password">아이디 또는 비밀번호를 잊으셨나요?</a>
+        </div>
         <br>
-        <div class="button-container">
-	        <div class="btn btn-naver btn-xs">
-				<a href="https://kauth.kakao.com/oauth/authorize?client_id
-						=d860d38c992ca8bf5f07dcc3fd5122b9&redirect_uri=http:
-						//localhost:9090/member/auth/kakao/callback&response_type=code" id="kakaoLogin">
-		            	KAKAO 로그인
-		        </a>
-			</div>
-			<br>
-			<br>
-			<div class="btn btn-kakao btn-xs">
-				<a href="https://nid.naver.com/oauth2.0/authorize?
-						response_type=code
-						&client_id=O9St1pC9EAPKQRlsYeWN
-						&state=state
-						&redirect_uri=http://localhost:8081/c3t2/Naver" id="naverLogin">
-	            		NAVER 로그인
-		        </a>
-			</div>
+        <div class="btn btn-naver btn-xs">
+			<a href="https://kauth.kakao.com/oauth/authorize?client_id
+					=d860d38c992ca8bf5f07dcc3fd5122b9&redirect_uri=http:
+					//localhost:9090/member/auth/kakao/callback&response_type=code" id="kakaoLogin">
+	            	KAKAO 로그인
+	        </a>
 		</div>
 		<br>
 		<br>
-		<div class="footer">
-		    <a href="IdForgot" class="btn btn-white btn-xs">아이디 찾기</a>
-		    <a href="PasswdForgot" class="btn btn-white btn-xs">비밀번호 찾기</a>
+		<div class="btn btn-kakao btn-xs">
+			<a href="https://nid.naver.com/oauth2.0/authorize?
+					response_type=code
+					&client_id=O9St1pC9EAPKQRlsYeWN
+					&state=state
+					&redirect_uri=http://localhost:8081/c3t2/Naver" id="naverLogin">
+            		NAVER 로그인
+	        </a>
 		</div>
       </div>
+      
     </div>
   </div>
+ </form>
   <script>
-	  document.getElementById('loginButton').addEventListener('click', function() {
-	    window.location.href = 'Main'; 
-	  });
+// 	  document.getElementById('loginButton').addEventListener('click', function() {
+// 	    window.location.href = 'Main'; 
+// 	  });
 	  
 	  document.getElementById('joinButton').addEventListener('click', function() {
-	    window.location.href = 'JoinAgree'; 
+	    window.location.href = 'Join'; // Change this URL to the path of your join.jsp or the URL mapped by your controller
 	  });
-	  
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

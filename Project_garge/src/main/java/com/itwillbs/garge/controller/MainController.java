@@ -35,12 +35,17 @@ public class MainController {
 		return "blog_details";
 	}
 	@GetMapping("Checkout")
-	public String checkout() {
-		
+	public String checkout(HttpSession session, Model model) {
+		String sName = (String)session.getAttribute("sId");
+//		Map<String, String> memberAddress = service.getMemberAddress(sId);
+//		model.addAttribute("memberAddress" ,memberAddress);
+		model.addAttribute("sName" ,sName);
+//		System.out.println(memberAddress);
 		return "checkout";
 	}
 	@GetMapping("Contact")
 	public String contact() {
+		
 		
 		return "contact";
 	}
@@ -49,7 +54,7 @@ public class MainController {
 	@GetMapping("Main")
 	public String main(HttpSession session) {
 		
-		session.setAttribute("sId", "hyeri123");
+//		session.setAttribute("sId", "hyeri123");
 		
 		return "main";
 	}
