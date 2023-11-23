@@ -16,8 +16,8 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
 						<div class="shop__sidebar__search">
-							<form action="#">
-								<input type="text" style="margin-top:7%;" placeholder="상품 혹은 동네를 입력해주세요">
+							<form action="Shop" onsubmit="return isSubmit()">
+								<input type="text" name="search"style="margin-top:7%;" placeholder="상품 혹은 동네를 입력해주세요">
 								<button style="margin-top:4%;" type="submit"><span class="icon_search"></span></button>
 							</form> 
 						</div>

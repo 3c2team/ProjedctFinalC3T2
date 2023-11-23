@@ -53,11 +53,11 @@
                        		필터
                         </div>
                         <div>
-							<div class="btn" hidden="" id="category_name">
+							<div class="btn delete" hidden="" id="category">
 							</div>	
-							<div class="btn" hidden="" id="price">
+							<div class="btn delete" hidden="" id="price">
 							</div>	
-							<div class="btn" hidden="" id="search">
+							<div class="btn delete" hidden="" id="search">
 							</div>	
                         </div>
                         
@@ -651,24 +651,56 @@
 		<jsp:include page="inc/bottom.jsp"></jsp:include>
     </footer>
     <script type="text/javascript">
-    	$(function() {
-			$(".cusor").on("click",function(){
-				$("#category_name").attr("hidden",false);
-				$("#category_name").html($(this).text() + "<i class='bi bi-x'></i>");
-			});
-			$("#category_name").on("click",function(){
-				$("#category_name").html("");
-				$("#category_name").attr("hidden",true);
-			});
-			$(".radio").on("click",function(){
-				$("#price").attr("hidden",false);
-				$("#price").html($(this).val() + "<i class='bi bi-x'></i>");
-			});
-			$("#price").on("click",function(){
-				$("#price").html("");
-				$("#price").attr("hidden",true);
-			});
+    $(function() {
+// 		debugger;
+//			alert("${param}")
+//			if(search){
+		var search = "";
+		var category = "";
+		var price = "";
+		if("${param.category}"){
+			category = "&category=${param.category}";
+			$("#category").attr("hidden",false);
+			$("#category").html("${param.category} <i class='bi bi-x'></i>");
+		}
+		if("${param.search}"){
+			search = "&search=${param.search}";
+			$("#search").attr("hidden",false);
+			$("#search").html("${param.search} <i class='bi bi-x'></i>");
+		}
+		if("${param.price}"){
+			price = "&price=${param.price}";
+			$("#price").attr("hidden",false);
+			$("#price").html("${param.price} <i class='bi bi-x'></i>");
+		}
+		
+		
+		$(".delete").on("click",function(){
+			let totalSearch = search + price + category;
+			let deleteSearch = $(this).text().trim();
+			
+			if(deleteSearch == "${param.price}"){
+				
+				totalSearch = totalSearch.replace(price,"");		
+			}else if(deleteSearch == "${param.search}"){
+				
+				totalSearch = totalSearch.replace(search,"");
+			}else if(deleteSearch == "${param.category}"){
+				
+				totalSearch = totalSearch.replace(category,"");
+			}
+			location.href="Shop?" + totalSearch;
 		});
+		
+		$(".cusor").on("click",function(){
+			location.href="Shop?category=" + $(this).text() + search + price;
+		});
+		$(".radio").on("click",function(){
+			location.href="Shop?price=" + $(this).val() + search + category;
+		});
+			
+	});
+
     </script>
 </body>
 
