@@ -42,7 +42,7 @@
                     <div class="header__nav__option" >
                         <a href="MyPageMain"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a>&nbsp;&nbsp;
                         <a href="#none" onclick="openChat()"><img src="${pageContext.request.contextPath }/resources/img/icon/chatting.png" style=" width: 20px" alt=""></a>
-                        <a href=""><img src="${pageContext.request.contextPath }/resources/img/icon/person.png" style=" width: 30px" alt="" ></a>
+                        <a href="Login"><img src="${pageContext.request.contextPath }/resources/img/icon/person.png" style=" width: 30px" alt="" ></a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
         </div>
         <script type="text/javascript">
         	function openChat() {
-        		window.open("MyChat", "MyChat","width=600, height=800");
+        		window.open("MyChat", "MyChat","width=500, height=700");
 			}
         </script>
     </header>
