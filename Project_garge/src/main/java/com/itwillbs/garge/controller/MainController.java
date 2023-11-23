@@ -3,6 +3,8 @@ package com.itwillbs.garge.controller;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,7 +56,9 @@ public class MainController {
 	}
 	// 안써도 될거같음
 	@GetMapping("Main")
-	public String main() {
+	public String main(HttpSession session) {
+		
+		session.setAttribute("sId", "hyeri123");
 		
 		return "main";
 	}
