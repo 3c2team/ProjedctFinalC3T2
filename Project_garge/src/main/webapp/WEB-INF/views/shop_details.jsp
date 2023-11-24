@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
@@ -12,6 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
 <title>Male-Fashion | Template</title>
 <jsp:include page="inc/style.jsp"></jsp:include>
+<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/shops_detail.js"></script>
 </head>
 <body>
 	<header>
@@ -28,13 +31,51 @@
                     <div class="col-lg-6 col-md-9">
 						<div class="tab-pane active" id="tabs-1" role="tabpanel">
 						    <div class="product__details__pic__item">
-						        <img src="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg" alt="">
+							    <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
+									<div class="carousel-indicators">
+										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+									</div>
+									<div class="carousel-inner">
+										<div class="carousel-item active">
+											<img class="product__details__pic__form" id="main_img" src="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg" class="d-block w-100" alt="...">
+										</div>
+										<div class="carousel-item">
+											<img class="product__details__pic__form" id="main_img" src="${pageContext.request.contextPath }/resources/img/shop-details/product-big.png" class="d-block w-100" alt="...">
+										</div>
+										<div class="carousel-item">
+											<img class="product__details__pic__form" id="main_img" src="${pageContext.request.contextPath }/resources/img/shop-details/product-big-2.png" class="d-block w-100" alt="...">
+										</div>
+									</div>
+										<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+											<span class="visually-hidden">Previous</span>
+										</button>
+										<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+											<span class="carousel-control-next-icon" aria-hidden="true"></span>
+											<span class="visually-hidden">Next</span>
+										</button>
+								</div>
 						    </div>
+							<div class="product__details__mini__pic">
+								<ul>
+								<!-- 이미지 업로드 수 만큼 조절해야함 -->
+<%-- 									<c:forEach var="product_img" items="${productMiniImgList }"> --%>
+										<li><a><img src="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg" id="mini_img" ></a></li>
+<%-- 									</c:forEach> --%>
+<%-- 									<c:if test="${not empty reviewList }"> --%>
+										<li><a><img src="${pageContext.request.contextPath }/resources/img/shop-details/thumb-1.png" id="mini_img" ></a></li>
+										<li><a><img src="${pageContext.request.contextPath }/resources/img/shop-details/thumb-2.png" id="mini_img" ></a></li>
+										<li><a><img src="${pageContext.request.contextPath }/resources/img/shop-details/thumb-3.png" id="mini_img" ></a></li>
+<%-- 									</c:if> --%>
+								</ul>					
+							</div>
 						</div>
                     </div>
 					<!-- 오른쪽 -->
                     <div class="col-lg-6 col-md-9">
-						<div class="product__details__content">
+						<div class="product__details__content" style="margin: 10%;">
 	                        <div class="product__details__breadcrumb">
 	                            <a href="./index.jsp">홈</a>
 	                            <a href="./shop.jsp">디지털기기</a>
@@ -62,7 +103,7 @@
 												</div>
 											</div>
 											<h6 style="text-align: left; margin-top: 30px">직거래 희망장소</h6>
-											<div id="map" style="margin-bottom:1em; width:400px; height:280px;"></div>
+											<div id="map" style="margin-bottom:1em; width:400px; height:190px;"></div>
 											<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d79e4be802855b8c8c9dc38e9b02f6d"></script>
 											<script>
 												var container = document.getElementById('map');
@@ -83,9 +124,9 @@
 									// 			// 마커가 지도 위에 표시되도록 설정합니다
 									// 			marker.setMap(map);
 									
-												var imageSrc = '${pageContext.request.contextPath }/resources/main_img/free-icon-food-and-restaurant-1515636.png', // 마커이미지의 주소입니다    
+												var imageSrc = '${pageContext.request.contextPath }/resources/img/shop-details/marker.png', // 마커이미지의 주소입니다    
 											    imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-											    imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+											    imageOption = {offset: new kakaao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 											      
 												// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
 												var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
@@ -194,7 +235,7 @@
 								            <div class="row" style="justify-content: space-between;">
 								                <div class="col">
 								                    <div class="product__item">
-						                                <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
+						                                <div class="product__item__pic set-bg" style="width: 170px;" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
 						                                    <ul class="product__hover">
 						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
 						<%--                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li> --%>
