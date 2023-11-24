@@ -9,12 +9,13 @@
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel2">비밀번호를 입력하세요.</h5>
 			</div>
-			<form action="">
+			
+			<form action="DeleteMember" name="DeleteMemberForm" method="post">
 				<div class="modal-body">
 					<div class="row">
 						<div class="col mb-3">
 							<label for="nameSmall" class="form-label"></label>
-							<input type="password" id="nameSmall" class="form-control" required="required" placeholder="PassWord" />
+							<input type="password" name="password" class="form-control" required="required" placeholder="PassWord" />
 						</div>
 					</div>
 				</div>
@@ -25,6 +26,7 @@
 					</button>
 				</div>
 			</form>
+			
 		</div>
 	</div>
 </div>

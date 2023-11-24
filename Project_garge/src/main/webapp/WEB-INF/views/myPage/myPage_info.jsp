@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%--
+
+	전화번호 수정
+	이메일 수정
+	정규식 추가
+	계정 연동
+	회원 탈퇴
+
+--%>
+
 <html
   lang="en"
   class="light-style layout-menu-fixed"
@@ -70,6 +81,26 @@
 	    margin: auto;
   	}
   </style>
+  
+  <script>
+    function submitForm() {
+    	var formData = $('#MyInfoModify').serialize();
+    	$.ajax({
+            type: 'POST',
+            url: 'MyInfoModify',
+            data: formData,
+            dataType: "json",
+            success: function(response) {
+            	// 판별 추가하기
+	            window.location.reload();
+            },
+            error: function() {
+                alert('서버 오류가 발생했습니다.');
+            }
+    	});
+    }
+</script>
+  
 </head>
 
 <body>
@@ -89,15 +120,13 @@
 							<div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
 								<div class="card h-100">
 									<div class="card-header d-flex align-items-center justify-content-center" style="flex-direction: column;">
-<!-- 										<h5 class="card-header m-0 me-2 pb-3"> 프로필 </h5> -->
 										<div class="mb-4 mt-5">
 											<div class="info-img">
 												<img src="${pageContext.request.contextPath }/resources/myPage/assets/img/avatars/FxxQO6pacAAZ808.jpg" class="rounded-circle" />
 											</div>
 										</div>
-										
 										<h5>
-											닉네임
+											${member.member_nick_name }
 											<a 
 												data-bs-toggle="modal"
 												href="#info_adit_modal"
@@ -105,14 +134,85 @@
 											</a>
 											<jsp:include page="modal/info_adit_modal.jsp"></jsp:include>
 										</h5>
-										<p>#239488</p>
+										<h5>${member.member_id } <span class="text-muted fw-light">(#${member.member_num })</span></h5>
+									</div>
+									<div class="card-body" style="padding-bottom: 0">
+										<div class="divider">
+											<div class="divider-text">
+												계정 연동
+											</div>									
+										</div>
+										<div class="card-header d-flex align-items-center justify-content-center" style="flex-direction: column;">
+											<h5>카카오 <span class="text-muted fw-light">연동하기</span></h5>
+											<h5>네이버 <span class="text-muted fw-light">연동하기</span></h5>
+										</div>
 									</div>
 								</div>
 							</div>
 							<div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
 								<div class="card">
-									<div class="row row-bordered g-0">
-										<h5 class="card-header m-0 me-2 pb-3"> 내 정보 </h5>
+									<div class="card-header d-flex justify-content-between align-items-center">
+										<h5 class="mb-0 fw-bold"> 내 정보 </h5>
+									</div>
+									<div class="card-body">
+										<div>
+											<label class="form-label text-muted">이름</label>
+											<h5>${member.member_name }</h5>
+										</div>
+										<div>
+											<label class="form-label text-muted">전화번호</label>
+											<h5>${member.member_phone_num }  <a 
+												data-bs-toggle="modal"
+												href="#modify_phone"
+											><i class="tf-icons bx bx-edit"></i>
+											</a></h5>
+											<jsp:include page="modal/modify_phone.jsp"></jsp:include>
+										</div>
+										<div>
+											<label class="form-label text-muted">이메일</label>
+											<h5>${member.member_e_mail }  <a 
+												data-bs-toggle="modal"
+												href="#modify_email"
+											><i class="tf-icons bx bx-edit"></i>
+											</a></h5>
+											<jsp:include page="modal/modify_email.jsp"></jsp:include>
+										</div>
+										<div class="divider">
+											<div class="divider-text">
+												대표 주소
+											</div>
+										</div>
+										<button class="btn btn-outline-primary" style="float: right;" onclick="location.href='MyAddress'">
+											<span class="tf-icons bx bx-edit me-1"></span>
+											수정
+										</button>
+										<div>
+											<label class="form-label text-muted">주소명
+											</label>
+											<h5>${member.address_name }</h5>
+											
+										</div>
+										<div>
+											<label class="form-label text-muted">주소</label>
+											<h5>[우편번호] ${member.address1 } ${member.address2 }</h5>
+										</div>
+										<div class="divider">
+											<div class="divider-text">
+												대표 계좌
+											</div>
+										</div>
+										<div>
+											<button class="btn btn-outline-primary" style="float: right;" onclick="location.href='MyAccount'">
+												<span class="tf-icons bx bx-edit me-1"></span>
+												수정
+											</button>
+											<label class="form-label text-muted">계좌명</label>
+											<h5>${member.account_name }</h5>
+										</div>
+										<div>
+											<label class="form-label text-muted">계좌 번호</label>
+											<h5>(${member.account_bank }) ${member.account_num }</h5>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -141,10 +241,12 @@
 									>
 								</div>
 								<%-- 모달창 버튼 --%>
-								<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_account_modal">회원탈퇴</button>
+								<button type="button" class="btn btn-danger" id="deleteButton" data-bs-toggle="modal" data-bs-target="#delete_account_modal">회원탈퇴</button>
+								<jsp:include page="modal/delete_account_modal.jsp"></jsp:include>
 							</div>
 						</div>
 						<!-- 탈퇴 -->
+						
 						
 					</div>
 				</div> <!-- Content Wrapper -->
