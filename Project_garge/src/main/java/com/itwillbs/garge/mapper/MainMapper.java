@@ -11,5 +11,7 @@ public interface MainMapper {
 
 	List<Map<String, String>> selectCategory();
 
+	List<Map<String, Object>> selectProduct(Map<String, String> map);
+
 
 }

@@ -7,5 +7,24 @@
     	<select id="selectCategory" resultType="map">
     		select * from CATEGORY
     	</select>
-
+    	
+    	<select id="selectProduct" resultType="map">
+    		SELECT product_name,product_price,category_name
+			  FROM result_product p
+			  JOIN CATEGORY c
+				ON p.category_num = c.category_idx
+			 WHERE 1=1
+			<if test="search != null">
+				  AND product_name like('%${search}%') 
+			</if>	  
+			<if test="category != null">
+				  AND category_name = #{category} 
+			</if>	  
+			<if test="maxPrice != null">
+				  AND #{maxPrice} + 1 > product_price
+			</if>	  
+			<if test="minPrice != null">
+				  AND product_price > #{minPrice} - 1
+			</if>	  
+    	</select>
     </mapper>

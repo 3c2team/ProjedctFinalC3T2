@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.itwillbs.garge.service.MainService;
 
@@ -64,12 +65,31 @@ public class MainController {
 		return "main";
 	}
 	@GetMapping("Shop")
-	public String shop(Model model) {
+	public String shop(Model model,@RequestParam(required = false) Map<String,String> map) {
 		
 		List<Map<String, String>> selectCategory = service.selectCategory();
-		System.out.println(selectCategory);
-		model.addAttribute("selectCategory",selectCategory);
 		
+//		System.out.println(selectCategory);
+		System.out.println(map);
+		if(map.get("price") != null) {
+			System.out.println("일단 이건 성공");
+			String[] price = map.get("price")
+							.replace("만원", "0000")
+							.replace("이상", "")
+							.replace("이하", "")
+							.trim()
+							.split("-");
+			for(int i = 0; i < price.length; i++) {
+				if(i == 1) {
+					map.put("minPrice", price[i]);
+				}
+				map.put("maxPrice", price[i]);
+			}
+		}
+		List<Map<String, Object>> selectProduct = service.selectProduct(map);
+		System.out.println(selectProduct);
+		model.addAttribute("selectProduct",selectProduct);
+		model.addAttribute("selectCategory",selectCategory);
 		return "shop";
 	}
 	@GetMapping("ShopDetails")

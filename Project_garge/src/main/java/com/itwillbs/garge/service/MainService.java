@@ -19,6 +19,9 @@ public class MainService {
 		// TODO Auto-generated method stub
 		return mapper.selectCategory();
 	}
-	
 
+	public List<Map<String, Object>> selectProduct(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return mapper.selectProduct(map);	
+	}
 }
