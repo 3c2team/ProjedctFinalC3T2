@@ -110,7 +110,7 @@
 		</li>
 	  <!-- User interface -->
 		<li class="menu-item">
-			<a href="javascript:void(0)" class="menu-link">
+			<a href="PagesTest" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-box"></i>
 				<div data-i18n="User interface">공지사항</div>
 			</a>

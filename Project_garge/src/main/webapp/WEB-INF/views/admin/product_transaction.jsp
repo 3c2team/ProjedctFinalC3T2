@@ -68,7 +68,7 @@
 		<div class="layout-container">
 			<%-- 사이드 메뉴 --%>
 			<jsp:include page="inc/side_menu.jsp"></jsp:include>  
-			<div class="layout-page">
+			<div class="layout-page" style="background: white;">
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
 						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">거래내역 /</span> 거래 방법 내역</h4>
@@ -238,5 +238,6 @@
 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
 	</body>
 </html>

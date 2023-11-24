@@ -48,7 +48,6 @@
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
-  <link href="${pageContext.request.contextPath }/resources/css/admin_style.css" rel="stylesheet" />
 	<style type="text/css">
 		.product{
 		    display: flex;
@@ -74,31 +73,28 @@
 					<div class="container-xxl flex-grow-1 container-p-y">
 						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">거래내역 /</span> 수수료 내역</h4>
 						<!--/Table -->
-<!-- 						<div class="card"> -->
+						<div class="card">
 							<h5 class="card-header">월간 수수료 내역</h5>
-							<br>
-							<div class="table-responsive text-nowrap" style="width: auto;">
+							<div class="table-responsive text-nowrap">
 								
 								<!-- -------------------------------------------------------------- -->
 								<div class="row">
 <!-- 									<div class="col-xl-6"> -->
-<!-- 										<div class="card shadow mb-4"> -->
+										<div class="card shadow mb-4">
 			                                <div class="card-header py-3">
-			                                    <h6 class="m-0 font-weight-bold text-primary" style="position: absolute;">Area Chart</h6>
+			                                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
 			                                </div>
 			                                <div class="card-body">
 					                        	<div class="chart-area">
-					                            	<canvas id="myAreaChart" style="display: block;width: 1000px;height: 200px;"></canvas>
+					                            	<canvas id="myAreaChart"></canvas>
 					                            </div>
 <!-- 					                         Styling for the area chart can be found in the -->
 <%-- 					                        <code>/js/demo/chart-area-demo.js</code> file. --%>
 					                        </div>
-<!-- 			                            </div> -->
+			                            </div>
 									</div>		
-								</div>
-								<br><br>
 									<!--/Table -->
-<!-- 									<div class="card"> -->
+									<div class="card">
 										<h5 class="card-header">수수료 상세  내역</h5>
 <!-- 										<div class="calendarContainer "> -->
 <%-- 											<button type="button"  onclick="setToday(this)"  class="calendarContainer  badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button> --%>
@@ -116,8 +112,8 @@
 <!-- 											</div> -->
 <!-- 										</div>	 -->
 											<form  id="frm">	
-												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;padding-top: 30px;">
-													<div class="calendarContainer" style="float:left;">
+												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;">
+													<div class="calendarContainer" style="float: right;">
 														<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button>
 														<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button>
 														<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button>
@@ -125,7 +121,7 @@
 														<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button>
 													</div>
 													<input type="hidden" id="searchType" name="searchType">
-													<div id="reservation_confirm_term_right" style="float: inline-end;">
+													<div id="reservation_confirm_term_right" style="float: left;">
 														<div class="calanderWrap">
 															<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate" 
 															value="${pageMaker.endDate}">
@@ -135,47 +131,111 @@
 													</div>
 												</div>
 											</form>	
-												<div class="table-responsive text-nowrap">
-											<form action="AdminNoticeDelete" method="post">
-												<table id="datatablesSimple">
-													<thead>
-														<tr>
-															<th style="text-align: center;">#</th>
-															<th style="text-align: center;">신고상품</th>
-															<th style="text-align: center;">판매자</th>
-															<th style="text-align: center;">신고사유</th>
-															<th style="text-align: center;">회원상태</th>
-															<th style="text-align: center;">회원설정</th>
-														</tr>
-													</thead>
-													<tbody>
-													<c:forEach var="selectNoticeList" items="${selectNoticeList }">
-														<tr>
-															<th><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></th>
-																			<th>${selectNoticeList.num }</th>
-															<td style="text-align: center;">강원하</td>
-															<td>
-															
-															</td>
-															<td style="text-align: center;"><span class="badge bg-label-hold me-1" style="font-size:small;">상태보류</span></td>
-															<td>
-																<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
-			                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
-															</td>
-														</tr>
-													</c:forEach>
-													</tbody>
-									</table>
-									<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	
-								</form>
+
+										<div class="table-responsive text-nowrap">
+											<table class="table">
+												<thead>
+													<tr>
+														<th width="50px"><input type="checkbox"></th>
+														<th>상품정보</th>
+														<th>구매자</th>
+														<th>입금액</th>
+														<th>수수료</th>
+													</tr>
+												</thead>
+												<tbody class="table-border-bottom-0">
+													<tr>
+														<td><input type="checkbox"></td>
+														<td>
+															<div class="product">
+																<img width="80px" src="../assets/img/elements/1.jpg">
+																<div class="product_info"><strong>****상품명****</strong><a>15,000원</a></div>
+															</div>
+														</td>
+														<td>홍길동</td>
+														<td>
+									                        <span class="badge bg-label-approval me-1">15,000원</span>	
+														</td>
+														<td>
+															<span class="badge bg-label-hold me-1">450원</span>
+														</td>
+														
+													</tr>
+													
+													<tr>
+														<td><input type="checkbox"></td>
+														<td>
+															<div class="product">
+																<img width="80px" src="../assets/img/elements/1.jpg">
+																<div class="product_info"><strong>****상품명****</strong><a>35,000원</a></div>
+															</div>
+														</td>
+														<td>고길동</td>
+														<td>
+									                        <span class="badge bg-label-approval me-1">32,000원</span>	
+														</td>
+														<td>
+															<span class="badge bg-label-hold me-1">960원</span>
+														</td>
+													</tr>
+													<tr>
+														<td><input type="checkbox"></td>
+														<td>
+															<div class="product">
+																<img width="80px" src="../assets/img/elements/1.jpg">
+																<div class="product_info"><strong>****상품명****</strong><a>35,000원</a></div>
+															</div>
+														</td>
+														<td>고길동</td>
+														<td>
+									                        <span class="badge bg-label-approval me-1">32,000원</span>	
+														</td>
+														<td>
+															<span class="badge bg-label-hold me-1">960원</span>
+														</td>
+													</tr>
+													<tr>
+														<td><input type="checkbox"></td>
+														<td>
+															<div class="product">
+																<img width="80px" src="../assets/img/elements/1.jpg">
+																<div class="product_info"><strong>****상품명****</strong><a>35,000원</a></div>
+															</div>
+														</td>
+														<td>고길동</td>
+														<td>
+									                        <span class="badge bg-label-approval me-1">32,000원</span>	
+														</td>
+														<td>
+															<span class="badge bg-label-hold me-1">960원</span>
+														</td>
+													</tr>
+													<tr>
+														<td><input type="checkbox"></td>
+														<td>
+															<div class="product">
+																<img width="80px" src="../assets/img/elements/1.jpg">
+																<div class="product_info"><strong>****상품명****</strong><a>35,000원</a></div>
+															</div>
+														</td>
+														<td>고길동</td>
+														<td>
+									                        <span class="badge bg-label-approval me-1">32,000원</span>	
+														</td>
+														<td>
+															<span class="badge bg-label-hold me-1">960원</span>
+														</td>
+													</tr>
+												</tbody>
+											</table>
 										</div>
-<!-- 									</div> -->
+									</div>
 									  	
 								
 								
 								<!-- -------------------------------------------------------------- -->
-<!-- 							</div> -->
-						
+							</div>
+						</div>
 						<!--/Table -->
 					</div>
 				</div>
@@ -236,11 +296,5 @@
     <script src="${pageContext.request.contextPath }/resources/admin/vendor/chart.js/Chart.min.js"></script>
     <!-- Page level custom scripts -->
     <script src="${pageContext.request.contextPath }/resources/admin/js/demo/chart-area-demo.js"></script>
-    
-    <script
-		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-		crossorigin="anonymous"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
 	</body>
 </html>

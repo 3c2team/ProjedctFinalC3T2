@@ -117,9 +117,9 @@ var webSocket = new WebSocket("<%=application.getInitParameter("CHAT_ADDR")%>/Ch
 </head>
 <body>
 	아이디:
-	<input type="text" id="chatId" value="${ param.chatId }" readonly />
+	<input type="text" id="chatId" value="${ sessionScope.sId }" readonly />
 	<button id="closeBtn" onclick="disconnect();">채팅 종료</button>
-	<div id="chatWindow" style=" width: 85%; height: 650px"></div>
+	<div id="chatWindow" style=" width: 85%; height: 550px"></div>
 	<div>
 		<input type="text" id="chatMessage" onkeyup="enterKey();">
 		<button id="sendBtn" onclick="sendMessage();">전송</button>

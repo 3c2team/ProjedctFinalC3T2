@@ -76,7 +76,10 @@ public class AdminController {
 	
 	// 채팅하기
 	@GetMapping("/MyChat")
-	public String myChat() {
+	public String myChat(HttpSession session) {
+		String sId = (String)session.getAttribute("sId");
+		System.out.println("sId : " + sId);
+		
 		
 		return "myChat";
 	}
@@ -100,6 +103,12 @@ public class AdminController {
 //		}
 		
 		return "admin/admin_main";
+	}
+	
+	@GetMapping("/PagesTest")
+	public String pageTest() {
+		
+		return "admin/pagesTest";
 	}
 	
 }

@@ -57,15 +57,16 @@
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
 	<style type="text/css">
-		.product{
-		    display: flex;
-    		align-items: center;
-		}
-		.product_info{
-			margin-left: 20px;
-		    display: flex;
-		    flex-direction: column;
-		}
+/* 		.product{ */
+/* 		    display: flex; */
+/*     		align-items: center; */
+/* 		} */
+/* 		.product_info{ */
+/* 			margin-left: 20px; */
+/* 		    display: flex; */
+/* 		    flex-direction: column; */
+/* 		} */
+		.text-xs{font-size:.9rem}
 	</style>
 </head>
 
@@ -93,8 +94,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                               UP-PAY</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                              금일 수수료 금액</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">200,000 원</div>
                                         </div>
                                         <div class="col-auto">
 <!--                                             <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
@@ -111,8 +112,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                KAKAO-PAY</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                                금일 거래량</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">30 건</div>
                                         </div>
                                         <div class="col-auto">
 <!--                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i> -->
@@ -128,19 +129,20 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Bank Transfer
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">금일 회원가입 수
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+<!--                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div> -->
+													<div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
                                                 </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
+<!--                                                 <div class="col"> -->
+<!--                                                     <div class="progress progress-sm mr-2"> -->
+<!--                                                         <div class="progress-bar bg-info" role="progressbar" -->
+<!--                                                             style="width: 50%" aria-valuenow="50" aria-valuemin="0" -->
+<!--                                                             aria-valuemax="100"></div> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -158,7 +160,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Direct Transaction</div>
+                                               금일 회원탈퇴 수</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
