@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.itwillbs.garge.mapper.MemberMapper">
+	<insert id="insertMember">
+		INSERT
+			INTO MEMBER
+			(member_name, member_nick_name, member_id, member_passwd, member_e_mail, mail_auth_status, member_insert_date, member_phone_num, member_birth_day)
+			VALUES (
+				  #{member_name}
+				, #{member_nick_name}
+				, #{member_id}
+				, #{member_passwd}
+				, CONCAT(#{member_email1}, '@', #{member_email2})
+				, 'N'
+				, now()
+				, #{member_phone_num}
+				, #{member_birth}
+			)
+	</insert>
+	
+	<!-- 기존 인증정보 조회 - SELECT -->
+	<!-- 전달받은 아이디(id)에 해당하는 auth_info 테이블의 레코드 조회 -->
+	<select id="selectAuthInfo" resultType="com.itwillbs.garge.vo.AuthInfoVO">
+		SELECT *
+		FROM auth_info
+		WHERE member_id = #{member_id}
+	</select>
+	
+	<!-- 인증정보 등록 - INSERT -->
+	<insert id="insertAuthInfo">
+		INSERT
+		INTO auth_info
+		VALUES (
+			#{member_id}
+			, #{authCode}
+		)
+	</insert>
+	
+	<!-- 기존 인증정보 갱신 - UPDATE -->
+	<!-- 아이디에 해당하는 레코드의 인증코드를 수정 -->
+	<update id="updateAuthInfo">
+		UPDATE auth_info
+		SET auth_code = #{authCode}
+		WHERE member_id = #{member_id}
+	</update>
+	
+	<!-- 회원 인증상태 변경 - UPDATE -->
+	<!-- member 테이블의 아이디에 해당하는 레코드의 인증상태(member_auth_status) 컬럼값 "Y" 로 변경 -->
+	<update id="updateMailAuthStatus">
+		UPDATE MEMBER
+		SET mail_auth_status = 'Y'
+		WHERE member_id = #{member_id}
+	</update>
+	
+	<!-- 인증정보 삭제 - DELETE -->
+	<!-- auth_info 테이블의 아이디에 해당하는 레코드의 인증정보 삭제 -->
+	<delete id="deleteAuthInfo">
+		DELETE FROM auth_info
+		WHERE member_id = #{member_id}
+	</delete>
+	
+	<!-- 암호화 된 패스워드 조회 - SELECT -->
+	<!-- member 테이블의 아이디에 해당하는 패스워드 조회 -->
+	<!-- resultType 은 MemberVO 타입 또는 string(String) 타입 활용 -->
+	<select id="selectPasswd" resultType="string">
+		SELECT member_passwd
+		FROM MEMBER
+		WHERE member_id = #{member_id}
+	</select>
+	
+<!-- 	<select id="selectMember" resultType="string"> -->
+<!-- 		SELECT * -->
+<!-- 		FROM MEMBER -->
+<!-- 		WHERE member_name = #{member_name} -->
+<!-- 	</select> -->
+	
+	<select id="selectMemberLogin" resultType="com.itwillbs.garge.vo.MemberVO">
+		SELECT *
+		FROM MEMBER
+		WHERE member_id = #{member_id}
+	</select>
+
+	<select id="selectMember" resultType="string">
+		SELECT member_id
+		FROM MEMBER
+		WHERE member_name = #{member_name}
+	</select>
+	
+	<select id="selectMemberId" resultType="string">
+		SELECT member_id
+		FROM MEMBER
+		WHERE member_phone_num = #{member_phone_num}
+	</select>
+	
+	<update id="updateMemberPasswd">
+		UPDATE MEMBER
+		SET member_passwd = #{securePasswd}
+		WHERE member_id = #{member_id}
+	</update>
+	
+	<select id="selectMemberEmail" resultType="string">
+		SELECT member_e_mail
+		FROM MEMBER
+		WHERE member_id = #{member_id}
+	</select>
+	
+	<select id="selectCheckId" resultType="int">
+		SELECT count(*)
+		FROM MEMBER
+		WHERE member_id=#{member_id}
+	</select>
+	
+	<!-- 회원상세정보 조회 -->
+	<select id = "selectMemberDetails" resultType="com.itwillbs.garge.vo.MemberVO">
+		SELECT*
+		FROM MEMBER 
+		WHERE member_id = #{member_id}
+	</select>
+	
+	<select id="selectMemberKakaoLogin" resultType="com.itwillbs.garge.vo.MemberVO">
+		SELECT *
+		FROM MEMBER
+		WHERE kakao_id = #{kakao_id}
+	</select>
+	
+	<update id="updateKakaoId">
+		UPDATE MEMBER
+		SET kakao_id = #{kakao_id}
+		WHERE member_id = #{member_id}
+	</update>
+	
+	
+	<select id="selectNoticeListCount" resultType="int">
+		SELECT COUNT(*)
+		FROM NOTICE
+		<if test="!searchKeyword.equals('')">
+			WHERE
+			<choose>
+				<when test="searchType.equals('subject')">
+						notice_subject LIKE CONCAT('%', #{searchKeyword}, '%')
+				</when>
+				<when test="searchType.equals('content')">
+						notice_content LIKE CONCAT('%', #{searchKeyword}, '%')
+				</when>
+				<when test="searchType.equals('subject_content')">
+						notice_subject LIKE CONCAT('%', #{searchKeyword}, '%')
+						OR notice_content LIKE CONCAT('%', #{searchKeyword}, '%')
+				</when>
+			</choose>
+		</if>
+	</select>
+	
+	
+	<select id="selectMemberDup" resultType="com.itwillbs.garge.vo.MemberVO">
+		SELECT *
+		FROM MEMBER
+		WHERE member_id = #{member_id}
+	</select>
+	
+	<select id="selectMemberDupPhone" resultType="com.itwillbs.garge.vo.MemberVO">
+		SELECT *
+		FROM MEMBER
+		WHERE member_phone_num = #{member_phone_num}
+	</select>
+	
+</mapper>

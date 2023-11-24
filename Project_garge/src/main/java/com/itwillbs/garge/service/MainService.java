@@ -20,13 +20,5 @@ public class MainService {
 		return mapper.selectCategory();
 	}
 	
-	// 주소 가져오기
-	public List<Map<String, String>> getMemberAddress(String sId) {
-		return mapper.selectMemberAddress();
-	}
-
-	public MemberVO getMemberLogin(String uid) {
-		return mapper.selectMember(uid);
-	}
 
 }

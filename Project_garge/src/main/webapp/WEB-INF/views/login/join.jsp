@@ -1,321 +1,138 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lnag="ko">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Join the GARGE</title>
-<!--     <script src="login.js"></script> -->
-    <style>
- 
-/*회원가입 부분*/
-.main-signup{
-    text-align: center;
-    width: 460px;
-    margin: auto;
-}
-h3{
-    margin:19px 0px 8px;
-    text-align: left;
-    font-size: 14px;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
-}
-.signup-input{
-    display:flex;
-    /* margin: 0px 10px 8px 10px; */
-    padding: 10px;
-    border: solid 1px #dadada;
-    background: #fff;
-    cursor: pointer;
-    border-radius: 20px;
-}
-.signup-input-c{
-    display:flex;
-    /* margin: 0px 10px 8px 10px; */
-    padding: 10px;
-    border: solid 1px #dadada;
-    background: #f5f6f7;
-    cursor: pointer;
-    border-radius: 20px;
-}
-.signup-input-c input{
-    background: #f5f6f7;
-}
-#signup-id, #signup-pw, #signup-pww{
-    height: 29px;
-    border: none;
-    outline:none;
-    width:100%;
-}
-.pw-lock{
-    /* content: ''; */
-    /* display: inline-block; */
-    top: 50%;
-    right: 13px;
-    width: 24px;
-    height: 24px;
-    margin-top: 5px;
-    background-image: url(https://static.nid.naver.com/images/ui/join/m_icon_pw_step.png);
-    background-size: 125px 75px;
-    cursor: pointer;
-}
-.pww-lock{
-    /* content: ''; */
-    /* display: inline-block; */
-    top: 50%;
-    right: 13px;
-    width: 24px;
-    height: 24px;
-    margin-top: 5px;
-    background-image: url(https://static.nid.naver.com/images/ui/join/m_icon_pw_step.png);
-    background-size: 125px 75px;
-    cursor: pointer;
-}
-
-.signup-input-birth{
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 51px;
-    border: solid 1px #dadada;
-    padding: 10px;
-    background: #fff;
-    box-sizing: border-box;
-    border-radius: 20px;
-}
-#signup-birth-yy, #signup-birth-mm, #signup-birth-dd{
-    width: 113px;
-    height: 29px;
-    border: none;
-    outline:none;
-}
-#signup-name, #signup-gender, #signup-email, #signup-country, #signup-phone, #signup-cnum{
-    width:100%;
-    height: 29px;
-    border: none;
-    outline:none;
-}
-#signup-gender{
-    background-color: white;
-}
-#signup-country{
-    background-color: white;
-}
-#signup-birth-mm{
-    background-color: white;
-}
-/*본인 확인 이메일*/
-.choice{
-    display: flex;
-}
-.choice span{
-    margin-top: 20px;
-    color: rgb(150, 150, 150);
-    font-size: 13px;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
-}
-/*회원가입버튼박스*/
-.signup-btn-wrap{
-    height: 52px;
-    line-height: 55px;
-    margin: 10px 0px 50px 0px;
-    border: solid 1px rgba(0,0,0,.1);
-    background-color: #9F13D4;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 20px;
-}
-/*회원가입버튼*/
-#signup-btn{
-    width:100px;
-    background-color: #9F13D4;
-    border: none;
-    color:#fff;
-    font-size: 18px;
-    outline:none;
-    cursor: pointer;
-}
-/*인증번호버튼박스*/
-.cnum-btn-wrap{
-    height: 52px;
-    line-height: 55px;
-    margin: 10px 0px 0px 10px;
-    border: solid 1px rgba(0,0,0,.1);
-    background-color: #9F13D4;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 20px;
-}
-/*인증번호버튼*/
-#cnum-btn{
-    width:115px;
-    background-color: #9F13D4;
-    border: none;
-    color:#fff;
-    font-size: 15px;
-    outline:none;
-    cursor: pointer;
-}
-
-#loginBoxTitle {
-      color:#000000;
-      font-weight: bold;
-      font-size: 32px;
-      text-transform: uppercase;
-      padding: 5px;
-      margin-bottom: 20px;
-      background: linear-gradient(to right, #5F12D3, #8ca6ce);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-</style>
-	
-	
+<meta charset="UTF-8">
+<title>J'ai Faim</title>
+<!-- 공통 메소드들 정리해논 파일 -->
 </head>
+<meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Male-Fashion | Template</title>
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/join.css" type="text/css">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
 <body>
-
-    <div class="main-signup">
-        <!--웹페이지 상단-->
-        <header>
-            <div id="loginBoxTitle">Welcome GARGE!</div>
-        </header>
-
-        <!--회원가입 부분-->
-        <section class="signup-wrap">
-
-            <div>
-                <!--아이디,비번,비번재확인-->
-
-                <h3>아이디</h3>
-                <span class="signup-input">
-                    <input id="signup-id" type="text"></input>
-                </span>
-
-                <h3>비밀번호</h3>
-                <span class="signup-input">
-                    <input id="signup-pw" type="text"></input>
-                    <span class="pw-lock"></span>
-                </span>
-
-                <h3>비밀번호 재확인</h3>
-                <span class="signup-input">
-                    <input id="signup-pww" type="text"></input>
-                    <span class="pww-lock"></span>
-                </span>
-
-            </div>
-
-            <div style="margin-top: 20px;">
-                <!--이름,생년월일,성별,이메일-->
-                <h3>이름</h3>
-                <span class="signup-input">
-                    <input id="signup-name" type="text"></input>
-                </span>
-                
-                <h3>닉네임</h3>
-                <span class="signup-input">
-                    <input id="signup-name" type="text"></input>
-                </span>
-
-                <h3>생년월일</h3>
-                <span style="display: flex;">
-                    <span class="signup-input-birth">
-                        <input id="signup-birth-yy" type="text" placeholder="년(4자)"></input>
-                    </span>
-                    <span class="signup-input-birth" style="margin-left: 10px;">
-                        <select id="signup-birth-mm" class="selectbox" name="month" onchange="">
-                            <option value="month">월</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                    </span>
-                    <span class="signup-input-birth" style="margin-left: 10px;">
-                        <input id="signup-birth-dd" type="text" placeholder="일"></input>
-                    </span>
-                </span>
-
-                <h3>성별</h3>
-                <span class="signup-input">
-                    <select id="signup-gender" class="selectbox" name="gender" onchange="">
-                        <option value="gender">성별</option>
-                        <option value="man">남자</option>
-                        <option value="woman">여자</option>
-                        <option value="no">선택 안함</option>
-                    </select>
-                </span>
-
-                <span class="choice">
-                    <h3>본인 확인 이메일</h3>
-                </span>
-                <div style="display: flex;">
-                    <span class="signup-input" style="width:100%; margin: 10px 0px 0px 0px">
-                        <input id="signup-phone" type="text" placeholder="이메일주소 입력"></input>
-                    </span>
-                    <span class="cnum-btn-wrap">
-                        <button id="cnum-btn">인증메일 받기</button>
-                    </span>
-                    
-                </div>
-				<span class="signup-input-c" style="margin-top: 10px;">
-                    <input id="signup-cnum" type="text" placeholder="메일인증번호 입력하세요"></input>
-                </span>
-            </div>
-
-            <div style="margin-top: 20px;">
-                <!--휴대전화-->
-                <h3>휴대전화</h3>
-                <div style="display: flex;">
-                    <span class="signup-input" style="width:100%; margin: 10px 0px 0px 0px">
-                        <input id="signup-phone" t1ype="text" placeholder="전화번호 입력"></input>
-                    </span>
-                    <span class="cnum-btn-wrap">
-                        <button id="cnum-btn">인증문자 받기</button>
-                    </span>
-                </div>
-                
-                <span class="signup-input-c" style="margin-top: 10px;">
-                    <input id="signup-cnum" type="text" placeholder="문자인증번호 입력하세요"></input>
-                </span>
-            </div>
-
-            <div>
-                <!--가입하기-->
-                <div class="signup-btn-wrap">
-                    <button id="signup-btn">가입하기</button>
-                </div>
-            </div>
-        </section>
-
-        <!--저작권 정보-->
-        <footer>
-            <div class="copyright-wrap" style="font-size: 12px;">
-                <div>© GARGE Corp.</div>
-            </div>
-        </footer>
-
-    </div>
-<script>
-  // "가입하기" 버튼에 대한 참조를 가져옵니다.
-  var signupButton = document.getElementById('signup-btn');
-
-  // 버튼에 클릭 이벤트 리스너를 추가합니다.
-  signupButton.addEventListener('click', function() {
-    // account_auth.jsp 페이지로 이동합니다.
-    window.location.href = 'AccountAuth';
-  });
-</script>
+	<header>
+	
+		<!-- top.jsp 페이지를 현재 페이지에 삽입 -->
+		<jsp:include page="../inc/top.jsp"></jsp:include>
+	</header>
+	<article>
+		<p class="sign" align="center">회원가입</p>
+		<%-- MemberJoinPro.me 서블릿 주소 요청 --%>
+		<form action="JoinPro" name="joinForm" method="post" onsubmit="return checks()">
+			<input type="hidden" name="c1" id="c1" value="${member.c1}">
+			<input type="hidden" name="c2" id="c2" value="${member.c2}">
+			<input type="hidden" name="c3" id="c3" value="${member.c3}">
+			<input type="hidden" name="c4" id="c4" value="${member.c4}">
+			<table style="margin-top: -9%">
+				<tr>
+					<th>이름</th>
+					<td><input type="text" name="member_name" id="member_name" size="20"></td>
+				</tr>
+				<tr>
+					<th>닉네임</th>
+					<td><input type="text" name="member_nick_name" id="member_nick_name" size="20"></td>
+				</tr>
+				<tr>
+					<th>ID</th>
+					<td>
+						<input type="text" name="member_id" id="member_id" size="24">
+						<br><span id="checkIdResult">영문소문자/숫자, 4~16자</span>
+					</td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td>
+						<input type="password" name="member_passwd" id="member_passwd" size="24">
+						<br><span id="checkPasswdResult">영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자</span>
+					</td>
+				</tr>
+				<tr>
+					<th>비밀번호 확인</th>
+					<td>
+						<input type="password" name="member_passwd2" id="member_passwd2" size="24">
+						<br><span id="checkPasswd2Result"></span>
+					</td>
+				</tr>
+				<tr>
+					<th>주소</th>
+					<td>
+						<input type="text" name="member_address1" id="member_address1" placeholder="기본주소" size="25">
+						<input type="button" id="btnSearchAddress" value="주소검색"><br>
+						<input type="text" name="member_address2" id="member_address2" placeholder="상세주소" size="25">
+					</td>
+				</tr>
+				<tr>
+					<th>E-Mail</th>
+					<td>
+						<input type="text" name="member_email1" id="member_email1" required size="10">&nbsp;@<input type="text" name="member_email2" id="member_email2" size="10">
+						<select id="member_emailDomain">
+							<option value="">직접입력</option>
+							<option value="naver.com">naver.com</option>
+							<option value="nate.com">nate.com</option>
+							<option value="gmail.com">gmail.com</option>
+							<option value="daum.net">daum.net</option>
+						</select>
+						<br><span style="color: gray;">인증번호를 이메일로 보내드리니 한번 더 확인 후 가입해주세요.</span>
+					</td>
+				</tr>
+				<tr>
+					<th>전화번호</th>
+					<td>
+						<input type="text" name="member_phone_num" id="member_phone_num" size="20">
+						<br><span id="checkPhoneResult">000-0000-0000</span>
+					</td>
+				</tr>
+				<tr>
+					<th>생일</th>
+					<td><input type="date" name="member_birth" id="member_birth" size="20"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center" >
+						<!-- <button type="button" id="btnCheck" value="가입" onclick="checks()"> -->
+<!-- 						<input type="button" id="btnTest" value="테스트"> -->
+						<input type="submit" id="btnCheck" value="가입">
+						<input type="reset" value="초기화">
+<!-- 						<input type="button" value="돌아가기" onclick=""> -->
+					</td>
+				</tr>
+			</table>
+		</form>
+	</article>
+	<footer id="footer">
+		<jsp:include page="../inc/bottom.jsp"></jsp:include>
+	</footer>
+<!-- Js Plugins -->
+    <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/jquery.nice-select.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/jquery.nicescroll.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/jquery.magnific-popup.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/jquery.countdown.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/jquery.slicknav.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/mixitup.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/owl.carousel.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/main.js"></script>
 </body>
-
 </html>

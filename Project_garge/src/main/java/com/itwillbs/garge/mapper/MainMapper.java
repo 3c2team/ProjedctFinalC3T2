@@ -11,8 +11,5 @@ public interface MainMapper {
 
 	List<Map<String, String>> selectCategory();
 
-	List<Map<String, String>> selectMemberAddress();
-
-	MemberVO selectMember(String uid); 
 
 }

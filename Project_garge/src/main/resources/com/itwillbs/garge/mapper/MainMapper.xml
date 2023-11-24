@@ -8,13 +8,4 @@
     		select * from CATEGORY
     	</select>
 
-    	<select id="selectMemberAddress" resultType="map">
-    		SELECT * FROM MY_ADDRESS
-    		WHERE member_id = #{sId}
-    	</select>
-    	
-    	<select id="selectMember" resultType="com.itwillbs.garge.vo.MemberVO">
-    		SELECT * FROM MEMBER
-    		WHERE member_id = #{uid}
-    	</select>
     </mapper>
