@@ -54,8 +54,8 @@
 			<div class="custom_font_13px text">
 				(주)가지는 범죄 피해방지를 위해 해당 서비스를 운영하고 있습니다. 피해 사례 결과에 대해 중고나라는 보증하지 않으며, 거래에 대한 법적 책임은 당사자에게 있습니다.
 			</div>
-			<div class="fw-bold font2">
-				경찰청 사이버 수사국 바로가기 >
+			<div class="fw-bold font2" >
+				<div id="police">경찰청 사이버 수사국 바로가기 ></div>
 			</div>
 			<hr class="custom_border_grove">
 			<div class="d-grid gap-2">

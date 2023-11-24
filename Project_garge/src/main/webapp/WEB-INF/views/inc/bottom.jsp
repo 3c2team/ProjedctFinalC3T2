@@ -93,10 +93,4 @@
     <script src="${pageContext.request.contextPath }/resources/js/owl.carousel.min.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/admin_easterEgg.js"></script>
-    <script type="text/javascript">
-     	function isSubmit() {
-	     	if($("input[type=text][name=search]").val() == ''){
-	     		return false;
-	     	}
-		}
-     </script>
+    <script src="${pageContext.request.contextPath }/resources/js/etc.js"></script>

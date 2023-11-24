@@ -5,7 +5,7 @@
     
     <mapper namespace="com.itwillbs.garge.mapper.MainMapper">
     	<select id="selectCategory" resultType="map">
-    		select * from category
+    		select * from CATEGORY
     	</select>
 
     	<select id="selectMemberAddress" resultType="map">
