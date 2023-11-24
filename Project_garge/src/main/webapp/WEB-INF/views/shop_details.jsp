@@ -124,9 +124,9 @@
 									// 			// 마커가 지도 위에 표시되도록 설정합니다
 									// 			marker.setMap(map);
 									
-												var imageSrc = '${pageContext.request.contextPath }/resources/img/shop-details/marker.png', // 마커이미지의 주소입니다    
-											    imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-											    imageOption = {offset: new kakaao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+												var imageSrc = "${pageContext.request.contextPath }/resources/img/shop-details/marker.png", // 마커이미지의 주소입니다    
+											    	imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+											    	imageOption = {offset: new kakaao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 											      
 												// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
 												var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
@@ -169,17 +169,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__tab">
-                             <div class="row">
-<!-- 			                   <div class="product__details__tab"> -->
-<!-- 		                            <ul class="nav justify-content-center"> -->
-<!-- 										<li class="nav-item"> -->
-<!-- 											<a class="nav-link active" href="#tabs-5">Active</a> -->
-<!-- 										</li> -->
-<!-- 										<li class="nav-item"> -->
-<!-- 											<a class="nav-link" href="#tabs-6">Link</a> -->
-<!-- 										</li> -->
-<!-- 									</ul> -->
-<!--                             	</div> -->
+							<div class="row">
                             <div class="tab-content">
                             <div class="product__content__all">
                                 <div class="tab-pane active" id="tabs-5" role="tabpanel">
@@ -235,7 +225,7 @@
 								            <div class="row" style="justify-content: space-between;">
 								                <div class="col">
 								                    <div class="product__item">
-						                                <div class="product__item__pic set-bg" style="width: 170px;" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
+						                                <div class="product__item__pic set-bg" style="width: 170px; height: 170px;" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
 						                                    <ul class="product__hover">
 						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
 						<%--                                         <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/compare.png" alt=""> <span>Compare</span></a></li> --%>
@@ -252,7 +242,7 @@
 								                </div>
 								                <div class="col">
 								                    <div class="product__item sale">
-						                                <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
+						                                <div class="product__item__pic set-bg" style="width: 170px; height: 170px;" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
 						                                    <span class="label">무료나눔</span>
 						                                    <ul class="product__hover">
 						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
@@ -270,7 +260,7 @@
 								                </div>
 								                <div class="col">
 								                    <div class="product__item sale">
-						                                <div class="product__item__pic set-bg" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
+						                                <div class="product__item__pic set-bg" style="width: 170px; height: 170px;" data-setbg="${pageContext.request.contextPath }/resources/img/shop-details/ex.jpg">
 						                                    <span class="label">무료나눔</span>
 						                                    <ul class="product__hover">
 						                                        <li><a href="#"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a></li>
