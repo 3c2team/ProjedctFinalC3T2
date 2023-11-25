@@ -10,7 +10,7 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo" id="easterEgg" onclick="easterEgg()">
 <!--                     <div class="header__logo" id="easterEgg" > -->
-                        <a href="./"><img src="${pageContext.request.contextPath }/resources/img/logo.png" alt=""></a>
+                        <a href="./"><img src="${pageContext.request.contextPath }/resources/img/tradeup.jpg" style="size: 70%" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

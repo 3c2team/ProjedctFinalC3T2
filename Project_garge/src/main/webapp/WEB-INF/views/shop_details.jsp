@@ -15,6 +15,19 @@
 <jsp:include page="inc/style.jsp"></jsp:include>
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/shops_detail.js"></script>
+<script type="text/javascript">
+// 	function payCheck(){
+// 		if(${sessionScope.sId} == null){
+// 			alert("로그인 후 이용바랍니다.");
+// 			return;
+// 		}
+// 		if(${sessionScope.sChat} == null){
+// 			alert("채팅 후 안심거래 하시길 바랍니다.");
+// 			return;
+// 		}
+		
+// 	}
+</script>
 </head>
 <body>
 	<header>
@@ -154,7 +167,7 @@
 				                            </div>
 											<div class="product__details__cart__option">
 				                                <a href="#" class="primary-btn">채팅하기</a>
-				                                <a href="#" class="primary-btn">안심거래하기</a>
+				                                <a href="#" class="primary-btn" onclick="payCheck()">안심거래하기</a>
 				                            </div>
 										</div>
 									</div>

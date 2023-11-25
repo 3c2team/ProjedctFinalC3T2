@@ -2066,6 +2066,7 @@ ol {
 .card-main li {
     margin: 1rem;
     list-style: none;
+    color: #6c757d;
 }
 
 .card-main a {

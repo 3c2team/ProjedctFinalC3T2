@@ -18,7 +18,7 @@
     <!-- 본문 시작 -->
     <form action="shop">
     	<section class="contact shop_spad">
-	        <div class="container">
+	        <div class="container" style="background-color: lavender; padding: 50px;">
 				<div class="section-title">
 				    <h2>판매하기</h2>
 				</div>
@@ -114,23 +114,23 @@
 </body>
 <script type="text/javascript">
 	
-	function insertCheck(){
-		if($('input[name=reservation_time]:checked').val() == "undefined" || $('input[name=reservation_time]:checked').val() == "" || $('input[name=reservation_time]:checked').val() == null){
-			alert("예약 시간을 선택해주세요.");
-			return false;
-		}
-		if ($("#reservation_person_name").val() == "") {
-			alert("성함을 입력해주세요.");
-			return false;
-		}
-		if(emailEvtFn()){
-			var result = confirm("예약 하시겠습니까?");
-			if(result){
-				$("form").submit();
-			}
-		}
-		return false;
-	}
+// 	function insertCheck(){
+// 		if($('input[name=reservation_time]:checked').val() == "undefined" || $('input[name=reservation_time]:checked').val() == "" || $('input[name=reservation_time]:checked').val() == null){
+// 			alert("예약 시간을 선택해주세요.");
+// 			return false;
+// 		}
+// 		if ($("#reservation_person_name").val() == "") {
+// 			alert("성함을 입력해주세요.");
+// 			return false;
+// 		}
+// 		if(emailEvtFn()){
+// 			var result = confirm("예약 하시겠습니까?");
+// 			if(result){
+// 				$("form").submit();
+// 			}
+// 		}
+// 		return false;
+// 	}
 	
 </script>
 </html>
