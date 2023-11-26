@@ -111,4 +111,33 @@ public class AdminController {
 		return "admin/pagesTest";
 	}
 	
+	@PostMapping("/SearchList")
+	public String searchList(
+			@RequestParam(defaultValue = "1990-01-01") String startDate, 
+			@RequestParam(defaultValue = "") String endDate) {
+		
+		System.out.println("SearchList => 시작일자 : " + startDate + ", 종료일자 : " + endDate);
+		
+		
+		return "";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

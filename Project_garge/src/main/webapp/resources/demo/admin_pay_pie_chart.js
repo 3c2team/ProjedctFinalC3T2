@@ -2,6 +2,14 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
+$("#search_btn").click(function(){
+	var start = $("input[name=startDate]").val();
+	var end = $("input[name=endDate]").val();
+	alert("start : " + start + ", end :" + end);
+	console.log("start : " + start + "end" + "end");
+});
+
+
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
 //$.ajax({

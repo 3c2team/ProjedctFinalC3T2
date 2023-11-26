@@ -80,25 +80,22 @@
 						<div class="card">
 							<h5 class="card-header">신고 목록</h5>
 								<form  id="frm">	
-												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;padding-top: 30px;">
-													<div class="calendarContainer" style="float:left;">
-														<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button>
-														<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button>
-														<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button>
-														<button type="button"  onclick="setMonths(this,-6)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-6' ? 'active':''} ">6개월</button>
-														<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button>
-													</div>
+												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 25px;padding-top: 30px;">
+<!-- 													<div class="calendarContainer" style="float:left;"> -->
+<%-- 														<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button> --%>
+<%-- 														<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button> --%>
+<%-- 														<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button> --%>
+<%-- 														<button type="button"  onclick="setMonths(this,-6)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-6' ? 'active':''} ">6개월</button> --%>
+<%-- 														<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button> --%>
+<!-- 													</div> -->
 													<input type="hidden" id="searchType" name="searchType">
-													<div id="reservation_confirm_term_right" style="float: inline-end;">
+													<div id="reservation_confirm_term_right" >
 														<div class="calanderWrap">
 															<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate" 
 															value="${pageMaker.endDate}">
 															<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
 <!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
-													</div>
-															<span class="card-header" style="float:inline-end; font-weight: bold;">
-																수수료 합계 : 500,000 원
-															</span>
+														</div>
 													</div>
 												</div>
 											</form>	
@@ -127,6 +124,32 @@
 												
 												</td>
 												<td style="text-align: center;"><span class="badge bg-label-hold me-1" style="font-size:small;">상태보류</span></td>
+												<td>
+													<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
+                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
+												</td>
+											</tr>
+											<tr>
+												<th><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></th>
+												<th>${selectNoticeList.num }</th>
+												<td style="text-align: center;">강원하</td>
+												<td>
+												
+												</td>
+												<td style="text-align: center;"><span class="badge bg-label-prohibition" style="font-size:small;">회원정지</span></td>
+												<td>
+													<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
+                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
+												</td>
+											</tr>
+											<tr>
+												<th><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></th>
+												<th>${selectNoticeList.num }</th>
+												<td style="text-align: center;">강원하</td>
+												<td>
+												
+												</td>
+												<td style="text-align: center;"><span class="badge bg-label-approval me-1" style="font-size:small;">회원복구</span></td>
 												<td>
 													<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
                         							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>

@@ -26,7 +26,7 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!--   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
   <link
     href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet"
@@ -97,8 +97,7 @@
 												<div class="col-xl-6" id="reservation_confirm_term_right">
 													<div class="calanderWrap" align="center">
 														<br>
-														<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate" 
-														value="${pageMaker.endDate}">
+														<input type="date" id="startDate" name="startDate"> - <input type="date" id="endDate" name="endDate" >
 														<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
 													</div>
 													<br>
@@ -228,16 +227,15 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
 		<script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_scripts.js"></script>
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin_scripts.js"></script> --%>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
 		crossorigin="anonymous"></script>
-	<script src="${pageContext.request.contextPath }/resources/demo/sales_product_pie.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/demo/sales_product_bar.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_pie_chart.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script> --%>
 	</body>
 </html>

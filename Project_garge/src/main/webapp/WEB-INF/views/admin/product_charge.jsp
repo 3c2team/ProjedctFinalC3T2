@@ -75,7 +75,7 @@
 						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">거래내역 /</span> 수수료 내역</h4>
 						<!--/Table -->
 <!-- 						<div class="card"> -->
-							<h5 class="card-header">월간 수수료 내역</h5>
+							<h5 class="card-header">주간 수수료 내역</h5>
 							<br>
 							<div class="table-responsive text-nowrap" style="width: auto;">
 								
@@ -115,20 +115,20 @@
 <!-- 												<button type="submit" id="search_btn">조회</button> -->
 <!-- 											</div> -->
 <!-- 										</div>	 -->
-											<form  id="frm">	
-												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;padding-top: 30px;">
-													<div class="calendarContainer" style="float:left;">
-														<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button>
-														<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button>
-														<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button>
-														<button type="button"  onclick="setMonths(this,-6)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-6' ? 'active':''} ">6개월</button>
-														<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button>
-													</div>
+<!-- 											<form  id="frm">	 -->
+											<form  action="SearchList" method="post">	
+												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 20px;padding-top: 30px;">
+<!-- 													<div class="calendarContainer" style="float:left;"> -->
+<%-- 														<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button> --%>
+<%-- 														<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button> --%>
+<%-- 														<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button> --%>
+<%-- 														<button type="button"  onclick="setMonths(this,-6)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-6' ? 'active':''} ">6개월</button> --%>
+<%-- 														<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button> --%>
+<!-- 													</div> -->
 													<input type="hidden" id="searchType" name="searchType">
-													<div id="reservation_confirm_term_right" style="float: inline-end;">
+													<div id="reservation_confirm_term_right">
 														<div class="calanderWrap">
-															<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate" 
-															value="${pageMaker.endDate}">
+															<input type="date" id="startDate" name="startDate"> - <input type="date" id="endDate" name="endDate">
 															<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
 <!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
 														</div>
@@ -235,12 +235,13 @@
     <!-- Page level plugins -->
     <script src="${pageContext.request.contextPath }/resources/admin/vendor/chart.js/Chart.min.js"></script>
     <!-- Page level custom scripts -->
-    <script src="${pageContext.request.contextPath }/resources/admin/js/demo/chart-area-demo.js"></script>
+<%--     <script src="${pageContext.request.contextPath }/resources/admin/js/demo/chart-area-demo.js"></script> --%>
     
     <script
 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_area_chart.js"></script>
 	</body>
 </html>

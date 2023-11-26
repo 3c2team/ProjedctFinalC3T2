@@ -80,95 +80,69 @@
 						<div class="card">
 							<h5 class="card-header">상품 목록</h5>
 							<form  id="frm">	
-												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;padding-top: 30px;">
-													<div class="calendarContainer" style="float:left;">
-														<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button>
-														<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button>
-														<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button>
-														<button type="button"  onclick="setMonths(this,-6)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-6' ? 'active':''} ">6개월</button>
-														<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button>
-													</div>
+												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 25px;padding-top: 30px;">
+<!-- 													<div class="calendarContainer" style="float:left;"> -->
+<%-- 														<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button> --%>
+<%-- 														<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button> --%>
+<%-- 														<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button> --%>
+<%-- 														<button type="button"  onclick="setMonths(this,-6)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-6' ? 'active':''} ">6개월</button> --%>
+<%-- 														<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button> --%>
+<!-- 													</div> -->
 													<input type="hidden" id="searchType" name="searchType">
-													<div id="reservation_confirm_term_right" style="float: inline-end;">
-														<div class="calanderWrap">
-															<input type="date" id="startDate" name="startDate" value="${pageMaker.startDate}"> - <input type="date" id="endDate" name="endDate" 
-															value="${pageMaker.endDate}">
+<!-- 													<div id="reservation_confirm_term_right"> -->
+<!-- 														<div class="calanderWrap"> -->
+															<input type="date" id="startDate" name="startDate" > - <input type="date" id="endDate" name="endDate">
 															<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
 <!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
-														</div>
-													</div>
+<!-- 														</div> -->
+<!-- 													</div> -->
 												</div>
 											</form>	
 											<div class="table-responsive text-nowrap">
-											<form action="AdminNoticeDelete" method="post">
-												<table id="datatablesSimple">
-													<thead>
-														<tr>
-															<th style="text-align: center;">#</th>
-															<th style="text-align: center;">신고상품</th>
-															<th style="text-align: center;">판매자</th>
-															<th style="text-align: center;">신고사유</th>
-															<th style="text-align: center;">회원상태</th>
-															<th style="text-align: center;">회원설정</th>
-														</tr>
-													</thead>
-													<tbody>
-													<c:forEach var="selectNoticeList" items="${selectNoticeList }">
-														<tr>
-															<th><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></th>
-																			<th>${selectNoticeList.num }</th>
-															<td style="text-align: center;">강원하</td>
-															<td>
+												<form action="AdminNoticeDelete" method="post">
+													<table id="datatablesSimple">
+														<thead>
+															<tr>
+																<th>#</th>
+																<th>상품정보</th>
+																<th>판매자</th>
+																<th>신뢰지수</th>
+																<th>출금액</th>
+	<!-- 															<th>수수료</th> -->
+																<th>출금계좌</th>
+															</tr>
+														</thead>
+														<tbody>
+														<c:forEach var="selectNoticeList" items="${selectNoticeList }">
+															<tr>
+																<td><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></td>
+																<td>
+																	<div class="">
+																		<div class=""><strong>****상품명****</strong></div>
+																	</div>
+																</td>
+																<td>홍길동</td>
+																<td>
+																	<span class="badge bg-label-state">88%</span>
+																</td>
+																<td>
+											                        <span class="badge bg-label-prohibition">50,000</span>	
+																</td>
+	<!-- 															<td> -->
+	<!-- 										                        <span class="badge bg-label-prohibition">450원</span>	 -->
+	<!-- 															</td> -->
+																<td>
+											                        <span>하나은행 274-158945-45230</span>	
+																</td>
+															</tr>
 															
-															</td>
-															<td style="text-align: center;"><span class="badge bg-label-hold me-1" style="font-size:small;">상태보류</span></td>
-															<td>
-																<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
-			                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
-															</td>
-														</tr>
-													</c:forEach>
-													</tbody>
-									</table>
-									<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	
-								</form>
+														</c:forEach>
+														</tbody>
+													</table>
+													
+													<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	
+											</form>
 										</div>
-<!-- 							<div class="table-responsive text-nowrap"> -->
-<!-- 								<table class="table"> -->
-<!-- 									<thead> -->
-<!-- 										<tr> -->
-<!-- 											<th width="50px"><input type="checkbox"></th> -->
-<!-- 											<th>상품정보</th> -->
-<!-- 											<th>판매자</th> -->
-<!-- 											<th>신뢰지수</th> -->
-<!-- 											<th>출금액</th> -->
-<!-- 											<th>출금계좌<th> -->
-<!-- 										</tr> -->
-<!-- 									</thead> -->
-<!-- 									<tbody class="table-border-bottom-0"> -->
-<!-- 										<tr> -->
-<!-- 											<td><input type="checkbox"></td> -->
-<!-- 											<td> -->
-<!-- 												<div class="product"> -->
-<!-- 													<img width="80px" src="../assets/img/elements/1.jpg"> -->
-<!-- 													<div class="product_info"><strong>****상품명****</strong><a>50,000원</a></div> -->
-<!-- 												</div> -->
-<!-- 											</td> -->
-<!-- 											<td>강원하</td> -->
-<!-- 											<td> -->
-<!-- 												<span class="badge bg-label-state">88%</span>	 -->
-<!-- 											</td> -->
-<!-- 											<td> -->
-<!-- 						                        <span class="badge bg-label-prohibition">50,000</span>	 -->
-<!-- 											</td> -->
-<!-- 											<td> -->
-<!-- 						                        <span>농협 158-452142-367452</span>	 -->
-<!-- 											</td> -->
-<!-- 										</tr> -->
-
-<!-- 									</tbody> -->
-<!-- 								</table> -->
-<!-- 							</div> -->
 						</div>
 						<!--/Table -->
 					</div>
@@ -177,7 +151,7 @@
 			</div>
             <!-- / Content -->
 
-			<div class="content-backdrop fade"></div>
+<!-- 			<div class="content-backdrop fade"></div> -->
 			</div>
           <!-- Content wrapper -->
 		</div>

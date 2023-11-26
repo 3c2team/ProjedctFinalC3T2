@@ -263,12 +263,9 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
 		crossorigin="anonymous"></script>
-	<script src="${pageContext.request.contextPath }/resources/demo/sales_product_pie.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/demo/sales_product_bar.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-		crossorigin="anonymous"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
+		<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_pie_chart.js"></script>
+		<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_area_chart.js"></script>
+	
 	
 	<!-- -------------------------------------------------------------------------------------------- -->
 	    <!-- Bootstrap core JavaScript-->
@@ -282,7 +279,11 @@
     <script src="${pageContext.request.contextPath }/resources/admin/vendor/chart.js/Chart.min.js"></script>
     <!-- Page level custom scripts -->
     <script src="${pageContext.request.contextPath }/resources/admin/js/demo/chart-area-demo.js"></script>
-    
+      <script
+		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+		crossorigin="anonymous"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
 
 	</body>
 </html>

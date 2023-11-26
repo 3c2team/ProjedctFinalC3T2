@@ -85,26 +85,36 @@ function setAllPeriod(event) {
 }
 
 // 페이지 로드 시 기본값으로 3개월 전의 날짜를 시작 날짜로 설정하는 초기화 로직
-document.addEventListener('DOMContentLoaded', function() {
+//document.addEventListener('DOMContentLoaded', function() {
     //setMonths('',-3);
 
     // "조회" 버튼 클릭 시 적절한 함수를 호출하는 이벤트 리스너
     var searchButton = document.getElementById('search_btn');
     if (searchButton) {
         searchButton.addEventListener('click', function() {
-			// 리뷰 항목이 있는 경우 해당 항목을 날짜별로 필터링
-            if (document.querySelector('.review-row')) {
-                filterItemsByDate('startDate', 'endDate', '.review-row', 'data-review-date');
-            
-            // 예약 항목이 있는 경우 해당 항목을 날짜별로 필터링
-            } else if (document.querySelector('.reservation-row')) {
-                filterItemsByDate('startDate', 'endDate', '.reservation-row', 'data-reservation-date');
-            // 포인트 내역이 있는 경우 해당 항복을 날짜별로 필터링
-            } else if (document.querySelector('.point-row')) {
-		        filterItemsByDate('startDate', 'endDate', '.point-row', 'data-point-date');
-		    } else if (document.querySelector('.buy-row')) {
-		        filterItemsByDate('startDate', 'endDate', '.buy-row', 'data-buy-date');
-		    }
+//	alert("확인");
+//	var start = $("input[name=startDate]").val();
+//	var end = $("input[name=endDate]").val();
+//	
+//	alert("시작날짜 : " + start + ", 끝날짜 : " + end);
+//	console.log("시작날짜 : " + start + ", 끝날짜 : " + end);
+	
+
+	
+	
+//			// 리뷰 항목이 있는 경우 해당 항목을 날짜별로 필터링
+//            if (document.querySelector('.review-row')) {
+//                filterItemsByDate('startDate', 'endDate', '.review-row', 'data-review-date');
+//            
+//            // 예약 항목이 있는 경우 해당 항목을 날짜별로 필터링
+//            } else if (document.querySelector('.reservation-row')) {
+//                filterItemsByDate('startDate', 'endDate', '.reservation-row', 'data-reservation-date');
+//            // 포인트 내역이 있는 경우 해당 항복을 날짜별로 필터링
+//            } else if (document.querySelector('.point-row')) {
+//		        filterItemsByDate('startDate', 'endDate', '.point-row', 'data-point-date');
+//		    } else if (document.querySelector('.buy-row')) {
+//		        filterItemsByDate('startDate', 'endDate', '.buy-row', 'data-buy-date');
+//		    }
         });
     }
-});
+//});
