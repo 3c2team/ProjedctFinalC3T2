@@ -102,7 +102,7 @@
 								<!-- --------------------------------------------------------------- -->
 								
 								<div class="table-responsive text-nowrap">
-											<form action="AdminNoticeDelete" method="post">
+											<form action="AdminNoticeDelete" method="post" style="margin:30px">
 									<table id="datatablesSimple">
 										<thead>
 											<tr>

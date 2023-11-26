@@ -16,7 +16,7 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 
-  <title>GARGE | 입금내역</title>
+  <title>TRADEUP | 입금내역</title>
 
   <meta name="description" content="" />
 
@@ -78,7 +78,7 @@
 						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">가지페이 /</span> 입금내역</h4>
 						<!--/Table -->
 						<div class="card">
-							<h5 class="card-header">상품 목록</h5>
+							<h5 class="card-header">입금내역</h5>
 								<form action="SearchList" method="post" >	
 <!-- 								<form>	 -->
 									<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;padding-top: 30px;">

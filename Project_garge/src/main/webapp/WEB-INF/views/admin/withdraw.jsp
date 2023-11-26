@@ -78,9 +78,9 @@
 						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">가지페이 /</span> 출금내역</h4>
 						<!--/Table -->
 						<div class="card">
-							<h5 class="card-header">상품 목록</h5>
+							<h5 class="card-header">출금내역</h5>
 							<form  id="frm">	
-												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 25px;padding-top: 30px;">
+												<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 5px;padding-top: 30px;">
 <!-- 													<div class="calendarContainer" style="float:left;"> -->
 <%-- 														<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button> --%>
 <%-- 														<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button> --%>
@@ -99,7 +99,7 @@
 												</div>
 											</form>	
 											<div class="table-responsive text-nowrap">
-												<form action="AdminNoticeDelete" method="post">
+												<form action="AdminNoticeDelete" method="post" style="margin:30px">
 													<table id="datatablesSimple">
 														<thead>
 															<tr>
