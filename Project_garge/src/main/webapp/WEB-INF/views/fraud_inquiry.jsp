@@ -16,35 +16,7 @@
 		margin-left: 2%;
 		cursor: pointer;		
 	}
-   #modal-box {
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-   }   
-   #modal-box.active {
-      display: flex;
-   }
-   #modal-contents {
-      background-color: #ffffff;
-      width: 450px;
-      padding: 20px;
-      border-radius: 5px;
-       position: relative;
-   }
-   #modal-contents botton {
-      background-color: #ffffff;
-      
-   }
-   #desc p {
-      margin-bottom: 2%;
-   }
+
 </style>
 
 	<jsp:include page="inc/style.jsp"></jsp:include>
