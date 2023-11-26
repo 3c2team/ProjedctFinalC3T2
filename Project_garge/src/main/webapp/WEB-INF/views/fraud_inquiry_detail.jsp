@@ -27,6 +27,35 @@
 		margin-left: 2%;
 		cursor: pointer;		
 	}
+	   #modal-box {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+   }   
+   #modal-box.active {
+      display: flex;
+   }
+   #modal-contents {
+      background-color: #ffffff;
+      width: 450px;
+      padding: 20px;
+      border-radius: 5px;
+       position: relative;
+   }
+   #modal-contents botton {
+      background-color: #ffffff;
+      
+   }
+   #desc p {
+      margin-bottom: 2%;
+   }
 </style>
 	<jsp:include page="inc/style.jsp"></jsp:include>
 </head>
@@ -60,10 +89,32 @@
 			<hr class="custom_border_grove">
 			<div class="d-grid gap-2">
 				<input type="button" class="btn btn-light" value="다시 조회하기" onclick="histroy.back()">
-				<input type="button" class="btn btn-light" value="이의 제기하기">
+				<input type="button" id="open" class="btn btn-light" value="신고하기">
 			</div>
 		</div>
+		<div id="modal-box">
+       <div id="modal-contents">
+          <button id="close" class="btn btn-primary"style="margin-bottom: 2%;">&times;</button>
+          <h5 id="title" style="font-style: bold; margin-top: 2%; margin-bottom: 4%;">신고하기</h5>
+          <div id="addresses">
+               <div id="desc1">
+                <hr>
+                <p class="user">신고자 정보<input type="text"></p>
+                <p class="user">신고 사유 :<textarea rows="5" cols="20"></textarea></p>
+             </div>
+          </div>
+       </div>
+    </div>
 <!-- 	</div> -->
 	<jsp:include page="inc/bottom.jsp"></jsp:include>
+	<script type="text/javascript">
+		$("#open").click(function() {
+			   $("#modal-box").toggleClass("active");
+			});
+			$("#close").click(function() {
+			   $("#modal-box").toggleClass("active");
+			});
+	</script>
+	
 </body>
 </html>
