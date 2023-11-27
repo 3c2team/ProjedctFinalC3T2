@@ -43,12 +43,12 @@
                     <div class="header__nav__option" >
                     <c:choose>
 						<c:when test="${empty sessionScope.sId }">
-	                        <a href="Login"><img src="${pageContext.request.contextPath }/resources/img/icon/person.png" style=" width: 30px" alt="" ></a>
+	                        <a href="Login">로그인</a>
 						</c:when>
 						<c:otherwise>
 							<strong>${sessionScope.sName }</strong> 님 반갑습니다. &nbsp;&nbsp;&nbsp;
-	                        <a href="MyPageMain"><img src="${pageContext.request.contextPath }/resources/img/icon/heart.png" alt=""></a>
-	                        <a href="#none" onclick="openChat()"><img src="${pageContext.request.contextPath }/resources/img/icon/chatting.png" style=" width: 20px" alt=""></a>
+	                        <a href="MyPageMain"><i class="fa fa-regular fa-user"></i></a>
+	                        <a href="#none" onclick="openChat()"><i class="fa fa-regular fa-comment-dots"></i></a>
 						</c:otherwise>
 					</c:choose>
                     </div>
