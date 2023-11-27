@@ -82,7 +82,7 @@
 				</li>
 			</ul>
 			<div class="d-grid gap-2">
-				<input type="button" class="btn btn-light" value="1대1 문의하기" onclick="location.href='FraudInquiry'">
+				<input type="button" class="btn btn-light" value="1대1 문의하기" onclick="location.href='RegistQuewstion'">
 				<input type="button" id="open" class="btn btn-light" value="내 문의 내역"onclick="location.href=">
 			</div>
 		</div>

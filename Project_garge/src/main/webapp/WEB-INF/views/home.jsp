@@ -524,29 +524,30 @@
 	<jsp:include page="inc/bottom.jsp"></jsp:include>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7a037ee7b5defdef9bd8b44dd31e3eac&libraries=services"></script>
   <script type="text/javascript">
-    navigator.geolocation.getCurrentPosition((position) => {
+    navigator.geolocation.getCurrentPosition(position => {
 		const gps = {
 			latitude: position.coords.latitude,
 			longitude: position.coords.longitude
 		}
 		// 검색이름
-		var SEARCH_KEYWORD = "부전동사무소";
+		var SEARCH_KEYWORD = "동사무소";
 		
         const options = {
    			x: gps.longitude,
-   			y: gps.latitude
+   			y: gps.latitude,
+   			redius: 1000
    		};
 		
 		const places = new kakao.maps.services.Places();
 
 		var callback = function(result, status) {
-	    if (status === kakao.maps.services.Status.OK) {
-			for(let i = 0; i < result.length; i++){
-				if(result[i].category_name.includes("주민센터")){
-					console.log(result[i].category_name);
+		    if (status === kakao.maps.services.Status.OK) {
+				for(let i = 0; i < result.length; i++){
+					if(result[i].category_name.includes("주민센터")){
+						console.log(result[i]);
+					}
 				}
-			}
-	    }
+		    }
 		};
 		console.log("성공");
 		places.keywordSearch(SEARCH_KEYWORD, callback,options); 

@@ -138,6 +138,12 @@ public class MainController {
 		
 		return "customer";
 	}
+	//1대1 문의 페이지 이동
+	@GetMapping("RegistQuewstion")
+	public String registQuewstion() {
+		
+		return "regist_question";
+	}
 	
 	
 }
