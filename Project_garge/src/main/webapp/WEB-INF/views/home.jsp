@@ -14,7 +14,7 @@
 </head>
 
 <body>
-		<jsp:include page="inc/top.jsp"></jsp:include>
+	<jsp:include page="inc/top.jsp"></jsp:include>
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">

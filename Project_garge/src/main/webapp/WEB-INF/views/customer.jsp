@@ -47,6 +47,12 @@
 	    border-color: aliceblue;
 	    cursor: pointer;
 	}
+	.custom_sticky{
+	    position: sticky;
+	    top: 200px;
+	    z-index: 1020;
+	    background-color: white;
+	}
 </style>
 	<jsp:include page="inc/style.jsp"></jsp:include>
 </head>
@@ -57,12 +63,12 @@
 			<hr class="custom_border_grove">
 			<h3 class="fw-bold">자주 묻는 질문FAQ</h3>
 			<div class="shop__sidebar__search" style="margin-top: 5%;">
-				<form>
-					<input type="text" class="custom_text" name="search" placeholder="궁금하신점을 입력해주세요">
+				<form onSubmit="customer()">
+					<input type="text" id="select" class="custom_text" placeholder="궁금하신점을 입력해주세요">
 					<button type="button"><span class="icon_search"></span></button>
 				</form>
 			</div>
-			<div class="sticky-top">
+			<div class="custom_sticky">
 				<button class="custom_btn">전체</button>
 				<button class="custom_btn">거래문의</button>
 				<button class="custom_btn">이용문의</button>
@@ -75,8 +81,10 @@
 					<div class="custom_select w-100">질문이름</div>
 				</li>
 			</ul>
-			<input type="button">
-			<input type="button">
+			<div class="d-grid gap-2">
+				<input type="button" class="btn btn-light" value="1대1 문의하기" onclick="location.href='FraudInquiry'">
+				<input type="button" id="open" class="btn btn-light" value="내 문의 내역"onclick="location.href=">
+			</div>
 		</div>
 	<jsp:include page="inc/bottom.jsp"></jsp:include>
 	<script type="text/javascript">
@@ -89,6 +97,9 @@
 		$(".custom_select").on("click",function(){
 			$(this).after("<div><h1>result</h1></div>");
 		});
+		function customer() {
+			$("#select").val();
+		}
 	</script>
 </body>
 </html>

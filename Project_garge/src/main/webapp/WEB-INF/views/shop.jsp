@@ -22,9 +22,7 @@
 </style>
 </head>
 <body>
-	<header>
 		<jsp:include page="inc/top.jsp"></jsp:include>
-	</header>
 	
     <!-- 주메뉴 -->
     <section class="breadcrumb-option">

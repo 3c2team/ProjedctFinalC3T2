@@ -4,7 +4,7 @@
 
 
     <!-- Header Section Begin -->
-    <header class="header">
+    <header class="header sticky-top">
         <div class="container">
             <div class="customrow">
                 <div class="col-lg-3 col-md-3">
