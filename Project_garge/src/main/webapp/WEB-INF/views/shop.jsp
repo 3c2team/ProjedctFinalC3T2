@@ -669,6 +669,11 @@
 			$("#search").html("${param.search} <i class='bi bi-x'></i>");
 		}
 		if("${param.price}"){
+			$("input[type=radio][name=radio]").each(function(){
+				if($(this).val() == "${param.price}"){
+					$(this).prop("checked",true);
+				}
+			});
 			price = "&price=${param.price}";
 			$("#price").attr("hidden",false);
 			$("#price").html("${param.price} <i class='bi bi-x'></i>");

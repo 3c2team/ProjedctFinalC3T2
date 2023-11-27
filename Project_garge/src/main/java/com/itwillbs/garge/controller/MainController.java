@@ -87,7 +87,7 @@ public class MainController {
 			}
 		}
 		List<Map<String, Object>> selectProduct = service.selectProduct(map);
-		System.out.println(selectProduct);
+		System.out.println("상품 목록" + selectProduct);
 		model.addAttribute("selectProduct",selectProduct);
 		model.addAttribute("selectCategory",selectCategory);
 		return "shop";
@@ -131,6 +131,12 @@ public class MainController {
 	public String marketPriceInquiry() {
 		
 		return "market_price_inquiry";
+	}
+	//고객센터 페이지 이동
+	@GetMapping("Customer")
+	public String customer() {
+		
+		return "customer";
 	}
 	
 	

@@ -61,60 +61,37 @@
 </head>
 <body>
 	<jsp:include page="inc/top.jsp"></jsp:include>
-<!-- 	<div class="custom_div"> -->
-		<div class="custom_flex2">
-			<h2 class="fw-bold">가지 사기 조회</h2>
-			<hr class="custom_border_grove">
-			<h4 style="margin: 1%;">검색 내용</h4>
-			<h4 style="margin: 1%;">피해사례 조회</h4>
-			<hr class="custom_border_grove">
-			<div class="custom_flex">
-				<div class="custom_subject fw-bold">
-					가지
+	<div class="custom_flex2">
+		<h2 class="fw-bold">가지 사기 조회</h2>
+		<hr class="custom_border_grove">
+		<h4 style="margin: 1%;">검색 내용</h4>
+		<h4 style="margin: 1%;">피해사례 조회</h4>
+		<hr class="custom_border_grove">
+		<div class="custom_flex">
+			<div class="custom_subject fw-bold">
+				가지
+			</div>
+			<div class="custom_content">
+				<div >
+					신고 건수 없음
 				</div>
-				<div class="custom_content">
-					<div >
-						신고 건수 없음
-					</div>
-					<div class="font">(신고 내역이 없는 경우에도 안전한 거래라는 것을 보장할 수 없습니다. 안전거래를 이용해주세요. )</div>
-				</div>
-			</div>
-			<hr class="custom_border_grove">
-			<div class="custom_font_13px text">
-				(주)가지는 범죄 피해방지를 위해 해당 서비스를 운영하고 있습니다. 피해 사례 결과에 대해 중고나라는 보증하지 않으며, 거래에 대한 법적 책임은 당사자에게 있습니다.
-			</div>
-			<div class="fw-bold font2" >
-				<div id="police">경찰청 사이버 수사국 바로가기 ></div>
-			</div>
-			<hr class="custom_border_grove">
-			<div class="d-grid gap-2">
-				<input type="button" class="btn btn-light" value="다시 조회하기" onclick="histroy.back()">
-				<input type="button" id="open" class="btn btn-light" value="신고하기">
+				<div class="font">(신고 내역이 없는 경우에도 안전한 거래라는 것을 보장할 수 없습니다. 안전거래를 이용해주세요. )</div>
 			</div>
 		</div>
-		<div id="modal-box">
-       <div id="modal-contents">
-          <button id="close" class="btn btn-primary"style="margin-bottom: 2%;">&times;</button>
-          <h5 id="title" style="font-style: bold; margin-top: 2%; margin-bottom: 4%;">신고하기</h5>
-          <div id="addresses">
-               <div id="desc1">
-                <hr>
-                <p class="user">신고자 정보<input type="text"></p>
-                <p class="user">신고 사유 :<textarea rows="5" cols="20"></textarea></p>
-             </div>
-          </div>
-       </div>
-    </div>
-<!-- 	</div> -->
+		<hr class="custom_border_grove">
+		<div class="custom_font_13px text">
+			(주)가지는 범죄 피해방지를 위해 해당 서비스를 운영하고 있습니다. 피해 사례 결과에 대해 중고나라는 보증하지 않으며, 거래에 대한 법적 책임은 당사자에게 있습니다.
+		</div>
+		<div class="fw-bold font2" >
+			<div id="police">경찰청 사이버 수사국 바로가기 ></div>
+		</div>
+		<hr class="custom_border_grove">
+		<div class="d-grid gap-2">
+			<input type="button" class="btn btn-light" value="다시 조회하기" onclick="location.href='FraudInquiry'">
+			<input type="button" id="open" class="btn btn-light" value="신고하기"onclick="location.href=">
+		</div>
+	</div>
 	<jsp:include page="inc/bottom.jsp"></jsp:include>
-	<script type="text/javascript">
-		$("#open").click(function() {
-			   $("#modal-box").toggleClass("active");
-			});
-			$("#close").click(function() {
-			   $("#modal-box").toggleClass("active");
-			});
-	</script>
 	
 </body>
 </html>
