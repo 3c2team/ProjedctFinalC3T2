@@ -95,11 +95,13 @@
 												</div>
 												
 												<div class="col-xl-6" id="reservation_confirm_term_right">
-													<div class="calanderWrap" align="center">
-														<br>
-														<input type="date" id="startDate" name="startDate"> - <input type="date" id="endDate" name="endDate" >
-														<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
-													</div>
+													<form action="SearchList" method="post">	
+														<div class="calanderWrap" align="center">
+															<br>
+															<input type="date" id="startDate" name="startDate"> - <input type="date" id="endDate" name="endDate" >
+															<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
+														</div>
+													</form>
 													<br>
 													<div class="table-responsive text-nowrap">
 														<table class="table">
@@ -158,18 +160,6 @@
 												                        <span class="badge bg-label-prohibition">1,000,000 원</span>	
 																	</td>
 																</tr>
-<!-- 																<tr> -->
-<!-- 																	<td> -->
-<!-- 																		<div class="product pay-type"> -->
-<!-- 																			<div class="product_info"><strong>직접거래</strong></div> -->
-<!-- 																		</div> -->
-<!-- 																	</td> -->
-<!-- 																	<td> -->
-<!-- 																		<div class="product pay-type"> -->
-<!-- 																			<div class="product_info"><strong>210</strong></div> -->
-<!-- 																		</div> -->
-<!-- 																	</td> -->
-<!-- 																</tr> -->
 															</tbody>
 														</table>
 													</div>
@@ -182,23 +172,13 @@
 								<!-- -------------------------------------------------------------- -->
 							</div>
 						</div>
-						<!--/Table -->
 					</div>
 				</div>
-              <!--/ Responsive Table -->
 			</div>
-            <!-- / Content -->
-
-			<div class="content-backdrop fade"></div>
-			</div>
-          <!-- Content wrapper -->
 		</div>
-        <!-- / Layout page -->
 	</div>
 
-      <!-- Overlay -->
 	<div class="layout-overlay layout-menu-toggle"></div>
-    </div>
     <!-- / Layout wrapper -->
 
 	<%-- 바텀 메뉴 --%>
