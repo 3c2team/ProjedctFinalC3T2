@@ -17,7 +17,7 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 
-  <title>GARGE | 거래내역</title>
+  <title>TRADEUP | 거래내역</title>
 
   <meta name="description" content="" />
 
@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/myPage/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/myPage/assets/css/demo.css" />
   <!-- Custom fonts for this template-->
-  <link href="${pageContext.request.contextPath }/resources/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<%--   <link href="${pageContext.request.contextPath }/resources/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> --%>
   <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -161,7 +161,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                금일 회원탈퇴 수</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18 명</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0 명</div>
                                         </div>
                                         <div class="col-auto">
 <!--                                             <i class="fas fa-comments fa-2x text-gray-300"></i> -->
@@ -241,7 +241,7 @@
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/popper/popper.js"></script>
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/bootstrap.js"></script>
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-	<script src="${pageContext.request.contextPath }/resources//js/admin/product_sales.js"></script>
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin/product_sales.js"></script> --%>
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
@@ -259,7 +259,7 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
 		<script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_scripts.js"></script>
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin_scripts.js"></script> --%>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
 		crossorigin="anonymous"></script>

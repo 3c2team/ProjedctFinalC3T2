@@ -189,7 +189,7 @@
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/popper/popper.js"></script>
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/bootstrap.js"></script>
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-	<script src="${pageContext.request.contextPath }/resources//js/admin/product_sales.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/admin/product_sales.js"></script>
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 

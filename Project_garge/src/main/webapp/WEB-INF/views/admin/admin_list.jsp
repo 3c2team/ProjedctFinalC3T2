@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html
   lang="en"
@@ -16,7 +17,7 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 
-  <title>TRADEUP | 입금내역</title>
+  <title>TRADEUP | 회원조회</title>
 
   <meta name="description" content="" />
 
@@ -49,6 +50,8 @@
   <!-- Helpers -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/helpers.js"></script>
 
+  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
 	<style type="text/css">
 		.product{
@@ -73,82 +76,57 @@
 			<div class="layout-page">
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
-						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">가지페이 /</span> 수수료 내역</h4>
+						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">회원 조회 /</span> 회원 목록</h4>
 						<!--/Table -->
-						<div class="row">
-                               <div class="card-header py-3">
-                                   <h6 class="m-0 font-weight-bold text-primary" style="position: absolute;">수수료 차트</h6>
-                               </div>
-                               <div class="card-body">
-	                        	<div class="chart-area">
-	                            	<canvas id="myAreaChart" style="display: block;width: 1000px;height: 200px;"></canvas>
-	                            </div>
-	                        </div>
-						</div>	
-						<br><br>
 						<div class="card">
-							<h5 class="card-header">수수료 내역</h5>
-								<form action="SearchList" method="post" style="margin-bottom: -25px;">	
-<!-- 								<form>	 -->
-									<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 20px;padding-top: 30px;">
+							<h5 class="card-header">회원 목록</h5>
+								<form action="MemberListPeriod" method="post">	
+									<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 25px;padding-top: 30px;">
 										<input type="hidden" id="searchType" name="searchType">
 										<div id="reservation_confirm_term_right" >
-											<div class="calanderWrap" style="margin-bottom: 25px;">
-												<input type="date" id="startDate" name="startDate" > - <input type="date" id="endDate" name="endDate">
+											<div class="calanderWrap">
+												<input type="date" id="startDate" name="startDate"> - <input type="date" id="endDate" name="endDate">
 												<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
-												
+<!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
+
 												<span class="card-header" style="float:inline-end; font-weight: bold; margin-bottom: 25px;">
-													수수료 합계 : 500,000 원
+													총 회원 수&nbsp; : &nbsp; ${memberCount} 명
 												</span>
 											</div>
 										</div>
-							    	</div>
+									</div>
 								</form>	
-							<!-- --------------------------------------------------------------- -->
+								<!-- --------------------------------------------------------------- -->
 								
 								<div class="table-responsive text-nowrap">
-									<form action="AdminNoticeDelete" method="post" style="margin:30px">
-										<table id="datatablesSimple">
+									<form action="MemberListPeriod" method="post" style="margin:30px">
+										<table id="datatablesSimple" >
 											<thead>
 												<tr>
-													<th>#</th>
-													<th>상품정보</th>
-													<th>구매자</th>
-													<th>구매완료 여부</th>
-													<th>입금액</th>
-													<th>수수료</th>
-													<th>입금계좌</th>
+													<th></th>
+													<th>이름</th>
+													<th>닉네임</th>
+													<th>ID</th>
+													<th>E-MAIL</th>
+													<th>전화번호</th>
+													<th>회원상태</th>
 												</tr>
 											</thead>
 											<tbody>
-											<c:forEach var="selectNoticeList" items="${selectNoticeList }">
+											<c:forEach var="memberList" items="${memberList}">
 												<tr>
-													<td><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></td>
-													<td>
-														<div class="">
-															<div class=""><strong>****상품명****</strong></div>
-														</div>
-													</td>
-													<td>홍길동</td>
-													<td>
-														<span class="badge bg-label-hold me-1">확정대기</span>
-													</td>
-													<td>
-								                        <span class="badge bg-label-approval me-1">15,000원</span>	
-													</td>
-													<td>
-								                        <span class="badge bg-label-prohibition">450원</span>	
-													</td>
-													<td>
-								                        <span>하나은행 274-158945-45230</span>	
-													</td>
+													<td><input type="checkbox" name="checkbox" value=""></td>
+													<td>${memberList.member_name}</td>
+													<td>${memberList.member_nick_name}</td>
+													<td>${memberList.member_id}</td>
+													<td>${memberList.member_e_mail}</td>
+													<td>${memberList.member_phone_num}</td>
+													<td>${memberList.member_state}</td>
 												</tr>
-												
 											</c:forEach>
 											</tbody>
-										</table>
-										
-										<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	
+										</table>	
+									<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	
 								</form>
 							</div>
 						</div>
@@ -157,6 +135,11 @@
 			</div>
 		</div>
 	</div>
+
+      <!-- Overlay -->
+	<div class="layout-overlay layout-menu-toggle"></div>
+    <!-- / Layout wrapper -->
+
 	<%-- 바텀 메뉴 --%>
 	<jsp:include page="../inc/bottom.jsp"></jsp:include>
     <!-- Core JS -->
@@ -165,7 +148,7 @@
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/popper/popper.js"></script>
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/bootstrap.js"></script>
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin/product_sales.js"></script> --%>
+
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
@@ -178,32 +161,11 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    
-<%-- 		<script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script> --%>
-<!-- ---------------------------------------------------------------------------------------------------- -->
-<!-- 	<script -->
-<!-- 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" -->
-<!-- 		crossorigin="anonymous"></script> -->
-<%-- 	<script src="${pageContext.request.contextPath }/resources/demo/sales_month_chart.js"></script> --%>
-	
-	<!-- -------------------------------------------------------------------------------------------- -->
-	    <!-- Bootstrap core JavaScript-->
-    <script src="${pageContext.request.contextPath }/resources/admin/vendor/jquery/jquery.min.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="${pageContext.request.contextPath }/resources/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="${pageContext.request.contextPath }/resources/admin/js/sb-admin-2.min.js"></script>
-    <!-- Page level plugins -->
-    <script src="${pageContext.request.contextPath }/resources/admin/vendor/chart.js/Chart.min.js"></script>
-    <!-- Page level custom scripts -->
-<%--     <script src="${pageContext.request.contextPath }/resources/admin/js/demo/chart-area-demo.js"></script> --%>
-    
-    <script
+        <script
 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_area_chart.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
 	</body>
 </html>

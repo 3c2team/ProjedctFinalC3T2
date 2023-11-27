@@ -26,4 +26,5 @@ public class MemberVO {
 	private String mail_auth_status;
 	private String kakao_id;
 	private String naver_id;
+	private String member_state;
 }

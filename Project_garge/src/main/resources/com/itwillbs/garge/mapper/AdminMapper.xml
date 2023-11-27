@@ -5,12 +5,57 @@
     
  <mapper namespace="com.itwillbs.garge.mapper.AdminMapper">
  
- 	<select id="selectMember" resultType="map">
+ 	<select id="selectMemberJoin" resultType="map">
  		SELECT COUNT(member_num) as selectMemberIn
 		FROM MEMBER
 		WHERE DATE_FORMAT(member_insert_date, "%Y-%m-%d") = CURDATE()
  	</select>
- 
+ 	
+ 	<select id="selectMemberAll" resultType="com.itwillbs.garge.vo.MemberVO">
+ 		SELECT *
+ 		FROM MEMBER
+ 		ORDER BY member_insert_date DESC
+ 	</select>
+ 	
+ 	<select id="selectMemberCount" resultType="map">
+ 		SELECT COUNT(*) as member
+ 		FROM MEMBER
+ 	</select>
+ 	
+ 	<select id="selectAdminMember" resultType="com.itwillbs.garge.vo.MemberVO">
+ 		SELECT *
+ 		FROM MEMBER
+ 		WHERE member_id = #{id} AND member_state = '관리자'
+ 	</select>
+ 	
+ 	<select id="selectMemberPeriod" resultType="com.itwillbs.garge.vo.MemberVO">
+ 		SELECT *
+ 		FROM MEMBER
+ 		WHERE 
+ 		<if test="!startDate.equals('')">
+ 			member_insert_date BETWEEN #{startDate}
+ 			<choose>
+ 			<when test="!endDate.equals('')">
+ 				AND date_format(date(#{endDate}) + 1, '%Y-%m-%d')
+ 			</when>
+ 			</choose>
+ 		</if>
+ 	</select>
+ 	
+ 	<select id="selectMemberCountPeriod" resultType="map">
+ 		SELECT COUNT(*) as memberCount
+ 		FROM MEMBER
+ 		WHERE 
+ 		<if test="!startDate.equals('')">
+ 			member_insert_date BETWEEN #{startDate}
+ 			<choose>
+ 			<when test="!endDate.equals('')">
+ 				AND date_format(date(#{endDate}) + 1, '%Y-%m-%d')
+ 			</when>
+ 			</choose>
+ 		</if>
+ 	</select>
+
  
  
  

@@ -10,6 +10,7 @@
 		<li class="menu-item active">
 			<a href="AdminMain" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-home-circle"></i>
+<!-- 				<div data-i18n="MyPageMain">관리자 페이지</div> -->
 				<div data-i18n="MyPageMain">관리자 페이지</div>
 			</a>
 		</li>
@@ -103,9 +104,9 @@
 		</li>
 	  <!-- Cards -->
 		<li class="menu-item">
-			<a href="Charts" class="menu-link">
+			<a href="MemberList" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-collection"></i>
-				<div data-i18n="Basic">자주 묻는 질문</div>
+				<div data-i18n="Basic">회원 조회</div>
 			</a>
 		</li>
 	  <!-- User interface -->
@@ -120,7 +121,13 @@
 		<li class="menu-item">
 			<a href="javascript:void(0)" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-copy"></i>
-				<div data-i18n="Extended UI">약관 및 정책</div>
+				<div data-i18n="Extended UI">카테고리</div>
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="javascript:void(0)" class="menu-link">
+				<i class="menu-icon tf-icons bx bx-copy"></i>
+				<div data-i18n="Extended UI">자주 묻는 질문</div>
 			</a>
 		</li>
 	</ul>
