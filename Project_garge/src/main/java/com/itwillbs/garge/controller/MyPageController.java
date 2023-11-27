@@ -13,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -89,21 +88,22 @@ public class MyPageController {
 	@GetMapping("MyAccount")
 	public String myAccount(HttpSession session, Model model, HttpServletRequest request) {
 		String sId = (String)session.getAttribute("sId");
-		String servlet_path = request.getServletPath().toUpperCase();
+		String servlet_path = request.getServletPath();
 		
-		List<Map<String, Object>> list =  retrieveDataForServletAndSession(sId, servlet_path);
+		List<Map<String, Object>> list = retrieveDataForServletAndSession(sId, servlet_path);
 		model.addAttribute("my_account", list);
 		
 		return "myPage/myPage_account";
 	}
 	
+
 	@GetMapping("MyAddress")
 	public String myAddress(HttpSession session, Model model, HttpServletRequest request) {
 		String sId = (String)session.getAttribute("sId");
-		String servlet_path = request.getServletPath().toUpperCase();
+		String servlet_path = request.getServletPath();
 		
-		List<Map<String, Object>> list =  retrieveDataForServletAndSession(sId, servlet_path);
-		model.addAttribute("my_account", list);
+		List<Map<String, Object>> list = retrieveDataForServletAndSession(sId, servlet_path);
+		model.addAttribute("my_address", list);
 		
 		return "myPage/myPage_address";
 	}
@@ -127,9 +127,8 @@ public class MyPageController {
 	}
 	
 	public List<Map<String, Object>> retrieveDataForServletAndSession(String sId, String servlet_path) {
-		String table_name = servlet_path.replace("MY", "MY_").replace("/", "").toString();
-		System.out.println("table_name" + table_name);
-		System.out.println("sId" + sId);
+		String table_name = servlet_path.toUpperCase().replace("MY", "MY_").replace("/", "").toString();
+		
 		List<Map<String, Object>> list = new ArrayList<Map<String,Object>>(); 
 		list = service.getMemeberInfo(sId, table_name);
 		

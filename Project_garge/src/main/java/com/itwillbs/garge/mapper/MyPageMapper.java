@@ -14,5 +14,9 @@ public interface MyPageMapper {
 
 	int updateMember(Map<String, Object> param);
 
-	List<Map<String, Object>> selectMemberInfo(@Param("sId")String sId, @Param("table_name") String table_name);
+	List<Map<String, Object>> selectAccount(String sId);
+
+	List<Map<String, Object>> selectAddress(String sId);
+
+	List<Map<String, Object>> selectMemberInfo(@Param("sId") String sId, @Param("table_name") String table_name);
 }

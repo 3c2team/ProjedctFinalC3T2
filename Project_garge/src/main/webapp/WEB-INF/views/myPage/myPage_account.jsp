@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+<%--
+	추가등록 모달 만들기
+	계좌 10개까지 등록 가능
+	(만약 10개 초과시 추가버튼 안보이게 버튼 수정)
+	
+
+--%>
 <html
   lang="en"
   class="light-style layout-menu-fixed"
@@ -66,19 +74,39 @@
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
 						<div class="container-xxl flex-grow-1 container-p-y">
-						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">내 정보 /</span> 계좌 관리</h4>
-						
+							<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">내 정보 /</span> 계좌 관리
+								<!-- 주소지 추가 버튼~ -->
+								<button id="address_add" class="btn rounded-pill btn-icon btn-outline-primary" style="float: right;">
+									<span class="tf-icons bx bx-plus"></span>
+								</button>
+							</h4>
 							<div class="row">
+							
+							<c:forEach var="account" items="${my_account }">
 								<!-- Basic -->
 								<div class="col-md-6">
-									<div class="card mb-4" style="border: 2px solid #696cff;">
+									<div class="card mb-4" <c:if test="${account.account_main eq true }">style="border: 2px solid #696cff;"</c:if>>
 										<div class="card-body demo-vertical-spacing demo-only-element">
 											<div class="dropdown" style="float: right;">
 												<button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
 													<i class="bx bx-dots-vertical-rounded"></i>
 												</button>
 												<div class="dropdown-menu">
-													<a class="dropdown-item" href="javascript:void(0);"
+													<c:if test="${account.account_main eq false }">
+														<a class="dropdown-item" href="javascript:void(0);"
+														><i class="bx bx-star me-1"></i> 대표계좌로 지정</a
+														>
+														
+														
+														<script type="text/javascript">
+															
+														</script>
+													</c:if>
+													<a class="dropdown-item"
+														type="button"
+														class="btn btn-primary"
+														data-bs-toggle="modal"
+														data-bs-target="#largeModal"
 													><i class="bx bx-edit-alt me-1"></i> 수정</a
 													>
 													<a class="dropdown-item" href="javascript:void(0);"
@@ -86,42 +114,15 @@
 													>
 												</div>
 											</div>
-											<h5 class="mb-0">농협</h5>											
+											<h5 class="mb-0">${account.account_bank }</h5>											
 											<hr>
-											<p>신혜리</p>
-											<p>352-0531-3001-53</p>
+											<p>${account.account_holder_name }</p>
+											<p>${account.account_num }</p>
 										</div>
 									</div>
 								</div>
 								<!-- / Basic -->
-								<!-- Basic -->
-								<div class="col-md-6">
-									<div class="card mb-4">
-										<div class="card-body demo-vertical-spacing demo-only-element">
-											<div class="dropdown" style="float: right;">
-												<button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-													<i class="bx bx-dots-vertical-rounded"></i>
-												</button>
-												<div class="dropdown-menu">
-													<a class="dropdown-item" href="javascript:void(0);"
-													><i class="bx bx-star me-1"></i> 대표계좌로 지정</a
-													>
-													<a class="dropdown-item" href="javascript:void(0);"
-													><i class="bx bx-edit-alt me-1"></i> 수정</a
-													>
-													<a class="dropdown-item" href="javascript:void(0);"
-													><i class="bx bx-trash me-1"></i> 삭제</a
-													>
-												</div>
-											</div>
-											<h5 class="mb-0">농협</h5>											
-											<hr>
-											<p>신혜리</p>
-											<p>352-0531-3001-53</p>
-										</div>
-									</div>
-								</div>
-								<!-- / Basic -->
+							</c:forEach>
 							</div>
 						</div>
 					</div>
@@ -129,7 +130,6 @@
 			</div> <!-- / Layout page -->
 		</div> <!-- / Layout Container -->
 	</div> <!-- / Layout Wrapper -->
-
 
 	<%-- 바텀 메뉴 --%>
 	<jsp:include page="../inc/bottom.jsp"></jsp:include>

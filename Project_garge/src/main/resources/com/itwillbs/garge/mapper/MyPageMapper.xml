@@ -16,7 +16,7 @@
 			]]>
     	</select>
     	
-    	<select id="selectMemberInfo" resultType="list">
+    	<select id="selectMemberInfo" resultType="map">
     		SELECT *
     		FROM ${table_name}
     		WHERE member_id = #{sId};

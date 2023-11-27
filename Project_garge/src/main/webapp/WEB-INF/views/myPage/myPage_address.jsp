@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+<%--
+	추가등록 모달 만들기
+	계좌 10개까지 등록 가능
+	(만약 10개 초과시 추가버튼 안보이게 버튼 수정)
+	
+
+--%>
 <html
   lang="en"
   class="light-style layout-menu-fixed"
@@ -52,6 +60,9 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
+
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  
   </head>
 
 <body>
@@ -66,74 +77,59 @@
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
 						<div class="container-xxl flex-grow-1 container-p-y">
-						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">내 정보 /</span> 배송지 관리</h4>
-						
+							<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">내 정보 /</span> 배송지 관리
+								<!-- 주소지 추가 버튼~ -->
+								<button 
+									id="address_add"
+									class="btn rounded-pill btn-icon btn-outline-primary"
+									style="float: right;"
+									data-bs-toggle="offcanvas"
+									data-bs-target="#offcanvasEnd"
+								>
+									<span class="tf-icons bx bx-plus"></span>
+								</button>
+							</h4>
 							<div class="row">
-								<!-- Basic -->
-								<div class="col-md-6">
-									<div class="card mb-4" style="border: 2px solid #696cff;">
-										<div class="card-body demo-vertical-spacing demo-only-element">
-											<div class="dropdown" style="float: right;">
-												<button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-													<i class="bx bx-dots-vertical-rounded"></i>
-												</button>
-												<div class="dropdown-menu">
-													<a class="dropdown-item"
-													  type="button"
-													  class="btn btn-primary"
-													  data-bs-toggle="modal"
-													  data-bs-target="#addressModal">
-														<i class="bx bx-edit-alt me-1"></i> 수정
-													</a>
-													<a class="dropdown-item" href="javascript:void(0);"
-													><i class="bx bx-trash me-1"></i> 삭제</a
-													>
+								
+								<c:forEach var="address" items="${my_address }">
+									<!-- Basic -->
+									<div class="col-md-6">
+										<div class="card mb-4" <c:if test="${address.address_main eq true }">style="border: 2px solid #696cff;"</c:if>>
+											<div class="card-body demo-vertical-spacing demo-only-element">
+												<div class="dropdown" style="float: right;">
+													<button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+														<i class="bx bx-dots-vertical-rounded"></i>
+													</button>
+													<div class="dropdown-menu">
+														<c:if test="${address.address_main eq false }">
+															<a class="dropdown-item" href="javascript:void(0);"
+															><i class="bx bx-star me-1"></i> 대표계좌로 지정</a
+															>
+														</c:if>
+														<a class="dropdown-item"
+														  type="button"
+														  class="btn btn-primary"
+														  data-bs-toggle="modal"
+														  data-bs-target="#addressModal"
+														  >
+														  
+															<i class="bx bx-edit-alt me-1"></i> 수정
+														</a>
+														<a class="dropdown-item" href="javascript:void(0);"
+														><i class="bx bx-trash me-1"></i> 삭제</a
+														>
+													</div>
 												</div>
+												<h5 class="mb-0">${address.address_name }</h5>											
+												<hr>
+												<p>${address.recipient_name }</p>
+												<p>${address.recipient_phone_num }</p>
+												<p>[56455]${address.address1 } ${address.address2 }</p>
 											</div>
-											<h5 class="mb-0">집</h5>											
-											<hr>
-											<p>신혜리</p>
-											<p>010-4448-1931</p>
-											<p>[56455]경상남도 김해시 인제로167-1 어쩌고저쩌고 201동 1703호</p>
 										</div>
 									</div>
-								</div>
-								<!-- / Basic -->
-								<!-- Basic -->
-								<div class="col-md-6">
-									<div class="card mb-4">
-										<div class="card-body demo-vertical-spacing demo-only-element">
-											<div class="dropdown" style="float: right;">
-												<button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-													<i class="bx bx-dots-vertical-rounded"></i>
-												</button>
-												<div class="dropdown-menu">
-													<a class="dropdown-item" href="javascript:void(0);">
-														<i class="bx bx-star me-1"></i>
-														 기본 주소 지정
-													</a>
-													<a class="dropdown-item"
-													  type="button"
-													  class="btn btn-primary"
-													  data-bs-toggle="modal"
-													  data-bs-target="#addressModal"
-													>
-														<i class="bx bx-edit-alt me-1"></i> 수정
-													</a>
-													<a class="dropdown-item" href="javascript:void(0);">
-														<i class="bx bx-trash me-1"></i> 삭제
-													</a>
-												</div>
-											</div>
-											<h5 class="mb-0">집</h5>											
-											<hr>
-											<p>신혜리</p>
-											<p>010-4448-1931</p>
-											<p>[56455]경상남도 김해시 인제로167-1 어쩌고저쩌고 201동 1703호</p>
-										</div>
-									</div>
-								</div>
-								<!-- / Basic -->
+									<!-- / Basic -->
+								</c:forEach>
 								
 							</div>
 						</div>
@@ -142,8 +138,11 @@
 			</div> <!-- / Layout page -->
 		</div> <!-- / Layout Container -->
 	</div> <!-- / Layout Wrapper -->
-
+	
+	<%-- 수정 모달 --%>
 	<jsp:include page="modal/address_modal.jsp"></jsp:include>
+	<%-- 추가 모달? --%>
+	<jsp:include page="offcanvas/address_add.jsp"></jsp:include>
 	<%-- 바텀 메뉴 --%>
 	<jsp:include page="../inc/bottom.jsp"></jsp:include>
 	

@@ -16,7 +16,7 @@
  -->
 
 <!-- Large Modal -->
-<div class="modal fade" id="addressModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="accountModal" tabindex="-1" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">

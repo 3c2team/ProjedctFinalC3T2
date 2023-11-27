@@ -22,11 +22,7 @@ public class MyPageService {
 	}
 
 	public List<Map<String, Object>> getMemeberInfo(String sId, String table_name) {
-		System.out.println(sId);
 		return mapper.selectMemberInfo(sId, table_name);
 	}
-
-	
-
 
 }
