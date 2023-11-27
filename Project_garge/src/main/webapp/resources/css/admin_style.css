@@ -7687,8 +7687,8 @@ textarea.form-control-lg {
 
 .mb-4 {
   margin-bottom: 1.5rem !important;
-  margin-left: 2%;
-  margin-right: 2%;
+/*   margin-left: 2%; */
+/*   margin-right: 2%; */
 }
 
 .mb-5 {
@@ -11172,6 +11172,7 @@ body {
 .datatable-table > thead > tr > th {
   vertical-align: top;
   padding: 0.5rem 0.5rem;
+  text-align: center;
 }
 
 .datatable-table > thead > tr > th {
@@ -11193,6 +11194,7 @@ body {
 .datatable-table th a {
   text-decoration: none;
   color: inherit;
+  text-align: center;
 }
 
 .datatable-sorter {

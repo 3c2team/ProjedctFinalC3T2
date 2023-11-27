@@ -68,7 +68,7 @@
 			<a href="Declaration" class="menu-link">
 <!-- 				<i class="menu-icon tf-icons bx bx-dock-top"></i> -->
 				<i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-				<div data-i18n="">신고회원 조회</div>
+				<div data-i18n="">사기신고 조회</div>
 			</a>
 		</li>
 	  <!-- Components -->

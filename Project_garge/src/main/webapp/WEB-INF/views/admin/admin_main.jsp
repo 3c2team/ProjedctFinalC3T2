@@ -134,7 +134,7 @@
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
 <!--                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div> -->
-													<div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
+													<div class="h5 mb-0 font-weight-bold text-gray-800">${memberInCount} 명</div>
                                                 </div>
 <!--                                                 <div class="col"> -->
 <!--                                                     <div class="progress progress-sm mr-2"> -->
@@ -161,7 +161,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                금일 회원탈퇴 수</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18 명</div>
                                         </div>
                                         <div class="col-auto">
 <!--                                             <i class="fas fa-comments fa-2x text-gray-300"></i> -->
@@ -278,12 +278,13 @@
     <!-- Page level plugins -->
     <script src="${pageContext.request.contextPath }/resources/admin/vendor/chart.js/Chart.min.js"></script>
     <!-- Page level custom scripts -->
-    <script src="${pageContext.request.contextPath }/resources/admin/js/demo/chart-area-demo.js"></script>
+<%--     <script src="${pageContext.request.contextPath }/resources/admin/js/demo/chart-area-demo.js"></script> --%>
       <script
 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_area_chart.js"></script>
 
 	</body>
 </html>

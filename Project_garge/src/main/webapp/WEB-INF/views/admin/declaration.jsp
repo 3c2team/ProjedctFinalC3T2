@@ -16,7 +16,7 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 
-  <title>GARGE | 입금내역</title>
+  <title>GARGE | 사기신고 조회</title>
 
   <meta name="description" content="" />
 
@@ -25,7 +25,7 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!--   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
   <link
     href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet"
@@ -75,7 +75,7 @@
 			<div class="layout-page">
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
-						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">신고회원 /</span> 회원목록</h4>
+						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">사기 신고 /</span> 신고 목록</h4>
 						<!--/Table -->
 						<div class="card">
 							<h5 class="card-header">신고 목록</h5>
@@ -102,84 +102,78 @@
 								<!-- --------------------------------------------------------------- -->
 								
 								<div class="table-responsive text-nowrap">
-											<form action="AdminNoticeDelete" method="post" style="margin:30px">
-									<table id="datatablesSimple">
-										<thead>
-											<tr>
-												<th style="text-align: center;">#</th>
-												<th style="text-align: center;">신고상품</th>
-												<th style="text-align: center;">판매자</th>
-												<th style="text-align: center;">신고사유</th>
-												<th style="text-align: center;">회원상태</th>
-												<th style="text-align: center;">회원설정</th>
-											</tr>
-										</thead>
-										<tbody>
-										<c:forEach var="selectNoticeList" items="${selectNoticeList }">
-											<tr>
-												<th><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></th>
-												<th>${selectNoticeList.num }</th>
-												<td style="text-align: center;">강원하</td>
-												<td>
-												
-												</td>
-												<td style="text-align: center;"><span class="badge bg-label-hold me-1" style="font-size:small;">상태보류</span></td>
-												<td>
-													<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
-                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
-												</td>
-											</tr>
-											<tr>
-												<th><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></th>
-												<th>${selectNoticeList.num }</th>
-												<td style="text-align: center;">강원하</td>
-												<td>
-												
-												</td>
-												<td style="text-align: center;"><span class="badge bg-label-prohibition" style="font-size:small;">회원정지</span></td>
-												<td>
-													<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
-                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
-												</td>
-											</tr>
-											<tr>
-												<th><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></th>
-												<th>${selectNoticeList.num }</th>
-												<td style="text-align: center;">강원하</td>
-												<td>
-												
-												</td>
-												<td style="text-align: center;"><span class="badge bg-label-approval me-1" style="font-size:small;">회원복구</span></td>
-												<td>
-													<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
-                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
-												</td>
-											</tr>
-										</c:forEach>
-										</tbody>
-									</table>
+									<form action="AdminNoticeDelete" method="post" style="margin:30px">
+										<table id="datatablesSimple" >
+											<thead>
+												<tr>
+													<th></th>
+													<th>신고사진</th>
+													<th>신고상품</th>
+													<th>판매자</th>
+													<th>신고사유</th>
+													<th>회원상태</th>
+													<th>회원설정</th>
+												</tr>
+											</thead>
+											<tbody>
+											<c:forEach var="selectNoticeList" items="${selectNoticeList }">
+												<tr>
+													<td><input type="checkbox" name="checkbox" value=""></td>
+													<td></td>
+													<td>니트</td>
+													<td style="text-align: center;">강원하</td>
+													<td>
+													
+													</td>
+													<td style="text-align: center;"><span class="badge bg-label-hold me-1" style="font-size:small;">상태보류</span></td>
+													<td>
+														<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
+	                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
+													</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="checkbox" value=""></td>
+													<td></td>
+													<td>니트</td>
+													<td style="text-align: center;">강원하</td>
+													<td>
+													
+													</td>
+													<td style="text-align: center;"><span class="badge bg-label-prohibition" style="font-size:small;">회원정지</span></td>
+													<td>
+														<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
+	                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
+													</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="checkbox" value=""></td>
+													<td></td>
+													<td>니트</td>
+													<td style="text-align: center;">강원하</td>
+													<td>
+													
+													</td>
+													<td style="text-align: center;"><span class="badge bg-label-approval me-1" style="font-size:small;">회원복구</span></td>
+													<td>
+														<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
+	                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
+													</td>
+												</tr>
+											</c:forEach>
+											</tbody>
+										</table>	
 									<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	
 								</form>
-										</div>
-
+							</div>
 						</div>
-						<!--/Table -->
 					</div>
 				</div>
-              <!--/ Responsive Table -->
 			</div>
-            <!-- / Content -->
-
-			<div class="content-backdrop fade"></div>
-			</div>
-          <!-- Content wrapper -->
 		</div>
-        <!-- / Layout page -->
 	</div>
 
       <!-- Overlay -->
 	<div class="layout-overlay layout-menu-toggle"></div>
-    </div>
     <!-- / Layout wrapper -->
 
 	<%-- 바텀 메뉴 --%>
@@ -208,5 +202,6 @@
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
 	</body>
 </html>

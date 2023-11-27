@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.itwillbs.garge.service.AdminService;
+import com.itwillbs.garge.vo.MemberVO;
 
 @Controller
 public class AdminController {
@@ -85,9 +86,13 @@ public class AdminController {
 	}
 	
 	@PostMapping("/AdminLoginPro")
-	public String adminLoginPro(HttpSession session, Model model,@RequestParam Map<String, String> map) {
+	public String adminLoginPro(@RequestParam Map<String, String> map, HttpSession session, Model model, MemberVO member) {
+		
 		System.out.println("id : " + map.get("id") + ", passwd : " +  map.get("passwd"));
-	
+		
+		Map<String, Integer> memberIn = adminService.selectMember();
+		
+		System.out.println("금일 회원 가입 수 : " + memberIn.get("selectMemberIn"));
 		
 //		MemberVO dbMember = adminService.selectAdminMember(map);
 		
@@ -101,6 +106,9 @@ public class AdminController {
 //			session.invalidate();
 //			return "forward";
 //		}
+		
+		// 금일 회원가입 인원
+		model.addAttribute("memberInCount",memberIn.get("selectMemberIn"));
 		
 		return "admin/admin_main";
 	}

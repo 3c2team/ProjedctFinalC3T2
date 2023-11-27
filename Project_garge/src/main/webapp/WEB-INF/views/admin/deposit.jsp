@@ -25,7 +25,7 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!--   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
   <link
     href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet"
@@ -49,8 +49,6 @@
   <!-- Helpers -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/helpers.js"></script>
 
-  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
 	<style type="text/css">
 		.product{
@@ -82,92 +80,71 @@
 								<form action="SearchList" method="post" >	
 <!-- 								<form>	 -->
 									<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;padding-top: 30px;">
-<!-- 										<div class="calendarContainer" style="float:left;"> -->
-<%-- 											<button type="button"   onclick="setToday(this)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '1' ? 'active':''}" >오늘</button> --%>
-<%-- 											<button type="button"  onclick="setMonths(this, -1)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-1' ? 'active':''} "  >1개월</button> --%>
-<%-- 											<button type="button"  onclick="setMonths(this, -3)" class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-3' ? 'active':''} ">3개월</button> --%>
-<%-- 											<button type="button"  onclick="setMonths(this,-6)"  class="calendarContainer badge bg-label-prohibition ${pageMaker.searchType eq '-6' ? 'active':''} ">6개월</button> --%>
-<%-- 											<button type="button"  onclick="setAllPeriod(this)" class="calendarContainer badge bg-label-prohibition ${ (empty pageMaker.searchType) or (pageMaker.searchType eq 'NaN') ? 'active':''}"  >전체기간</button> --%>
-<!-- 										</div> -->
 										<input type="hidden" id="searchType" name="searchType">
 										<div id="reservation_confirm_term_right" >
-											<div class="calanderWrap">
+											<div class="calanderWrap" style="margin-bottom: 25px;">
 												<input type="date" id="startDate" name="startDate" > - <input type="date" id="endDate" name="endDate">
-<!-- 												<button class="badge bg-label-prohibition" id="search_btn">조회</button> -->
 												<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
-<!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
-<!-- 										</div> -->
-												<span class="card-header" style="float:inline-end; font-weight: bold; margin-bottom: 25px;">
-													수수료 합계 : 500,000 원
-												</span>
-<!-- 										</div> -->
-									</div>
+											</div>
+										</div>
+							    	</div>
 								</form>	
-								<!-- --------------------------------------------------------------- -->
+							<!-- --------------------------------------------------------------- -->
 								
 								<div class="table-responsive text-nowrap">
-											<form action="AdminNoticeDelete" method="post">
-												<table id="datatablesSimple">
-													<thead>
-														<tr>
-															<th>#</th>
-															<th>상품정보</th>
-															<th>구매자</th>
-															<th>구매완료 여부</th>
-															<th>입금액</th>
-															<th>수수료</th>
-															<th>입금계좌</th>
-														</tr>
-													</thead>
-													<tbody>
-													<c:forEach var="selectNoticeList" items="${selectNoticeList }">
-														<tr>
-															<td><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></td>
-															<td>
-																<div class="">
-																	<div class=""><strong>****상품명****</strong></div>
-																</div>
-															</td>
-															<td>홍길동</td>
-															<td>
-																<span class="badge bg-label-hold me-1">확정대기</span>
-															</td>
-															<td>
-										                        <span class="badge bg-label-approval me-1">15,000원</span>	
-															</td>
-															<td>
-										                        <span class="badge bg-label-prohibition">450원</span>	
-															</td>
-															<td>
-										                        <span>하나은행 274-158945-45230</span>	
-															</td>
-														</tr>
-														
-													</c:forEach>
-													</tbody>
-												</table>
+									<form action="AdminNoticeDelete" method="post" style="margin:30px">
+										<table id="datatablesSimple">
+											<thead>
+												<tr>
+													<th>#</th>
+													<th>상품정보</th>
+													<th>구매자</th>
+													<th>구매완료 여부</th>
+													<th>입금액</th>
+													<th>수수료</th>
+													<th>입금계좌</th>
+												</tr>
+											</thead>
+											<tbody>
+											<c:forEach var="selectNoticeList" items="${selectNoticeList }">
+												<tr>
+													<td><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></td>
+													<td>
+														<div class="">
+															<div class=""><strong>****상품명****</strong></div>
+														</div>
+													</td>
+													<td>홍길동</td>
+													<td>
+														<span class="badge bg-label-hold me-1">확정대기</span>
+													</td>
+													<td>
+								                        <span class="badge bg-label-approval me-1">15,000원</span>	
+													</td>
+													<td>
+								                        <span class="badge bg-label-prohibition">450원</span>	
+													</td>
+													<td>
+								                        <span>하나은행 274-158945-45230</span>	
+													</td>
+												</tr>
 												
-												<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	
-										</form>
+											</c:forEach>
+											</tbody>
+										</table>
+										
+										<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	
+								</form>
 							</div>
 						</div>
-						<!--/Table -->
 					</div>
 				</div>
-              <!--/ Responsive Table -->
 			</div>
-            <!-- / Content -->
-
-<!-- 			<div class="content-backdrop fade"></div> -->
-			</div>
-          <!-- Content wrapper -->
 		</div>
-        <!-- / Layout page -->
 	</div>
-
       <!-- Overlay -->
 	<div class="layout-overlay layout-menu-toggle"></div>
-    </div>
+
     <!-- / Layout wrapper -->
 
 	<%-- 바텀 메뉴 --%>
@@ -195,6 +172,7 @@
 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
 	</body>
 </html>
