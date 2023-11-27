@@ -43,12 +43,12 @@
                     <div class="header__nav__option" >
                     <c:choose>
 						<c:when test="${empty sessionScope.sId }">
-	                        <a href="Login">로그인</a>
+	                        <a href="Login"><p>로그인</p></a>
 						</c:when>
 						<c:otherwise>
 							<strong>${sessionScope.sName }</strong> 님 반갑습니다. &nbsp;&nbsp;&nbsp;
-	                        <a href="MyPageMain"><i class="fa fa-regular fa-user"></i></a>
-	                        <a href="#none" onclick="openChat()"><i class="fa fa-regular fa-comment-dots"></i></a>
+	                        <a href="MyPageMain"><i class="fa fa-solid fa-user fa-lg" style="color: #262626;"></i></a>
+	                        <a href="#none" onclick="openChat()"><i class="fa fa-solid fa-comment fa-lg" style="color: #262626;"></i></a>
 						</c:otherwise>
 					</c:choose>
                     </div>
