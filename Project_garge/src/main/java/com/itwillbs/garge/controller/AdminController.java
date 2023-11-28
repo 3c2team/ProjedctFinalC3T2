@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.itwillbs.garge.service.AdminService;
+import com.itwillbs.garge.vo.DepositVO;
 import com.itwillbs.garge.vo.MemberVO;
+import com.itwillbs.garge.vo.WithdrawVO;
 
 @Controller
 public class AdminController {
@@ -57,20 +59,35 @@ public class AdminController {
 	
 	// 거래내역
 	@GetMapping("/Transaction")
-	public String transaction() {
+	public String transaction(Model model) {
+		
+		// 거래 방법 출력
+		List<DepositVO> transactionList = adminService.selectTransacList();
+		model.addAttribute("transactionList",transactionList);
 		
 		return "admin/product_transaction";
 	}
 	
-	// 가지페이 입금내역
+	//고객계좌 입금한 내역
 	@GetMapping("/Deposit")
-	public String deposit() {
+	public String deposit(Model model) {
+		
+		// 입금한 내역 조회
+		List<WithdrawVO> depositList = adminService.selectDepositList();
+//		List<WithdrawVO> withdrawList = adminService.selectWithdrawList();
+		model.addAttribute("depositList",depositList);
 		
 		return "admin/deposit";
 	}
-	// 가지페이 출금내역
+	
+	// 고객계좌 출금한 내역
 	@GetMapping("/Withdraw")
-	public String withdraw() {
+	public String withdraw(Model model) {
+		
+		// 출금한 내역 조회
+		List<DepositVO> withdrawList = adminService.selectWithdrawList();
+//		System.out.println("출금한 내역 : " + withdrawList);
+		model.addAttribute("withdrawList", withdrawList);
 		
 		return "admin/withdraw";
 	}
@@ -87,7 +104,6 @@ public class AdminController {
 		String sId = (String)session.getAttribute("sId");
 		System.out.println("sId : " + sId);
 		
-		
 		return "myChat";
 	}
 	
@@ -98,7 +114,7 @@ public class AdminController {
 		
 		// 관리자 계정인지 조회
 		List<MemberVO> adminMember = adminService.selectAdminMember(map);
-		System.out.println("관리자 계정이니? : " + adminMember);
+//		System.out.println("관리자 계정이니? : " + adminMember);
 		
 		if(adminMember.isEmpty()) {
 			model.addAttribute("msg", "관리자 계정이 아닙니다."); // 출력할 메세지
@@ -159,6 +175,7 @@ public class AdminController {
 		return "admin/admin_list";
 	}
 	
+	// 회원 조회 페이지 기간별 검색 
 	@PostMapping("/MemberListPeriod")
 	public String memberListPeriod(
 			@RequestParam Map<String, String> map,

@@ -145,20 +145,20 @@
 	                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
 													</td>
 												</tr>
-												<tr>
-													<td><input type="checkbox" name="checkbox" value=""></td>
-													<td></td>
-													<td>니트</td>
-													<td style="text-align: center;">강원하</td>
-													<td>
+<!-- 												<tr> -->
+<!-- 													<td><input type="checkbox" name="checkbox" value=""></td> -->
+<!-- 													<td></td> -->
+<!-- 													<td>니트</td> -->
+<!-- 													<td style="text-align: center;">강원하</td> -->
+<!-- 													<td> -->
 													
-													</td>
-													<td style="text-align: center;"><span class="badge bg-label-approval me-1" style="font-size:small;">회원복구</span></td>
-													<td>
-														<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button>
-	                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br>
-													</td>
-												</tr>
+<!-- 													</td> -->
+<!-- 													<td style="text-align: center;"><span class="badge bg-label-approval me-1" style="font-size:small;">회원복구</span></td> -->
+<!-- 													<td> -->
+<%-- 														<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">회원정지</button> --%>
+<%-- 	                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">회원복구</button><br> --%>
+<!-- 													</td> -->
+<!-- 												</tr> -->
 											</c:forEach>
 											</tbody>
 										</table>	

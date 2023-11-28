@@ -110,6 +110,7 @@
 													<th>E-MAIL</th>
 													<th>전화번호</th>
 													<th>회원상태</th>
+<!-- 													<th>관리자 권한 부여</th> -->
 												</tr>
 											</thead>
 											<tbody>
@@ -122,11 +123,18 @@
 													<td>${memberList.member_e_mail}</td>
 													<td>${memberList.member_phone_num}</td>
 													<td>${memberList.member_state}</td>
+<!-- 													<td> -->
+<%-- 														<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">관리자 권한 회수</button> --%>
+<%-- 	                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">관리자 권한 부여</button><br> --%>
+<!-- 													</td> -->
 												</tr>
 											</c:forEach>
 											</tbody>
 										</table>	
-									<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	
+<!-- 									<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	 -->
+											<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 13px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">관리자 권한 회수</button>
+                      						<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 13px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">관리자 권한 부여</button><br>
+
 								</form>
 							</div>
 						</div>

@@ -5,7 +5,9 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.itwillbs.garge.vo.DepositVO;
 import com.itwillbs.garge.vo.MemberVO;
+import com.itwillbs.garge.vo.WithdrawVO;
 
 @Mapper
 public interface AdminMapper {
@@ -27,6 +29,15 @@ public interface AdminMapper {
 
 	// 기간 별 총 회원 수
 	Map<String, Integer> selectMemberCountPeriod(Map<String, String> map);
+	
+	// 입금한 내역
+	List<WithdrawVO> selectDepositList();
+
+	// 출금한 내역
+//	List<DepositVO> selectDepositList();
+	List<DepositVO> selectWithdrawList();
+
+
 
 	
 	

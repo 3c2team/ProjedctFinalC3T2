@@ -17,7 +17,7 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 
-  <title>TRADEUP | 출금내역</title>
+  <title>TRADEUP | 입금내역</title>
 
   <meta name="description" content="" />
 
@@ -74,10 +74,10 @@
 			<div class="layout-page">
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
-						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">가지페이 /</span> 출금내역</h4>
+						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">가지페이 /</span> 입금내역</h4>
 						<!--/Table -->
 						<div class="card">
-							<h5 class="card-header">고객계좌 출금내역</h5>
+							<h5 class="card-header">입금내역</h5>
 								<form action="SearchList" method="post" >	
 <!-- 								<form>	 -->
 									<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;padding-top: 30px;">
@@ -103,11 +103,11 @@
 													<th>구매완료 여부</th>
 													<th>입금액</th>
 													<th>수수료</th>
-													<th>출금계좌</th>
+													<th>입금계좌</th>
 												</tr>
 											</thead>
 											<tbody>
-											<c:forEach var="withdrawList" items="${withdrawList }">
+											<c:forEach var="depositList" items="${depositList }">
 												<tr>
 													<td><input type="checkbox" name="checkbox" value=""></td>
 													<td>
@@ -115,26 +115,26 @@
 															<div class=""><strong>****상품명****</strong></div>
 <!-- 														</div> -->
 													</td>
-													<td>${withdrawList.member_name }</td>
+													<td>${depositList.member_name }</td>
 													<td>
 														<c:choose>
-															<c:when test="${withdrawList.buy_check eq '확정대기'}">
-																<span class="badge bg-label-hold me-1" style="font-size:small;">${withdrawList.buy_check }</span>
+															<c:when test="${depositList.buy_check eq '확정대기'}">
+																<span class="badge bg-label-hold me-1" style="font-size:small;">${depositList.buy_check }</span>
 															</c:when>
-															<c:when test="${withdrawList.buy_check eq '구매완료'}">
-																<span class="badge bg-label-approval me-1" style="font-size:small;">${withdrawList.buy_check }</span>
+															<c:when test="${depositList.buy_check eq '구매완료'}">
+																<span class="badge bg-label-approval me-1" style="font-size:small;">${depositList.buy_check }</span>
 															</c:when>
 														</c:choose>
 <%-- 														<span class="badge bg-label-hold me-1" style="font-size:small;">${depositList.buy_check }</span> --%>
 													</td>
 													<td>
-								                        <span class="badge bg-label-approval me-1" style="font-size:small;">${withdrawList.product_price }원</span>	
+								                        <span class="badge bg-label-approval me-1" style="font-size:small;">${depositList.product_price }원</span>	
 													</td>
 													<td>
-								                        <span class="badge bg-label-prohibition" style="font-size:small;">${withdrawList.commission }원</span>	
+								                        <span class="badge bg-label-prohibition" style="font-size:small;">${depositList.commission }원</span>	
 													</td>
 													<td>
-								                        <span>${withdrawList.deposit_bank} (${withdrawList.deposit_acc})</span>	
+								                        <span>${depositList.deposit_bank} (${depositList.deposit_acc})</span>	
 													</td>
 												</tr>												
 											</c:forEach>

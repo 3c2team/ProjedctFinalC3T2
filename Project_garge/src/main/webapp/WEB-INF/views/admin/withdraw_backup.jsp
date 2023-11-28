@@ -17,7 +17,7 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 
-  <title>TRADEUP | 출금내역</title>
+  <title>GARGE | 출금내역</title>
 
   <meta name="description" content="" />
 
@@ -26,7 +26,7 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-<!--   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet"
@@ -50,6 +50,8 @@
   <!-- Helpers -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/helpers.js"></script>
 
+  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
 	<style type="text/css">
 		.product{
@@ -77,21 +79,15 @@
 						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">가지페이 /</span> 출금내역</h4>
 						<!--/Table -->
 						<div class="card">
-							<h5 class="card-header">고객계좌 출금내역</h5>
-								<form action="SearchList" method="post" >	
-<!-- 								<form>	 -->
-									<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;padding-top: 30px;">
-										<input type="hidden" id="searchType" name="searchType">
-										<div id="reservation_confirm_term_right" >
-											<div class="calanderWrap" style="margin-bottom: 25px;">
-												<input type="date" id="startDate" name="startDate" > - <input type="date" id="endDate" name="endDate">
-												<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
-											</div>
-										</div>
-							    	</div>
-								</form>	
-							<!-- --------------------------------------------------------------- -->
-								
+							<h5 class="card-header">출금내역</h5>
+							<form  id="frm">	
+								<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 5px;padding-top: 30px;">
+									<input type="hidden" id="searchType" name="searchType">
+									<input type="date" id="startDate" name="startDate" > - <input type="date" id="endDate" name="endDate">
+									<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
+<!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
+								</div>
+							</form>	
 								<div class="table-responsive text-nowrap">
 									<form action="AdminNoticeDelete" method="post" style="margin:30px">
 										<table id="datatablesSimple">
@@ -99,44 +95,33 @@
 												<tr>
 													<th>#</th>
 													<th>상품정보</th>
-													<th>구매자</th>
-													<th>구매완료 여부</th>
-													<th>입금액</th>
-													<th>수수료</th>
+													<th>판매자</th>
+													<th>신뢰지수</th>
+													<th>출금액</th>
+<!-- 															<th>수수료</th> -->
 													<th>출금계좌</th>
 												</tr>
 											</thead>
 											<tbody>
 											<c:forEach var="withdrawList" items="${withdrawList }">
 												<tr>
-													<td><input type="checkbox" name="checkbox" value=""></td>
+													<td><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></td>
 													<td>
-<!-- 														<div class=""> -->
+														<div class="">
 															<div class=""><strong>****상품명****</strong></div>
-<!-- 														</div> -->
+														</div>
 													</td>
 													<td>${withdrawList.member_name }</td>
 													<td>
-														<c:choose>
-															<c:when test="${withdrawList.buy_check eq '확정대기'}">
-																<span class="badge bg-label-hold me-1" style="font-size:small;">${withdrawList.buy_check }</span>
-															</c:when>
-															<c:when test="${withdrawList.buy_check eq '구매완료'}">
-																<span class="badge bg-label-approval me-1" style="font-size:small;">${withdrawList.buy_check }</span>
-															</c:when>
-														</c:choose>
-<%-- 														<span class="badge bg-label-hold me-1" style="font-size:small;">${depositList.buy_check }</span> --%>
+														<span class="badge bg-label-state" style="font-size:small;">88%</span>
 													</td>
 													<td>
-								                        <span class="badge bg-label-approval me-1" style="font-size:small;">${withdrawList.product_price }원</span>	
+								                        <span class="badge bg-label-prohibition" style="font-size:small;">${withdrawList.product_price }</span>	
 													</td>
 													<td>
-								                        <span class="badge bg-label-prohibition" style="font-size:small;">${withdrawList.commission }원</span>	
+								                        <span>${withdrawList.withdraw_bank} (${withdrawList.withdraw_acc})</span>	
 													</td>
-													<td>
-								                        <span>${withdrawList.deposit_bank} (${withdrawList.deposit_acc})</span>	
-													</td>
-												</tr>												
+												</tr>
 											</c:forEach>
 											</tbody>
 										</table>
@@ -150,8 +135,6 @@
 			</div>
 		</div>
 	</div>
-      <!-- Overlay -->
-	<div class="layout-overlay layout-menu-toggle"></div>
 
     <!-- / Layout wrapper -->
 
@@ -176,11 +159,12 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
         <script
 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
 	</body>
 </html>
