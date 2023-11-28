@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.itwillbs.garge.service.MainService;
 
@@ -143,6 +144,13 @@ public class MainController {
 	public String registQuewstion() {
 		
 		return "regist_question";
+	}
+	@PostMapping("QuestionRegistPro")
+	public String quewstionRegistPro(@RequestParam(value = "file", required = false) List<MultipartFile> imageList) {
+		for(MultipartFile file : imageList) {
+			System.out.println("fdfdfd : " + file.getName());
+		}
+		return "";
 	}
 	
 	

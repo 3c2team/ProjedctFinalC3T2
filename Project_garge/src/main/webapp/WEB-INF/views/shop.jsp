@@ -658,6 +658,12 @@
 		var price = "";
 		if("${param.category}"){
 			category = "&category=${param.category}";
+			$(".cusor").each(function(){
+// 				debugger;				
+				if($(this).text() == "${param.category}"){
+					$(this).css("color","red");
+				}
+			});
 			$("#category").attr("hidden",false);
 			$("#category").html("${param.category} <i class='bi bi-x'></i>");
 		}
