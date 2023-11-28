@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.itwillbs.garge.service.MainService;
+import com.mysql.cj.Session;
 
 @Controller
 public class MainController {
@@ -146,9 +147,10 @@ public class MainController {
 		return "regist_question";
 	}
 	@PostMapping("QuestionRegistPro")
-	public String quewstionRegistPro(@RequestParam(value = "file", required = false) List<MultipartFile> imageList) {
+	public String quewstionRegistPro(HttpSession session,@RequestParam(value = "files", required = false) List<MultipartFile> imageList) {
 		for(MultipartFile file : imageList) {
-			System.out.println("fdfdfd : " + file.getName());
+			System.out.println("fdfdfd : " + file.getOriginalFilename());
+//			session.;
 		}
 		return "";
 	}

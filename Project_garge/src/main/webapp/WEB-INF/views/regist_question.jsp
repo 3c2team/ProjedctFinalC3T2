@@ -43,7 +43,7 @@
 		<div class="custom_flex2" style="width: 40%;">
 			<h2 class="fw-bold" style="text-align: center;">1:1문의</h2>
 			<hr class="custom_border_grove">
-			<form action="QuestionRegistPro" method="post" enctype="multipart/form-data" >
+			<form action="QuestionRegistPro" method="post" onsubmit="return result()" enctype="multipart/form-data" >
 				<select class="form-control" id="qna_category" style="margin: 20px 0; height: 3.2rem;">
 					<option selected disabled>문의 유형을 선택하세요</option>
 					<option value="1">이용제재</option>
@@ -66,8 +66,8 @@
 					<button type="button" class="custom_btn" onclick="document.all.file.click();">
 						<i class="bi bi-camera"></i>
 					</button>		
-					
-					<input type="file" multiple="multiple" accept=" audio/*, video/*, image/*" name="file" id="file" style="display:none"/>
+					<input type="hidden" name="files" value="">
+					<input type="file" accept=" audio/*, video/*, image/*" name="file" id="file" style="display:none"/>
 				</div>
 				<div class="d-grid gap-2">
 					<input type="submit"  style="height: 3.5rem;" class="btn btn-success" value="등록하기" onclick="location.href='FraudInquiry'">
@@ -77,40 +77,55 @@
 	<jsp:include page="inc/bottom.jsp"></jsp:include>
 	<script type="text/javascript">
 		var count = 0;
+		var files = []; 
 		$("input[type=file][name=file]").on("change", function(event) {
 			const file = event.target.files;
-			for(let i = 0; i<file.length;i++){
-				
-			
-				count += 1;
-				$("#count").text(count);
-				var image = new Image();
-				var ImageTempUrl = window.URL.createObjectURL(file[i]);
-				
-				
-				image.src = ImageTempUrl;
-				image.className = "custom_btn custom_img";
-				
-				// 스크립트
-				
-				// JQuery
-				$("#imgArea").append(image);
-				
-				
-				$(image).on("click",function(){
-					if(confirm("삭제하시겠습니까?")){
-						$(this).remove("");
-						count -= 1;
-						$("#count").text(count);
-					}
-				});
+			count += 1;
+			if(count > 10){
+				alert("등록 최대갯수를 초과하였습니다");
+				count -= 1;
+				return;
 			}
-// 				debugger;
+			
+			files.push(file);
+			$("#count").text(count);
+			var image = new Image();
+			var ImageTempUrl = window.URL.createObjectURL(file[0]);
+			
+			
+			image.src = ImageTempUrl;
+			image.name = file[0].name;
+			image.className = "custom_btn custom_img";
+			
+			// 스크립트
+// 			debugger;
+			// JQuery
+			$("#imgArea").append(image);
+			
+			$(image).on("click",function(){
+				if(confirm("삭제하시겠습니까?")){
+					$(this).remove("");
+					count -= 1;
+					$("#count").text(count);
+					for(let i = 0; i < files.length; i++){
+						if(file[i].name == $(this)[0].name){
+							 files.splice(i, 1);
+						}						
+					}
+				debugger;
+				console.log(files);
+				}
+			});
 		});
 		$("#qna_category").on("change",function(){
 			$("#qna_category2").attr("disabled",false);
 // 			$("#qna_category").val() == "1"
 		});
+		
+		function result() {
+			debugger;
+			return false;
+		}
 		
 	</script>
 </body>
