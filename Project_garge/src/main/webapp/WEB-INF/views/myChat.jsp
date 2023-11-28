@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html style="padding-top: 10px;">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -113,15 +113,16 @@ var webSocket = new WebSocket("<%=application.getInitParameter("CHAT_ADDR")%>/Ch
 .myMsg {
 	text-align: right;
 }
+
 </style>
 </head>
 <body>
 	아이디:
 	<input type="text" id="chatId" value="${ sessionScope.sId }" readonly />
 	<button id="closeBtn" onclick="disconnect();">채팅 종료</button>
-	<div id="chatWindow" style=" width: 85%; height: 550px"></div>
+	<div id="chatWindow" style=" width: 85%; height: 550px; margin-top: 20px;margin-bottom: 10px; margin-left: 25px;"></div>
 	<div>
-		<input type="text" id="chatMessage" onkeyup="enterKey();">
+		<input type="text" id="chatMessage" style="margin-left: 25px;" onkeyup="enterKey();">
 		<button id="sendBtn" onclick="sendMessage();">전송</button>
 	</div>
 </body>

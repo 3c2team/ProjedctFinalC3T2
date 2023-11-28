@@ -17,7 +17,7 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 
-  <title>TRADEUP | 회원조회</title>
+  <title>TRADEUP | 입금내역</title>
 
   <meta name="description" content="" />
 
@@ -50,8 +50,6 @@
   <!-- Helpers -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/helpers.js"></script>
 
-  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
 	<style type="text/css">
 		.product{
@@ -76,65 +74,74 @@
 			<div class="layout-page">
 				<div class="content-wrapper">
 					<div class="container-xxl flex-grow-1 container-p-y">
-						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">회원 조회 /</span> 회원 목록</h4>
+						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">가지페이 /</span> 입금내역</h4>
 						<!--/Table -->
 						<div class="card">
-							<h5 class="card-header">회원 목록</h5>
-								<form action="MemberListPeriod" method="post">	
-									<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 25px;padding-top: 30px;">
+							<h5 class="card-header">입금내역</h5>
+								<form action="SearchList" method="post" >	
+<!-- 								<form>	 -->
+									<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 50px;padding-top: 30px;">
 										<input type="hidden" id="searchType" name="searchType">
 										<div id="reservation_confirm_term_right" >
-											<div class="calanderWrap">
-												<input type="date" id="startDate" name="startDate"> - <input type="date" id="endDate" name="endDate">
+											<div class="calanderWrap" style="margin-bottom: 25px;">
+												<input type="date" id="startDate" name="startDate" > - <input type="date" id="endDate" name="endDate">
 												<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
-<!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
-
-												<span class="card-header" style="float:inline-end; font-weight: bold; margin-bottom: 25px;">
-													총 회원 수&nbsp; : &nbsp; ${memberCount} 명
-												</span>
 											</div>
 										</div>
-									</div>
+							    	</div>
 								</form>	
-								<!-- --------------------------------------------------------------- -->
+							<!-- --------------------------------------------------------------- -->
 								
 								<div class="table-responsive text-nowrap">
-									<form action="MemberListPeriod" method="post" style="margin:30px">
-										<table id="datatablesSimple" >
+									<form action="AdminNoticeDelete" method="post" style="margin:30px">
+										<table id="datatablesSimple">
 											<thead>
 												<tr>
-													<th></th>
-													<th>이름</th>
-													<th>닉네임</th>
-													<th>ID</th>
-													<th>E-MAIL</th>
-													<th>전화번호</th>
-													<th>회원상태</th>
-<!-- 													<th>관리자 권한 부여</th> -->
+													<th>#</th>
+													<th>상품정보</th>
+													<th>구매자</th>
+													<th>구매완료 여부</th>
+													<th>입금액</th>
+													<th>수수료</th>
+													<th>입금계좌</th>
 												</tr>
 											</thead>
 											<tbody>
-											<c:forEach var="memberList" items="${memberList}">
+											<c:forEach var="depositList" items="${depositList }">
 												<tr>
 													<td><input type="checkbox" name="checkbox" value=""></td>
-													<td>${memberList.member_name}</td>
-													<td>${memberList.member_nick_name}</td>
-													<td>${memberList.member_id}</td>
-													<td>${memberList.member_e_mail}</td>
-													<td>${memberList.member_phone_num}</td>
-													<td>${memberList.member_state}</td>
-<!-- 													<td> -->
-<%-- 														<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">관리자 권한 회수</button> --%>
-<%-- 	                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">관리자 권한 부여</button><br> --%>
-<!-- 													</td> -->
-												</tr>
+													<td>
+<!-- 														<div class=""> -->
+															<div class=""><strong>****상품명****</strong></div>
+<!-- 														</div> -->
+													</td>
+													<td>${depositList.member_name }</td>
+													<td>
+														<c:choose>
+															<c:when test="${depositList.buy_check eq '확정대기'}">
+																<span class="badge bg-label-hold me-1" style="font-size:small;">${depositList.buy_check }</span>
+															</c:when>
+															<c:when test="${depositList.buy_check eq '구매완료'}">
+																<span class="badge bg-label-approval me-1" style="font-size:small;">${depositList.buy_check }</span>
+															</c:when>
+														</c:choose>
+<%-- 														<span class="badge bg-label-hold me-1" style="font-size:small;">${depositList.buy_check }</span> --%>
+													</td>
+													<td>
+								                        <span class="badge bg-label-approval me-1" style="font-size:small;">${depositList.product_price }원</span>	
+													</td>
+													<td>
+								                        <span class="badge bg-label-prohibition" style="font-size:small;">${depositList.commission }원</span>	
+													</td>
+													<td>
+								                        <span>${depositList.deposit_bank} (${depositList.deposit_acc})</span>	
+													</td>
+												</tr>												
 											</c:forEach>
 											</tbody>
-										</table>	
-<!-- 									<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	 -->
-											<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 13px; color: #fff; background: black;" onclick="authorization('${memberList.member_id}')">관리자 권한 회수</button>
-                      						<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 13px; color: #fff; background: darkgreen;" onclick="revoke('${memberList.member_id}')">관리자 권한 부여</button><br>
-
+										</table>
+										
+										<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	
 								</form>
 							</div>
 						</div>
@@ -143,9 +150,9 @@
 			</div>
 		</div>
 	</div>
-
       <!-- Overlay -->
 	<div class="layout-overlay layout-menu-toggle"></div>
+
     <!-- / Layout wrapper -->
 
 	<%-- 바텀 메뉴 --%>
@@ -173,7 +180,7 @@
 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
 	</body>
 </html>

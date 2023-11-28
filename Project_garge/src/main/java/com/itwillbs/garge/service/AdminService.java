@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.itwillbs.garge.mapper.AdminMapper;
+import com.itwillbs.garge.vo.DepositVO;
 import com.itwillbs.garge.vo.MemberVO;
+import com.itwillbs.garge.vo.WithdrawVO;
 
 @Service
 public class AdminService {
@@ -45,6 +47,28 @@ public class AdminService {
 	public Map<String, Integer> selectMemberPeriodCount(Map<String, String> map) {
 		// TODO Auto-generated method stub
 		return adminMapper.selectMemberCountPeriod(map);
+	}
+
+	// 결제 출금한 내역
+	public List<DepositVO> selectWithdrawList() {
+		// TODO Auto-generated method stub
+		return adminMapper.selectWithdrawList();
+	}
+
+	// 결제 입금한 내역
+	public List<WithdrawVO> selectDepositList() {
+		// TODO Auto-generated method stub
+		return adminMapper.selectDepositList();
+	}
+//	public List<WithdrawVO> selectWithdrawList() {
+//		// TODO Auto-generated method stub
+//		return adminMapper.selectWithdrawList();
+//	}
+
+	// 거래 방법 출력
+	public List<DepositVO> selectTransacList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

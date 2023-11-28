@@ -48,15 +48,18 @@
 			</a>
 			<ul class="menu-sub">
 				<li class="menu-item">
-					<a href="Deposit" class="menu-link" >
-						<div data-i18n="">페이 입금내역</div>
-					</a>
-				</li>
-				<li class="menu-item">
 					<a href="Withdraw" class="menu-link">
 						<div data-i18n="">페이 출금내역</div>
 					</a>
 				</li>
+				<li class="menu-item">
+					<a href="Deposit" class="menu-link" >
+						<div data-i18n="">페이 입금내역</div>
+					</a>
+				</li>
+				
+				
+				
 <!-- 				<li class="menu-item"> -->
 <!-- 					<a href="auth-forgot-password-basic.html" class="menu-link" target="_blank"> -->
 <!-- 						<div data-i18n="Basic">거래완료</div> -->
