@@ -8,41 +8,39 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="#"><img src="${pageContext.request.contextPath }/resources/img/footer-logo.png" alt=""></a>
+                            <a href="#"><img src="${pageContext.request.contextPath }/resources/img/logo2.png" alt=""></a>
                         </div>
-                        <p>중고나라 상점의 판매상품을 제외한 모든 상품들에 대하여, (주)중고나라는 통신판매중개자로서 거래 당사자가 아니며 판매 회원과 구매 회원 간의 상품거래 정보 및 거래에 관여하지 않고, 어떠한 의무와 책임도 부담하지 않습니다.</p>
+                        <p>트레이드업 상점의 판매상품을 제외한 모든 상품들에 대하여, (주)트레이드업은 통신판매중개자로서 거래 당사자가 아니며 판매 회원과 구매 회원 간의 상품거래 정보 및 거래에 관여하지 않고, 어떠한 의무와 책임도 부담하지 않습니다.</p>
                         <a href="#"><img src="${pageContext.request.contextPath }/resources/img/payment.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
                     <div class="footer__widget">
-                        <h6>Shopping</h6>
+                        <h6>중고거래</h6>
                         <ul>
-                            <li><a href="#">Clothing Store</a></li>
-                            <li><a href="#">Trending Shoes</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Sale</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Location</a></li>
+                            <li><a href="#">Sell</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-6">
                     <div class="footer__widget">
-                        <h6>Shopping</h6>
+                        <h6>고객센터</h6>
                         <ul>
                             <li><a href="#">Contact Us</a></li>
                             <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Delivary</a></li>
                             <li><a href="#">Return & Exchanges</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
                     <div class="footer__widget">
-                        <h6>NewLetter</h6>
+                        <h6>자주 묻는 질문</h6>
                         <div class="footer__newslatter">
-                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <p>로그인하시면 더욱 편리하게 도움을 받으실 수 있습니다.</p>
                             <form action="#">
-                                <input type="text" placeholder="Your email">
+                                <input type="text" placeholder="궁금하신 점을 검색해주세요.">
                                 <button type="submit"><span class="icon_mail_alt"></span></button>
                             </form>
                         </div>
