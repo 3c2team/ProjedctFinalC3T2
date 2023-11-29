@@ -67,59 +67,50 @@ public class MyPageController {
 		return "myPage/myPage_info";
 	}
 	
-	@ResponseBody
 	@PostMapping("MyInfoModify")	// 회원 프로필 수정
-	public Map<String, Object> myInfoModify(HttpSession session, @RequestParam Map<String, Object> param) {
+	public String myInfoModify(HttpSession session, @RequestParam Map<String, Object> param) {
 		param.put("sId", session.getAttribute("sId"));
 		
 		int updateCount = service.myInfoModify(param);
 		
-		Map<String, Object> response = new HashMap<String, Object>();
 		if (updateCount > 0) {
-			response.put("success", true);
-			
+			return "redirect:/MyInfo";
 	    } else {
-	    	response.put("success", false);
+	    	return "fail_back";
 	    }
-		return response;
-		
 	}
 	
-	@ResponseBody
 	@PostMapping("MyProfileModify")	// 회원 프로필 사진 수정
-	public Map<String, Object> myProfileModify(HttpSession session, @RequestParam Map<String, Object> param, @RequestParam(value = "file", required=false) MultipartFile file) {
+	public String myProfileModify(HttpSession session, @RequestParam Map<String, Object> param, @RequestParam(value = "file", required=false) MultipartFile file) {
 		
 		String sId = (String)session.getAttribute("sId");
 		param.put("sId", sId);
 		String uploadDir = "resources/TradeUp_upload/user_profile_image";
 		String saveDir = session.getServletContext().getRealPath(uploadDir); //.replace("프로젝트명"); 추가하기
 		String fileName = "";
-			//================= < 이미지 처리 > =================
-			try {
-				
-				//하위폴더 고민중
+		try {
+			
+			//하위폴더 고민중
 //				subDir = (String)session.getAttribute("sMember_num");
 //				saveDir += subDir;
-				
-				Path path = Paths.get(saveDir);
-				Files.createDirectories(path);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 			
-			// 중복방지 uuid 추가하기 고민중
-			fileName = file.getOriginalFilename();// 파일이름 추가 작업 해주기
-			if(file != null || !(file.getOriginalFilename().equals(""))) {
-//				param.put("modify_value", "");
-				param.put("modify_value", uploadDir + "/" + fileName);
-			}
-			
+			Path path = Paths.get(saveDir);
+			Files.createDirectories(path);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
+		// 중복방지 uuid 추가하기 고민중
+		fileName = file.getOriginalFilename();// 파일이름 추가 작업 해주기
+		if(file != null || !(file.getOriginalFilename().equals(""))) {
+//				param.put("modify_value", "");
+			param.put("modify_value", uploadDir + "/" + fileName);
+		}
+			
 		int updateCount = service.myInfoModify(param);
 		
 		Map<String, Object> response = new HashMap<String, Object>();
 		if (updateCount > 0) {
-			response.put("success", true);
 			try {
 				if(file != null && !(file.getOriginalFilename().equals(""))) {
 					file.transferTo(new File(saveDir, fileName));
@@ -131,12 +122,10 @@ public class MyPageController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+			return "redirect:/MyInfo";
 	    } else {
-	    	response.put("success", false);
+	    	return "fail_back";
 	    }
-		
-		return response;
 	}
 	
 	@PostMapping("DeleteMember")	// 회원 탈퇴

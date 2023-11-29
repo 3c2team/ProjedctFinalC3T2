@@ -31,7 +31,7 @@
 				></button>
 			</div>
 			
-			<form action="MyInfoModify" id="MyInfoModify" method="post">
+			<form action="MyInfoModify" id="nickname_modify" method="post">
 				<input type="hidden" name="modify_type" value="member_nick_name">
 				<div class="modal-body">
 					<div class="row">
@@ -45,7 +45,7 @@
 					<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
 						취소
 					</button>
-					<button type="submit" class="btn btn-primary" onclick="submitForm()">저장</button>
+					<button type="submit" class="btn btn-primary">저장</button>
 				</div>
 			</form>
 		</div>

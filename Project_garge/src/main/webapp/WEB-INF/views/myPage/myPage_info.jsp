@@ -81,28 +81,7 @@
 	    margin: auto;
   	}
   </style>
-  
-  <script>
-    function submitForm() {
-    	var formData = $('#MyInfoModify').serialize();
-    	$.ajax({
-            type: 'POST',
-            url: 'MyInfoModify',
-            data: formData,
-            dataType: "json",
-            success: function(response) {
-            	// 판별 추가하기
-	            window.location.reload();
-            },
-            error: function() {
-                alert('서버 오류가 발생했습니다.');
-            }
-    	});
-    }
-</script>
-  
 </head>
-
 <body>
 	<%-- 탑 메뉴 --%>
 	<jsp:include page="../inc/top.jsp"></jsp:include>

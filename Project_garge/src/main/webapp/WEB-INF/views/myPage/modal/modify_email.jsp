@@ -15,14 +15,13 @@
 				></button>
 			</div>
 			
-			<form action="MyInfoModify" id="MyInfoModify" method="post">
-				<input type="hidden" name="modify_type" value="member_nick_name">
-				<input type="hidden" name="modify_type2" value="member_profile_img">
+			<form action="MyInfoModify" id="email_modify" method="post">
+				<input type="hidden" name="modify_type" value="member_e_mail">
 				<div class="modal-body">
 					<div class="row">
 						<div class="col mb-3">
 							<label for="nameSmall" class="form-label">이메일 변경</label>
-							<input type="text" name="modify_value2" id="nameSmall" class="form-control" placeholder="이메일" />
+							<input type="text" name="modify_value" id="nameSmall" class="form-control" placeholder="이메일" />
 						</div>
 					</div>
 				</div>
@@ -30,7 +29,7 @@
 					<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
 						취소
 					</button>
-					<button type="submit" class="btn btn-primary" onclick="submitForm()">저장</button>
+					<button type="submit" class="btn btn-primary">저장</button>
 				</div>
 			</form>
 		</div>
