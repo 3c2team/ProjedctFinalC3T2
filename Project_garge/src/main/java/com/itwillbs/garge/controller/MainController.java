@@ -37,20 +37,7 @@ public class MainController {
 		
 		return "blog_details";
 	}
-	@GetMapping("Checkout")
-	public String checkout(HttpSession session, Model model) {
-		String sId = (String)session.getAttribute("sId");
-		String sEmail = (String)session.getAttribute("sEmail");
-//		String sEmail2 = (String)session.getAttribute("sEmail2");
-//		Map<String, String> memberAddress = service.getMemberAddress(sId);
-//		model.addAttribute("memberAddress" ,memberAddress);
-//		model.addAttribute("sName", sName);
-		model.addAttribute("sId", sId);
-		model.addAttribute("sEmail", sEmail);
-//		model.addAttribute("sEmail2", sEmail2);
-//		System.out.println(memberAddress);
-		return "checkout";
-	}
+	
 	@GetMapping("Contact")
 	public String contact() {
 		

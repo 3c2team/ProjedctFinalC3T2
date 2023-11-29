@@ -96,39 +96,48 @@
                             <h6 class="checkout__title">결제 정보</h6>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
-                                    <p>받으시는 분 : 이예림</p>
+                                    <p>받으시는 분 : ${deliver.member_name }</p>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="checkout__input">
-                                    <p>주소 : 부산광역시 부산진구 엄광로 68(가야동, 벽산아파트) 999동 4515호(우편번호)</p>
+                                    <p>주소 : (${deliver.zonecode })${deliver.member_address1 } ${deliver.member_address2 }</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
-                                    <p>전화번호 : 010-2594-7524</p>
+                                    <p>전화번호 : ${deliver.member_phone }</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
-                                    <p>이메일 : lyl3697@naver.com</p>
+                                    <p>이메일 : ${deliver.member_email }</p>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="checkout__input">
-                                    <p>배송문구 : 없음</p>
+                                    <p>배송문구 : 
+                                    <c:choose>
+	                                    <c:when test="${empty deliver.diliver_ment }">
+	                                   		작성된 배송문구가 없습니다.
+	                                   	</c:when>
+	                                   	<c:otherwise>
+	                                   		${deliver.diliver_ment }
+	                                   	</c:otherwise>
+                                    </c:choose>
+                                    </p>
                                 </div>
                             </div>
                             <hr>
                             <div class="col-lg-12">
                                 <div class="checkout__input">
-                                	<c:if test="${bank eq kakao }">
+                                	<c:if test="${deliver.bank eq 'kakao' }">
                                     	<p>계좌 정보 : 카카오뱅크 3333-10-6668888</p>
                                 	</c:if>
-                                	<c:if test="${bank eq kb }">
+                                	<c:if test="${deliver.bank eq 'kb' }">
 	                                    <p>계좌 정보 : 국민은행 3333-10-6668888</p>
                                 	</c:if>
-                                	<c:if test="${bank eq sinhan }">
+                                	<c:if test="${deliver.bank eq 'sinhan' }">
 	                                    <p>계좌 정보 : 신한은행 3333-10-6668888</p>
                                 	</c:if>
                                     <p style="color: #5F12D3;">24시간 내에 입금되지 않으면 주문은 자동으로 취소됩니다.</p>

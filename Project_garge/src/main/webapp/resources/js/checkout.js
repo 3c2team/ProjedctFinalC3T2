@@ -1,13 +1,43 @@
 $("#open").click(function() {
 	$("#modal-box").toggleClass("active");
+	$('html, body').css({'overflow': 'hidden', 'height': '100%'}); // 모달팝업 중 html,body의 scroll을 hidden시킴
+	$('#element').on('scroll touchmove mousewheel', function(event) { // 터치무브와 마우스휠 스크롤 방지
+		event.preventDefault();
+		event.stopPropagation();
+		return false;
+	});
+});
+
+$("#modal-box").on("click",function(){
+	$("#modal-contents").on("click",function(){
+		return false;
+	});
+	$("#modal-box").toggleClass("active");
 });
 $("#close").click(function() {
 	$("#modal-box").toggleClass("active");
+	$('html, body').css({'overflow': 'auto', 'height': '100%'}); //scroll hidden 해제
+	$('#element').off('scroll touchmove mousewheel'); // 터치무브 및 마우스휠 스크롤 가능
 });
 
 $('.choice').click(function(e){
 	$("#modal-box").toggleClass("active");
 	console.log("!!!!!!!!!!!!!" + e.target.value);
+	let name = $("#desc" + e.target.value).children('p')[0].textContent;
+	$("#member_name").val(name.split(': ').reverse()[0]);
+	let address1 = $("#desc" + e.target.value).find('span')[1].textContent;
+	$("#member_address1").val(address1);
+	let address2 = $("#desc" + e.target.value).find('span')[2].textContent;
+	$("#member_address2").val(address2);
+	let zonecode = $("#desc" + e.target.value).find('span')[0].textContent;
+	$("#zonecode").val(zonecode);
+	let phone = $("#desc" + e.target.value).find('span')[3].textContent;
+	$("#member_phone").val(phone);
+	$('input[type="checkbox"][name="new"]').prop('checked',false);
+	$('input[id="origin"]').prop('checked',true);
+	$("#new").hide();
+	$('html, body').css({'overflow': 'auto', 'height': '100%'}); //scroll hidden 해제
+	$('#element').off('scroll touchmove mousewheel'); // 터치무브 및 마우스휠 스크롤 가능
 });
 
 $(function() {
@@ -42,7 +72,6 @@ $(function() {
 	            if(data.buildingName != '') { // 건물명이 있을 경우
 	            	address += " (" + data.buildingName + ")";
 	            }
-	            
 	            $("#zonecode").val(data.zonecode);
 	            $("#member_address1").val(address);
 	            $("#member_address2").focus();
@@ -51,15 +80,20 @@ $(function() {
 	});
 	
 	// 기존 배송지와 새로운 배송지 구분 짓기
-    $('input[type="radio"][name="diliver"]').change(function(){
-	   if($('input[type="radio"][name="diliver"]:checked').val() == 1){
-//		   $("#member_name").val("${Member.member_name}");
-// 		   $("#phone").val("${Member.member_phone_num}");
+	$('input[type="radio"][name="diliver"]').change(function(){
+		if($('input[type="radio"][name="diliver"]:checked').val() == 1){
+			let addr = JSON.parse(addressMain2.value);
+			
+			$("#member_name").val(addr.recipient_name);
+			$("#member_address1").val(addr.address1);
+			$("#member_address2").val(addr.address2);
+			$("#member_phone").val(addr.recipient_phone_num);
 			$("#new").hide();
 			$('input[type="checkbox"][name="new"]').prop('checked',false);
 		   
 	   } else{
-	         $('input[type="text"]').val(""); // id는 그대로 유지
+	         $('input[type="text"]').val("");
+	         $('#member_id').val(member_sId.value); // id는 그대로 유지
 	         $("#new").show();
 	   }
     });
@@ -128,4 +162,16 @@ function checks() {
 	if($('input[type="checkbox"][name="pay"]:checked').val( ) == 3){
 		$("form").attr("action", "PaypalPro");
 	};
+	
+	if ($('input[name=add]').is(":checked")) {
+		$('input[name=add]').val('Y');
+	} else {
+		$('input[name=add]').val('N');
+	}
+	
+	if ($('input[name=pick]').is(":checked")) {
+		$('input[name=pick]').val('Y');
+	} else {
+		$('input[name=pick]').val('N');
+	}
 }
