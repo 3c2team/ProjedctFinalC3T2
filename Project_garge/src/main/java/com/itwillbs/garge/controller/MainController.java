@@ -79,18 +79,23 @@ public class MainController {
 		System.out.println("상품 목록" + selectProduct);
 		model.addAttribute("selectProduct",selectProduct);
 		model.addAttribute("selectCategory",selectCategory);
-		return "shop";
+		return "shop/shop";
 	}
-	@GetMapping("ShopDetails")
-	public String shopDetails() {
-		
-		return "shop_details";
-	}
+	
 	@GetMapping("ShopForm")
-	public String shopForm() {
+	public String shopForm(@RequestParam(required = false) Map<String,String> map, HttpSession session, Model model) {
+		// 로그인X 처리
+		if(session.getAttribute("sId") == null) {
+			model.addAttribute("msg", "로그인 후 이용부탁드립니다.");
+			return "fail_back";
+		}
 		
-		return "shop_form";
+		List<Map<String, String>> selectCategory = service.selectCategory();
+		System.out.println(selectCategory);
+		model.addAttribute("selectCategory",selectCategory);
+		return "shop/shop_form";
 	}
+	
 	@GetMapping("ShoppingCart")
 	public String shoppingCart() {
 		

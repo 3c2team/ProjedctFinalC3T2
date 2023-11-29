@@ -49,6 +49,7 @@
 							<strong>${sessionScope.sName }</strong> 님 반갑습니다. &nbsp;&nbsp;&nbsp;
 	                        <a href="MyPageMain"><i class="fa fa-solid fa-user fa-lg" style="color: #262626;"></i></a>
 	                        <a href="#none" onclick="openChat()"><i class="fa fa-solid fa-comment fa-lg" style="color: #262626;"></i></a>
+	                        <a href="ShopForm"><i class="fa fa-solid fa-gift fa-lg" style="color: #262626;"></i></a>
 						</c:otherwise>
 					</c:choose>
                     </div>
