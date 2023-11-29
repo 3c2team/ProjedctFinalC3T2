@@ -31,11 +31,31 @@ public interface AdminMapper {
 	Map<String, Integer> selectMemberCountPeriod(Map<String, String> map);
 	
 	// 입금한 내역
-	List<WithdrawVO> selectDepositList();
+	List<DepositVO> selectDepositList();
 
 	// 출금한 내역
-//	List<DepositVO> selectDepositList();
-	List<DepositVO> selectWithdrawList();
+	List<WithdrawVO> selectWithdrawList();
+
+	// 관리자 권한 회수
+	int updateMemberRevoke(String member);
+
+	// 관리자 권한 부여
+	int updateMemberAuth(String admin);
+
+	// 금일 수수료 금액, 금일 거래량
+	Map<String, Integer> selectCommission();
+
+	// 금일 회원탈퇴 수
+	Map<String, Integer> selectMemberOut();
+
+	// 출금내역 기간조회
+	List<WithdrawVO> selectWithdrawSearch(Map<String, String> map);
+
+	// 입금내역 기간조회
+	List<DepositVO> selectDepositSearch(Map<String, String> map);
+
+	// 구매확정 수수료 내역
+	List<WithdrawVO> selectWithdrawCharge();
 
 
 

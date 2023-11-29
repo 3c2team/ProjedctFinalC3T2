@@ -86,7 +86,7 @@
 										<div id="reservation_confirm_term_right" >
 											<div class="calanderWrap">
 												<input type="date" id="startDate" name="startDate"> - <input type="date" id="endDate" name="endDate">
-												<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
+												<button type="submit" class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button>
 <!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
 
 												<span class="card-header" style="float:inline-end; font-weight: bold; margin-bottom: 25px;">
@@ -116,13 +116,15 @@
 											<tbody>
 											<c:forEach var="memberList" items="${memberList}">
 												<tr>
-													<td><input type="checkbox" name="checkbox" value=""></td>
+													<td><input type="checkbox" id="checkbox" name="checkbox" value="${memberList.member_id}"></td>
 													<td>${memberList.member_name}</td>
 													<td>${memberList.member_nick_name}</td>
 													<td>${memberList.member_id}</td>
 													<td>${memberList.member_e_mail}</td>
 													<td>${memberList.member_phone_num}</td>
-													<td>${memberList.member_state}</td>
+													<td><span id="checkedResult">${memberList.member_state}</span></td>
+														
+<!-- 													<td><span id="checkedResult">테스트</span></td> -->
 <!-- 													<td> -->
 <%-- 														<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" onclick="orderPro('${productList.product_num}')">관리자 권한 회수</button> --%>
 <%-- 	                        							<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" onclick="favorite('${productList.product_num}')">관리자 권한 부여</button><br> --%>
@@ -132,9 +134,12 @@
 											</tbody>
 										</table>	
 <!-- 									<input type="submit" id="delete_btn"class="btn btn-primary" value="삭제">	 -->
-											<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 13px; color: #fff; background: black;" onclick="authorization('${memberList.member_id}')">관리자 권한 회수</button>
-                      						<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 13px; color: #fff; background: darkgreen;" onclick="revoke('${memberList.member_id}')">관리자 권한 부여</button><br>
+<%-- 											<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 13px; color: #fff; background: black;" onclick="authorization('${memberList.member_id}')">관리자 권한 회수</button> --%>
 
+											<input type="button" class="btn default"  id="revoke" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: black;" value="관리자 권한 회수">
+											<input type="button" class="btn default"  id="authorization" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: darkgreen;" value="관리자 권한 부여">
+<!-- 											<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 13px; color: #fff; background: black;" id="authorization" >관리자 권한 회수</button> -->
+<!--                       						<button class="btn default" style="border-radius: 3px; margin-bottom: 3px; font-size: 13px; color: #fff; background: darkgreen;" id="revoke">관리자 권한 부여</button><br> -->
 								</form>
 							</div>
 						</div>
@@ -175,5 +180,6 @@
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/admin_authorization.js"></script>
 	</body>
 </html>

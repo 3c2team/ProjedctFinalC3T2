@@ -48,7 +48,7 @@
 			</a>
 			<ul class="menu-sub">
 				<li class="menu-item">
-					<a href="Withdraw" class="menu-link">
+					<a href="Withdraw" class="menu-link" >
 						<div data-i18n="">페이 출금내역</div>
 					</a>
 				</li>
