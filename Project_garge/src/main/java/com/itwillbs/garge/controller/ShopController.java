@@ -51,14 +51,19 @@ public class ShopController {
 	// 등록 완료
 	@PostMapping("/ShopSuccess")
 	public String shopSuccess(@RequestParam Map<String, Object> map
-							  ,@RequestParam(value = "files", required=false) MultipartFile file
+							  ,@RequestParam(value = "file", required=false) MultipartFile[] file
 							  , HttpSession session, Model model) {
 		System.out.println("오긴옴?" + map);
+//		System.out.println("여기 안와? : " + file);
 		
 		String sId = (String)session.getAttribute("sId");
-		String uploadDir = "/sssion.getAttr"; //가상 경로
-		String saveDir = session.getServletContext().getRealPath(uploadDir).replace("Project_garge/", ""); //실제 경로
+		String uploadDir = "/resources/upload/"; //가상 경로
+		String saveDir = session.getServletContext().getRealPath(uploadDir).replace("Project_garge/resources/upload/", ""); //실제 경로
 		
+		// trading_method 
+//		if(map.get("direct").toString().contains("direct")) {
+//			
+//		}
 		
 //		//===================== < 이미지 처리 > ===================== 
 //		//--------------------- < 이미지 경로 > ---------------------
@@ -77,36 +82,40 @@ public class ShopController {
 		}
 //		//-------------------- < 이미지명 처리 > --------------------
 		String uuid = UUID.randomUUID().toString();
-		System.out.println("swe11121111 : " + file);
-		System.out.println("3454422112121212a : "+file.getOriginalFilename());
-		String fileName =  uuid.substring(0, 3) + "_" + file.getOriginalFilename();
-		
-		if(file == null || file.getOriginalFilename().equals("")) {
-			map.put("file_name", "");
-		} else {
-			map.put("file_name", uploadDir + subDir + "/" + fileName);
-		}
-		map.put("member_id", sId);
-//		//------------------ < 게시물 등록 처리 > -------------------
-		
-		int insertCount = shopService.registProduct(map);
-//		
-		try {
-			if(insertCount > 0) { //성공
-				if(file != null && !(file.getOriginalFilename().equals(""))) {
-					file.transferTo(new File(saveDir, fileName));
-					
-					System.out.println("***************************************saveDir: " + saveDir);
-					System.out.println("***************************************fileName: " + fileName);
-				}
-				model.addAttribute("msg", "판매할 상품을 등록했습니다.");
-
-				return "home";
+		System.out.println("s234123515163456 : " + file);
+		for(int i = 0; i < file.length; i++) {
+			
+			String fileName =  uuid.substring(0, 3) + "_" + file[i].getOriginalFilename();
+			
+			if(file == null || file[i].getOriginalFilename().equals("")) {
+				map.put("file_name", "");
+			} else {
+				map.put("file_name", uploadDir + subDir + "/" + fileName);
+			}
+			System.out.println(map.get("file_name"));
+			
+			map.put("member_id", sId);
+	//		//------------------ < 게시물 등록 처리 > -------------------
+			
+			int insertCount = shopService.registProduct(map);
+	//		
+			try {
+				if(insertCount > 0) { //성공
+					if(file[i] != null && !(file[i].getOriginalFilename().equals(""))) {
+						file[i].transferTo(new File(saveDir, fileName));
+						
+						System.out.println("***************************************saveDir: " + saveDir);
+						System.out.println("***************************************fileName: " + fileName);
+					}
+					model.addAttribute("msg", "판매할 상품을 등록했습니다.");
+	
+					return "redirect:/Shop";
+				} 
+			} catch (Exception e) {
+				e.printStackTrace();
 			} 
-		} catch (Exception e) {
-			e.printStackTrace();
-		} 
-		return "home";
+		}
+		return "";
 	}
 
 	@GetMapping("ShopDetails")

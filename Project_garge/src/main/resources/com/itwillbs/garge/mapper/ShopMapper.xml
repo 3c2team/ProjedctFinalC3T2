@@ -7,16 +7,16 @@
    	<insert id="registProduct">
 		INSERT INTO PRODUCT
 		VALUES (null
+				,#{member_id}
 				,#{product_name}
 				,#{product_price}
 				,#{product_info}
 				,now()
 				,#{category_idx}
-				,#{product_main_img}
+				,#{file_name}
 				,#{upload_dir}
 				,#{trading_method}
 				,#{product_status}
-				,#{trading_location}
 			   )
 	</insert>
 </mapper>

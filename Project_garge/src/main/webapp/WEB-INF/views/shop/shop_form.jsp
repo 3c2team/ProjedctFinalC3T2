@@ -18,7 +18,7 @@
 	</header>
 
     <!-- 본문 시작 -->
-    <form action="ShopSuccess" method="POST" name="insertForm" onsubmit="return confirm('등록하시겠습니까?')">
+    <form action="ShopSuccess" method="POST" enctype="multipart/form-data" name="insertForm" onsubmit="return confirm('등록하시겠습니까?')">
     	<section class="contact shop_spad">
 	        <div class="container">
 				<div class="section-title">
@@ -51,14 +51,14 @@
 							</div>
 	                        <div class="fs-6 fw-semibold">
 								사진 동영상 첨부(
-								<span id="count">0</span>/10)
+								<span id="count">0</span>/5)
 							</div>
 							<div id="imgArea" style="display: flex;">
 								<button type="button" class="custom_btn" onclick="document.all.file.click();">
 									<i class="bi bi-camera"></i>
 								</button>		
-<%-- 								<input type="hidden" name="files" value="${product_main_img}"> --%>
-								<input type="file" accept=" audio/*, video/*, image/*" name="file" id="file" style="display:none" value="${product_main_img}"/>
+								<input type="hidden" name="files" value="${product_main_img}">
+								<input type="file" multiple accept=" audio/*, video/*, image/*" name="file" id="file" style="display:none"/>
 							</div>
 						</div>
 	<!--                         	</div> -->
@@ -95,10 +95,10 @@
 		                                <div class="product__details__option__size">
 		                                    <span style="color: #111111; font-weight: 700;">상품상태</span>
 		                                    <label class="active" for="xxl">중고상품
-		                                        <input type="radio" id="xxl" name="used" value="used">
+		                                        <input type="radio" id="xxl" name="product_status" value="used" checked>
 		                                    </label>
 		                                    <label for="xl">새상품
-		                                        <input type="radio" id="xl" name="new" value="new">
+		                                        <input type="radio" id="xl" name="product_status" value="new">
 		                                    </label>
 		                                </div>
 		                            </div>
@@ -129,6 +129,7 @@
 	</footer>
 </body>
 <script type="text/javascript">
+
 	
 $(function () {
 
@@ -164,7 +165,7 @@ $(function () {
 	$("input[type=file][name=file]").on("change", function(event) {
 		const file = event.target.files;
 		count += 1;
-		if(count > 10){
+		if(count > 5){
 			alert("등록 최대갯수를 초과하였습니다");
 			count -= 1;
 			return;
