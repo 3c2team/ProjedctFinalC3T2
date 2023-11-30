@@ -92,7 +92,7 @@
                 <form method="get" action="MyPageMain">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
-                            <h6 class="coupon__code"><span class="icon_tag_alt"></span>상품이 주문 완료 되었습니다. 임급하시면 결제가 완료됩니다. 결제 완료 시 상품 수령 후 구매확정 버튼을 눌려주세요.</h6>
+                            <h6 class="coupon__code"><span class="icon_tag_alt"></span>상품이 주문 완료 되었습니다. 상품 수령 후 구매확정 버튼을 눌러주세요.</h6>
                             <h6 class="checkout__title">결제 정보</h6>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
@@ -134,13 +134,13 @@
                                 	<c:if test="${deliver.bank eq 'kakao' }">
                                     	<p>계좌 정보 : 카카오뱅크 3333-10-6668888</p>
                                 	</c:if>
-                                	<c:if test="${deliver.bank eq 'kb' }">
-	                                    <p>계좌 정보 : 국민은행 3333-10-6668888</p>
+                                	<c:if test="${deliver.bank eq 'su' }">
+	                                    <p>계좌 정보 : 산업은행 2023120106</p>
                                 	</c:if>
                                 	<c:if test="${deliver.bank eq 'sinhan' }">
 	                                    <p>계좌 정보 : 신한은행 3333-10-6668888</p>
                                 	</c:if>
-                                    <p style="color: #5F12D3;">24시간 내에 입금되지 않으면 주문은 자동으로 취소됩니다.</p>
+                                    <p style="color: #5F12D3;">24시간 내에 대표 계좌에서 자동 출금되므로 대표 계좌 잔액 확인 바랍니다.</p>
                                 </div>
                             </div>
                         </div>

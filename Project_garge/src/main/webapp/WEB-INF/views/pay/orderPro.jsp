@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Male_Fashion Template">
@@ -92,31 +92,40 @@
                 <form method="get" action="MyPageMain">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
-                            <h6 class="coupon__code"><span class="icon_tag_alt"></span>상품이 결제 완료 되었습니다. 상품 수령 후 구매확정 버튼을 눌려주세요.</h6>
+                            <h6 class="coupon__code"><span class="icon_tag_alt"></span>상품이 결제 완료 되었습니다. 상품 수령 후 구매확정 버튼을 눌러주세요.</h6>
                             <h6 class="checkout__title">결제 정보</h6>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
-                                    <p>받으시는 분 : 이예림</p>
+                                    <p>받으시는 분 : ${deliver.member_name }</p>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="checkout__input">
-                                    <p>주소 : 부산광역시 부산진구 엄광로 68(가야동, 벽산아파트) 999동 4515호(우편번호)</p>
+                                    <p>주소 : (${deliver.zonecode })${deliver.member_address1 } ${deliver.member_address2 }</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
-                                    <p>전화번호 : 010-2594-7524</p>
+                                    <p>전화번호 : ${deliver.member_phone }</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
-                                    <p>이메일 : lyl3697@naver.com</p>
+                                    <p>이메일 : ${deliver.member_email }</p>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="checkout__input">
-                                    <p>배송문구 : 없음</p>
+                                    <p>배송문구 : 
+                                    <c:choose>
+	                                    <c:when test="${empty deliver.diliver_ment }">
+	                                   		작성된 배송문구가 없습니다.
+	                                   	</c:when>
+	                                   	<c:otherwise>
+	                                   		${deliver.diliver_ment }
+	                                   	</c:otherwise>
+                                    </c:choose>
+                                    </p>
                                 </div>
                             </div>
                         </div>

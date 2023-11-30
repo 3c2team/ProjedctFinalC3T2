@@ -89,7 +89,7 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form method="post" action="PaymentComplete">
+                <form method="get" action="PaymentComplete">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <h6 class="coupon__code"><span class="icon_tag_alt"></span>같은 상품을 2회 이상 주문 완료 후 취소하실 경우 그 상품은 구매하실 수 없으므로 신중하게 구매해 주세요.</h6>

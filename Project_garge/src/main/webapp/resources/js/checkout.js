@@ -1,5 +1,5 @@
 $("#open").click(function() {
-	$("#modal-box").toggleClass("active");
+	$("#modal-box").addClass("active");
 	$('html, body').css({'overflow': 'hidden', 'height': '100%'}); // 모달팝업 중 html,body의 scroll을 hidden시킴
 	$('#element').on('scroll touchmove mousewheel', function(event) { // 터치무브와 마우스휠 스크롤 방지
 		event.preventDefault();
@@ -12,10 +12,10 @@ $("#modal-box").on("click",function(){
 	$("#modal-contents").on("click",function(){
 		return false;
 	});
-	$("#modal-box").toggleClass("active");
+	$("#modal-box").removeClass("active");
 });
 $("#close").click(function() {
-	$("#modal-box").toggleClass("active");
+	$("#modal-box").removeClass("active");
 	$('html, body').css({'overflow': 'auto', 'height': '100%'}); //scroll hidden 해제
 	$('#element').off('scroll touchmove mousewheel'); // 터치무브 및 마우스휠 스크롤 가능
 });
@@ -38,6 +38,7 @@ $('.choice').click(function(e){
 	$("#new").hide();
 	$('html, body').css({'overflow': 'auto', 'height': '100%'}); //scroll hidden 해제
 	$('#element').off('scroll touchmove mousewheel'); // 터치무브 및 마우스휠 스크롤 가능
+	$("#modal-box").removeClass("active");
 });
 
 $(function() {
@@ -88,6 +89,7 @@ $(function() {
 			$("#member_address1").val(addr.address1);
 			$("#member_address2").val(addr.address2);
 			$("#member_phone").val(addr.recipient_phone_num);
+			$("#zonecode").val(addr.postcode);
 			$("#new").hide();
 			$('input[type="checkbox"][name="new"]').prop('checked',false);
 		   

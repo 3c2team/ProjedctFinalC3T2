@@ -53,7 +53,8 @@
 	       private String 변수명;
 	       => 지정된 변수에 속성값이 자동으로 저장됨
 	-->
-		<context:component-scan base-package="com.itwillbs.garge" />	
+	<context:property-placeholder location="classpath:/config/appdata.properties" />
+	<context:component-scan base-package="com.itwillbs.garge" />	
 </beans:beans>
 
 
