@@ -14,9 +14,28 @@
 				,now()
 				,#{category_idx}
 				,#{file_name}
-				,#{upload_dir}
 				,#{trading_method}
 				,#{product_status}
 			   )
 	</insert>
+	
+   	<insert id="registProductImg">
+		INSERT INTO PRODUCT_IMG
+		VALUES (null
+				,(SELECT product_num
+				    FROM PRODUCT
+				   WHERE product_main_img = #{file_name})
+				,${product_image}
+			   )
+	</insert>
+	
+	
+	
+<!-- 	<select id="getProduct"> -->
+<!-- 		SELECT * -->
+<!--    		  FROM PRODUCT -->
+<!--    		 WHERE product_num = #{product_num} -->
+	
+<!-- 	</select> -->
+	
 </mapper>

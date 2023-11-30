@@ -1,6 +1,5 @@
 package com.itwillbs.garge.service;
 
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +18,11 @@ public class ShopService {
 	public int registProduct(Map<String, Object> map) {
 		return mapper.registProduct(map);
 	}
+	
+	// 글쓰기 사진 등록
+	public int registProductImg(Map<String, Object> map) {
+		return mapper.registProductImg(map);
+	}
 //
 //	// 글목록 조회 요청
 //	public List<List<Map<String, Object>>> getBoardList(String searchType, String searchKeyword, int startRow, int listLimit) {
@@ -29,14 +33,18 @@ public class ShopService {
 //	public int getBoardListCount(String searchType, String searchKeyword) {
 //		return mapper.selectBoardListCount(searchType, searchKeyword);
 //	}
+//	
+//	public Map<String, Object> getProductDetail(Map<String, Object> param) {
+//		return null;
+//	}
 //
 //	// 글 상세정보 조회 요청(조회 성공 시 조회수 증가)
-//	public List<Map<String, Object>> getBoard(int board_num, boolean isUpdateReadcount) {
+//	public List<Map<String, Object>> getProduct(int product_num) {
 //		// 1. Mapper - selectBoard() 메서드 호출하여 상세정보 조회 요청 후 결과를 List<Map<String, Object>> 객체에 저장
-//		List<Map<String, Object>> board = mapper.selectBoard(board_num);
+//		List<Map<String, Object>> productList = mapper.getProduct(product_num);
 //		
 //		// 2. 조회 결과가 있을 경우
-//		if(board != null) {
+//		if(productList != null) {
 //			// Mapper - updateReadcount() 메서드 호출하여 조회수 증가 요청
 //			// 조회 수 증가 후 수동으로 List<Map<String, Object>> 객체의 조회수 값을 수정하지 않고
 //			// 마이바티스의 <selectKey> 태그 활용하여 자동 증가시킨 값을 저장
@@ -47,11 +55,10 @@ public class ShopService {
 //			// isUpdateReadcount 변수값이 true 일 경우에만 조회수 증가를 수행
 //			// ex) 글 수정 or 답글 작성을 위한 상세조회 시에는 false 값을 전달하여 조회수 증가 X
 //			if(isUpdateReadcount) {
-//				mapper.updateReadcount(board);
+//				mapper.updateReadcount(productList);
 //			}
 //		}
-//		
-//		return board; 
+//		return productList; 
 //	}
 //
 //	// 파일명 조회 요청

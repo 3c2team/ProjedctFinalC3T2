@@ -92,7 +92,7 @@ public class MainController {
 		}
 		
 		List<Map<String, String>> selectCategory = service.selectCategory();
-		System.out.println(selectCategory);
+//		System.out.println(selectCategory);
 		model.addAttribute("selectCategory",selectCategory);
 		return "shop/shop_form";
 	}

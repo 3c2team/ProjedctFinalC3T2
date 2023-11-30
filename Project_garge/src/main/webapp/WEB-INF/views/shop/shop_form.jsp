@@ -49,15 +49,13 @@
 							        </div>
 							    </div>
 							</div>
-	                        <div class="fs-6 fw-semibold">
-								사진 동영상 첨부(
-								<span id="count">0</span>/5)
+							<div class="fs-6 fw-semibold">
+								사진 동영상 첨부( <span id="count"></span>/10)
 							</div>
 							<div id="imgArea" style="display: flex;">
-								<button type="button" class="custom_btn" onclick="document.all.file.click();">
+								<button id="fileTrigger" type="button" class="custom_btn">
 									<i class="bi bi-camera"></i>
 								</button>		
-								<input type="hidden" name="files" value="${product_main_img}">
 								<input type="file" multiple accept=" audio/*, video/*, image/*" name="file" id="file" style="display:none"/>
 							</div>
 						</div>
@@ -70,10 +68,10 @@
                                     <input type="text" name="product_name" class="input-name" placeholder="글제목">
                                 </div>
                                 <div class="col-lg-7">
-                                    <input type="number" name="product_price" class="input-price" placeholder="판매가격" min="0">
+                                    <input type="number" name="product_price" class="input-price" id="product_price" placeholder="판매가격" min="0">
 <!--                                     <input type="checkbox" name="free_sharing" class="active" value="무료나눔"> -->
 <!--                                     <label class="active" > -->
-                                        <input type="checkbox" name="free_sharing" value="무료나눔">무료나눔
+                                        <input type="checkbox" name="free_sharing" id="free_sharing" value="무료나눔">무료나눔
 <!--                                     </label> -->
                                 </div>
                                 <div class="col-lg-8">
@@ -105,14 +103,14 @@
                                     <div class="product__details__option">
 		                                <div class="product__details__option__size">
 		                                    <span style="color: #111111; font-weight: 700;">거래방법</span>
-		                                    <input type="checkbox" name="trading_method" class="active" value="delivery">택배거래
-		                                    <input type="checkbox" name="trading_method" class="active" value="direct">직거래
+		                                    <input type="checkbox" name="trading_method1" class="active" value="delivery">택배거래
+		                                    <input type="checkbox" name="trading_method2" class="active" value="direct">직거래
 		                                </div>
 		                            </div>
 		                            <div class="product__form__submit">
 	                                    <button type="reset" class="site-btn" >리셋</button>
 <!-- 	                                    <button class="site-btn" onclick="insertCheck()">판매등록</button> -->
-	                                    <button type="submit" class="site-btn" onclick="insertCheck()">판매등록</button>
+	                                    <button type="submit" class="site-btn" >판매등록</button>
 		                            </div>
                                 </div>
                             </div>
@@ -130,15 +128,16 @@
 </body>
 <script type="text/javascript">
 
+const dataTransfer = new DataTransfer();
 	
 $(function () {
-
+		
 	// li 선택값 넘기기, css
 	$(".nice-scroll li").click(function() {
 		$("#hidCategory").val($(this).val());
 		$(this).css("background-color" , "#5F12D3");
 		$(this).css("color" , "white");
-		alert($("#hidCategory").val());
+// 		alert($("#hidCategory").val());
 	});
 	
 	$("#direct_address1").click(function(){
@@ -146,6 +145,13 @@ $(function () {
 		alert("주소를 검색해주세요.");
 // 		debugger;
 	});
+
+// 	$("#free_sharing").click(function(){
+		
+// 		$("#product_price").attr("disabled", false);
+// 		$("#product_price").attr("disabled", true);
+		
+// 	});
 	
 	$("#btnSearchAddress").click(function() {
 	    new daum.Postcode({
@@ -160,47 +166,81 @@ $(function () {
 	    }).open();
 	    
 	});
-	var count = 0;
-	var files = []; 
-	$("input[type=file][name=file]").on("change", function(event) {
-		const file = event.target.files;
-		count += 1;
-		if(count > 5){
-			alert("등록 최대갯수를 초과하였습니다");
-			count -= 1;
-			return;
-		}
-		
-		files.push(file);
-		$("#count").text(count);
-		var image = new Image();
-		var ImageTempUrl = window.URL.createObjectURL(file[0]);
-		
-		image.src = ImageTempUrl;
-		image.name = file[0].name;
-		image.className = "custom_btn custom_img";
-		
-		// 스크립트
-//			debugger;
-		// JQuery
-		$("#imgArea").append(image);
-		
-		$(image).on("click",function(){
-			if(confirm("삭제하시겠습니까?")){
-				$(this).remove("");
-				count -= 1;
-				$("#count").text(count);
-				for(let i = 0; i < files.length; i++){
-					if(file[i].name == $(this)[0].name){
-						 files.splice(i, 1);
-					}						
-				}
-			debugger;
-			console.log(files);
-			}
-		});
+	
+	
+	$("#fileTrigger").on("click", function() {
+		$("#file").trigger("click");
 	});
+	
+	$("#file").on("change", uploadImageHandler);
+	
+// 	var count = 0;
+// 	var files = []; 
+// 	$("input[type=file][name=file]").on("change", function(event) {
+// 		const file = event.target.files;
+// 		count += 1;
+// 		if(count > 10){
+// 			alert("등록 최대갯수를 초과하였습니다");
+// 			count -= 1;
+// 			return;
+// 		}
+		
+// 		files.push(file);
+// 		$("#count").text(count);
+// 		var image = new Image();
+// 		var ImageTempUrl = window.URL.createObjectURL(file[0]);
+		
+		
+// 		image.src = ImageTempUrl;
+// 		image.name = file[0].name;
+// 		image.className = "custom_btn custom_img";
+		
+// 		// 스크립트
+// //			debugger;
+// 		// JQuery
+// 		$("#imgArea").append(image);
+		
+// 		$(image).on("click",function(){
+// 			if(confirm("삭제하시겠습니까?")){
+// 				$(this).remove("");
+// 				count -= 1;
+// 				$("#count").text(count);
+// 				for(let i = 0; i < files.length; i++){
+// 					if(file[i].name == $(this)[0].name){
+// 						 files.splice(i, 1);
+// 					}						
+// 				}
+// 			debugger;
+// 			console.log(files);
+// 			}
+// 		});
+// 	});
 });
+
+function uploadImageHandler(e) {
+	let files = e.target.files;
+	console.log(files);
+	
+	let filesArr = Array.prototype.slice.call(files);
+	console.log(filesArr);
+	
+	let idx = 0;
+	filesArr.forEach(function(file) {
+		
+		let reader = new FileReader();
+		reader.onload = function(e) {
+			let html = "<a href = \"javascript:void(0);\" onclick=\"deleteImage(" + idx + ")\ id=\"img_" + idx + "\"><img src=\"" + e.target.result + "\" data-file='" + file.name + "' class='productFile' title='클릭 시 제거'></a>";
+			$("#imgArea").append(html);
+			idx++;
+		};
+		
+		reader.readAsDataURL(file);
+		
+		dataTransfer.items.add(file);
+	});
+	
+	e.target.files = dataTransfer.files;
+}
 	
 	
 </script>
