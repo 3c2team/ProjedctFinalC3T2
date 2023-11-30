@@ -11,7 +11,7 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo" id="easterEgg" onclick="easterEgg()">
 <!--                     <div class="header__logo" id="easterEgg" > -->
-                        <a href="./"><img src="${pageContext.request.contextPath }/resources/img/tradeup.jpg" style="width: 70%" alt=""></a>
+                        <a href="./"><img src="${pageContext.request.contextPath }/resources/img/logo.png" style="width: 70%" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -49,6 +49,7 @@
 							<strong>${sessionScope.sName }</strong> 님 반갑습니다. &nbsp;&nbsp;&nbsp;
 	                        <a href="MyPageMain"><i class="fa fa-solid fa-user fa-lg" style="color: #262626;"></i></a>
 	                        <a href="#none" onclick="openChat()"><i class="fa fa-solid fa-comment fa-lg" style="color: #262626;"></i></a>
+	                        <a href="ShopForm"><i class="fa fa-solid fa-money fa-lg" style="color: #262626;"></i></a>
 						</c:otherwise>
 					</c:choose>
                     </div>

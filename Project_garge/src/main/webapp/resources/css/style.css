@@ -229,8 +229,7 @@ ol {
 	font-weight: 700;
 	border: none;
 	text-transform: uppercase;
-/* 	display: inline-block; */
-	padding: 14px 30px;
+	margin-bottom: 25px;
 	float: right;
 }
 
@@ -1980,9 +1979,10 @@ ol {
 	-ms-flex-pack: center;
 	justify-content: center;
 }
+
 .product__content__all {
 	display: flex;
-    margin: 5%;
+    margin: 3%;
     justify-content: space-evenly;
 }
 
@@ -3516,6 +3516,11 @@ ol {
 	margin-bottom: 27px;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .contact__form input::-webkit-input-placeholder {
 	color: #b7b7b7;
 }

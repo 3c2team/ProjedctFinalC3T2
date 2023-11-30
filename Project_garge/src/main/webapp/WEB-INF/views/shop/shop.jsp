@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Male-Fashion | Template</title>
-<jsp:include page="inc/style.jsp"></jsp:include>
+<jsp:include page="../inc/style.jsp"></jsp:include>
 <style type="text/css">
 .btn{
 	 background-color:#e0e0e0;
@@ -22,7 +22,7 @@
 </style>
 </head>
 <body>
-		<jsp:include page="inc/top.jsp"></jsp:include>
+	<jsp:include page="../inc/top.jsp"></jsp:include>
 	
     <!-- 주메뉴 -->
     <section class="breadcrumb-option">
@@ -646,7 +646,7 @@
         </div>
     </section>
     <footer class="footer">
-		<jsp:include page="inc/bottom.jsp"></jsp:include>
+		<jsp:include page="../inc/bottom.jsp"></jsp:include>
     </footer>
     <script type="text/javascript">
     $(function() {

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html
   lang="en"
@@ -95,10 +97,10 @@
 										<div id="reservation_confirm_term_right" >
 											<div class="calanderWrap" style="margin-bottom: 25px;">
 												<input type="date" id="startDate" name="startDate" > - <input type="date" id="endDate" name="endDate">
-												<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
-												
+<!-- 												<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button> -->
+												<button type="submit" class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button>
 												<span class="card-header" style="float:inline-end; font-weight: bold; margin-bottom: 25px;">
-													수수료 합계 : 500,000 원
+													수수료 합계 : <fmt:formatNumber value="${commission }" pattern="#,###" /> 원
 												</span>
 											</div>
 										</div>
@@ -115,35 +117,42 @@
 													<th>상품정보</th>
 													<th>구매자</th>
 													<th>구매완료 여부</th>
-													<th>입금액</th>
+													<th>출금액</th>
 													<th>수수료</th>
-													<th>입금계좌</th>
+													<th>출금계좌</th>
 												</tr>
 											</thead>
 											<tbody>
-											<c:forEach var="selectNoticeList" items="${selectNoticeList }">
+											<c:forEach var="CommissionList" items="${CommissionList }">
 												<tr>
-													<td><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></td>
+													<td><input type="checkbox" name="checkbox" value=""></td>
 													<td>
-														<div class="">
+<!-- 														<div class=""> -->
 															<div class=""><strong>****상품명****</strong></div>
-														</div>
+<!-- 														</div> -->
 													</td>
-													<td>홍길동</td>
+													<td>${CommissionList.member_name }</td>
 													<td>
-														<span class="badge bg-label-hold me-1">확정대기</span>
+														<c:choose>
+															<c:when test="${CommissionList.buy_check eq '확정대기'}">
+																<span class="badge bg-label-hold me-1" style="font-size:small;">${CommissionList.buy_check }</span>
+															</c:when>
+															<c:when test="${CommissionList.buy_check eq '구매확정'}">
+																<span class="badge bg-label-approval me-1" style="font-size:small;">${CommissionList.buy_check }</span>
+															</c:when>
+														</c:choose>
+<%-- 														<span class="badge bg-label-hold me-1" style="font-size:small;">${depositList.buy_check }</span> --%>
 													</td>
 													<td>
-								                        <span class="badge bg-label-approval me-1">15,000원</span>	
+								                        <span class="badge bg-label-approval me-1" style="font-size:small;">${CommissionList.product_price }원</span>	
 													</td>
 													<td>
-								                        <span class="badge bg-label-prohibition">450원</span>	
+								                        <span class="badge bg-label-prohibition" style="font-size:small;">${CommissionList.commission }원</span>	
 													</td>
 													<td>
-								                        <span>하나은행 274-158945-45230</span>	
+								                        <span>${CommissionList.withdraw_bank} (${CommissionList.withdraw_acc})</span>	
 													</td>
-												</tr>
-												
+												</tr>												
 											</c:forEach>
 											</tbody>
 										</table>

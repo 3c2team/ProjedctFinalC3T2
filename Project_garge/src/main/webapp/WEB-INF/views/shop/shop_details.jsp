@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
 <title>Male-Fashion | Template</title>
-<jsp:include page="inc/style.jsp"></jsp:include>
+<jsp:include page="../inc/style.jsp"></jsp:include>
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/shops_detail.js"></script>
 <script type="text/javascript">
@@ -31,7 +31,7 @@
 </head>
 <body>
 	<header>
-		<jsp:include page="inc/top.jsp"></jsp:include>
+		<jsp:include page="../inc/top.jsp"></jsp:include>
 	</header>
 	
     <!-- 본문 시작 -->
@@ -92,7 +92,7 @@
 	                        <div class="product__details__breadcrumb">
 	                            <a href="./index.jsp">홈</a>
 	                            <a href="./shop.jsp">디지털기기</a>
-	                            <a href="./ShopForm">모바일</a>
+	                            <a href="./shop.jsp">모바일</a>
 	                            <span>아이폰</span>
 	                        </div>
 							<div class="container">
@@ -119,40 +119,36 @@
 											<div id="map" style="margin-bottom:1em; width:400px; height:190px;"></div>
 											<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d79e4be802855b8c8c9dc38e9b02f6d"></script>
 											<script>
-												var container = document.getElementById('map');
-												var options = {
-													center: new kakao.maps.LatLng(35.15860, 129.0620),
-													level: 1
-												};
-											
-												var map = new kakao.maps.Map(container, options);
-												
-									// 			var markerPosition  = new kakao.maps.LatLng(35.15860, 129.0620); 
-											
-									// 			// 마커를 생성합니다
-									// 			var marker = new kakao.maps.Marker({
-									// 			    position: markerPosition
-									// 			});
-											
-									// 			// 마커가 지도 위에 표시되도록 설정합니다
-									// 			marker.setMap(map);
-									
-												var imageSrc = "${pageContext.request.contextPath }/resources/img/shop-details/marker.png", // 마커이미지의 주소입니다    
-											    	imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-											    	imageOption = {offset: new kakaao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-											      
-												// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-												var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-												    markerPosition = new kakao.maps.LatLng(35.15860, 129.0620); // 마커가 표시될 위치입니다
-												
+												var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+											    mapOption = { 
+											        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+											        level: 3 // 지도의 확대 레벨
+											    };
+	
+												var map = new kakao.maps.Map(mapContainer, mapOption);
+		
+												// 마커가 표시될 위치입니다 
+												var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+		
 												// 마커를 생성합니다
 												var marker = new kakao.maps.Marker({
-												    position: markerPosition, 
-												    image: markerImage // 마커이미지 설정 
+												    position: markerPosition
 												});
-												
+		
 												// 마커가 지도 위에 표시되도록 설정합니다
-												marker.setMap(map);  
+												marker.setMap(map);
+		
+												var iwContent = '<div style="padding:5px;">직거래 희망장소<br><a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:#5F12D3 padding:5px;" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+												    iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+		
+												// 인포윈도우를 생성합니다
+												var infowindow = new kakao.maps.InfoWindow({
+												    position : iwPosition, 
+												    content : iwContent 
+												});
+												  
+												// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+												infowindow.open(map, marker); 
 											</script>
 											<div class="product__details__option">
 				                                <div class="product__details__option__size">
@@ -457,7 +453,7 @@
     
     <!-- 바텀 시작 -->
 	<footer class="footer">
-		<jsp:include page="inc/bottom.jsp"></jsp:include>
+		<jsp:include page="../inc/bottom.jsp"></jsp:include>
     </footer>
 </body>
 

@@ -1,5 +1,10 @@
 package com.itwillbs.garge.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +20,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.itwillbs.garge.service.MyPageService;
 
@@ -61,22 +67,65 @@ public class MyPageController {
 		return "myPage/myPage_info";
 	}
 	
-	@ResponseBody
 	@PostMapping("MyInfoModify")	// 회원 프로필 수정
-	public Map<String, Object> myInfoModify(HttpSession session, @RequestParam Map<String, Object> param) {
+	public String myInfoModify(HttpSession session, @RequestParam Map<String, Object> param) {
 		param.put("sId", session.getAttribute("sId"));
 		
 		int updateCount = service.myInfoModify(param);
 		
+		if (updateCount > 0) {
+			return "redirect:/MyInfo";
+	    } else {
+	    	return "fail_back";
+	    }
+	}
+	
+	@PostMapping("MyProfileModify")	// 회원 프로필 사진 수정
+	public String myProfileModify(HttpSession session, @RequestParam Map<String, Object> param, @RequestParam(value = "file", required=false) MultipartFile file) {
+		
+		String sId = (String)session.getAttribute("sId");
+		param.put("sId", sId);
+		String uploadDir = "resources/TradeUp_upload/user_profile_image";
+		String saveDir = session.getServletContext().getRealPath(uploadDir); //.replace("프로젝트명"); 추가하기
+		String fileName = "";
+		try {
+			
+			//하위폴더 고민중
+//				subDir = (String)session.getAttribute("sMember_num");
+//				saveDir += subDir;
+			
+			Path path = Paths.get(saveDir);
+			Files.createDirectories(path);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		// 중복방지 uuid 추가하기 고민중
+		fileName = file.getOriginalFilename();// 파일이름 추가 작업 해주기
+		if(file != null || !(file.getOriginalFilename().equals(""))) {
+//				param.put("modify_value", "");
+			param.put("modify_value", uploadDir + "/" + fileName);
+		}
+			
+		int updateCount = service.myInfoModify(param);
+		
 		Map<String, Object> response = new HashMap<String, Object>();
 		if (updateCount > 0) {
-			response.put("success", true);
-			
+			try {
+				if(file != null && !(file.getOriginalFilename().equals(""))) {
+					file.transferTo(new File(saveDir, fileName));
+				}
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return "redirect:/MyInfo";
 	    } else {
-	    	response.put("success", false);
+	    	return "fail_back";
 	    }
-		return response;
-		
 	}
 	
 	@PostMapping("DeleteMember")	// 회원 탈퇴

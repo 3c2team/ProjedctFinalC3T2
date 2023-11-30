@@ -49,14 +49,14 @@ public class AdminService {
 		return adminMapper.selectMemberCountPeriod(map);
 	}
 
-	// 결제 출금한 내역
-	public List<DepositVO> selectWithdrawList() {
+	// 구매자 계좌에서 출금한 내역
+	public List<WithdrawVO> selectWithdrawList() {
 		// TODO Auto-generated method stub
 		return adminMapper.selectWithdrawList();
 	}
 
-	// 결제 입금한 내역
-	public List<WithdrawVO> selectDepositList() {
+	// 판매자에게 입금한 내역
+	public List<DepositVO> selectDepositList() {
 		// TODO Auto-generated method stub
 		return adminMapper.selectDepositList();
 	}
@@ -69,6 +69,48 @@ public class AdminService {
 	public List<DepositVO> selectTransacList() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	// 관리자 권한 회수
+	public int updateMemberRevoke(String member) {
+		// TODO Auto-generated method stub
+		return adminMapper.updateMemberRevoke(member);
+	}
+
+	// 관리자 권한 부여
+	public int updateMemberAuth(String admin) {
+		// TODO Auto-generated method stub
+		return adminMapper.updateMemberAuth(admin);
+	}
+
+	// 금일 수수료 금액, 금일 거래량
+	public Map<String, Integer> selectCommission() {
+		// TODO Auto-generated method stub
+		return adminMapper.selectCommission();
+	}
+
+	// 금일 회원 탈퇴 수
+	public Map<String, Integer> selectMemberOut() {
+		// TODO Auto-generated method stub
+		return adminMapper.selectMemberOut();
+	}
+
+	// 출금내역 기간조회
+	public List<WithdrawVO> selectWithdrawSearch(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return adminMapper.selectWithdrawSearch(map);
+	}
+
+	// 입금내역 기간조회
+	public List<DepositVO> selectDepositSearch(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return adminMapper.selectDepositSearch(map);
+	}
+
+	// 구매확정 수수료 내역
+	public List<WithdrawVO> selectWithdrawCharge() {
+		// TODO Auto-generated method stub
+		return adminMapper.selectWithdrawCharge();
 	}
 
 

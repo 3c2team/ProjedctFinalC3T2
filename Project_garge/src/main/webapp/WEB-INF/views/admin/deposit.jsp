@@ -79,12 +79,13 @@
 						<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">가지페이 /</span> 입금내역</h4>
 						<!--/Table -->
 						<div class="card">
-							<h5 class="card-header">고객계좌 입금내역</h5>
-							<form  id="frm">	
+							<h5 class="card-header">판매자계좌 입금내역</h5>
+							<form action=DepositListPeriod method="post" >	
 								<div class="reservationConfirmTerm" style="padding-right: 30px; padding-left: 30px; margin-bottom: 5px;padding-top: 30px;">
 									<input type="hidden" id="searchType" name="searchType">
 									<input type="date" id="startDate" name="startDate" > - <input type="date" id="endDate" name="endDate">
-									<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button>
+									<button type="submit" class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button>
+<!-- 									<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button> -->
 <!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
 								</div>
 							</form>	
@@ -97,15 +98,15 @@
 													<th>상품정보</th>
 													<th>판매자</th>
 													<th>신뢰지수</th>
-													<th>출금액</th>
-<!-- 															<th>수수료</th> -->
+													<th>입금액</th>
+													<th>입금 상태</th>
 													<th>입금계좌</th>
 												</tr>
 											</thead>
 											<tbody>
 											<c:forEach var="depositList" items="${depositList }">
 												<tr>
-													<td><input type="checkbox" name="checkbox" value="${selectNoticeList.notice_num }"></td>
+													<td><input type="checkbox" name="checkbox" ></td>
 													<td>
 														<div class="">
 															<div class=""><strong>****상품명****</strong></div>
@@ -119,7 +120,10 @@
 								                        <span class="badge bg-label-prohibition" style="font-size:small;">${depositList.product_price }</span>	
 													</td>
 													<td>
-								                        <span>${depositList.withdraw_bank} (${depositList.withdraw_acc})</span>	
+								                        <span>${depositList.sell_check}</span>	
+													</td>
+													<td>
+								                        <span>${depositList.deposit_bank} (${depositList.deposit_acc})</span>	
 													</td>
 												</tr>
 											</c:forEach>
