@@ -59,7 +59,7 @@
         </div>
         <script type="text/javascript">
         	function openChat() {
-        		window.open("MyChat", "MyChat","width=500, height=700");
+        		window.open("MyChat", "MyChat","top=200,left=700,width=500, height=500");
 			}
         </script>
     </header>

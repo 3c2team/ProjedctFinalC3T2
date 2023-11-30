@@ -113,6 +113,18 @@ public class AdminService {
 		return adminMapper.selectWithdrawCharge();
 	}
 
+	// 공지사항 등록
+	public int insertNotice(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return adminMapper.insertNotice(map);
+	}
+
+	//공지사항 조회
+	public List<Map<String, String>> selectNoticeList() {
+		// TODO Auto-generated method stub
+		return adminMapper.selectNotice();
+	}
+
 
 	
 	

@@ -17,7 +17,7 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
   />
 
-  <title>GARGE | 거래내역</title>
+  <title>TRADEUP | 거래내역</title>
 
   <meta name="description" content="" />
 
@@ -95,12 +95,13 @@
 												</div>
 												
 												<div class="col-xl-6" id="reservation_confirm_term_right">
-													<form action="SearchList" method="post">	
+													<form action="TransactionSearch" method="post">	
 														<div class="calanderWrap" align="center">
 															<br>
 															<input type="date" id="startDate" name="startDate"> - <input type="date" id="endDate" name="endDate" >
 <!-- 															<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button> -->
-																<button type="submit" class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button>
+<!-- 																<button type="submit" class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button> -->
+																<button class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button>
 														</div>
 													</form>
 													<br>
@@ -186,11 +187,11 @@
 	<jsp:include page="../inc/bottom.jsp"></jsp:include>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/popper/popper.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/bootstrap.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin/product_sales.js"></script>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/jquery/jquery.js"></script> --%>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/popper/popper.js"></script> --%>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/bootstrap.js"></script> --%>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> --%>
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin/product_sales.js"></script> --%>
     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 

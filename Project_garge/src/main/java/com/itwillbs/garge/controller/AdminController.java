@@ -300,21 +300,29 @@ public class AdminController {
 	@PostMapping("/WithdrawListPeriod")
 	public String withdrawListPeriod(
 			@RequestParam Map<String, String> map,
-			@RequestParam(defaultValue = "1990-01-01") String startDate, 
+			@RequestParam(defaultValue = "") String startDate, 
 			@RequestParam(defaultValue = "") String endDate,
 			Model model) {
 		
 		map.put("startDate", startDate);
 		map.put("endDate",endDate);
 		
+		System.out.println("기간 확인 : " + map.get("startDate") + ", ::> " + map.get("endDate"));
+		
+		
+//		int start = (Integer.parseInt(startDate));
+//		int end = (Integer.parseInt(endDate));
+//		
+//		if(start.get > end) {
+//			model.addAttribute("msg", "날짜 지정이 잘못 됐습니다."); // 출력할 메세지
+//			return "fail_back";
+//		}
+		
 		// 출금내역 기간조회
 		List<WithdrawVO> withdrawSearchList = adminService.selectWithdrawSearch(map);
 		System.out.println("withdrawSearchList : " + withdrawSearchList);
 		
 		model.addAttribute("withdrawList",withdrawSearchList);
-		
-		// 입금내역 기간조회
-		List<DepositVO> depositSearchList = adminService.selectDepositSearch(map);
 		
 		
 		return "admin/withdraw";
@@ -337,9 +345,64 @@ public class AdminController {
 			
 			return "admin/deposit";
 		}
+		
+		 //공지사항 페이지 이동(관리자)
+		@GetMapping("/AdminNotice")
+		public String adminNotice(Model model) {
+			// 공지사항 조회
+			List<Map<String, String>> noticeList = adminService.selectNoticeList();
+			model.addAttribute("NoticeList", noticeList);
+			
+			return "admin/admin_notice_board";
+		}
+		
+		 //공지사항 등록 페이지 이동(관리자)
+		@GetMapping("/AdminNoticeRegist")
+		public String adminNoticeRegit() {
+			
+			
+			
+			return "admin/admin_notice_regist";
+		}
+		
+		 //공지사항 등록 처리(관리자)
+		@PostMapping("AdminNoticeRegistPro")
+		public String noticeRegetPro(@RequestParam Map<String, String> map, Model model) {
+			
+			System.out.println(map);
+			
+			int insertNoticeCount = adminService.insertNotice(map);
+			if(insertNoticeCount == 0) return "fail_back";
+	    	model.addAttribute("msg","등록 완료되었습니다.");
+	    	return "success_close";
+			
+		}
+		
+		@GetMapping("/AdminEvenet")
+		public String adminEvenet() {
+			
+			return "";
+		}
+		
+//		@GetMapping("/Notice")
+//		public String notice() {
+//			
+//			return "notice";
+//		}
+//		
+//		@GetMapping("/Event")
+//		public String event() {
+//			
+//			return "";
+//		}
 	
-	
-	
+	@PostMapping("/TransactionSearch")
+	public String transactionSearch() {
+		
+		System.out.println("거래내역 넘어옴");
+		
+		return "";
+	}
 	
 	
 	

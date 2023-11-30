@@ -57,6 +57,12 @@ public interface AdminMapper {
 	// 구매확정 수수료 내역
 	List<WithdrawVO> selectWithdrawCharge();
 
+	// 공지사항 등록
+	int insertNotice(Map<String, String> map);
+
+	// 공지사항 조회
+	List<Map<String, String>> selectNotice();
+
 
 
 	

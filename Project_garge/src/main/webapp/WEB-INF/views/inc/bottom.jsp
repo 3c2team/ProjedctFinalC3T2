@@ -31,6 +31,8 @@
                             <li><a href="#">Contact Us</a></li>
                             <li><a href="#">Payment Methods</a></li>
                             <li><a href="#">Return & Exchanges</a></li>
+                            <li><a href="Notice">Notice</a></li>
+                            <li><a href="Event">Event</a></li>
                         </ul>
                     </div>
                 </div>

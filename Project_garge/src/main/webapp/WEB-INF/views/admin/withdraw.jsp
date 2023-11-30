@@ -49,8 +49,11 @@
   <link href="${pageContext.request.contextPath }/resources/css/admin_style.css" rel="stylesheet" />
   <!-- Helpers -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/helpers.js"></script>
-
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
+  
+  <script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
+  <script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
+  
 	<style type="text/css">
 		.product{
 		    display: flex;
@@ -86,7 +89,7 @@
 											<div class="calanderWrap" style="margin-bottom: 25px;">
 												<input type="date" id="startDate" name="startDate" > - <input type="date" id="endDate" name="endDate">
 <!-- 												<button type="submit" class="badge bg-label-prohibition" id="search_btn">조회</button> -->
-												<button type="submit" class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button>
+												<button class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button>
 											</div>
 										</div>
 							    	</div>
@@ -158,14 +161,34 @@
 
 	<%-- 바텀 메뉴 --%>
 	<jsp:include page="../inc/bottom.jsp"></jsp:include>
+	
+	<!-- ---------------------------------------------------------------------------------------------------------------------- -->
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/popper/popper.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/bootstrap.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/jquery/jquery.js"></script> --%>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/popper/popper.js"></script> --%>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/bootstrap.js"></script> --%>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> --%>
 
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/menu.js"></script>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/menu.js"></script> --%>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/main.js"></script> --%>
+
+    <!-- Page JS -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+<!--     <script async defer src="https://buttons.github.io/buttons.js"></script> -->
+<!--         <script -->
+<!-- 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" -->
+<!-- 		crossorigin="anonymous"></script> -->
+	
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script> --%>
+	<!-- ---------------------------------------------------------------------------------------------------------------------- -->
+	<script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
@@ -177,11 +200,19 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <script
+    
+    <script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		crossorigin="anonymous"></script>
+		<script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin_scripts.js"></script> --%>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+		crossorigin="anonymous"></script>
+	<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_pie_chart.js"></script>
+	<script
 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
 	</body>
 </html>

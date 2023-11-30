@@ -41,7 +41,7 @@
  			member_insert_date BETWEEN #{startDate}
  			<choose>
  			<when test="!endDate.equals('')">
- 				AND date_format(date(#{endDate}) + 1, '%Y-%m-%d')
+ 				AND date_format(date(#{endDate}), '%Y-%m-%d')
  			</when>
  			</choose>
  		</if>
@@ -57,7 +57,7 @@
  			member_insert_date BETWEEN #{startDate}
  			<choose>
  			<when test="!endDate.equals('')">
- 				AND date_format(date(#{endDate}) + 1, '%Y-%m-%d')
+ 				AND date_format(date(#{endDate}), '%Y-%m-%d')
  			</when>
  			</choose>
  		</if>
@@ -73,7 +73,8 @@
 		    , W.buy_check
 			, M.member_name
 		FROM WITHDRAW W JOIN MEMBER M
-		ON W.member_id = M.member_id;
+		ON W.member_id = M.member_id
+		ORDER BY withdraw_date DESC
  	</select>
  	
  	<!--판매자에게 입금한 내역 조회-->
@@ -85,7 +86,8 @@
 		    , D.sell_check
 			, M.member_name
 		FROM DEPOSIT D JOIN MEMBER M
-		ON D.member_id = M.member_id;
+		ON D.member_id = M.member_id
+		ORDER BY deposit_date DESC
  	</select>
  	
  	<!-- 관리자 권한 회수 -->
@@ -125,7 +127,7 @@
  			withdraw_date BETWEEN #{startDate}
  			<choose>
  			<when test="!endDate.equals('')">
- 				AND date_format(date(#{endDate}) + 1, '%Y-%m-%d')
+ 				AND date_format(date(#{endDate}), '%Y-%m-%d')
  			</when>
  			</choose>
  		</if>
@@ -135,17 +137,17 @@
  	<!-- 입금내역 기간조회 -->
  	<select id="selectDepositSearch" resultType="com.itwillbs.garge.vo.DepositVO">
 	 	SELECT *
-	 		FROM DEPOSIT
-	 		WHERE 
-	 		<if test="!startDate.equals('')">
-	 			deposit_date BETWEEN #{startDate}
-	 			<choose>
-	 			<when test="!endDate.equals('')">
-	 				AND date_format(date(#{endDate}) + 1, '%Y-%m-%d')
-	 			</when>
-	 			</choose>
-	 		</if>
-	 		ORDER BY deposit_date DESC
+ 		FROM DEPOSIT
+ 		WHERE 
+ 		<if test="!startDate.equals('')">
+ 			deposit_date BETWEEN #{startDate}
+ 			<choose>
+ 			<when test="!endDate.equals('')">
+ 				AND date_format(date(#{endDate}), '%Y-%m-%d')
+ 			</when>
+ 			</choose>
+ 		</if>
+ 		ORDER BY deposit_date DESC
  	</select>
  	
  	<!-- 구매확정 수수료내역 -->
@@ -153,6 +155,25 @@
  		SELECT *
  		FROM WITHDRAW
  		WHERE buy_check = '구매확정'
+ 	</select>
+ 	
+ 	<!-- 공지사항 등록 -->
+ 	<insert id="insertNotice">
+ 		INSERT INTO NOTICE
+			VALUES(	null
+					, #{notice_subject}
+					, #{notice_content}
+					,now()
+			)
+ 	</insert>
+ 	
+ 	<!-- 관리자페이지 공지사항 조회 -->
+ 	<select id="selectNotice" resultType="map">
+ 		SELECT  notice_num
+				, notice_subject
+				, notice_content
+				, DATE_FORMAT(notice_date, '%Y-%m-%d') as notice_date
+		FROM NOTICE
  	</select>
 
  

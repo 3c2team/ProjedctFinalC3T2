@@ -5,34 +5,29 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 $("#search_btn").click(function(){
 	var start = $("input[name=startDate]").val();
 	var end = $("input[name=endDate]").val();
-//	alert("start : " + start + ", end :" + end + " : 확인용!");
+	alert("start : " + start + ", end :" + end + " : 확인용!");
 	console.log("start : " + start + "end" + "end");
-	
-	if(start > end){
-		alert("이후 날짜보다 시작 날짜가 더 빠를 수 없습니다. ");
-		return false;
-	}
 });
 
 
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
-//	$.ajax({
-//		type: "POST",
-//		url: "",
-//		async: false,
-//		data: {
-//			start, end
-//		},
-//		success: function(adminSelectProductSales) {
-////			product_category = adminSelectProductSales.map(row => row.category);
+	$.ajax({
+		type: "POST",
+		url: "",
+		async: false,
+		data: {
+			start, end
+		},
+		success: function(adminSelectProductSales) {
+//			product_category = adminSelectProductSales.map(row => row.category);
 //			sales = adminSelectProductSales.map(row => row.sales);
 			
-//		},
-//		error:function(){
-//			alert("들고오기 실패");
-//		}
-//	});
+		},
+		error:function(){
+			alert("들고오기 실패");
+		}
+	});
 	
 var myPieChart = new Chart(ctx, {
   type: 'pie',

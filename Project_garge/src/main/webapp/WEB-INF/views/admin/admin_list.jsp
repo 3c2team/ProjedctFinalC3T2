@@ -53,6 +53,7 @@
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/config.js"></script>
+  	<script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
 	<style type="text/css">
 		.product{
 		    display: flex;
@@ -86,7 +87,8 @@
 										<div id="reservation_confirm_term_right" >
 											<div class="calanderWrap">
 												<input type="date" id="startDate" name="startDate"> - <input type="date" id="endDate" name="endDate">
-												<button type="submit" class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button>
+<!-- 												<button type="submit" class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button> -->
+												<button class="btn default" id="search_btn" style="border-radius: 3px; margin-bottom: 3px; font-size: 11px; color: #fff; background: #5F12D3 ;">조회</button>
 <!-- 															<button type="submit" class="primary-btn" id="search_btn">조회</button> -->
 
 												<span class="card-header" style="float:inline-end; font-weight: bold; margin-bottom: 25px;">
@@ -122,7 +124,16 @@
 													<td>${memberList.member_id}</td>
 													<td>${memberList.member_e_mail}</td>
 													<td>${memberList.member_phone_num}</td>
-													<td><span id="checkedResult">${memberList.member_state}</span></td>
+													<td>
+														<c:choose>
+															<c:when test="${memberList.member_state eq '회원'}">
+																<span class="badge bg-label-hold me-1" style="font-size:small;" id="checkedResult">${memberList.member_state}</span>
+															</c:when>
+															<c:when test="${memberList.member_state eq '관리자'}">
+																<span class="badge bg-label-prohibition" style="font-size:small;" id="checkedResult">${memberList.member_state}</span>
+															</c:when>
+														</c:choose>
+													</td>
 														
 <!-- 													<td><span id="checkedResult">테스트</span></td> -->
 <!-- 													<td> -->
@@ -157,12 +168,31 @@
 	<jsp:include page="../inc/bottom.jsp"></jsp:include>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/popper/popper.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/bootstrap.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    
+    
+    
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/jquery/jquery.js"></script> --%>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/popper/popper.js"></script> --%>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/bootstrap.js"></script> --%>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> --%>
+	<!-- -------------------------------------------------------------------------------------------------- -->
 
-    <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/menu.js"></script>
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/menu.js"></script> --%>
+   
+   
+<%--     <script src="${pageContext.request.contextPath }/resources/myPage/assets/js/main.js"></script> --%>
+
+<!--     <script async defer src="https://buttons.github.io/buttons.js"></script> -->
+<!--         <script -->
+<!-- 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" -->
+<!-- 		crossorigin="anonymous"></script> -->
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script> --%>
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script> --%>
+
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin_authorization.js"></script> --%>
+	
+	<!-- -------------------------------------------------------------------------------------------------- -->
+	<script src="${pageContext.request.contextPath }/resources/myPage/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
@@ -174,12 +204,19 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <script
+    
+    <script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		crossorigin="anonymous"></script>
+		<script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
+<%-- 	<script src="${pageContext.request.contextPath }/resources/js/admin_scripts.js"></script> --%>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+		crossorigin="anonymous"></script>
+	<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_pie_chart.js"></script>
+	<script
 		src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_search_list.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/admin_authorization.js"></script>
 	</body>
 </html>

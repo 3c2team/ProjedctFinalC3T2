@@ -59,7 +59,6 @@
 				</li>
 				
 				
-				
 <!-- 				<li class="menu-item"> -->
 <!-- 					<a href="auth-forgot-password-basic.html" class="menu-link" target="_blank"> -->
 <!-- 						<div data-i18n="Basic">거래완료</div> -->
@@ -69,12 +68,26 @@
 		</li>
 		
 		<li class="menu-item">
-			<a href="Declaration" class="menu-link">
-<!-- 				<i class="menu-icon tf-icons bx bx-dock-top"></i> -->
-				<i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-				<div data-i18n="">사기신고 조회</div>
+			<a href="javascript:void(0);" class="menu-link menu-toggle">
+<!-- 				<i class="menu-icon tf-icons bx bx-cube-alt"></i> -->
+				<i class="menu-icon tf-icons bx bx-collection"></i>
+				<div data-i18n="Misc">메인관리</div>
 			</a>
+			<ul class="menu-sub">
+				<li class="menu-item">
+					<a href="" class="menu-link">
+						<div data-i18n="Under Maintenance">카테고리 관리</div>
+					</a>
+				</li>
+<!-- 				<li class="menu-item"> -->
+<!-- 					<a href="" class="menu-link"> -->
+<!-- 						<div data-i18n="Error"> 수수료 내역</div> -->
+<!-- 					</a> -->
+<!-- 				</li> -->
+			</ul>
 		</li>
+		
+
 	  <!-- Components -->
 <!-- 		<li class="menu-header small text-uppercase"> -->
 <!-- 			<span class="menu-header-text">내 정보</span> -->
@@ -105,34 +118,60 @@
 		<li class="menu-header small text-uppercase">
 			<span class="menu-header-text">소식 및 지원</span>
 		</li>
+		
 	  <!-- Cards -->
+	  <li class="menu-item">
+			<a href="javascript:void(0);" class="menu-link menu-toggle">
+				<i class="menu-icon tf-icons bx bx-cube-alt"></i>
+				<div data-i18n="Misc">공지사항</div>
+			</a>
+			<ul class="menu-sub">
+				<li class="menu-item">
+					<a href="AdminNotice" class="menu-link">
+						<div data-i18n="Under Maintenance">공지사항</div>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="AdminEvent" class="menu-link">
+						<div data-i18n="Error"> 이벤트</div>
+					</a>
+				</li>
+			</ul>
+		</li>
 		<li class="menu-item">
 			<a href="MemberList" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-collection"></i>
 				<div data-i18n="Basic">회원 조회</div>
 			</a>
 		</li>
-	  <!-- User interface -->
-		<li class="menu-item">
-			<a href="PagesTest" class="menu-link">
-				<i class="menu-icon tf-icons bx bx-box"></i>
-				<div data-i18n="User interface">공지사항</div>
+				<li class="menu-item">
+			<a href="Declaration" class="menu-link">
+<!-- 				<i class="menu-icon tf-icons bx bx-dock-top"></i> -->
+				<i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+				<div data-i18n="">사기신고 조회</div>
 			</a>
 		</li>
+	  <!-- User interface -->
+<!-- 		<li class="menu-item"> -->
+<!-- 			<a href="PagesTest" class="menu-link"> -->
+<!-- 				<i class="menu-icon tf-icons bx bx-box"></i> -->
+<!-- 				<div data-i18n="User interface">공지사항</div> -->
+<!-- 			</a> -->
+<!-- 		</li> -->
 	
 	  <!-- Extended components -->
-		<li class="menu-item">
-			<a href="javascript:void(0)" class="menu-link">
-				<i class="menu-icon tf-icons bx bx-copy"></i>
-				<div data-i18n="Extended UI">카테고리</div>
-			</a>
-		</li>
-		<li class="menu-item">
-			<a href="javascript:void(0)" class="menu-link">
-				<i class="menu-icon tf-icons bx bx-copy"></i>
-				<div data-i18n="Extended UI">자주 묻는 질문</div>
-			</a>
-		</li>
+<!-- 		<li class="menu-item"> -->
+<!-- 			<a href="javascript:void(0)" class="menu-link"> -->
+<!-- 				<i class="menu-icon tf-icons bx bx-copy"></i> -->
+<!-- 				<div data-i18n="Extended UI">카테고리</div> -->
+<!-- 			</a> -->
+<!-- 		</li> -->
+<!-- 		<li class="menu-item"> -->
+<!-- 			<a href="javascript:void(0)" class="menu-link"> -->
+<!-- 				<i class="menu-icon tf-icons bx bx-copy"></i> -->
+<!-- 				<div data-i18n="Extended UI">자주 묻는 질문</div> -->
+<!-- 			</a> -->
+<!-- 		</li> -->
 	</ul>
 	<%--
 	<li class="menu-header small text-uppercase">

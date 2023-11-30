@@ -72,7 +72,7 @@
 </head>
 
 <body>
-	<jsp:include page="../inc/admin_top.jsp"></jsp:include>
+	<jsp:include page="../inc/top.jsp"></jsp:include>
 	<!-- Layout wrapper -->
 	<div class="layout-wrapper layout-content-navbar">
 		<div class="layout-container">
@@ -264,8 +264,8 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
 		crossorigin="anonymous"></script>
-		<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_pie_chart.js"></script>
-		<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_area_chart.js"></script>
+
+		
 	
 	
 	<!-- -------------------------------------------------------------------------------------------- -->
@@ -285,6 +285,7 @@
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_datatable.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/admin_calender.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_pie_chart.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/demo/admin_pay_area_chart.js"></script>
 
 	</body>
