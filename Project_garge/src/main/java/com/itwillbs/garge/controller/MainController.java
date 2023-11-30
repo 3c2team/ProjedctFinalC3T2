@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.itwillbs.garge.service.MainService;
@@ -142,18 +143,21 @@ public class MainController {
 	}
 	//1대1 문의 페이지 이동
 	@GetMapping("RegistQuewstion")
-	public String registQuewstion() {
+	public String registQuewstion(Model model) {
 		
+		List<Map<String, String>> selectQnaCategory = service.selectQnaCategory();
+		System.out.println(selectQnaCategory.size());
+		System.out.println(selectQnaCategory);
+		model.addAttribute("selectQnaCategory", selectQnaCategory);
 		return "regist_question";
 	}
 	@PostMapping("QuestionRegistPro")
-	public String quewstionRegistPro(HttpSession session,@RequestParam(value = "files", required = false) List<MultipartFile> imageList) {
+	public String quewstionRegistPro(HttpSession session,@RequestParam(value =  "file" , required = false) MultipartFile[] imageList) {
 		for(MultipartFile file : imageList) {
 			System.out.println("fdfdfd : " + file.getOriginalFilename());
 //			session.;
 		}
 		return "";
-	}
-	
-	
+	}	
+
 }

@@ -27,4 +27,13 @@
 				  AND product_price > #{minPrice} - 1
 			</if>	  
     	</select>
+    	<select id="selectQnaCategory" resultType="map">
+    		select *
+			from QUESTION_CATEGORY
+    	</select>
+<!--     	<select id="selectQnaCategoryDetail" resultType="map"> -->
+<!--     		select * -->
+<!-- 			from QUESTION_CATEGORY_DETAIL -->
+<!-- 			where  -->
+<!--     	</select> -->
     </mapper>

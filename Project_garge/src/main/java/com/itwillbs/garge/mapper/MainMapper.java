@@ -13,5 +13,9 @@ public interface MainMapper {
 
 	List<Map<String, Object>> selectProduct(Map<String, String> map);
 
+	List<Map<String, String>>  selectQnaCategory();
+
+	List<Map<String, String>> selectQnaCategoryDetail(String qnaCategoryName);
+
 
 }

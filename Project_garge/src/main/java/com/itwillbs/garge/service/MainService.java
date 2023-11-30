@@ -24,4 +24,15 @@ public class MainService {
 		// TODO Auto-generated method stub
 		return mapper.selectProduct(map);	
 	}
+
+	public List<Map<String, String>>  selectQnaCategory() {
+		// TODO Auto-generated method stub
+		return mapper.selectQnaCategory();		
+	}
+
+
+	public List<Map<String, String>> selectQnaCategoryDetail(String qnaCategoryName) {
+		// TODO Auto-generated method stub
+		return mapper.selectQnaCategoryDetail(qnaCategoryName);
+	}
 }
